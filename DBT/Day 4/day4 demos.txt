@@ -1,0 +1,867 @@
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use iacsd0324
+Database changed
+mysql> create table mytable(
+    -> id int,
+    -> name varchar);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+mysql> create table mytable(
+    -> id int,
+    -> name varchar(30));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc mytable;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> create table product(
+    -> pid int primary key,
+    -> pname varchar(30) not null,
+    -> qty int check(qty>0),
+    -> price decimal(9,2) check (price between  1000 and 10000))
+    -> ;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into product values(12,'lays',34,50);
+ERROR 3819 (HY000): Check constraint 'product_chk_2' is violated.
+mysql> insert into product values(12,'lays',34,1000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values(12,'lays',34,1000);
+ERROR 1062 (23000): Duplicate entry '12' for key 'product.PRIMARY'
+mysql> insert into product values(13,null,34,1000);
+ERROR 1048 (23000): Column 'pname' cannot be null
+mysql> insert into product values(13,'maggi',-23,1000);
+ERROR 3819 (HY000): Check constraint 'product_chk_1' is violated.
+mysql> insert into product values(13,'maggi');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into product(pname,pid) values('maggi',13);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from product;
++-----+-------+------+---------+
+| pid | pname | qty  | price   |
++-----+-------+------+---------+
+|  12 | lays  |   34 | 1000.00 |
+|  13 | maggi | NULL |    NULL |
++-----+-------+------+---------+
+2 rows in set (0.00 sec)
+
+mysql> create table person(
+    -> pid int primary key,
+    -> panme varchar(20),
+    -> address varchar(20) default 'pune');
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into person values(12,'xxx','mumbai')
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into person(pid,pname) values(13,'yyyy');
+ERROR 1054 (42S22): Unknown column 'pname' in 'field list'
+mysql> insert into person(pid,panme) values(13,'yyyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from person;
++-----+-------+---------+
+| pid | panme | address |
++-----+-------+---------+
+|  12 | xxx   | mumbai  |
+|  13 | yyyy  | pune    |
++-----+-------+---------+
+2 rows in set (0.00 sec)
+
+mysql> drop table person;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> create table stud_marks(
+    ->      sid int ,
+    ->      cname varchar(2),
+    -> marks int check(marks between 0 and 100,
+    -> grade enum(‘A’,’B’,’C’),
+    -> primary key(sid,cname)
+    -> )
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',
+grade enum(?A?,?B?,?C?),
+primary key(sid,cname)
+)' at line 4
+mysql> create table stud_marks(
+    ->      sid int ,
+    ->      cname varchar(2),
+    -> marks int check(marks between 0 and 100),
+    -> grade enum('A','B','C'),
+    -> primary key(sid,cname)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into values(10,'java',87,'A');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values(10,'java',87,'A')' at line 1
+mysql> insert into stud_marks values(10,'java',87,'A');
+ERROR 1406 (22001): Data too long for column 'cname' at row 1
+mysql> insert into stud_marks values(10,'ja',87,'A');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into stud_marks values(10,'ja',89,'A');
+ERROR 1062 (23000): Duplicate entry '10-ja' for key 'stud_marks.PRIMARY'
+mysql> insert into stud_marks values(11,'c++',87,'F');
+ERROR 1406 (22001): Data too long for column 'cname' at row 1
+mysql> insert into stud_marks values(11,'c+',87,'F');
+ERROR 1265 (01000): Data truncated for column 'grade' at row 1
+mysql> insert into stud_marks values(11,'c+',87,'c');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> create table category(
+    -> cid int primary key,
+    -> cname varchar(20),
+    -> description varchar(100));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> create table salesman(
+    -> sid int primary key,
+    -> sname varchar(20),
+    -> address varchar(20));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> create table product(
+    -> pid int primary key,
+    -> pname varchar(20),
+    -> qty int check(qty>0),
+    -> price float(9,2),
+    -> catid int,
+    -> sid int,
+    -> constraint fk_cat foreign key(catid) references category(cid)
+    -> on delete set null
+    -> on update cascade,
+    -> constraint fk_sid foreign key(sid) rference salesman(sid)
+    -> on delete set null
+    -> on update cascade)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rference salesman(sid)
+on delete set null
+on update cascade)' at line 11
+mysql> create table product(
+    -> pid int primary key,
+    -> pname varchar(20),
+    -> qty int check(qty>0),
+    -> price float(9,2),
+    -> catid int,
+    -> sid int,
+    -> constraint fk_cat foreign key(catid) references category(cid)
+    -> on delete set null
+    -> on update cascade,
+    -> constraint fk_sid foreign key(sid) references salesman(sid)
+    -> on delete set null
+    -> on update cascade)
+    -> ;
+ERROR 1050 (42S01): Table 'product' already exists
+mysql> drop table product;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table product(
+    -> pid int primary key,
+    -> pname varchar(20),
+    -> qty int check(qty>0),
+    -> price float(9,2),
+    -> catid int,
+    -> sid int,
+    -> constraint fk_cat foreign key(catid) references category(cid)
+    -> on delete set null
+    -> on update cascade,
+    -> constraint fk_sid foreign key(sid) references salesman(sid)
+    -> on delete set null
+    -> on update cascade)
+    -> ;
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> insert into category values(10,'chips','very crispy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into category values(11,'biscuits','very crunchy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into category values(12,'snacks','yummy');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from category;
++-----+----------+--------------+
+| cid | cname    | description  |
++-----+----------+--------------+
+|  10 | chips    | very crispy  |
+|  11 | biscuits | very crunchy |
+|  12 | snacks   | yummy        |
++-----+----------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into salesman values(1000,'Rajesh','Pune');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into salesman values(1001,'Ajinkya','Mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into salesman values(1002,'Rohit','pune');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from salesman;
++------+---------+---------+
+| sid  | sname   | address |
++------+---------+---------+
+| 1000 | Rajesh  | Pune    |
+| 1001 | Ajinkya | Mumbai  |
+| 1002 | Rohit   | pune    |
++------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> insert into product valuse(1,'lays',34,50,10,1000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'valuse(1,'lays',34,50,10,1000)' at line 1
+mysql> insert into product values(1,'lays',34,50,10,1000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values(2,'prigles',50,150,10,1000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into product values(3,'nice',53,50,11,1001)
+    -> ;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into product values(4,'maggi',45,60,12,1001)
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from product;
++-----+---------+------+--------+-------+------+
+| pid | pname   | qty  | price  | catid | sid  |
++-----+---------+------+--------+-------+------+
+|   1 | lays    |   34 |  50.00 |    10 | 1000 |
+|   2 | prigles |   50 | 150.00 |    10 | 1000 |
+|   3 | nice    |   53 |  50.00 |    11 | 1001 |
+|   4 | maggi   |   45 |  60.00 |    12 | 1001 |
++-----+---------+------+--------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from category;
++-----+----------+--------------+
+| cid | cname    | description  |
++-----+----------+--------------+
+|  10 | chips    | very crispy  |
+|  11 | biscuits | very crunchy |
+|  12 | snacks   | yummy        |
++-----+----------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from category where cid=10;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from category;
++-----+----------+--------------+
+| cid | cname    | description  |
++-----+----------+--------------+
+|  11 | biscuits | very crunchy |
+|  12 | snacks   | yummy        |
++-----+----------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from product;
++-----+---------+------+--------+-------+------+
+| pid | pname   | qty  | price  | catid | sid  |
++-----+---------+------+--------+-------+------+
+|   1 | lays    |   34 |  50.00 |  NULL | 1000 |
+|   2 | prigles |   50 | 150.00 |  NULL | 1000 |
+|   3 | nice    |   53 |  50.00 |    11 | 1001 |
+|   4 | maggi   |   45 |  60.00 |    12 | 1001 |
++-----+---------+------+--------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> update product
+    -> set catid=13
+    -> where;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql> update category
+    -> set cid=13
+    -> where cid=11;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from category;
++-----+----------+--------------+
+| cid | cname    | description  |
++-----+----------+--------------+
+|  12 | snacks   | yummy        |
+|  13 | biscuits | very crunchy |
++-----+----------+--------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from product;
++-----+---------+------+--------+-------+------+
+| pid | pname   | qty  | price  | catid | sid  |
++-----+---------+------+--------+-------+------+
+|   1 | lays    |   34 |  50.00 |  NULL | 1000 |
+|   2 | prigles |   50 | 150.00 |  NULL | 1000 |
+|   3 | nice    |   53 |  50.00 |    13 | 1001 |
+|   4 | maggi   |   45 |  60.00 |    12 | 1001 |
++-----+---------+------+--------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> create table owner(
+    -> ownerid int primary key ,
+    -> oname varchar(20),
+    -> oaddress varchar(20))
+    -> ;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into owner values(100,'Anchal','pune');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into owner values(110, 'shreya','mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into owner values(120, 'shreyas','nagpur');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from owner;
++---------+---------+----------+
+| ownerid | oname   | oaddress |
++---------+---------+----------+
+|     100 | Anchal  | pune     |
+|     110 | shreya  | mumbai   |
+|     120 | shreyas | nagpur   |
++---------+---------+----------+
+3 rows in set (0.00 sec)
+
+mysql> create table salesman(
+    -> sid int primary key,
+    -> sname varchar(20),
+    -> saddrerss varchar(20))
+    -> ;
+ERROR 1050 (42S01): Table 'salesman' already exists
+mysql> select * from salesman;
++------+---------+---------+
+| sid  | sname   | address |
++------+---------+---------+
+| 1000 | Rajesh  | Pune    |
+| 1001 | Ajinkya | Mumbai  |
+| 1002 | Rohit   | pune    |
++------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> create table vehicle(
+    ->  vid int primary key ,
+    -> vaname varchar(20),
+    -> make varchar(20),
+    -> model varchar(20),
+    -> company varchar(20),
+    -> ownerid int ,
+    ->  sid int ,
+    -> constraint f_ownerid foreign key (ownerid) references owner(ownerid)
+    -> on delete set null
+    -> on update cascade ,
+    -> constraint f_sid foreign key (sid) references salesman(sid)
+    -> on delete set null
+    -> on update cascade );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into vehicle values(1,'Activa','a','b','honda',100,1000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into vehicle values(2,'Jupiter', 'x','y','tvs',120,1000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into vehicle values(3,'Access', 'x','y','suzuki',110,1001);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from vehicle ;
++-----+---------+------+-------+---------+---------+------+
+| vid | vaname  | make | model | company | ownerid | sid  |
++-----+---------+------+-------+---------+---------+------+
+|   1 | Activa  | a    | b     | honda   |     100 | 1000 |
+|   2 | Jupiter | x    | y     | tvs     |     120 | 1000 |
+|   3 | Access  | x    | y     | suzuki  |     110 | 1001 |
++-----+---------+------+-------+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> delete from owner where ownerid=120;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from owner ;
++---------+--------+----------+
+| ownerid | oname  | oaddress |
++---------+--------+----------+
+|     100 | Anchal | pune     |
+|     110 | shreya | mumbai   |
++---------+--------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from vehicle ;
++-----+---------+------+-------+---------+---------+------+
+| vid | vaname  | make | model | company | ownerid | sid  |
++-----+---------+------+-------+---------+---------+------+
+|   1 | Activa  | a    | b     | honda   |     100 | 1000 |
+|   2 | Jupiter | x    | y     | tvs     |    NULL | 1000 |
+|   3 | Access  | x    | y     | suzuki  |     110 | 1001 |
++-----+---------+------+-------+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> update salesman
+    -> set sid = 1003
+    -> where sid=1000;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from salesman ;
++------+---------+---------+
+| sid  | sname   | address |
++------+---------+---------+
+| 1001 | Ajinkya | Mumbai  |
+| 1002 | Rohit   | pune    |
+| 1003 | Rajesh  | Pune    |
++------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from vehicle ;
++-----+---------+------+-------+---------+---------+------+
+| vid | vaname  | make | model | company | ownerid | sid  |
++-----+---------+------+-------+---------+---------+------+
+|   1 | Activa  | a    | b     | honda   |     100 | 1003 |
+|   2 | Jupiter | x    | y     | tvs     |    NULL | 1003 |
+|   3 | Access  | x    | y     | suzuki  |     110 | 1001 |
++-----+---------+------+-------+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> insert into salesman(sid,sname,address) values(11,'xxx','Pune'),(12,'yyy','pune'),(13,'zzzz','mumbai');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> set autocommit=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from salesman;
++------+---------+---------+
+| sid  | sname   | address |
++------+---------+---------+
+|   11 | xxx     | Pune    |
+|   12 | yyy     | pune    |
+|   13 | zzzz    | mumbai  |
+| 1001 | Ajinkya | Mumbai  |
+| 1002 | Rohit   | pune    |
+| 1003 | Rajesh  | Pune    |
++------+---------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> select * from owner;
++---------+--------+----------+
+| ownerid | oname  | oaddress |
++---------+--------+----------+
+|     100 | Anchal | pune     |
+|     110 | shreya | mumbai   |
++---------+--------+----------+
+2 rows in set (0.00 sec)
+
+mysql> desc mytable;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> insert into mytable values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable values(2,'yyyyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from mytable;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | xxx   |
+|    2 | yyyyy |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> delete from mytable;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> set autocommit=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into mytable values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable values(2,'yyyyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from mytable;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | xxx   |
+|    2 | yyyyy |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> delete from mytable;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> insert into mytable values(2,'yyyyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable values(2,'yyyyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delete from mytable;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable;
++------+-------+
+| id   | name  |
++------+-------+
+|    2 | yyyyy |
+|    2 | yyyyy |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into mytable values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable;
++------+-------+
+| id   | name  |
++------+-------+
+|    2 | yyyyy |
+|    2 | yyyyy |
+|    1 | xxx   |
++------+-------+
+3 rows in set (0.00 sec)
+
+mysql> delete from mytable;
+Query OK, 3 rows affected (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable;
++------+-------+
+| id   | name  |
++------+-------+
+|    2 | yyyyy |
+|    2 | yyyyy |
+|    1 | xxx   |
++------+-------+
+3 rows in set (0.00 sec)
+
+mysql> truncate table mytable;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable;
+Empty set (0.00 sec)
+
+mysql> desc mytable
+    -> ;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> add addr varchar(20) before name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before name' at line 2
+mysql> alter table mytable
+    -> add column addr varchar(20) before name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'before name' at line 2
+mysql> add column addr varchar(20) after id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add column addr varchar(20) after id' at line 1
+mysql> alter table mytable
+    -> add addr varchar(20) after id;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| addr  | varchar(20) | YES  |     | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> add location varchar(20);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | YES  |     | NULL    |       |
+| addr     | varchar(20) | YES  |     | NULL    |       |
+| name     | varchar(30) | YES  |     | NULL    |       |
+| location | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> add addr11 varchar(20) after id
+    -> add test int first
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add test int first' at line 3
+mysql> alter table mytable
+    -> add addr11 varchar(20) after id
+    -> add test int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add test int' at line 3
+mysql> alter table mytable
+    -> add addr11 varchar(20) after id,
+    -> add addr12 int first;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| addr12   | int         | YES  |     | NULL    |       |
+| id       | int         | YES  |     | NULL    |       |
+| addr11   | varchar(20) | YES  |     | NULL    |       |
+| addr     | varchar(20) | YES  |     | NULL    |       |
+| name     | varchar(30) | YES  |     | NULL    |       |
+| location | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> drop column addr11
+    -> ;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| addr12   | int         | YES  |     | NULL    |       |
+| id       | int         | YES  |     | NULL    |       |
+| addr     | varchar(20) | YES  |     | NULL    |       |
+| name     | varchar(30) | YES  |     | NULL    |       |
+| location | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> drop column addr12;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | YES  |     | NULL    |       |
+| addr     | varchar(20) | YES  |     | NULL    |       |
+| name     | varchar(30) | YES  |     | NULL    |       |
+| location | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> modify location varchar(50)
+    -> ;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | YES  |     | NULL    |       |
+| addr     | varchar(20) | YES  |     | NULL    |       |
+| name     | varchar(30) | YES  |     | NULL    |       |
+| location | varchar(50) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> change location mylocation varchar(50)
+    -> ;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | YES  |     | NULL    |       |
+| addr       | varchar(20) | YES  |     | NULL    |       |
+| name       | varchar(30) | YES  |     | NULL    |       |
+| mylocation | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> add primary key(id);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | NO   | PRI | NULL    |       |
+| addr       | varchar(20) | YES  |     | NULL    |       |
+| name       | varchar(30) | YES  |     | NULL    |       |
+| mylocation | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table mytable
+    -> drop primary key;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc mytable;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | NO   |     | NULL    |       |
+| addr       | varchar(20) | YES  |     | NULL    |       |
+| name       | varchar(30) | YES  |     | NULL    |       |
+| mylocation | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> show create table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> show create table mytable;
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                   |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| mytable | CREATE TABLE `mytable` (
+  `id` int NOT NULL,
+  `addr` varchar(20) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `mylocation` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> show create table vehicle;
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| vehicle | CREATE TABLE `vehicle` (
+  `vid` int NOT NULL,
+  `vaname` varchar(20) DEFAULT NULL,
+  `make` varchar(20) DEFAULT NULL,
+  `model` varchar(20) DEFAULT NULL,
+  `company` varchar(20) DEFAULT NULL,
+  `ownerid` int DEFAULT NULL,
+  `sid` int DEFAULT NULL,
+  PRIMARY KEY (`vid`),
+  KEY `f_ownerid` (`ownerid`),
+  KEY `f_sid` (`sid`),
+  CONSTRAINT `f_ownerid` FOREIGN KEY (`ownerid`) REFERENCES `owner` (`ownerid`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `f_sid` FOREIGN KEY (`sid`) REFERENCES `salesman` (`sid`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from vehicle;
++-----+---------+------+-------+---------+---------+------+
+| vid | vaname  | make | model | company | ownerid | sid  |
++-----+---------+------+-------+---------+---------+------+
+|   1 | Activa  | a    | b     | honda   |     100 | 1003 |
+|   2 | Jupiter | x    | y     | tvs     |    NULL | 1003 |
+|   3 | Access  | x    | y     | suzuki  |     110 | 1001 |
++-----+---------+------+-------+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> delete from vehicle
+    -> where sid=1003;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> select * from vehicle;
++-----+--------+------+-------+---------+---------+------+
+| vid | vaname | make | model | company | ownerid | sid  |
++-----+--------+------+-------+---------+---------+------+
+|   3 | Access | x    | y     | suzuki  |     110 | 1001 |
++-----+--------+------+-------+---------+---------+------+
+1 row in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from vehicle;
++-----+---------+------+-------+---------+---------+------+
+| vid | vaname  | make | model | company | ownerid | sid  |
++-----+---------+------+-------+---------+---------+------+
+|   1 | Activa  | a    | b     | honda   |     100 | 1003 |
+|   2 | Jupiter | x    | y     | tvs     |    NULL | 1003 |
+|   3 | Access  | x    | y     | suzuki  |     110 | 1001 |
++-----+---------+------+-------+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> set autocommit=1;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>

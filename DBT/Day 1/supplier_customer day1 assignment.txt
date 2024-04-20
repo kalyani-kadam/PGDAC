@@ -1,0 +1,10 @@
+1. display all suppliers who statys in state either in  california 
+or Texas or Arkansas
+3. list all suppliers who does not stay in Springdale
+3. find orderid and customerid for orders place on date 18-feb-16
+4. find orderid and customerid for orders place on feb 2016
+5. find all customers with name 'Reynolds', or Anderson
+6. find all suppliers with supplierid >=200 and <=700
+7. find all customers for whome favorite_website is not given
+8. find all customers for whome favorite_website is given
+9. find all suppliers with supplierid not  >=200 and  not <=700

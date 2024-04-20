@@ -1,0 +1,524 @@
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select dayname(concat(year(curdate()),'-01-01')) "first day", concat(year(curdate()),'-12-31') "last day";
++-----------+------------+
+| first day | last day   |
++-----------+------------+
+| Monday    | 2024-12-31 |
++-----------+------------+
+1 row in set (0.00 sec)
+
+mysql> use iacsd0324
+Database changed
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.06 sec)
+
+mysql> alter table emp
+    -> drop primary key;
+Query OK, 15 rows affected (0.14 sec)
+Records: 15  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   |     | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> alter table emp
+    -> add primary key(empno);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> create table movie(movieid int primary key,
+    -> title varchar(20),
+    -> director varchar(20),
+    -> year int check(year>1990),
+    -> length_min int check(length_min between 15 and 240),
+    -> release_date date check(release_date>'1990-12-31') default '1991-01-01')
+    -> ;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into movie values(1,'Toy story','John Lasseter',1995,81,'1995-03-02');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into movie values(2,'A Bugs Life','John Lasseter',1998,95,'1998-03-02');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> ate table boxoffice(
+    -> movieid int primary key,
+    -> rating float(5,2) check rating between 1 and 10,
+    -> domestic_sales int,
+    -> international_sales int,
+    -> constraint fk_mid foreign key(movieid) references movie(movieid))
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ate table boxoffice(
+movieid int primary key,
+rating float(5,2) check rating bet' at line 1
+mysql> create table boxoffice(
+    -> movieid int primary key,
+    -> rating float(5,2) check rating between 1 and 10,
+    -> domestic_sales int,
+    -> international_sales int,
+    -> constraint fk_mid foreign key(movieid) references movie(movieid))
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rating between 1 and 10,
+domestic_sales int,
+international_sales int,
+constraint' at line 3
+mysql> create table boxoffice(
+    -> movieid int primary key,
+    -> rating float(5,2) check(rating between 1 and 10),
+    -> domestic_sales int,
+    -> international_sales int,
+    -> constraint fk_mid foreign key(movieid) references movie(movieid))
+    -> ;
+Query OK, 0 rows affected, 1 warning (0.08 sec)
+
+mysql> insert into boxoffice values(2,9,380843261,55559988);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into boxoffice values(5,9,380843261,55559988);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iacsd0324`.`boxoffice`, CONSTRAINT `fk_mid` FOREIGN KEY (`movieid`) REFERENCES `movie` (`movieid`))
+mysql> insert into boxoffice values(1,11,380843261,55559988);
+ERROR 3819 (HY000): Check constraint 'boxoffice_chk_1' is violated.
+mysql> insert into boxoffice values(1,7.8,380843261,55559988);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> create table team(
+    -> tid int primary key,
+    -> tname varchar(50),
+    -> player_num int check(player_num>0))
+    -> ;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> create table player(
+    -> player_id int primary key,
+    -> pname varchar(20),
+    -> speciality enum(‘bowler’,’batsman’,’allrounder’,’wicket_keeper’)
+    -> date_of_joining date,
+    -> num_matches int,
+    -> team_id int,
+    -> constraint fk_tid foreign key(team_id) references team(tid)
+    -> on delete set null
+    -> on update cascade);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?bowler?,?batsman?,?allrounder?,?wicket_keeper?)
+date_of_joining date,
+num_match' at line 4
+mysql> create table player(
+    -> player_id int primary key,
+    -> pname varchar(20),
+    -> speciality enum('bowler','batsman','allrounder','wicket_keeper')
+    -> date_of_joining date,
+    -> num_matches int,
+    -> team_id int,
+    -> constraint fk_tid foreign key(team_id) references team(tid)
+    -> on delete set null
+    -> on update cascade);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'date_of_joining date,
+num_matches int,
+team_id int,
+constraint fk_tid foreign ke' at line 5
+mysql> create table player(
+    -> player_id int primary key,
+    -> pname varchar(20),
+    -> speciality enum('bowler','batsman','allrounder','wicket_keeper'),
+    -> date_of_joining date,
+    -> num_matches int,
+    -> team_id int,
+    -> constraint fk_tid foreign key(team_id) references team(tid)
+    -> on delete set null
+    -> on update cascade);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table matches(
+    -> match_id int primary key,
+    -> team1 int,
+    -> team2 int,
+    -> match_date date
+    -> winner int,
+    -> man_of_match int,
+    -> constraint fk_pid foreign key(man_of_match) references player(player_id),
+    -> constraint fk_team1 foreign key(team1) references team(tid) ,
+    -> constraint fk_team2 foreign key(team2) references team(tid) ,
+    -> constraint chk_win check(winner in (team1,team2))
+    ->
+    -> )
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'winner int,
+man_of_match int,
+constraint fk_pid foreign key(man_of_match) refere' at line 6
+mysql> create table matches(
+    -> match_id int primary key,
+    -> team1 int,
+    -> team2 int,
+    -> match_date date,
+    -> winner int,
+    -> man_of_match int,
+    -> constraint fk_pid foreign key(man_of_match) references player(player_id),
+    -> constraint fk_team1 foreign key(team1) references team(tid) ,
+    -> constraint fk_team2 foreign key(team2) references team(tid) ,
+    -> constraint chk_win check(winner in (team1,team2))
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+mysql> create table matches(
+    -> match_id int primary key,
+    -> team1 int,
+    -> team2 int,
+    -> match_date date,
+    -> winner int,
+    -> man_of_match int,
+    -> constraint fk_pid foreign key(man_of_match) references player(player_id),
+    -> constraint fk_team1 foreign key(team1) references team(tid) ,
+    -> constraint fk_team2 foreign key(team2) references team(tid) ,
+    -> constraint chk_win check(winner in (team1,team2))
+    -> )
+    -> ;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> insert into team(10,'CSK',15)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10,'CSK',15)' at line 1
+mysql> insert into team values(10,'CSK',15);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into team values(11,'RCB',13);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into player values(7,'msd','wicket_keeper','2004-02-01',289,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into player values(18,'vk','batsman','2008-02-01',189,11);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into player values(8,'jadejja','allrounder','2006-10-01',199,10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into player values(19,'kartik','wicket_keeper','2008-10-01',199,11);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into matches values(100,10,11,10);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into matches values(100,10,11,10,'2024-03-25',7);
+ERROR 1292 (22007): Incorrect date value: '10' for column 'match_date' at row 1
+mysql> insert into matches values(100,10,11,'2024-03-25',10,7);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into matches values(100,10,11,'2024-03-25',15,7);
+ERROR 3819 (HY000): Check constraint 'chk_win' is violated.
+mysql> insert into matches values(100,12,11,'2024-03-25',11,7);
+ERROR 1062 (23000): Duplicate entry '100' for key 'matches.PRIMARY'
+mysql> insert into matches values(101,12,11,'2024-03-25',11,7);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iacsd0324`.`matches`, CONSTRAINT `fk_team1` FOREIGN KEY (`team1`) REFERENCES `team` (`tid`))
+mysql> select *
+    -> from emp
+    -> where deptno=( select deptno from emp where ename='SMITH');
++-------+-------+---------+------+------------+---------+------+--------+
+| EMPNO | ENAME | JOB     | MGR  | HIREDATE   | SAL     | COMM | DEPTNO |
++-------+-------+---------+------+------------+---------+------+--------+
+|  7369 | SMITH | CLERK   | 7902 | 1980-12-17 |  800.00 | NULL |     20 |
+|  7566 | JONES | MANAGER | 7839 | 1981-04-02 | 2975.00 | NULL |     20 |
+|  7788 | SCOTT | ANALYST | 7566 | 1982-12-09 | 3000.00 | NULL |     20 |
+|  7876 | ADAMS | CLERK   | 7788 | 1983-01-12 | 1100.00 | NULL |     20 |
+|  7902 | FORD  | ANALYST | 7566 | 1981-12-03 | 3000.00 | NULL |     20 |
++-------+-------+---------+------+------------+---------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select *
+    -> from emp
+    -> where sal >all  (select sal from emp
+    ->            where ename in ('Jones','smith'));
++-------+---------+-----------+------+------------+----------+--------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM   | DEPTNO |
++-------+---------+-----------+------+------------+----------+--------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 | 345.00 |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |   NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |   NULL |     10 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |   NULL |     20 |
++-------+---------+-----------+------+------------+----------+--------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from emp
+    -> where sal > (select max(sal) from emp
+    -> where deptno=(select deptno from emp where ename='SMITH'));
++-------+---------+-----------+------+------------+----------+--------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM   | DEPTNO |
++-------+---------+-----------+------+------------+----------+--------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 | 345.00 |     10 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |   NULL |     10 |
++-------+---------+-----------+------+------------+----------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select max(sal) from emp where deptno=20;
++----------+
+| max(sal) |
++----------+
+|  3000.00 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select * from dept
+    -> ;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select deptno from dept where dname in ('ACCOUNTING','sales')
+    -> ;
++--------+
+| deptno |
++--------+
+|     10 |
+|     30 |
++--------+
+2 rows in set (0.00 sec)
+
+mysql> select avg(sal) from emp where deptno in(select deptno from dept where dname in ('ACCOUNTING','sales'))
+    -> group by deptno;
++--------------+
+| avg(sal)     |
++--------------+
+| 10829.250000 |
+|  1566.666667 |
++--------------+
+2 rows in set (0.05 sec)
+
+mysql> select * from emp
+    -> ;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|  7369 | SMITH   | CLERK     | 7902 | 1980-12-17 |   800.00 |    NULL |     20 |
+|  7499 | ALLEN   | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD    | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES   | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN  | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE   | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER  | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS   | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES   | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+15 rows in set (0.00 sec)
+
+mysql> select * from dept
+    -> ;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select empno,ename
+    -> from emp e
+    -> where exists ( select * from emp m where m.mgr=e.empno)
+    -> ;
++-------+-------+
+| empno | ename |
++-------+-------+
+|  7902 | FORD  |
+|  7698 | BLAKE |
+|  7839 | KING  |
+|  7566 | JONES |
+|  7788 | SCOTT |
+|  7782 | CLARK |
++-------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select *
+    -> from emp
+    -> where sal between (select sal from emp where ename'smith' ) and  (select sal from emp where ename='WARD')
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''smith' ) and  (select sal from emp where ename='WARD')' at line 3
+mysql> where sal between (select sal from emp where ename='smith' ) and  (select sal from emp where ename='WARD')
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where sal between (select sal from emp where ename='smith' ) and  (select sal fr' at line 1
+mysql> select *
+    -> from emp
+    -> where sal between (select sal from emp where ename='smith')
+    -> and  (select sal from emp where ename='WARD');
++-------+--------+----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK    | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7876 | ADAMS  | CLERK    | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK    | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select *
+    ->     -> from emp
+    ->     -> where sal between (select sal from emp where ename='smith')
+    ->     -> and  (select sal from emp where ename='WARD')^C
+mysql> select *
+    -> from emp
+    -> where sal not between (select sal from emp where ename='smith')
+    -> and  (select sal from emp where ename='WARD');
++-------+---------+-----------+------+------------+----------+--------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM   | DEPTNO |
++-------+---------+-----------+------+------------+----------+--------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 | 345.00 |     10 |
+|  7499 | ALLEN   | SALESMAN  | 7698 | 1981-02-20 |  1600.00 | 300.00 |     30 |
+|  7566 | JONES   | MANAGER   | 7839 | 1981-04-02 |  2975.00 |   NULL |     20 |
+|  7698 | BLAKE   | MANAGER   | 7839 | 1981-05-01 |  2850.00 |   NULL |     30 |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |   NULL |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |   NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |   NULL |     10 |
+|  7844 | TURNER  | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |   0.00 |     30 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |   NULL |     20 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |   NULL |     10 |
++-------+---------+-----------+------+------------+----------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|  7369 | SMITH   | CLERK     | 7902 | 1980-12-17 |   800.00 |    NULL |     20 |
+|  7499 | ALLEN   | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD    | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES   | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN  | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE   | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER  | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS   | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES   | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+15 rows in set (0.00 sec)
+
+mysql> update emp
+    -> set sal=(select sal from emp e where e.ename='jones')+1000
+    -> where ename='smith'
+    -> ;
+ERROR 1093 (HY000): You can't specify target table 'emp' for update in FROM clause
+mysql> update emp
+    -> set sal=(select sal from (select * from emp) e where e.ename='jones')+1000
+    -> where ename='smith';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|  7369 | SMITH   | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7499 | ALLEN   | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD    | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES   | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN  | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE   | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER  | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS   | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES   | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+15 rows in set (0.00 sec)
+
+mysql> create table emp_20
+    -> as
+    -> (select * from emp where 1=2)
+    -> ;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show tables;
++---------------------+
+| Tables_in_iacsd0324 |
++---------------------+
+| bonus               |
+| boxoffice           |
+| category            |
+| dept                |
+| emp                 |
+| emp_20              |
+| item                |
+| matches             |
+| movie               |
+| mytable             |
+| owner               |
+| player              |
+| product             |
+| salesman            |
+| salgrade            |
+| stud_marks          |
+| team                |
+| vehicle             |
++---------------------+
+18 rows in set (0.05 sec)
+
+mysql> desc emp_20
+    -> ;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   |     | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql>

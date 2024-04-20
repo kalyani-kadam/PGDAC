@@ -1,0 +1,1461 @@
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use iacsd0324
+Database changed
+mysql> select * from emp;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|  7369 | SMITH   | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7499 | ALLEN   | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD    | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES   | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN  | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE   | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7775 | Atharva | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati  | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER  | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS   | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES   | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+17 rows in set (0.05 sec)
+
+mysql> create view myemp10
+    -> as
+    -> select * from emp
+    -> where deptno=10;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> select * from myemp10;
++-------+---------+-----------+------+------------+----------+--------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM   | DEPTNO |
++-------+---------+-----------+------+------------+----------+--------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 | 345.00 |     10 |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |   NULL |     10 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |   NULL |     10 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |   NULL |     10 |
++-------+---------+-----------+------+------------+----------+--------+--------+
+4 rows in set (0.00 sec)
+
+mysql> insert into emp values(122,'Ashwini','Manager',null,'2022-01-01',4567,3456,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from emp;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|  7369 | SMITH   | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7499 | ALLEN   | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD    | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES   | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN  | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE   | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7775 | Atharva | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati  | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER  | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS   | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES   | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+18 rows in set (0.00 sec)
+
+mysql> select * from myemp10;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> insert into myemp10 values(123,'Deepa','CLERK',7902,'2022-03-02',45678,4567,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from myemp10;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+---------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME   | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+---------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|   123 | Deepa   | CLERK     | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|  7369 | SMITH   | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7499 | ALLEN   | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD    | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES   | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN  | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE   | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7775 | Atharva | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati  | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|  7782 | CLARK   | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT   | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING    | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER  | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS   | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES   | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD    | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER  | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+---------+-----------+------+------------+----------+---------+--------+
+19 rows in set (0.00 sec)
+
+mysql> insert into myemp10 values(124,'Sangeeta','Manager',7902,'2022-03-02',45678,4567,10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from myemp10;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+6 rows in set (0.00 sec)
+
+mysql> drop view myemp10;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> create view myemp10
+    -> as
+    -> select * from emp
+    -> where deptno=10
+    -> with check option;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into myemp10 values(125,'Kedar','Manager',7782,'2022-03-02',45678,4567,30);
+ERROR 1369 (HY000): CHECK OPTION failed 'iacsd0324.myemp10'
+mysql> insert into myemp10 values(125,'Kedar','Manager',7782,'2022-03-02',45678,4567,10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> update myemp10
+    -> set sal=sal+10000
+    -> where empno=125;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from myemp10;\
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+7 rows in set (0.00 sec)
+
+mysql> create view vendor
+    -> as
+    -> select ename,deptno
+    -> from emp
+    -> where deptno=10
+    -> with check option;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from vendor;
++----------+--------+
+| ename    | deptno |
++----------+--------+
+| Rajan_A  |     10 |
+| Ashwini  |     10 |
+| Sangeeta |     10 |
+| Kedar    |     10 |
+| CLARK    |     10 |
+| KING     |     10 |
+| MILLER   |     10 |
++----------+--------+
+7 rows in set (0.00 sec)
+
+mysql> insert into vendor values('xxx',10);
+ERROR 1423 (HY000): Field of view 'iacsd0324.vendor' underlying table doesn't have a default value
+mysql> create view myview
+    -> as
+    -> select ename from myemp10;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> create view myview
+    -> as
+    -> select * from emp where deptno=10
+    -> with read only;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read only' at line 4
+mysql> show tables;
++---------------------+
+| Tables_in_iacsd0324 |
++---------------------+
+| bonus               |
+| boxoffice           |
+| category            |
+| dept                |
+| emp                 |
+| emp_20              |
+| item                |
+| matches             |
+| movie               |
+| myemp10             |
+| mytable             |
+| myview              |
+| owner               |
+| player              |
+| product             |
+| salesman            |
+| salgrade            |
+| stud_marks          |
+| team                |
+| testable            |
+| vehicle             |
+| vendor              |
++---------------------+
+22 rows in set (0.05 sec)
+
+mysql> use information_schemas;
+ERROR 1049 (42000): Unknown database 'information_schemas'
+mysql> use information_schema;
+Database changed
+mysql> show tables;
++---------------------------------------+
+| Tables_in_information_schema          |
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLLATIONS                            |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| COLUMNS                               |
+| COLUMNS_EXTENSIONS                    |
+| ENABLED_ROLES                         |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEY_COLUMN_USAGE                      |
+| KEYWORDS                              |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMA_PRIVILEGES                     |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| STATISTICS                            |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| TABLES                                |
+| TABLES_EXTENSIONS                     |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TRIGGERS                              |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| VIEWS                                 |
++---------------------------------------+
+79 rows in set (0.00 sec)
+
+mysql> desc tables;
++-----------------+--------------------------------------------------------------------+------+-----+---------+-------+
+| Field           | Type                                                               | Null | Key | Default | Extra |
++-----------------+--------------------------------------------------------------------+------+-----+---------+-------+
+| TABLE_CATALOG   | varchar(64)                                                        | YES  |     | NULL    |       |
+| TABLE_SCHEMA    | varchar(64)                                                        | YES  |     | NULL    |       |
+| TABLE_NAME      | varchar(64)                                                        | YES  |     | NULL    |       |
+| TABLE_TYPE      | enum('BASE TABLE','VIEW','SYSTEM VIEW')                            | NO   |     | NULL    |       |
+| ENGINE          | varchar(64)                                                        | YES  |     | NULL    |       |
+| VERSION         | int                                                                | YES  |     | NULL    |       |
+| ROW_FORMAT      | enum('Fixed','Dynamic','Compressed','Redundant','Compact','Paged') | YES  |     | NULL    |       |
+| TABLE_ROWS      | bigint unsigned                                                    | YES  |     | NULL    |       |
+| AVG_ROW_LENGTH  | bigint unsigned                                                    | YES  |     | NULL    |       |
+| DATA_LENGTH     | bigint unsigned                                                    | YES  |     | NULL    |       |
+| MAX_DATA_LENGTH | bigint unsigned                                                    | YES  |     | NULL    |       |
+| INDEX_LENGTH    | bigint unsigned                                                    | YES  |     | NULL    |       |
+| DATA_FREE       | bigint unsigned                                                    | YES  |     | NULL    |       |
+| AUTO_INCREMENT  | bigint unsigned                                                    | YES  |     | NULL    |       |
+| CREATE_TIME     | timestamp                                                          | NO   |     | NULL    |       |
+| UPDATE_TIME     | datetime                                                           | YES  |     | NULL    |       |
+| CHECK_TIME      | datetime                                                           | YES  |     | NULL    |       |
+| TABLE_COLLATION | varchar(64)                                                        | YES  |     | NULL    |       |
+| CHECKSUM        | bigint                                                             | YES  |     | NULL    |       |
+| CREATE_OPTIONS  | varchar(256)                                                       | YES  |     | NULL    |       |
+| TABLE_COMMENT   | text                                                               | YES  |     | NULL    |       |
++-----------------+--------------------------------------------------------------------+------+-----+---------+-------+
+21 rows in set (0.00 sec)
+
+mysql> show tables
+    -> ;
++---------------------------------------+
+| Tables_in_information_schema          |
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLLATIONS                            |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| COLUMNS                               |
+| COLUMNS_EXTENSIONS                    |
+| ENABLED_ROLES                         |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEY_COLUMN_USAGE                      |
+| KEYWORDS                              |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMA_PRIVILEGES                     |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| STATISTICS                            |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| TABLES                                |
+| TABLES_EXTENSIONS                     |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TRIGGERS                              |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| VIEWS                                 |
++---------------------------------------+
+79 rows in set (0.00 sec)
+
+mysql> desc columns;
++--------------------------+----------------------------+------+-----+---------+-------+
+| Field                    | Type                       | Null | Key | Default | Extra |
++--------------------------+----------------------------+------+-----+---------+-------+
+| TABLE_CATALOG            | varchar(64)                | YES  |     | NULL    |       |
+| TABLE_SCHEMA             | varchar(64)                | YES  |     | NULL    |       |
+| TABLE_NAME               | varchar(64)                | YES  |     | NULL    |       |
+| COLUMN_NAME              | varchar(64)                | YES  |     | NULL    |       |
+| ORDINAL_POSITION         | int unsigned               | NO   |     | NULL    |       |
+| COLUMN_DEFAULT           | text                       | YES  |     | NULL    |       |
+| IS_NULLABLE              | varchar(3)                 | NO   |     |         |       |
+| DATA_TYPE                | longtext                   | YES  |     | NULL    |       |
+| CHARACTER_MAXIMUM_LENGTH | bigint                     | YES  |     | NULL    |       |
+| CHARACTER_OCTET_LENGTH   | bigint                     | YES  |     | NULL    |       |
+| NUMERIC_PRECISION        | bigint unsigned            | YES  |     | NULL    |       |
+| NUMERIC_SCALE            | bigint unsigned            | YES  |     | NULL    |       |
+| DATETIME_PRECISION       | int unsigned               | YES  |     | NULL    |       |
+| CHARACTER_SET_NAME       | varchar(64)                | YES  |     | NULL    |       |
+| COLLATION_NAME           | varchar(64)                | YES  |     | NULL    |       |
+| COLUMN_TYPE              | mediumtext                 | NO   |     | NULL    |       |
+| COLUMN_KEY               | enum('','PRI','UNI','MUL') | NO   |     | NULL    |       |
+| EXTRA                    | varchar(256)               | YES  |     | NULL    |       |
+| PRIVILEGES               | varchar(154)               | YES  |     | NULL    |       |
+| COLUMN_COMMENT           | text                       | NO   |     | NULL    |       |
+| GENERATION_EXPRESSION    | longtext                   | NO   |     | NULL    |       |
+| SRS_ID                   | int unsigned               | YES  |     | NULL    |       |
++--------------------------+----------------------------+------+-----+---------+-------+
+22 rows in set (0.00 sec)
+
+mysql> select column_name
+    -> from column
+    -> where table_name=emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column
+where table_name=emp' at line 2
+mysql> select column_name
+    -> from column
+    -> where table_name='emp';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column
+where table_name='emp'' at line 2
+mysql> select column_name
+    -> from information_schema.column
+    -> where table_name='emp';
+ERROR 1109 (42S02): Unknown table 'COLUMN' in information_schema
+mysql> select column_name
+    -> from columns
+    -> where table_name='emp';
++-------------+
+| COLUMN_NAME |
++-------------+
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| status      |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
+| COMM        |
+| DEPTNO      |
+| EMPNO       |
+| ENAME       |
+| HIREDATE    |
+| JOB         |
+| MGR         |
+| SAL         |
++-------------+
+73 rows in set (0.05 sec)
+
+mysql> select empno,ename,e.deptno,s.grade,d.name
+    -> from emp e inner join dept d on e.deptno=d.deptno
+    -> inner join salgrade s on e.sal between s.losal and s.hisal;
+ERROR 1109 (42S02): Unknown table 'EMP' in information_schema
+mysql> use iacsd0324;
+Database changed
+mysql> select empno,ename,e.deptno,s.grade,d.name
+    -> from emp e inner join dept d on e.deptno=d.deptno
+    -> inner join salgrade s on e.sal between s.losal and s.hisal;
+ERROR 1054 (42S22): Unknown column 'd.name' in 'field list'
+mysql> select empno,ename,e.deptno,s.grade,d.dname
+    -> from emp e inner join dept d on e.deptno=d.deptno
+    -> inner join salgrade s on e.sal between s.losal and s.hisal;
++-------+---------+--------+-------+------------+
+| empno | ename   | deptno | grade | dname      |
++-------+---------+--------+-------+------------+
+|  7876 | ADAMS   |     20 |     1 | RESEARCH   |
+|  7900 | JAMES   |     30 |     1 | SALES      |
+|  7521 | WARD    |     30 |     2 | SALES      |
+|  7654 | MARTIN  |     30 |     2 | SALES      |
+|  7934 | MILLER  |     10 |     2 | ACCOUNTING |
+|  7499 | ALLEN   |     30 |     3 | SALES      |
+|  7844 | TURNER  |     30 |     3 | SALES      |
+|  7566 | JONES   |     20 |     4 | RESEARCH   |
+|  7698 | BLAKE   |     30 |     4 | SALES      |
+|  7782 | CLARK   |     10 |     4 | ACCOUNTING |
+|  7788 | SCOTT   |     20 |     4 | RESEARCH   |
+|  7902 | FORD    |     20 |     4 | RESEARCH   |
+|   122 | Ashwini |     10 |     5 | ACCOUNTING |
+|  7369 | SMITH   |     20 |     5 | RESEARCH   |
+|  7839 | KING    |     10 |     5 | ACCOUNTING |
+|  7876 | ADAMS   |     20 |     1 | RESEARCH   |
+|  7900 | JAMES   |     30 |     1 | SALES      |
+|  7521 | WARD    |     30 |     2 | SALES      |
+|  7654 | MARTIN  |     30 |     2 | SALES      |
+|  7934 | MILLER  |     10 |     2 | ACCOUNTING |
+|  7499 | ALLEN   |     30 |     3 | SALES      |
+|  7844 | TURNER  |     30 |     3 | SALES      |
+|  7566 | JONES   |     20 |     4 | RESEARCH   |
+|  7698 | BLAKE   |     30 |     4 | SALES      |
+|  7782 | CLARK   |     10 |     4 | ACCOUNTING |
+|  7788 | SCOTT   |     20 |     4 | RESEARCH   |
+|  7902 | FORD    |     20 |     4 | RESEARCH   |
+|   122 | Ashwini |     10 |     5 | ACCOUNTING |
+|  7369 | SMITH   |     20 |     5 | RESEARCH   |
+|  7839 | KING    |     10 |     5 | ACCOUNTING |
++-------+---------+--------+-------+------------+
+30 rows in set (0.00 sec)
+
+mysql> create view emp_data
+    -> as
+    -> select empno,ename,e.deptno,s.grade,d.dname
+    -> from emp e inner join dept d on e.deptno=d.deptno
+    -> inner join salgrade s on e.sal between s.losal and s.hisal;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from emp_data;
++-------+---------+--------+-------+------------+
+| empno | ename   | deptno | grade | dname      |
++-------+---------+--------+-------+------------+
+|  7876 | ADAMS   |     20 |     1 | RESEARCH   |
+|  7900 | JAMES   |     30 |     1 | SALES      |
+|  7521 | WARD    |     30 |     2 | SALES      |
+|  7654 | MARTIN  |     30 |     2 | SALES      |
+|  7934 | MILLER  |     10 |     2 | ACCOUNTING |
+|  7499 | ALLEN   |     30 |     3 | SALES      |
+|  7844 | TURNER  |     30 |     3 | SALES      |
+|  7566 | JONES   |     20 |     4 | RESEARCH   |
+|  7698 | BLAKE   |     30 |     4 | SALES      |
+|  7782 | CLARK   |     10 |     4 | ACCOUNTING |
+|  7788 | SCOTT   |     20 |     4 | RESEARCH   |
+|  7902 | FORD    |     20 |     4 | RESEARCH   |
+|   122 | Ashwini |     10 |     5 | ACCOUNTING |
+|  7369 | SMITH   |     20 |     5 | RESEARCH   |
+|  7839 | KING    |     10 |     5 | ACCOUNTING |
+|  7876 | ADAMS   |     20 |     1 | RESEARCH   |
+|  7900 | JAMES   |     30 |     1 | SALES      |
+|  7521 | WARD    |     30 |     2 | SALES      |
+|  7654 | MARTIN  |     30 |     2 | SALES      |
+|  7934 | MILLER  |     10 |     2 | ACCOUNTING |
+|  7499 | ALLEN   |     30 |     3 | SALES      |
+|  7844 | TURNER  |     30 |     3 | SALES      |
+|  7566 | JONES   |     20 |     4 | RESEARCH   |
+|  7698 | BLAKE   |     30 |     4 | SALES      |
+|  7782 | CLARK   |     10 |     4 | ACCOUNTING |
+|  7788 | SCOTT   |     20 |     4 | RESEARCH   |
+|  7902 | FORD    |     20 |     4 | RESEARCH   |
+|   122 | Ashwini |     10 |     5 | ACCOUNTING |
+|  7369 | SMITH   |     20 |     5 | RESEARCH   |
+|  7839 | KING    |     10 |     5 | ACCOUNTING |
++-------+---------+--------+-------+------------+
+30 rows in set (0.00 sec)
+
+mysql> show create view myemp10;
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+
+| View    | Create View                                                                                                                                                                                                                                                                                                                                                             | character_set_client | collation_connection |
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+
+| myemp10 | CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `myemp10` AS select `emp`.`EMPNO` AS `EMPNO`,`emp`.`ENAME` AS `ENAME`,`emp`.`JOB` AS `JOB`,`emp`.`MGR` AS `MGR`,`emp`.`HIREDATE` AS `HIREDATE`,`emp`.`SAL` AS `SAL`,`emp`.`COMM` AS `COMM`,`emp`.`DEPTNO` AS `DEPTNO` from `emp` where (`emp`.`DEPTNO` = 10) WITH CASCADED CHECK OPTION | cp850                | cp850_general_ci     |
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+----------------------+
+1 row in set (0.00 sec)
+
+mysql> desc information_schema.view
+    -> ;
+ERROR 1109 (42S02): Unknown table 'VIEW' in information_schema
+mysql> desc information_schema.views;
++----------------------+---------------------------------+------+-----+---------+-------+
+| Field                | Type                            | Null | Key | Default | Extra |
++----------------------+---------------------------------+------+-----+---------+-------+
+| TABLE_CATALOG        | varchar(64)                     | YES  |     | NULL    |       |
+| TABLE_SCHEMA         | varchar(64)                     | YES  |     | NULL    |       |
+| TABLE_NAME           | varchar(64)                     | YES  |     | NULL    |       |
+| VIEW_DEFINITION      | longtext                        | YES  |     | NULL    |       |
+| CHECK_OPTION         | enum('NONE','LOCAL','CASCADED') | YES  |     | NULL    |       |
+| IS_UPDATABLE         | enum('NO','YES')                | YES  |     | NULL    |       |
+| DEFINER              | varchar(288)                    | YES  |     | NULL    |       |
+| SECURITY_TYPE        | varchar(7)                      | YES  |     | NULL    |       |
+| CHARACTER_SET_CLIENT | varchar(64)                     | NO   |     | NULL    |       |
+| COLLATION_CONNECTION | varchar(64)                     | NO   |     | NULL    |       |
++----------------------+---------------------------------+------+-----+---------+-------+
+10 rows in set (0.05 sec)
+
+mysql> select table_name
+    -> from information_schema.views
+    -> ;
++-----------------------------------------------+
+| TABLE_NAME                                    |
++-----------------------------------------------+
+| version                                       |
+| innodb_buffer_stats_by_schema                 |
+| x$innodb_buffer_stats_by_schema               |
+| innodb_buffer_stats_by_table                  |
+| x$innodb_buffer_stats_by_table                |
+| schema_object_overview                        |
+| schema_auto_increment_columns                 |
+| x$schema_flattened_keys                       |
+| schema_redundant_indexes                      |
+| ps_check_lost_instrumentation                 |
+| latest_file_io                                |
+| x$latest_file_io                              |
+| io_by_thread_by_latency                       |
+| x$io_by_thread_by_latency                     |
+| io_global_by_file_by_bytes                    |
+| x$io_global_by_file_by_bytes                  |
+| io_global_by_file_by_latency                  |
+| x$io_global_by_file_by_latency                |
+| io_global_by_wait_by_bytes                    |
+| x$io_global_by_wait_by_bytes                  |
+| io_global_by_wait_by_latency                  |
+| x$io_global_by_wait_by_latency                |
+| innodb_lock_waits                             |
+| x$innodb_lock_waits                           |
+| memory_by_user_by_current_bytes               |
+| x$memory_by_user_by_current_bytes             |
+| memory_by_host_by_current_bytes               |
+| x$memory_by_host_by_current_bytes             |
+| memory_by_thread_by_current_bytes             |
+| x$memory_by_thread_by_current_bytes           |
+| memory_global_by_current_bytes                |
+| x$memory_global_by_current_bytes              |
+| memory_global_total                           |
+| x$memory_global_total                         |
+| schema_index_statistics                       |
+| x$schema_index_statistics                     |
+| x$ps_schema_table_statistics_io               |
+| schema_table_statistics                       |
+| x$schema_table_statistics                     |
+| schema_table_statistics_with_buffer           |
+| x$schema_table_statistics_with_buffer         |
+| schema_tables_with_full_table_scans           |
+| x$schema_tables_with_full_table_scans         |
+| schema_unused_indexes                         |
+| schema_table_lock_waits                       |
+| x$schema_table_lock_waits                     |
+| statement_analysis                            |
+| x$statement_analysis                          |
+| statements_with_errors_or_warnings            |
+| x$statements_with_errors_or_warnings          |
+| statements_with_full_table_scans              |
+| x$statements_with_full_table_scans            |
+| x$ps_digest_avg_latency_distribution          |
+| x$ps_digest_95th_percentile_by_avg_us         |
+| statements_with_runtimes_in_95th_percentile   |
+| x$statements_with_runtimes_in_95th_percentile |
+| statements_with_sorting                       |
+| x$statements_with_sorting                     |
+| statements_with_temp_tables                   |
+| x$statements_with_temp_tables                 |
+| user_summary_by_file_io_type                  |
+| x$user_summary_by_file_io_type                |
+| user_summary_by_file_io                       |
+| x$user_summary_by_file_io                     |
+| user_summary_by_statement_type                |
+| x$user_summary_by_statement_type              |
+| user_summary_by_statement_latency             |
+| x$user_summary_by_statement_latency           |
+| user_summary_by_stages                        |
+| x$user_summary_by_stages                      |
+| user_summary                                  |
+| x$user_summary                                |
+| host_summary_by_file_io_type                  |
+| x$host_summary_by_file_io_type                |
+| host_summary_by_file_io                       |
+| x$host_summary_by_file_io                     |
+| host_summary_by_statement_type                |
+| x$host_summary_by_statement_type              |
+| host_summary_by_statement_latency             |
+| x$host_summary_by_statement_latency           |
+| host_summary_by_stages                        |
+| x$host_summary_by_stages                      |
+| host_summary                                  |
+| x$host_summary                                |
+| wait_classes_global_by_avg_latency            |
+| x$wait_classes_global_by_avg_latency          |
+| wait_classes_global_by_latency                |
+| x$wait_classes_global_by_latency              |
+| waits_by_user_by_latency                      |
+| x$waits_by_user_by_latency                    |
+| waits_by_host_by_latency                      |
+| x$waits_by_host_by_latency                    |
+| waits_global_by_latency                       |
+| x$waits_global_by_latency                     |
+| metrics                                       |
+| processlist                                   |
+| x$processlist                                 |
+| session                                       |
+| x$session                                     |
+| session_ssl_status                            |
+| customer_list                                 |
+| film_list                                     |
+| nicer_but_slower_film_list                    |
+| staff_list                                    |
+| sales_by_store                                |
+| sales_by_film_category                        |
+| actor_info                                    |
+| myempdept                                     |
+| funfare                                       |
+| mgr10                                         |
+| allemp                                        |
+| emp_dept                                      |
+| dept_exists                                   |
+| mgr101                                        |
+| testview                                      |
+| allemp                                        |
+| emp_analysis                                  |
+| hrview                                        |
+| mgr10                                         |
+| allemp                                        |
+| ourtjoin                                      |
+| mgr10                                         |
+| testdata                                      |
+| allemp                                        |
+| produ_cat                                     |
+| mgr10                                         |
+| mydept1                                       |
+| empdept                                       |
+| empaggregate                                  |
+| all_emp                                       |
+| myemp10                                       |
+| mgr10                                         |
+| aggregate_data                                |
+| myemp10                                       |
+| vendor                                        |
+| myview                                        |
+| emp_data                                      |
++-----------------------------------------------+
+137 rows in set (0.06 sec)
+
+mysql> select table_name
+    -> ^C
+mysql> select * from emp
+    -> order  by sal;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7902 | FORD     | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
++-------+----------+-----------+------+------------+----------+---------+--------+
+21 rows in set (0.00 sec)
+
+mysql> select * from emp
+    -> order  by sal desc;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7902 | FORD     | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+21 rows in set (0.00 sec)
+
+mysql> select count(*)
+    -> from emp
+    -> where sal>45678;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*)
+    -> from (select distinct sal from emp) e
+    -> where e.sal>45678;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp where 2=select(count(*) from (select distinct sal from emp) e where e.sal> emp.sal);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select(count(*) from (select distinct sal from emp) e where e.sal> emp.sal)' at line 1
+mysql> select *
+    -> from emp m where 2=(select(count(*) from (select distinct sal from emp) e where e.sal> emp.sal);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from (select distinct sal from emp) e where e.sal> emp.sal)' at line 2
+mysql> select *
+    -> select * from emp where 2=(select count(*) from (select distinct sal from emp) e where e.sal> emp.sal);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from emp where 2=(select count(*) from (select distinct sal from emp) e' at line 2
+mysql> select * from emp where 2=(select count(*) from (select distinct sal from emp) e where e.sal> emp.sal);
++-------+---------+----------+------+------------+----------+--------+--------+
+| EMPNO | ENAME   | JOB      | MGR  | HIREDATE   | SAL      | COMM   | DEPTNO |
++-------+---------+----------+------+------------+----------+--------+--------+
+|    11 | Rajan_A | designer | 7902 | 2020-11-11 | 34567.00 | 345.00 |     10 |
++-------+---------+----------+------+------------+----------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> create view aggdata
+    -> as
+    -> select deptno,sum(sal),sum(sal+ifnull(comm,0)) netsal, count(*)
+    -> from emp
+    -> group by deptno;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from aggdata;
++--------+-----------+-----------+----------+
+| deptno | sum(sal)  | netsal    | count(*) |
++--------+-----------+-----------+----------+
+|     10 | 149240.00 | 162175.00 |        7 |
+|     30 |  55078.00 |  61845.00 |        7 |
+|     20 |  14050.00 |  14050.00 |        5 |
+|   NULL | 101356.00 | 111490.00 |        2 |
++--------+-----------+-----------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select max(sum(sal))
+    -> from aggdata;
+ERROR 1054 (42S22): Unknown column 'sal' in 'field list'
+mysql> drop view aggdata;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create view aggdata
+    -> as
+    -> select deptno,sum(sal) sumsal,sum(sal+ifnull(comm,0)) netsal, count(*) cnt
+    -> from emp
+    -> group by deptno;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from aggdata;
++--------+-----------+-----------+-----+
+| deptno | sumsal    | netsal    | cnt |
++--------+-----------+-----------+-----+
+|     10 | 149240.00 | 162175.00 |   7 |
+|     30 |  55078.00 |  61845.00 |   7 |
+|     20 |  14050.00 |  14050.00 |   5 |
+|   NULL | 101356.00 | 111490.00 |   2 |
++--------+-----------+-----------+-----+
+4 rows in set (0.00 sec)
+
+mysql> select max(sumsal)
+    -> from aggdata;
++-------------+
+| max(sumsal) |
++-------------+
+|   149240.00 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD     | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+21 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD     | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+21 rows in set (0.00 sec)
+
+mysql> select * from emp
+    -> order by sal desc;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7902 | FORD     | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+21 rows in set (0.00 sec)
+
+mysql> select count(*)
+    -> from emp
+    -> where sal>45678;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*)
+    -> from (select distinct sal from emp) e
+    -> where e.sal>45678;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select *
+    -> from emp
+    -> where 3>(select count(*)
+    -> from (select disitnct sal from emp) e
+    -> where e.sal>emp.sal)^C
+mysql> select *
+    -> from emp s
+    ->  where 3>(select count(*)
+    ->  from (select disitnct sal from emp) e
+    ->  where e.sal>s.sal);
+ERROR 1054 (42S22): Unknown column 'disitnct' in 'field list'
+mysql> select *
+    -> from emp s
+    ->  where 3>(select count(*)
+    ->  from (select distinct sal from emp) e
+    ->  where e.sal>s.sal);
++-------+----------+----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB      | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   123 | Deepa    | CLERK    | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager  | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|   125 | Kedar    | Manager  | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7775 | Atharva  | UIdev    | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati   | design   | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
++-------+----------+----------+------+------------+----------+---------+--------+
+6 rows in set (0.00 sec)
+
+mysql> 55678.00 | 4567.00 |     10 |
+    -> ^C
+mysql> select *
+    -> from emp s
+    ->  where 3>(select count(*)
+    ->  from (select distinct sal from emp) e
+    ->  where e.sal>s.sal)
+    -> order by sal;
++-------+----------+----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB      | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   123 | Deepa    | CLERK    | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager  | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|  7777 | Revati   | design   | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|   125 | Kedar    | Manager  | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7775 | Atharva  | UIdev    | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
++-------+----------+----------+------+------------+----------+---------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select *
+    -> from emp s
+    ->  where 2=(select count(*)
+    ->  from (select distinct sal from emp) e
+    ->  where e.sal>s.sal)
+    -> order by sal;
++-------+---------+----------+------+------------+----------+--------+--------+
+| EMPNO | ENAME   | JOB      | MGR  | HIREDATE   | SAL      | COMM   | DEPTNO |
++-------+---------+----------+------+------------+----------+--------+--------+
+|    11 | Rajan_A | designer | 7902 | 2020-11-11 | 34567.00 | 345.00 |     10 |
++-------+---------+----------+------+------------+----------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select *
+    -> from emp s
+    ->  where 2=(select count(*)
+    ->  from (select distinct sal from emp) e
+    ->  where e.sal<s.sal)
+    -> order by sal;
++-------+--------+----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select *
+    -> from emp s
+    ->  where 3>(select count(*)
+    ->  from (select distinct sal from emp) e
+    ->  where e.sal<s.sal)
+    -> order by sal;
++-------+--------+----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7900 | JAMES  | CLERK    | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7876 | ADAMS  | CLERK    | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
++-------+--------+----------+------+------------+---------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> create index idx_sal
+    -> on emp(sal);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> create index idx_sal1
+    -> on emp(sal,job);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> explain select *
+    -> from emp
+    -> where sal>2000;
++----+-------------+-------+------------+------+------------------+------+---------+------+------+----------+-------------+
+| id | select_type | table | partitions | type | possible_keys    | key  | key_len | ref  | rows | filtered | Extra       |
++----+-------------+-------+------------+------+------------------+------+---------+------+------+----------+-------------+
+|  1 | SIMPLE      | emp   | NULL       | ALL  | idx_sal,idx_sal1 | NULL | NULL    | NULL |   21 |    66.67 | Using where |
++----+-------------+-------+------------+------+------------------+------+---------+------+------+----------+-------------+
+1 row in set, 1 warning (0.04 sec)
+
+mysql> explain select *
+    -> from emp
+    -> where empno=7902;
++----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+| id | select_type | table | partitions | type  | possible_keys | key     | key_len | ref   | rows | filtered | Extra |
++----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+|  1 | SIMPLE      | emp   | NULL       | const | PRIMARY       | PRIMARY | 4       | const |    1 |   100.00 | NULL  |
++----+-------------+-------+------------+-------+---------------+---------+---------+-------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> show engines;
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables                          | NO           | NO   | NO         |
+| CSV                | YES     | CSV storage engine                                             | NO           | NO   | NO         |
+| FEDERATED          | NO      | Federated MySQL storage engine                                 | NULL         | NULL | NULL       |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                             | NO           | NO   | NO         |
+| MyISAM             | YES     | MyISAM storage engine                                          | NO           | NO   | NO         |
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| ARCHIVE            | YES     | Archive storage engine                                         | NO           | NO   | NO         |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+9 rows in set (0.05 sec)
+
+mysql> cretate table mytable(id int,name varchar(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cretate table mytable(id int,name varchar(20))' at line 1
+mysql> create table mytable(id int,name varchar(20));
+ERROR 1050 (42S01): Table 'mytable' already exists
+mysql> create table mytable1(id int,name varchar(20));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> set autocommit=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into mytable1 values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable1 values(2,'yyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> rollback
+    -> ;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    1 | xxx  |
+|    2 | yyy  |
++------+------+
+2 rows in set (0.00 sec)
+
+mysql> insert into mytable1 values(2,'yyy');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable1 values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> set autocommit=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into mytable1 values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    1 | xxx  |
+|    2 | yyy  |
+|    2 | yyy  |
+|    1 | xxx  |
+|    1 | xxx  |
++------+------+
+5 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    1 | xxx  |
+|    2 | yyy  |
++------+------+
+2 rows in set (0.00 sec)
+
+mysql> insert into mytable1 values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable1 values(1,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> create table test1(name varchar(2));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    1 | xxx  |
+|    2 | yyy  |
+|    1 | xxx  |
+|    1 | xxx  |
++------+------+
+4 rows in set (0.00 sec)
+
+mysql> delete from mytable1 where id=1;
+Query OK, 3 rows affected (0.00 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    2 | yyy  |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    1 | xxx  |
+|    2 | yyy  |
+|    1 | xxx  |
+|    1 | xxx  |
++------+------+
+4 rows in set (0.00 sec)
+
+mysql> insert into mytable1 values(10,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable1 values(11,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> savepoint A;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into mytable1 values(12,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mytable1 values(13,'xxx');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> delete from mytable where id=12;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> savepoint B;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delete from mytable1 where id=12;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> delete from mytable1 where id=13;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    1 | xxx  |
+|    2 | yyy  |
+|    1 | xxx  |
+|    1 | xxx  |
+|   10 | xxx  |
+|   11 | xxx  |
++------+------+
+6 rows in set (0.00 sec)
+
+mysql> rollback to B;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from mytable1;
++------+------+
+| id   | name |
++------+------+
+|    1 | xxx  |
+|    2 | yyy  |
+|    1 | xxx  |
+|    1 | xxx  |
+|   10 | xxx  |
+|   11 | xxx  |
+|   12 | xxx  |
+|   13 | xxx  |
++------+------+
+8 rows in set (0.00 sec)
+
+mysql> select empno,ename,sal,comm,concat('$',format(ifnull(comm,0),2));
+ERROR 1054 (42S22): Unknown column 'empno' in 'field list'
+mysql> select empno,ename,sal,comm,concat('$',format(ifnull(comm,0),2))
+    -> from emp;
++-------+----------+----------+---------+--------------------------------------+
+| empno | ename    | sal      | comm    | concat('$',format(ifnull(comm,0),2)) |
++-------+----------+----------+---------+--------------------------------------+
+|    11 | Rajan_A  | 34567.00 |  345.00 | $345.00                              |
+|   122 | Ashwini  |  4567.00 | 3456.00 | $3,456.00                            |
+|   123 | Deepa    | 45678.00 | 4567.00 | $4,567.00                            |
+|   124 | Sangeeta | 45678.00 | 4567.00 | $4,567.00                            |
+|   125 | Kedar    | 55678.00 | 4567.00 | $4,567.00                            |
+|  7369 | SMITH    |  3975.00 |    NULL | $0.00                                |
+|  7499 | ALLEN    |  1600.00 |  300.00 | $300.00                              |
+|  7521 | WARD     |  1250.00 |  500.00 | $500.00                              |
+|  7566 | JONES    |  2975.00 |    NULL | $0.00                                |
+|  7654 | MARTIN   |  1250.00 | 1400.00 | $1,400.00                            |
+|  7698 | BLAKE    |  2850.00 |    NULL | $0.00                                |
+|  7775 | Atharva  | 55678.00 | 5567.00 | $5,567.00                            |
+|  7777 | Revati   | 45678.00 | 4567.00 | $4,567.00                            |
+|  7782 | CLARK    |  2450.00 |    NULL | $0.00                                |
+|  7788 | SCOTT    |  3000.00 |    NULL | $0.00                                |
+|  7839 | KING     |  5000.00 |    NULL | $0.00                                |
+|  7844 | TURNER   |  1500.00 |    0.00 | $0.00                                |
+|  7876 | ADAMS    |  1100.00 |    NULL | $0.00                                |
+|  7900 | JAMES    |   950.00 |    NULL | $0.00                                |
+|  7902 | FORD     |  3000.00 |    NULL | $0.00                                |
+|  7934 | MILLER   |  1300.00 |    NULL | $0.00                                |
++-------+----------+----------+---------+--------------------------------------+
+21 rows in set (0.00 sec)
+
+mysql> select *
+    -> from emp
+    -> where job not like 's%' and job not like 'C%';
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7902 | FORD     | ANALYST   | 7566 | 1981-12-03 |  3000.00 |    NULL |     20 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+12 rows in set (0.01 sec)
+
+mysql>

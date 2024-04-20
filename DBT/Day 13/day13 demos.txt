@@ -1,0 +1,176 @@
+----to use condition following operators are used
+$lt, $gt, $eq,$ne,$gte,$lte,$not, $or, $and, $exists,$in, 
+$nin, $mod, $elemMatch, $regexp, $type, $size, $expr, $year, $month
+
+1. to find all movies with rating=2
+db.movie.find({rating:2})
+
+2. find all movies with price=200
+db.movie.find({price : 200})
+
+2. find all movies with price=200, 
+display only name and price
+db.movie.find({price : 200},{name:1,price:1,_id:0)
+
+
+3. to display all movies with price =200 and rating =2
+db.movie.find({price:200,rating:2},{name:1,price:1,rating:1,_id:0})
+$and:[{price:200},{rating:2}]
+db.movie.find({$and:[{price:200},{rating:2}]})
+
+4. to display name, price, ticket_no for all movies with
+ price=400 and ticket_no=300
+ db.movie.find({price:400,ticket_no:300},
+ {name:1,price:1,ticket_no:1,_id:0})
+ 
+5. to display all movies with price < 500
+db.movie.find({price:{$lt:500}})
+
+6. to display all movies with rating >3
+db.movie.find({rating:{$gt:3}})
+
+7. to display movie with rating >3 and price < 500
+rating:{$gt:3}
+price:{$lt:500}
+db.movie.find({rating:{$gt:3},price:{$lt:500}})
+
+ 8. find all movies with price either 200 or 320 or 530
+ db.movie.find({price:{$in:[200,320,530]}})
+
+9. find all movies with price not either 200 or 320 or 530
+ db.movie.find({price:{$nin:[200,320,530]}})
+
+10. find all movies with price not either 200 or 320 or 530
+and rating >=3
+price:{$nin:[200,320,530]}
+rating:{$gte:3}
+db.movie.find({price:{$nin:[200,320,530]},rating:{$gte:3}})
+$and:[{price:{$nin:[200,320,530]}},{rating:{$gte:3}}]
+
+db.movie.find({$and:[{price:{$nin:[200,320,530]}},{rating:{$gte:3}}]})
+
+
+11. to find all movies with price > 200 and < 600
+db.movie.find({price:{$gt:200,$lt:600}})
+
+12. find all movies with price not either 200 or 320 or 530
+or rating >=3
+price:{$nin:[200,320,530]}
+rating:{$gte:3}
+$or:[{price:{$nin:[200,320,530]}},{rating:{$gte:3}}]
+
+db.movie.find({$or:[{price:{$nin:[200,320,530]}},
+{rating:{$gte:3}}]})
+
+13. find all movies with rating null
+db.movie.find({rating:null})
+
+14. find all movies with rating key exists and the value
+is null
+db.movie.find({rating:{$in:[null],$exists:true}})
+
+15. find all movies with rating key does not exists 
+db.movie.find({rating:{$exists:false}})
+
+16. find all movies with rating key exists and the value
+is not null
+db.movie.find({rating:{$nin:[null],$exists:true}})
+
+17. db.movie.find in which rating is string
+db.movie.find({rating:{$type:'string'}})
+18. db.movie.find in which rating which are not string
+db.movie.find({rating:{$not:{$type:'string'}}})
+
+18. display name,rating and price,of all movies 
+with price key exists and it is not null, or rating >3
+price:{$nin:[null],$exists:true}
+rating:{$gt:3}
+$or:[{price:{$nin:[null],$exists:true}},{rating:{$gt:3}}]
+db.movie.find({$or:[{price:{$nin:[null],$exists:true}},
+{rating:{$gt:3}}]},{name:1,rating:1,price:1,_id:0})
+
+19. find all movies with actor array size is 3
+db.movie.find({actor:{$size:3}},{name:1,rating:1,actor:1})
+
+20. find all movies in which amitabh has acted
+db.movie.find({actor:'Amitabh'})
+
+21. find all movies in which Amitabh has acted
+db.movie.find({'actor.0':'Amitabh'})
+
+22.find all restaurants with score 10, and grade 
+'A' at 0 th index position
+db.restaurant.find({'grades.0.score':10,
+'grades.0.grade':'A'});
+
+23. find all restaurants with score 10, and grade 
+'A' 
+db.restaurant.find({'grades.score':10,
+'grades.grade':'A'});
+
+23. find all restaurants with score 10, and grade 
+'A' in single element of grades array 
+db.restaurant.find({grades:{$elemMatch:{score:10,
+grade:'A'}}});
+
+24. find all restaurent with 
+date: ISODate("2011-09-28T00:00:00.000Z"),
+grade: 'A',
+score: 12
+db.restaurant.find({grades:{$elemMatch:
+{date: ISODate("2011-09-28"),
+grade: 'A',
+score: 12}}});
+
+25. find movies with even rating
+db.movie.find({rating:{$mod:[2,0]}})
+
+26. find movies with odd rating
+db.movie.find({rating:{$mod:[2,1]}})
+
+27 find movies with rating divisible by 7;
+db.movie.find({rating:{$mod:[7,0]}})
+
+28. display all movies released in year 2016
+releasedate:2016
+{$year:'$releasedate'}
+$eq:[{$year:'$releasedate'},2016]
+db.movie.find({$expr:{$eq:[{$year:'$rdate'},2016]}})
+
+29. to find all movies with name starts with p
+db.movie.find({name:/^[Pp]/})
+
+\d--to match with a single digit  [0-9]
+\D--to match with a single non digit [^0-9]
+\s--to match with one space
+\S-- to match with non space character
+\w-- to match with one  word character [a-zA-Z0-9_]
+\W--to match with any one nonword character
+
+30. to find all movies with name starts with a digit
+db.movie.find({name:/^[0-9]/})
+db.movie.find({name:/^\d/})
+db.movie.find({name:{$regex:'^\d'}})
+
+31. to find all movies with name ending with i
+db.movie.find({name:/i$/})
+
+32. to find all movies with name has as somewhere in the name
+db.movie.find({name:/as/})
+
+33.to find all movies with name n is at 2nd last position
+db.movie.find({name:/n.$/})
+
+34.find all movies starts with k and ends with i or digit
+db.movie.find({name:/^k.*[i0-9]$/i})  ---//i -ignore case
+
+35find all movies starts with k and ends with i 
+or starts with p
+db.movie.find({name:/^k.*i|^p/})
+ 
+
+
+
+
+
+ 

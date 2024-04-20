@@ -1,0 +1,1319 @@
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 24
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> desc dept;
+ERROR 1046 (3D000): No database selected
+mysql> use iacsd0324
+Database changed
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  | MUL | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.09 sec)
+
+mysql> update emp set job='UI Developer'
+    -> where empno=7902;
+ERROR 1406 (22001): Data too long for column 'JOB' at row 1
+mysql> delimiter //
+mysql> create procedure updatejob(eid int,ejob varchar(20))
+    -> begin
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->
+    -> end//
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> delimiter ;
+mysql> call updatejob(7902,'UI developer');
+ERROR 1265 (01000): Data truncated for column 'JOB' at row 1
+mysql> drop procedure updatejob;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> delimiter //
+mysql> create procedure updatejob(eid int,ejob varchar(20))
+    -> begin
+    ->   declare exit handler for SQLEXCEPTION select 'error occured'
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->
+    ->
+    ->
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'update emp
+  set job=ejob
+  where empno=eid;
+
+
+
+end' at line 4
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure updatejob(eid int,ejob varchar(20))
+    -> begin
+    ->   declare exit handler for SQLEXCEPTION select 'error occured';
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call updatejob(7902,'UI developer');
+ERROR 1265 (01000): Data truncated for column 'JOB' at row 1
+mysql> drop procedure updatejob;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter //
+mysql> create procedure updatejob(eid int,ejob varchar(20))
+    -> begin
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call updatejob(7902,'xxxxxxxxxxxxxxxx');
+ERROR 1265 (01000): Data truncated for column 'JOB' at row 1
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  | MUL | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.05 sec)
+
+mysql> insert into emp values(7902,'xxx','xxx',123,'2020-11-11',45678,null,10);
+ERROR 1062 (23000): Duplicate entry '7902' for key 'emp.PRIMARY'
+mysql> delimiter //
+mysql> create procedure insertemp(eid int,ejob varchar(20))
+    -> begin
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   /*update emp
+   /*>   set job=ejob
+   /*>   where empno=eid;*/
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call insertemp(7902,'xxxx');
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter //
+mysql> create procedure insertempdept(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   /*update emp
+   /*>   set job=ejob
+   /*>   where empno=eid;*/
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   insert into dept values(did,'yyy','tttt')
+    ->
+    ->
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end' at line 9
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure insertempdept(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   /*update emp
+   /*>   set job=ejob
+   /*>   where empno=eid;*/
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> delimiter ;
+mysql> call insertempdept(111,'xxx',10);
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from emp;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 40318.95 |  345.00 |     10 |
+|   111 | xxx      | xxx       |  123 | 2020-11-11 | 45678.00 |    NULL |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  5526.07 | 3456.00 |     10 |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 65776.32 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 55270.38 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 67370.38 | 4567.00 |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  5724.00 |    NULL |     20 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1866.24 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1458.00 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  3599.75 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1458.00 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  3448.50 |    NULL |     30 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 64942.82 | 5567.00 |   NULL |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 53278.82 | 4567.00 |   NULL |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2964.50 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  4687.50 |    NULL |     20 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5832.00 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1749.60 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1584.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |  1368.00 |    NULL |     30 |
+|  7902 | FORD     | QA        | 7566 | 1981-12-03 |  7775.22 |    NULL |     20 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1872.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+22 rows in set (0.00 sec)
+
+mysql> select * from dept;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     12 | admin      | pune     |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> insert into dept values(10,'xxx','yyy')
+    -> ;
+ERROR 1062 (23000): Duplicate entry '10' for key 'dept.PRIMARY'
+mysql> delimiter //
+mysql> create procedure insertempdept1(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare exit handler for 1062 select "duplicate entry";
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   /*update emp
+   /*>   set job=ejob
+   /*>   where empno=eid;*/
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call insertempdept(111,'xxx',10);
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.05 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> call insertempdept1(111,'xxx',10);
++-----------------+
+| duplicate entry |
++-----------------+
+| duplicate entry |
++-----------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter //
+mysql> create procedure insertempdept2(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare continue handler for 1265 select "too long value";
+    ->   declare exit handler for 1062 select "duplicate entry";
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call insertempdept2(7902,'yyy',20);
++-----------------+
+| duplicate entry |
++-----------------+
+| duplicate entry |
++-----------------+
+1 row in set (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> call insertempdept2(7902,'yyyyyyyyyyyyyyyyyy',20);
++----------------+
+| too long value |
++----------------+
+| too long value |
++----------------+
+1 row in set (0.00 sec)
+
++----------------+
+| too long value |
++----------------+
+| too long value |
++----------------+
+1 row in set (0.00 sec)
+
++-----------------+
+| duplicate entry |
++-----------------+
+| duplicate entry |
++-----------------+
+1 row in set (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_iacsd0324 |
++---------------------+
+| aggdata             |
+| all_emp             |
+| bonus               |
+| boxoffice           |
+| category            |
+| dept                |
+| emp                 |
+| emp_20              |
+| emp_data            |
+| emp_india           |
+| emp_japan           |
+| emp_us              |
+| item                |
+| matches             |
+| movie               |
+| myemp10             |
+| mytable             |
+| mytable1            |
+| myview              |
+| owner               |
+| player              |
+| product             |
+| salesman            |
+| salgrade            |
+| stud_marks          |
+| team                |
+| test1               |
+| testable            |
+| vehicle             |
+| vendor              |
++---------------------+
+30 rows in set (0.06 sec)
+
+mysql> show create table salesman;
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table    | Create Table                                                                                                                                                                                                       |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| salesman | CREATE TABLE `salesman` (
+  `sid` int NOT NULL,
+  `sname` varchar(20) DEFAULT NULL,
+  `address` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.02 sec)
+
+mysql> show create table product;
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| product | CREATE TABLE `product` (
+  `pid` int NOT NULL,
+  `pname` varchar(20) DEFAULT NULL,
+  `qty` int DEFAULT NULL,
+  `price` float(9,2) DEFAULT NULL,
+  `catid` int DEFAULT NULL,
+  `sid` int DEFAULT NULL,
+  PRIMARY KEY (`pid`),
+  KEY `fk_cat` (`catid`),
+  KEY `fk_sid` (`sid`),
+  CONSTRAINT `fk_cat` FOREIGN KEY (`catid`) REFERENCES `category` (`cid`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `fk_sid` FOREIGN KEY (`sid`) REFERENCES `salesman` (`sid`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `product_chk_1` CHECK ((`qty` > 0))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.05 sec)
+
+mysql> selct * from salesman;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct * from salesman' at line 1
+mysql> select * from salesman;
++------+---------+---------+
+| sid  | sname   | address |
++------+---------+---------+
+|   11 | xxx     | Pune    |
+|   12 | yyy     | pune    |
+|   13 | zzzz    | mumbai  |
+| 1001 | Ajinkya | Mumbai  |
+| 1002 | Rohit   | pune    |
+| 1003 | Rajesh  | Pune    |
++------+---------+---------+
+6 rows in set (0.01 sec)
+
+mysql> select * from product;
++-----+---------+------+--------+-------+------+
+| pid | pname   | qty  | price  | catid | sid  |
++-----+---------+------+--------+-------+------+
+|   1 | lays    |   34 |  50.00 |  NULL | 1003 |
+|   2 | prigles |   50 | 150.00 |  NULL | 1003 |
+|   3 | nice    |   53 |  50.00 |    13 | 1001 |
+|   4 | maggi   |   45 |  60.00 |    12 | 1001 |
++-----+---------+------+--------+-------+------+
+4 rows in set (0.05 sec)
+
+mysql> insert into product values(5,'crackjak',45,46,100);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into product values(5,'crackjak',45,46,12,100);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`iacsd0324`.`product`, CONSTRAINT `fk_sid` FOREIGN KEY (`sid`) REFERENCES `salesman` (`sid`) ON DELETE SET NULL ON UPDATE CASCADE)
+mysql> insert into product values(5,'crackjak',-45,46,100);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into product values(5,'crackjak',-45,46,12,100);
+ERROR 3819 (HY000): Check constraint 'product_chk_1' is violated.
+mysql> delimiter //
+mysql> create procedure insertempdept3(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value"
+    ->   select 'xxx'
+    ->   select 'yyy'
+    ->   end;
+    ->   declare continue handler for 1062 select "duplicate entry";
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select 'xxx'
+  select 'yyy'
+  end;
+  declare continue handler for 1062 select "d' at line 5
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure insertempdept3(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 select "duplicate entry";
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call insertempdept3(7902,'yyyyyyyyyyyyyyyyyy',20);
++----------------+
+| too long value |
++----------------+
+| too long value |
++----------------+
+1 row in set (0.05 sec)
+
++-----+
+| xxx |
++-----+
+| xxx |
++-----+
+1 row in set (0.05 sec)
+
++-----+
+| yyy |
++-----+
+| yyy |
++-----+
+1 row in set (0.05 sec)
+
++----------------+
+| too long value |
++----------------+
+| too long value |
++----------------+
+1 row in set (0.06 sec)
+
++-----+
+| xxx |
++-----+
+| xxx |
++-----+
+1 row in set (0.07 sec)
+
++-----+
+| yyy |
++-----+
+| yyy |
++-----+
+1 row in set (0.08 sec)
+
++-----------------+
+| duplicate entry |
++-----------------+
+| duplicate entry |
++-----------------+
+1 row in set (0.09 sec)
+
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> drop procedure insertempdept3;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter //
+mysql> create procedure insertempdept3(eid int,ejob varchar(20),did int)
+    -> begin
+    -> declare vdept int default 0
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 begin
+    ->   if vdept=1 then
+    ->       select duplicate entry in dept';
+    '>   else
+    '>       select "duplicate entry";
+    '>   end;
+    '>   declare exit handler for SQLEXCEPTION select "error occured";
+    '>   update emp
+    '>   set job=ejob
+    '>   where empno=eid;
+    '>   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    '>   set vdept=1
+    '>   insert into dept values(did,'yyy','tttt');
+    '>
+    '>
+    '> end//
+    '> delimiter ;
+    '> ^C
+mysql> delimiter //
+mysql> create procedure insertempdept3(eid int,ejob varchar(20),did int)
+    -> begin
+    -> declare vdept int default 0
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 begin
+    ->   if vdept=1 then
+    ->       select "duplicate entry in dept';
+    ">   else
+    ">       select "duplicate entry";
+    ">   end;
+    ">   declare exit handler for SQLEXCEPTION select "error occured";
+    ">   update emp
+    ">   set job=ejob
+    ">   where empno=eid;
+    ">   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ">   set vdept=1
+    ">   insert into dept values(did,'yyy','tttt');
+    ">
+    ">
+    "> end//
+    "> delimiter ;
+    "> ^C
+mysql>
+mysql>  select "duplicate entry in dept';
+    ">     ">   else
+    ->     ">       select "duplicate entry";^C
+mysql> delimiter //
+mysql> create procedure insertempdept3(eid int,ejob varchar(20),did int)
+    -> begin
+    -> declare vdept int default 0
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 begin
+    ->   if vdept=1 then
+    ->       select "duplicate entry in dept";
+    ->   else
+    ->       select "duplicate entry";
+    ->   end;
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   set vdept=1
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'declare continue handler for 1265 begin
+  select "too long value";
+  select 'xx' at line 4
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure insertupdateproduct(ppid int,pcid int, psid int,pnm varchar(20),pqty int, pprice float(9,2))
+    -> begin
+    ->    declare continue handler for 1452 select 'wrong sid or cid';
+    ->    declare continue handler for 3819 select 'qty cannot be -ve';
+    ->    declare continue handler for SQLEXCEPTION select 'error occured'
+    ->    insert into product values(ppid,pnm,pqty,pprice,pcid,psid);
+    ->    update product
+    ->    set cid=pcid+2
+    ->    where pid=ppid;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insert into product values(ppid,pnm,pqty,pprice,pcid,psid);
+   update product
+  ' at line 6
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure insertupdateproduct(ppid int,pcid int, psid int,pnm varchar(20),pqty int, pprice float(9,2))
+    -> begin
+    ->    declare continue handler for 1452 select 'wrong sid or cid';
+    ->    declare continue handler for 3819 select 'qty cannot be -ve';
+    ->    declare continue handler for SQLEXCEPTION select 'error occured';
+    ->    insert into product values(ppid,pnm,pqty,pprice,pcid,psid);
+    ->    update product
+    ->    set cid=pcid+2
+    ->    where pid=ppid;
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> delimiter ;
+mysql> call insertupdateproduct(10,'xxx',-23,56,12,1003);
+ERROR 1366 (HY000): Incorrect integer value: 'xxx' for column 'pcid' at row 1
+mysql> call insertupdateproduct(10,12,1003,'xxx',-23,56);
++-------------------+
+| qty cannot be -ve |
++-------------------+
+| qty cannot be -ve |
++-------------------+
+1 row in set (0.00 sec)
+
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call insertupdateproduct(10,111,1003,'xxx',23,56);
++------------------+
+| wrong sid or cid |
++------------------+
+| wrong sid or cid |
++------------------+
+1 row in set (0.01 sec)
+
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.02 sec)
+
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select * from product;
++-----+---------+------+--------+-------+------+
+| pid | pname   | qty  | price  | catid | sid  |
++-----+---------+------+--------+-------+------+
+|   1 | lays    |   34 |  50.00 |  NULL | 1003 |
+|   2 | prigles |   50 | 150.00 |  NULL | 1003 |
+|   3 | nice    |   53 |  50.00 |    13 | 1001 |
+|   4 | maggi   |   45 |  60.00 |    12 | 1001 |
++-----+---------+------+--------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> call insertupdateproduct(4,111,1003,'xxx',23,56);
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.00 sec)
+
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter //
+mysql> create procedure insertupdateproduct1(ppid int,pcid int, psid int,pnm varchar(20),pqty int, pprice float(9,2))
+    -> begin
+    ->    declare continue handler for 1452 begin
+    ->       select 'wrong sid or cid';
+    ->       select 'wrong values';
+    ->    end;
+    ->    declare continue handler for 3819 select 'qty cannot be -ve';
+    ->    declare continue handler for SQLEXCEPTION select 'error occured';
+    ->    insert into product values(ppid,pnm,pqty,pprice,pcid,psid);
+    ->    update product
+    ->    set cid=pcid+2
+    ->    where pid=ppid;
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> delimiter ;
+mysql> call insertupdateproduct1(10,111,1003,'xxx',23,56);
++------------------+
+| wrong sid or cid |
++------------------+
+| wrong sid or cid |
++------------------+
+1 row in set (0.01 sec)
+
++--------------+
+| wrong values |
++--------------+
+| wrong values |
++--------------+
+1 row in set (0.02 sec)
+
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.02 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter //
+mysql> create procedure insertempdept4(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare vdept int default 0
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 begin
+    ->   if vdept=1 then
+    ->       select "duplicate entry in dept";
+    ->   else
+    ->       select "duplicate entry in emp";
+    ->   end;
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   set vdept=1
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'declare continue handler for 1265 begin
+  select "too long value";
+  select 'xx' at line 4
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure insertempdept4(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare vdept int default 0;
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 begin
+    ->   if vdept=1 then
+    ->       select "duplicate entry in dept";
+    ->   else
+    ->       select "duplicate entry in emp";
+    ->   end;
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   set vdept=1
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ';
+  declare exit handler for SQLEXCEPTION select "error occured";
+  update emp
+ ' at line 14
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure insertempdept4(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare vdept int default 0;
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 begin
+    ->   if vdept=1 then
+    ->       select "duplicate entry in dept";
+    ->   else
+    ->       select "duplicate entry in emp";
+    ->   end if;
+    ->   end;
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   set vdept=1
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insert into dept values(did,'yyy','tttt');
+
+
+end' at line 22
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure insertempdept4(eid int,ejob varchar(20),did int)
+    -> begin
+    ->   declare vdept int default 0;
+    ->   declare continue handler for 1265 begin
+    ->   select "too long value";
+    ->   select 'xxx';
+    ->   select 'yyy';
+    ->   end;
+    ->   declare continue handler for 1062 begin
+    ->   if vdept=1 then
+    ->       select "duplicate entry in dept";
+    ->   else
+    ->       select "duplicate entry in emp";
+    ->   end if;
+    ->   end;
+    ->   declare exit handler for SQLEXCEPTION select "error occured";
+    ->   update emp
+    ->   set job=ejob
+    ->   where empno=eid;
+    ->   insert into emp values(eid,'xxx',ejob,123,'2020-11-11',45678,null,10);
+    ->   set vdept=1;
+    ->   insert into dept values(did,'yyy','tttt');
+    ->
+    ->
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call insertempdept4(4545,'dddd',10);
++-------------------------+
+| duplicate entry in dept |
++-------------------------+
+| duplicate entry in dept |
++-------------------------+
+1 row in set (0.05 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> call insertempdept4(4545,'dddd',10);
++------------------------+
+| duplicate entry in emp |
++------------------------+
+| duplicate entry in emp |
++------------------------+
+1 row in set (0.00 sec)
+
++-------------------------+
+| duplicate entry in dept |
++-------------------------+
+| duplicate entry in dept |
++-------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> call insertempdept4(4546,'dddd',10);
++-------------------------+
+| duplicate entry in dept |
++-------------------------+
+| duplicate entry in dept |
++-------------------------+
+1 row in set (0.05 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> DELIMITER //
+mysql>
+mysql> CREATE PROCEDURE update_salary(
+    -> IN p_employee_id INT,
+    ->     IN p_salary DECIMAL
+    -> )
+    -> BEGIN
+    -> DECLARE employee_count INT;
+    ->
+    ->     -- check if employee exists
+    ->     SELECT COUNT(*) INTO employee_count
+    ->     FROM emp
+    ->     WHERE empno = p_employee_id;
+    ->
+    ->     IF employee_count = 0 THEN
+    -> SIGNAL SQLSTATE '45000'
+    -> SET MESSAGE_TEXT = 'Employee not found';
+    ->     END IF;
+    ->
+    ->     -- validate salary
+    ->     IF p_salary < 0 THEN
+    -> SIGNAL SQLSTATE '45000'
+    -> SET MESSAGE_TEXT = 'Salary cannot be negative';
+    ->     END IF;
+    ->
+    ->     -- if every is fine, update the salary
+    ->     UPDATE emp
+    ->     SET sal = p_salary
+    ->     WHERE empno = p_employee_id;
+    ->
+    -> END //
+Query OK, 0 rows affected (0.02 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> call update_salary(1000,2345);
+ERROR 1644 (45000): Employee not found
+mysql> call update_salary(7902,-2345);
+ERROR 1644 (45000): Salary cannot be negative
+mysql> call update_salary(7902,12345);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from emp;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 40318.95 |  345.00 |     10 |
+|   111 | xxx      | xxx       |  123 | 2020-11-11 | 45678.00 |    NULL |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  5526.07 | 3456.00 |     10 |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 65776.32 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 55270.38 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 67370.38 | 4567.00 |     10 |
+|  4545 | xxx      | dddd      |  123 | 2020-11-11 | 45678.00 |    NULL |     10 |
+|  4546 | xxx      | dddd      |  123 | 2020-11-11 | 45678.00 |    NULL |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  5724.00 |    NULL |     20 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1866.24 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1458.00 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  3599.75 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1458.00 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  3448.50 |    NULL |     30 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 64942.82 | 5567.00 |   NULL |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 53278.82 | 4567.00 |   NULL |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2964.50 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  4687.50 |    NULL |     20 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5832.00 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1749.60 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1584.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |  1368.00 |    NULL |     30 |
+|  7902 | FORD     | yyy       | 7566 | 1981-12-03 | 12345.00 |    NULL |     20 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1872.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+24 rows in set (0.00 sec)
+
+mysql> CREATE PROCEDURE p (pval INT)
+    -> BEGIN
+    ->   DECLARE specialty CONDITION FOR SQLSTATE '45000';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql>   IF pval = 0 THEN
+    ->     SIGNAL SQLSTATE '01000';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF pval = 0 THEN
+    SIGNAL SQLSTATE '01000'' at line 1
+mysql>   ELSEIF pval = 1 THEN
+    ->     SIGNAL SQLSTATE '45000'
+    ->       SET MESSAGE_TEXT = 'An error occurred';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ELSEIF pval = 1 THEN
+    SIGNAL SQLSTATE '45000'
+      SET MESSAGE_TEXT = 'An er' at line 1
+mysql>   ELSEIF pval = 2 THEN
+    ->     SIGNAL specialty
+    ->       SET MESSAGE_TEXT = 'An error occurred';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ELSEIF pval = 2 THEN
+    SIGNAL specialty
+      SET MESSAGE_TEXT = 'An error occ' at line 1
+mysql>   ELSE
+    ->     SIGNAL SQLSTATE '01000'
+    ->       SET MESSAGE_TEXT = 'A warning occurred', MYSQL_ERRNO = 1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ELSE
+    SIGNAL SQLSTATE '01000'
+      SET MESSAGE_TEXT = 'A warning occurred', ' at line 1
+mysql>     SIGNAL SQLSTATE '45000'
+    ->       SET MESSAGE_TEXT = 'An error occurred', MYSQL_ERRNO = 1001;
+ERROR 1001 (45000): An error occurred
+mysql>   END IF;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'END IF' at line 1
+mysql> delimiter //
+mysql> CREATE PROCEDURE p (pval INT)
+    -> BEGIN
+    ->   DECLARE specialty CONDITION FOR SQLSTATE '45000';
+    ->   IF pval = 0 THEN
+    ->     SIGNAL SQLSTATE '01000';
+    ->   ELSEIF pval = 1 THEN
+    ->     SIGNAL SQLSTATE '45000'
+    ->       SET MESSAGE_TEXT = 'An error occurred';
+    ->   ELSEIF pval = 2 THEN
+    ->     SIGNAL specialty
+    ->       SET MESSAGE_TEXT = 'An error occurred';
+    ->   ELSE
+    ->     SIGNAL SQLSTATE '01000'
+    ->       SET MESSAGE_TEXT = 'A warning occurred', MYSQL_ERRNO = 1000;
+    ->     SIGNAL SQLSTATE '45000'
+    ->       SET MESSAGE_TEXT = 'An error occurred', MYSQL_ERRNO = 1001;
+    ->   END IF;
+    -> END//
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> deleimiter ;
+    -> ^C
+mysql> delimiter ;
+mysql> call p(0);
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> call p(1);
+ERROR 1644 (45000): An error occurred
+mysql> call p(2);
+ERROR 1644 (45000): An error occurred
+mysql> call p(4);
+ERROR 1001 (45000): An error occurred
+mysql> 1.create table emp_audit(
+    -> empno int,
+    -> oldname varchar(20),
+    -> newname varchar(20),
+    -> oldsal float(9,2),
+    -> newsal float(9,2),
+    -> oldjob varchar(20),
+    -> newjob varchar(20),
+    -> uname varchar(20),
+    -> changes datetime,
+    -> action varchar(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1.create table emp_audit(
+empno int,
+oldname varchar(20),
+newname varchar(20),
+o' at line 1
+mysql> create table emp_audit(
+    -> empno int,
+    -> oldname varchar(20),
+    -> newname varchar(20),
+    -> oldsal float(9,2),
+    -> newsal float(9,2),
+    -> oldjob varchar(20),
+    -> newjob varchar(20),
+    -> uname varchar(20),
+    -> changes datetime,
+    -> action varchar(20));
+Query OK, 0 rows affected, 2 warnings (0.12 sec)
+
+mysql> create trigger insertemp before insert on emp
+    -> for each row
+    ->     insert into emp_audit values(
+    -> old.empno,old.pname,new.pname,old.sal,new.sal,old.job,new.job
+    -> ,user(),now(),'update');
+ERROR 1363 (HY000): There is no OLD row in on INSERT trigger
+mysql> create trigger insertemp before update on emp
+    -> for each row
+    ->     insert into emp_audit values(
+    -> old.empno,old.pname,new.pname,old.sal,new.sal,old.job,new.job
+    -> ,user(),now(),'update');
+ERROR 1054 (42S22): Unknown column 'pname' in 'OLD'
+mysql> create trigger insertemp before update on emp
+    -> for each row
+    ->     insert into emp_audit values(
+    -> old.empno,old.ename,new.ename,old.sal,new.sal,old.job,new.job
+    -> ,user(),now(),'update');
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select * from emp;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 40318.95 |  345.00 |     10 |
+|   111 | xxx      | xxx       |  123 | 2020-11-11 | 45678.00 |    NULL |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  5526.07 | 3456.00 |     10 |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 65776.32 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 55270.38 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 67370.38 | 4567.00 |     10 |
+|  4545 | xxx      | dddd      |  123 | 2020-11-11 | 45678.00 |    NULL |     10 |
+|  4546 | xxx      | dddd      |  123 | 2020-11-11 | 45678.00 |    NULL |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  5724.00 |    NULL |     20 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1866.24 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1458.00 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  3599.75 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1458.00 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  3448.50 |    NULL |     30 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 64942.82 | 5567.00 |   NULL |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 53278.82 | 4567.00 |   NULL |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2964.50 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  4687.50 |    NULL |     20 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5832.00 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1749.60 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1584.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |  1368.00 |    NULL |     30 |
+|  7902 | FORD     | yyy       | 7566 | 1981-12-03 | 12345.00 |    NULL |     20 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1872.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+24 rows in set (0.05 sec)
+
+mysql> update emp
+    -> set ename='deepa',sal=sal+1000,job='designer'
+    -> where empno=111;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp_audit;
++-------+---------+---------+----------+----------+--------+----------+----------------+---------------------+--------+
+| empno | oldname | newname | oldsal   | newsal   | oldjob | newjob   | uname          | changes             | action |
++-------+---------+---------+----------+----------+--------+----------+----------------+---------------------+--------+
+|   111 | xxx     | deepa   | 45678.00 | 46678.00 | xxx    | designer | root@localhost | 2024-04-01 11:55:57 | update |
++-------+---------+---------+----------+----------+--------+----------+----------------+---------------------+--------+
+1 row in set (0.00 sec)
+
+mysql> update emp
+    -> set sal=sal+1000,job='designer'
+    -> where deptno=20;
+Query OK, 5 rows affected (0.05 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> select * from emp_audit;
++-------+---------+---------+----------+----------+---------+----------+----------------+---------------------+--------+
+| empno | oldname | newname | oldsal   | newsal   | oldjob  | newjob   | uname          | changes             | action |
++-------+---------+---------+----------+----------+---------+----------+----------------+---------------------+--------+
+|   111 | xxx     | deepa   | 45678.00 | 46678.00 | xxx     | designer | root@localhost | 2024-04-01 11:55:57 | update |
+|  7369 | SMITH   | SMITH   |  5724.00 |  6724.00 | CLERK   | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7566 | JONES   | JONES   |  3599.75 |  4599.75 | MANAGER | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7788 | SCOTT   | SCOTT   |  4687.50 |  5687.50 | ANALYST | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7876 | ADAMS   | ADAMS   |  1584.00 |  2584.00 | CLERK   | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7902 | FORD    | FORD    | 12345.00 | 13345.00 | yyy     | designer | root@localhost | 2024-04-01 11:57:50 | update |
++-------+---------+---------+----------+----------+---------+----------+----------------+---------------------+--------+
+6 rows in set (0.00 sec)
+
+mysql> drop trigger insert emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insert emp' at line 1
+mysql> drop trigger insertemp;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> create trigger insertemp after insert on emp
+    -> for each row
+    ->     insert into emp_audit values(
+    -> new.empno,null,new.ename,null,new.sal,null,new.job
+    -> ,user(),now(),'insert');
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  | MUL | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.02 sec)
+
+mysql> insert into emp values(144,'sangeeta','manager',null,'2021-03-02',66666,6666,20);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from emp_audit;
++-------+---------+----------+----------+----------+---------+----------+----------------+---------------------+--------+
+| empno | oldname | newname  | oldsal   | newsal   | oldjob  | newjob   | uname          | changes             | action |
++-------+---------+----------+----------+----------+---------+----------+----------------+---------------------+--------+
+|   111 | xxx     | deepa    | 45678.00 | 46678.00 | xxx     | designer | root@localhost | 2024-04-01 11:55:57 | update |
+|  7369 | SMITH   | SMITH    |  5724.00 |  6724.00 | CLERK   | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7566 | JONES   | JONES    |  3599.75 |  4599.75 | MANAGER | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7788 | SCOTT   | SCOTT    |  4687.50 |  5687.50 | ANALYST | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7876 | ADAMS   | ADAMS    |  1584.00 |  2584.00 | CLERK   | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7902 | FORD    | FORD     | 12345.00 | 13345.00 | yyy     | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|   144 | NULL    | sangeeta |     NULL | 66666.00 | NULL    | manager  | root@localhost | 2024-04-01 12:09:29 | insert |
++-------+---------+----------+----------+----------+---------+----------+----------------+---------------------+--------+
+7 rows in set (0.00 sec)
+
+mysql> create trigger deleteemp after delete on emp
+    -> for each row
+    ->     insert into emp_audit values(
+    -> old.empno,old.ename,null,old.sal,null,old.job,null
+    -> ,user(),now(),'delete');
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> delete from emp
+    -> where empno=7566;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from emp_audit;
++-------+---------+----------+----------+----------+----------+----------+----------------+---------------------+--------+
+| empno | oldname | newname  | oldsal   | newsal   | oldjob   | newjob   | uname          | changes             | action |
++-------+---------+----------+----------+----------+----------+----------+----------------+---------------------+--------+
+|   111 | xxx     | deepa    | 45678.00 | 46678.00 | xxx      | designer | root@localhost | 2024-04-01 11:55:57 | update |
+|  7369 | SMITH   | SMITH    |  5724.00 |  6724.00 | CLERK    | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7566 | JONES   | JONES    |  3599.75 |  4599.75 | MANAGER  | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7788 | SCOTT   | SCOTT    |  4687.50 |  5687.50 | ANALYST  | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7876 | ADAMS   | ADAMS    |  1584.00 |  2584.00 | CLERK    | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|  7902 | FORD    | FORD     | 12345.00 | 13345.00 | yyy      | designer | root@localhost | 2024-04-01 11:57:50 | update |
+|   144 | NULL    | sangeeta |     NULL | 66666.00 | NULL     | manager  | root@localhost | 2024-04-01 12:09:29 | insert |
+|  7566 | JONES   | NULL     |  4599.75 |     NULL | designer | NULL     | root@localhost | 2024-04-01 12:15:25 | delete |
++-------+---------+----------+----------+----------+----------+----------+----------------+---------------------+--------+
+8 rows in set (0.00 sec)
+
+mysql> create table product_audit(
+    -> pid int,
+    -> pname varchar(20),
+    -> oldqty int,
+    -> newqty int,
+    -> oldprice float(9,2),
+    -> newprice float(9,2),
+    -> uname varchar(20),
+    -> change datetime,
+    -> action varchar(20));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'change datetime,
+action varchar(20))' at line 9
+mysql> create table product_audit(
+    -> pid int,
+    -> pname varchar(20),
+    -> oldqty int,
+    -> newqty int,
+    -> oldprice float(9,2),
+    -> newprice float(9,2),
+    -> uname varchar(20),
+    -> changedt datetime,
+    -> action varchar(20));
+Query OK, 0 rows affected, 2 warnings (0.05 sec)
+
+mysql> create trigger updateproduct before update on product
+    -> for each row
+    ->       insert into product_audit
+    ->   values(old.pid,old.pname,old.qty,new.qty,old.price,
+    ->   new.price,user(),now(),'update');
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create trigger insertproduct before insert on product
+    -> for each row
+    ->       insert into product_audit
+    ->   values(new.pid,new.pname,null,new.qty,null,
+    ->   new.price,user(),now(),'insert');
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc product
+    -> ;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| pid   | int         | NO   | PRI | NULL    |       |
+| pname | varchar(20) | YES  |     | NULL    |       |
+| qty   | int         | YES  |     | NULL    |       |
+| price | float(9,2)  | YES  |     | NULL    |       |
+| catid | int         | YES  | MUL | NULL    |       |
+| sid   | int         | YES  | MUL | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+6 rows in set (0.05 sec)
+
+mysql> select * from product;
++-----+---------+------+--------+-------+------+
+| pid | pname   | qty  | price  | catid | sid  |
++-----+---------+------+--------+-------+------+
+|   1 | lays    |   34 |  50.00 |  NULL | 1003 |
+|   2 | prigles |   50 | 150.00 |  NULL | 1003 |
+|   3 | nice    |   53 |  50.00 |    13 | 1001 |
+|   4 | maggi   |   45 |  60.00 |    12 | 1001 |
++-----+---------+------+--------+-------+------+
+4 rows in set (0.01 sec)
+
+mysql> insert into product values(5,'crackjack',45,65,13,1001);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from product_audit;
++------+-----------+--------+--------+----------+----------+----------------+---------------------+--------+
+| pid  | pname     | oldqty | newqty | oldprice | newprice | uname          | changedt            | action |
++------+-----------+--------+--------+----------+----------+----------------+---------------------+--------+
+|    5 | crackjack |   NULL |     45 |     NULL |    65.00 | root@localhost | 2024-04-01 12:44:17 | insert |
++------+-----------+--------+--------+----------+----------+----------------+---------------------+--------+
+1 row in set (0.00 sec)
+
+mysql> update product
+    -> set qty=55
+    -> where pid=5;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from product_audit;
++------+-----------+--------+--------+----------+----------+----------------+---------------------+--------+
+| pid  | pname     | oldqty | newqty | oldprice | newprice | uname          | changedt            | action |
++------+-----------+--------+--------+----------+----------+----------------+---------------------+--------+
+|    5 | crackjack |   NULL |     45 |     NULL |    65.00 | root@localhost | 2024-04-01 12:44:17 | insert |
+|    5 | crackjack |     45 |     55 |    65.00 |    65.00 | root@localhost | 2024-04-01 12:44:53 | update |
++------+-----------+--------+--------+----------+----------+----------------+---------------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from product;
++-----+-----------+------+--------+-------+------+
+| pid | pname     | qty  | price  | catid | sid  |
++-----+-----------+------+--------+-------+------+
+|   1 | lays      |   34 |  50.00 |  NULL | 1003 |
+|   2 | prigles   |   50 | 150.00 |  NULL | 1003 |
+|   3 | nice      |   53 |  50.00 |    13 | 1001 |
+|   4 | maggi     |   45 |  60.00 |    12 | 1001 |
+|   5 | crackjack |   55 |  65.00 |    13 | 1001 |
++-----+-----------+------+--------+-------+------+
+5 rows in set (0.00 sec)
+
+mysql>

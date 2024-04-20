@@ -1,0 +1,1699 @@
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 22
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use iacsd0324
+Database changed
+mysql> delimiter //
+mysql> create procedure displaynumwhile(num int)
+    -> begin
+    -> declare str varchar(100) default '';
+    -> declare n int default 1;
+    -> while n<=num do
+    ->     set str=concat(str,n,',');
+    -> set n=n+1;
+    -> end while;
+    -> set str=substr(str,1,length(str)-1);
+    -> select str;
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call displaynumwhile(10);
++----------------------+
+| str                  |
++----------------------+
+| 1,2,3,4,5,6,7,8,9,10 |
++----------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delimiter //
+mysql> create procedure displaynumrepeate(num int)
+    -> begin
+    -> declare str varchar(100) default '';
+    -> declare n int default 1;
+    -> repeat
+    ->     set str=concat(str,n,',');
+    -> set n=n+1;
+    -> until n>num
+    -> end repeat;
+    -> set str=substr(str,1,length(str)-1);
+    -> select str;
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delimiter ;
+mysql> call displaynumrepeat(20);
+ERROR 1305 (42000): PROCEDURE iacsd0324.displaynumrepeat does not exist
+mysql> call displaynumrepeate(20);
++----------------------------------------------------+
+| str                                                |
++----------------------------------------------------+
+| 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 |
++----------------------------------------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call displaynumrepeate(7);
++---------------+
+| str           |
++---------------+
+| 1,2,3,4,5,6,7 |
++---------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delimiter //
+mysql> create procedure displaynumrepeate(num int)
+    -> begin
+    -> declare str varchar(100) default '';
+    -> declare n int default 1;
+    -> label1: loop
+    ->     set str=concat(str,n,','); 1,2,3,4,5,
+    -> set n=n+1;
+    -> if n>num then
+    ->     leave label1;
+    -> end if;
+    ->
+    -> end loop;
+    -> set str=substr(str,1,length(str)-1); --remove last character of the string
+    -> select str;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1,2,3,4,5,
+set n=n+1;
+if n>num then
+    leave label1;
+end if;
+
+end loop;
+set str' at line 6
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure displaynumrepeate(num int)
+    -> begin
+    -> declare str varchar(100) default '';
+    -> declare n int default 1;
+    -> label1: loop
+    ->     set str=concat(str,n,','); #1,2,3,4,5,
+    -> set n=n+1;
+    -> if n>num then
+    ->     leave label1;
+    -> end if;
+    ->
+    -> end loop;
+    -> set str=substr(str,1,length(str)-1); --remove last character of the string
+    -> select str;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '--remove last character of the string
+select str;
+end' at line 13
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure displaynumrepeate(num int)
+    -> begin
+    -> declare str varchar(100) default '';
+    -> declare n int default 1;
+    -> label1: loop
+    ->     set str=concat(str,n,','); #1,2,3,4,5,
+    -> set n=n+1;
+    -> if n>num then
+    ->     leave label1;
+    -> end if;
+    ->
+    -> end loop;
+    -> set str=substr(str,1,length(str)-1);
+    -> select str;
+    -> end//
+ERROR 1304 (42000): PROCEDURE displaynumrepeate already exists
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure displaynumloop(num int)
+    -> begin
+    -> declare str varchar(100) default '';
+    -> declare n int default 1;
+    -> label1: loop
+    ->     set str=concat(str,n,','); #1,2,3,4,5,
+    -> set n=n+1;
+    -> if n>num then
+    ->     leave label1;
+    -> end if;
+    ->
+    -> end loop;
+    -> set str=substr(str,1,length(str)-1);
+    -> select str;
+    -> end//
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> delimiter ;
+mysql> call displaynumloop(10);
++----------------------+
+| str                  |
++----------------------+
+| 1,2,3,4,5,6,7,8,9,10 |
++----------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  | MUL | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.03 sec)
+
+mysql> delimiter //
+mysql> create procedure displayallemp(num int)
+    -> begin
+    -> declare vfinished int default 0;
+    -> declare vempno,vmgr,vdeptno int;
+    -> declare vename,vjob varchar(20);
+    -> declare vsal,vcomm float(9,2);
+    -> declare vhiredate date;
+    -> declare empcur cursor for select * from emp;
+    -> declare continue handler for NOT FOUND set vfinished=1;
+    -> open empcur;
+    -> label1:loop
+    -> fetch empcur into vempno,vename,vjob,vmgr,vhiredate,vsal,vcomm,vdeptno;
+    -> if vfinished=1 then
+    -> leave label1;
+    -> end if;
+    -> select vempno,vename,vjob,vmgr,vhiredate,vsal,vcomm,vdeptno;
+    -> end loop;
+    -> close empcur;
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> delimiter ;
+mysql> call displayallemp();
+ERROR 1318 (42000): Incorrect number of arguments for PROCEDURE iacsd0324.displayallemp; expected 1, got 0
+mysql> drop procedure displayallemp;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> delimiter //
+mysql> create procedure displayallemp()
+    -> begin
+    -> declare vfinished int default 0;
+    -> declare vempno,vmgr,vdeptno int;
+    -> declare vename,vjob varchar(20);
+    -> declare vsal,vcomm float(9,2);
+    -> declare vhiredate date;
+    -> declare empcur cursor for select * from emp;
+    -> declare continue handler for NOT FOUND set vfinished=1;
+    -> open empcur;
+    -> label1:loop
+    -> fetch empcur into vempno,vename,vjob,vmgr,vhiredate,vsal,vcomm,vdeptno;
+    -> if vfinished=1 then
+    -> leave label1;
+    -> end if;
+    -> select vempno,vename,vjob,vmgr,vhiredate,vsal,vcomm,vdeptno;
+    -> end loop;
+    -> close empcur;
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> delimiter ;
+mysql> call displayallemp();
++--------+---------+----------+------+------------+----------+--------+---------+
+| vempno | vename  | vjob     | vmgr | vhiredate  | vsal     | vcomm  | vdeptno |
++--------+---------+----------+------+------------+----------+--------+---------+
+|     11 | Rajan_A | designer | 7902 | 2020-11-11 | 34567.00 | 345.00 |      10 |
++--------+---------+----------+------+------------+----------+--------+---------+
+1 row in set (0.05 sec)
+
++--------+---------+---------+------+------------+---------+---------+---------+
+| vempno | vename  | vjob    | vmgr | vhiredate  | vsal    | vcomm   | vdeptno |
++--------+---------+---------+------+------------+---------+---------+---------+
+|    122 | Ashwini | Manager | NULL | 2022-01-01 | 4567.00 | 3456.00 |      10 |
++--------+---------+---------+------+------------+---------+---------+---------+
+1 row in set (0.06 sec)
+
++--------+--------+-------+------+------------+----------+---------+---------+
+| vempno | vename | vjob  | vmgr | vhiredate  | vsal     | vcomm   | vdeptno |
++--------+--------+-------+------+------------+----------+---------+---------+
+|    123 | Deepa  | CLERK | 7902 | 2022-03-02 | 45678.00 | 4567.00 |      30 |
++--------+--------+-------+------+------------+----------+---------+---------+
+1 row in set (0.07 sec)
+
++--------+----------+---------+------+------------+----------+---------+---------+
+| vempno | vename   | vjob    | vmgr | vhiredate  | vsal     | vcomm   | vdeptno |
++--------+----------+---------+------+------------+----------+---------+---------+
+|    124 | Sangeeta | Manager | 7902 | 2022-03-02 | 45678.00 | 4567.00 |      10 |
++--------+----------+---------+------+------------+----------+---------+---------+
+1 row in set (0.09 sec)
+
++--------+--------+---------+------+------------+----------+---------+---------+
+| vempno | vename | vjob    | vmgr | vhiredate  | vsal     | vcomm   | vdeptno |
++--------+--------+---------+------+------------+----------+---------+---------+
+|    125 | Kedar  | Manager | 7782 | 2022-03-02 | 55678.00 | 4567.00 |      10 |
++--------+--------+---------+------+------------+----------+---------+---------+
+1 row in set (0.11 sec)
+
++--------+--------+-------+------+------------+---------+-------+---------+
+| vempno | vename | vjob  | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+-------+------+------------+---------+-------+---------+
+|   7369 | SMITH  | CLERK | 7902 | 1980-12-17 | 3975.00 |  NULL |      20 |
++--------+--------+-------+------+------------+---------+-------+---------+
+1 row in set (0.13 sec)
+
++--------+--------+----------+------+------------+---------+--------+---------+
+| vempno | vename | vjob     | vmgr | vhiredate  | vsal    | vcomm  | vdeptno |
++--------+--------+----------+------+------------+---------+--------+---------+
+|   7499 | ALLEN  | SALESMAN | 7698 | 1981-02-20 | 1600.00 | 300.00 |      30 |
++--------+--------+----------+------+------------+---------+--------+---------+
+1 row in set (0.16 sec)
+
++--------+--------+----------+------+------------+---------+--------+---------+
+| vempno | vename | vjob     | vmgr | vhiredate  | vsal    | vcomm  | vdeptno |
++--------+--------+----------+------+------------+---------+--------+---------+
+|   7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 1250.00 | 500.00 |      30 |
++--------+--------+----------+------+------------+---------+--------+---------+
+1 row in set (0.17 sec)
+
++--------+--------+---------+------+------------+---------+-------+---------+
+| vempno | vename | vjob    | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+---------+------+------------+---------+-------+---------+
+|   7566 | JONES  | MANAGER | 7839 | 1981-04-02 | 2975.00 |  NULL |      20 |
++--------+--------+---------+------+------------+---------+-------+---------+
+1 row in set (0.19 sec)
+
++--------+--------+----------+------+------------+---------+---------+---------+
+| vempno | vename | vjob     | vmgr | vhiredate  | vsal    | vcomm   | vdeptno |
++--------+--------+----------+------+------------+---------+---------+---------+
+|   7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |      30 |
++--------+--------+----------+------+------------+---------+---------+---------+
+1 row in set (0.20 sec)
+
++--------+--------+---------+------+------------+---------+-------+---------+
+| vempno | vename | vjob    | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+---------+------+------------+---------+-------+---------+
+|   7698 | BLAKE  | MANAGER | 7839 | 1981-05-01 | 2850.00 |  NULL |      30 |
++--------+--------+---------+------+------------+---------+-------+---------+
+1 row in set (0.22 sec)
+
++--------+---------+-------+------+------------+----------+---------+---------+
+| vempno | vename  | vjob  | vmgr | vhiredate  | vsal     | vcomm   | vdeptno |
++--------+---------+-------+------+------------+----------+---------+---------+
+|   7775 | Atharva | UIdev | NULL | 2021-01-01 | 55678.00 | 5567.00 |    NULL |
++--------+---------+-------+------+------------+----------+---------+---------+
+1 row in set (0.24 sec)
+
++--------+--------+--------+------+------------+----------+---------+---------+
+| vempno | vename | vjob   | vmgr | vhiredate  | vsal     | vcomm   | vdeptno |
++--------+--------+--------+------+------------+----------+---------+---------+
+|   7777 | Revati | design | NULL | 2020-01-01 | 45678.00 | 4567.00 |    NULL |
++--------+--------+--------+------+------------+----------+---------+---------+
+1 row in set (0.28 sec)
+
++--------+--------+---------+------+------------+---------+-------+---------+
+| vempno | vename | vjob    | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+---------+------+------------+---------+-------+---------+
+|   7782 | CLARK  | MANAGER | 7839 | 1981-06-09 | 2450.00 |  NULL |      10 |
++--------+--------+---------+------+------------+---------+-------+---------+
+1 row in set (0.30 sec)
+
++--------+--------+---------+------+------------+---------+-------+---------+
+| vempno | vename | vjob    | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+---------+------+------------+---------+-------+---------+
+|   7788 | SCOTT  | ANALYST | 7566 | 1982-12-09 | 3000.00 |  NULL |      20 |
++--------+--------+---------+------+------------+---------+-------+---------+
+1 row in set (0.34 sec)
+
++--------+--------+-----------+------+------------+---------+-------+---------+
+| vempno | vename | vjob      | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+-----------+------+------------+---------+-------+---------+
+|   7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |  NULL |      10 |
++--------+--------+-----------+------+------------+---------+-------+---------+
+1 row in set (0.38 sec)
+
++--------+--------+----------+------+------------+---------+-------+---------+
+| vempno | vename | vjob     | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+----------+------+------------+---------+-------+---------+
+|   7844 | TURNER | SALESMAN | 7698 | 1981-09-08 | 1500.00 |  0.00 |      30 |
++--------+--------+----------+------+------------+---------+-------+---------+
+1 row in set (0.39 sec)
+
++--------+--------+-------+------+------------+---------+-------+---------+
+| vempno | vename | vjob  | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+-------+------+------------+---------+-------+---------+
+|   7876 | ADAMS  | CLERK | 7788 | 1983-01-12 | 1100.00 |  NULL |      20 |
++--------+--------+-------+------+------------+---------+-------+---------+
+1 row in set (0.42 sec)
+
++--------+--------+-------+------+------------+--------+-------+---------+
+| vempno | vename | vjob  | vmgr | vhiredate  | vsal   | vcomm | vdeptno |
++--------+--------+-------+------+------------+--------+-------+---------+
+|   7900 | JAMES  | CLERK | 7698 | 1981-12-03 | 950.00 |  NULL |      30 |
++--------+--------+-------+------+------------+--------+-------+---------+
+1 row in set (0.44 sec)
+
++--------+--------+------+------+------------+---------+-------+---------+
+| vempno | vename | vjob | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+------+------+------------+---------+-------+---------+
+|   7902 | FORD   | QA   | 7566 | 1981-12-03 | 6666.00 |  NULL |      20 |
++--------+--------+------+------+------------+---------+-------+---------+
+1 row in set (0.45 sec)
+
++--------+--------+-------+------+------------+---------+-------+---------+
+| vempno | vename | vjob  | vmgr | vhiredate  | vsal    | vcomm | vdeptno |
++--------+--------+-------+------+------------+---------+-------+---------+
+|   7934 | MILLER | CLERK | 7782 | 1982-01-23 | 1300.00 |  NULL |      10 |
++--------+--------+-------+------+------------+---------+-------+---------+
+1 row in set (0.47 sec)
+
+Query OK, 0 rows affected (0.50 sec)
+
+mysql> delimiter //
+mysql> create procedure updatesalemp()
+    -> begin
+    -> declare vfinished int default 0;
+    -> declare vempno int;
+    -> declare vename,vjob varchar(20);
+    -> declare vsal,vincsal float(9,2);
+    -> declare empcur cursor for select empno,ename,job,sal from emp;
+    -> declare continue handler for NOT FOUND set vfinished=1;
+    -> open empcur;
+    -> label1:loop
+    -> fetch empcur into vempno,vename,vjob,vsal;
+    -> if vfinished=1 then
+    -> leave label1;
+    -> end if;
+    -> if vjob='MANAGER' then
+    ->    set vincsal=vsal*1.1;
+    ->    update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    -> elseif vjob='CLERK' then
+    ->         set vincsal=vsal*1.2;
+    -> update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    ->     elseif vjob='ANALYST' then
+    -> set vincsal=vsal*1.25;
+    -> update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    ->     else
+    ->    set vincsal=vsal*1.08;
+    ->     update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    -> end if;
+    ->
+    -> select vempno,vename,vjob,vsal,vincsal;
+    -> end loop;
+    ->
+    -> close empcur;
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> delimiter ;
+mysql> select * from emp;
++-------+----------+-----------+------+------------+----------+---------+--------+
+| EMPNO | ENAME    | JOB       | MGR  | HIREDATE   | SAL      | COMM    | DEPTNO |
++-------+----------+-----------+------+------------+----------+---------+--------+
+|    11 | Rajan_A  | designer  | 7902 | 2020-11-11 | 34567.00 |  345.00 |     10 |
+|   122 | Ashwini  | Manager   | NULL | 2022-01-01 |  4567.00 | 3456.00 |     10 |
+|   123 | Deepa    | CLERK     | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     30 |
+|   124 | Sangeeta | Manager   | 7902 | 2022-03-02 | 45678.00 | 4567.00 |     10 |
+|   125 | Kedar    | Manager   | 7782 | 2022-03-02 | 55678.00 | 4567.00 |     10 |
+|  7369 | SMITH    | CLERK     | 7902 | 1980-12-17 |  3975.00 |    NULL |     20 |
+|  7499 | ALLEN    | SALESMAN  | 7698 | 1981-02-20 |  1600.00 |  300.00 |     30 |
+|  7521 | WARD     | SALESMAN  | 7698 | 1981-02-22 |  1250.00 |  500.00 |     30 |
+|  7566 | JONES    | MANAGER   | 7839 | 1981-04-02 |  2975.00 |    NULL |     20 |
+|  7654 | MARTIN   | SALESMAN  | 7698 | 1981-09-28 |  1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE    | MANAGER   | 7839 | 1981-05-01 |  2850.00 |    NULL |     30 |
+|  7775 | Atharva  | UIdev     | NULL | 2021-01-01 | 55678.00 | 5567.00 |   NULL |
+|  7777 | Revati   | design    | NULL | 2020-01-01 | 45678.00 | 4567.00 |   NULL |
+|  7782 | CLARK    | MANAGER   | 7839 | 1981-06-09 |  2450.00 |    NULL |     10 |
+|  7788 | SCOTT    | ANALYST   | 7566 | 1982-12-09 |  3000.00 |    NULL |     20 |
+|  7839 | KING     | PRESIDENT | NULL | 1981-11-17 |  5000.00 |    NULL |     10 |
+|  7844 | TURNER   | SALESMAN  | 7698 | 1981-09-08 |  1500.00 |    0.00 |     30 |
+|  7876 | ADAMS    | CLERK     | 7788 | 1983-01-12 |  1100.00 |    NULL |     20 |
+|  7900 | JAMES    | CLERK     | 7698 | 1981-12-03 |   950.00 |    NULL |     30 |
+|  7902 | FORD     | QA        | 7566 | 1981-12-03 |  6666.00 |    NULL |     20 |
+|  7934 | MILLER   | CLERK     | 7782 | 1982-01-23 |  1300.00 |    NULL |     10 |
++-------+----------+-----------+------+------------+----------+---------+--------+
+21 rows in set (0.00 sec)
+
+mysql> call updatesalemp();
++--------+---------+----------+----------+----------+
+| vempno | vename  | vjob     | vsal     | vincsal  |
++--------+---------+----------+----------+----------+
+|     11 | Rajan_A | designer | 34567.00 | 37332.36 |
++--------+---------+----------+----------+----------+
+1 row in set (0.01 sec)
+
++--------+---------+---------+---------+---------+
+| vempno | vename  | vjob    | vsal    | vincsal |
++--------+---------+---------+---------+---------+
+|    122 | Ashwini | Manager | 4567.00 | 5023.70 |
++--------+---------+---------+---------+---------+
+1 row in set (0.05 sec)
+
++--------+--------+-------+----------+----------+
+| vempno | vename | vjob  | vsal     | vincsal  |
++--------+--------+-------+----------+----------+
+|    123 | Deepa  | CLERK | 45678.00 | 54813.60 |
++--------+--------+-------+----------+----------+
+1 row in set (0.06 sec)
+
++--------+----------+---------+----------+----------+
+| vempno | vename   | vjob    | vsal     | vincsal  |
++--------+----------+---------+----------+----------+
+|    124 | Sangeeta | Manager | 45678.00 | 50245.80 |
++--------+----------+---------+----------+----------+
+1 row in set (0.07 sec)
+
++--------+--------+---------+----------+----------+
+| vempno | vename | vjob    | vsal     | vincsal  |
++--------+--------+---------+----------+----------+
+|    125 | Kedar  | Manager | 55678.00 | 61245.80 |
++--------+--------+---------+----------+----------+
+1 row in set (0.08 sec)
+
++--------+--------+-------+---------+---------+
+| vempno | vename | vjob  | vsal    | vincsal |
++--------+--------+-------+---------+---------+
+|   7369 | SMITH  | CLERK | 3975.00 | 4770.00 |
++--------+--------+-------+---------+---------+
+1 row in set (0.10 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7499 | ALLEN  | SALESMAN | 1600.00 | 1728.00 |
++--------+--------+----------+---------+---------+
+1 row in set (0.12 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7521 | WARD   | SALESMAN | 1250.00 | 1350.00 |
++--------+--------+----------+---------+---------+
+1 row in set (0.15 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7566 | JONES  | MANAGER | 2975.00 | 3272.50 |
++--------+--------+---------+---------+---------+
+1 row in set (0.18 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7654 | MARTIN | SALESMAN | 1250.00 | 1350.00 |
++--------+--------+----------+---------+---------+
+1 row in set (0.21 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7698 | BLAKE  | MANAGER | 2850.00 | 3135.00 |
++--------+--------+---------+---------+---------+
+1 row in set (0.23 sec)
+
++--------+---------+-------+----------+----------+
+| vempno | vename  | vjob  | vsal     | vincsal  |
++--------+---------+-------+----------+----------+
+|   7775 | Atharva | UIdev | 55678.00 | 60132.24 |
++--------+---------+-------+----------+----------+
+1 row in set (0.24 sec)
+
++--------+--------+--------+----------+----------+
+| vempno | vename | vjob   | vsal     | vincsal  |
++--------+--------+--------+----------+----------+
+|   7777 | Revati | design | 45678.00 | 49332.24 |
++--------+--------+--------+----------+----------+
+1 row in set (0.26 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7782 | CLARK  | MANAGER | 2450.00 | 2695.00 |
++--------+--------+---------+---------+---------+
+1 row in set (0.27 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7788 | SCOTT  | ANALYST | 3000.00 | 3750.00 |
++--------+--------+---------+---------+---------+
+1 row in set (0.29 sec)
+
++--------+--------+-----------+---------+---------+
+| vempno | vename | vjob      | vsal    | vincsal |
++--------+--------+-----------+---------+---------+
+|   7839 | KING   | PRESIDENT | 5000.00 | 5400.00 |
++--------+--------+-----------+---------+---------+
+1 row in set (0.30 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7844 | TURNER | SALESMAN | 1500.00 | 1620.00 |
++--------+--------+----------+---------+---------+
+1 row in set (0.32 sec)
+
++--------+--------+-------+---------+---------+
+| vempno | vename | vjob  | vsal    | vincsal |
++--------+--------+-------+---------+---------+
+|   7876 | ADAMS  | CLERK | 1100.00 | 1320.00 |
++--------+--------+-------+---------+---------+
+1 row in set (0.33 sec)
+
++--------+--------+-------+--------+---------+
+| vempno | vename | vjob  | vsal   | vincsal |
++--------+--------+-------+--------+---------+
+|   7900 | JAMES  | CLERK | 950.00 | 1140.00 |
++--------+--------+-------+--------+---------+
+1 row in set (0.34 sec)
+
++--------+--------+------+---------+---------+
+| vempno | vename | vjob | vsal    | vincsal |
++--------+--------+------+---------+---------+
+|   7902 | FORD   | QA   | 6666.00 | 7199.28 |
++--------+--------+------+---------+---------+
+1 row in set (0.35 sec)
+
++--------+--------+-------+---------+---------+
+| vempno | vename | vjob  | vsal    | vincsal |
++--------+--------+-------+---------+---------+
+|   7934 | MILLER | CLERK | 1300.00 | 1560.00 |
++--------+--------+-------+---------+---------+
+1 row in set (0.36 sec)
+
+Query OK, 0 rows affected (0.38 sec)
+
+mysql> drop procedure delimiter //
+    -> create procedure updatesalemp(out ccnt int,out mcnt int,out acnt int,out other int)
+    -> begin
+    -> declare vfinished int default 0;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//
+create procedure updatesalemp(out ccnt int,out mcnt int,out acnt int,out othe' at line 1
+mysql> declare vempno int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'declare vempno int' at line 1
+mysql> declare vename,vjob varchar(20);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'declare vename,vjob varchar(20)' at line 1
+mysql> declare vsal,vincsal float(9,2);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'declare vsal,vincsal float(9,2)' at line 1
+mysql> declare empcur cursor for select empno,ename,job,sal from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'declare empcur cursor for select empno,ename,job,sal from emp' at line 1
+mysql> declare continue handler for NOT FOUND set vfinished=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'declare continue handler for NOT FOUND set vfinished=1' at line 1
+mysql> set ccnt=0;
+ERROR 1193 (HY000): Unknown system variable 'ccnt'
+mysql> set mcnt=0;
+ERROR 1193 (HY000): Unknown system variable 'mcnt'
+mysql> set acnt=0;
+ERROR 1193 (HY000): Unknown system variable 'acnt'
+mysql> set other=0;
+ERROR 1193 (HY000): Unknown system variable 'other'
+mysql> open empcur;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'open empcur' at line 1
+mysql> label1:loop
+    -> fetch empcur into vempno,vename,vjob,vsal;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'label1:loop
+fetch empcur into vempno,vename,vjob,vsal' at line 1
+mysql> if vfinished=1 then
+    -> leave label1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if vfinished=1 then
+leave label1' at line 1
+mysql> end if;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end if' at line 1
+mysql> if vjob='MANAGER' then
+    ->    set mcnt=mcnt+1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if vjob='MANAGER' then
+   set mcnt=mcnt+1' at line 1
+mysql>    set vincsal=vsal*1.1;
+ERROR 1193 (HY000): Unknown system variable 'vincsal'
+mysql>    update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+ERROR 1054 (42S22): Unknown column 'vempno' in 'where clause'
+mysql>
+mysql> elseif vjob='CLERK' then
+    ->         set ccnt=ccnt+1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'elseif vjob='CLERK' then
+        set ccnt=ccnt+1' at line 1
+mysql> set vincsal=vsal*1.2;
+ERROR 1193 (HY000): Unknown system variable 'vincsal'
+mysql> update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+ERROR 1054 (42S22): Unknown column 'vempno' in 'where clause'
+mysql>     elseif vjob='ANALYST' then
+    ->     set acnt=acnt+1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'elseif vjob='ANALYST' then
+    set acnt=acnt+1' at line 1
+mysql> set vincsal=vsal*1.25;
+ERROR 1193 (HY000): Unknown system variable 'vincsal'
+mysql> update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+ERROR 1054 (42S22): Unknown column 'vempno' in 'where clause'
+mysql>     else
+    ->    set other=other+1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'else
+   set other=other+1' at line 1
+mysql>    set vincsal=vsal*1.08;
+ERROR 1193 (HY000): Unknown system variable 'vincsal'
+mysql>     update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+ERROR 1054 (42S22): Unknown column 'vempno' in 'where clause'
+mysql> end if;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end if' at line 1
+mysql>
+mysql> select vempno,vename,vjob,vsal,vincsal;
+ERROR 1054 (42S22): Unknown column 'vempno' in 'field list'
+mysql> end loop;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end loop' at line 1
+mysql>
+mysql> close empcur;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'close empcur' at line 1
+mysql> end//
+    ->
+    -> ^C
+mysql> drop procedure updatesalemp;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> delimiter //
+mysql> create procedure updatesalemp(out ccnt int,out mcnt int,out acnt int,out other int)
+    -> begin
+    -> declare vfinished int default 0;
+    -> declare vempno int;
+    -> declare vename,vjob varchar(20);
+    -> declare vsal,vincsal float(9,2);
+    -> declare empcur cursor for select empno,ename,job,sal from emp;
+    -> declare continue handler for NOT FOUND set vfinished=1;
+    -> set ccnt=0;
+    -> set mcnt=0;
+    -> set acnt=0;
+    -> set other=0;
+    -> open empcur;
+    -> label1:loop
+    -> fetch empcur into vempno,vename,vjob,vsal;
+    -> if vfinished=1 then
+    -> leave label1;
+    -> end if;
+    -> if vjob='MANAGER' then
+    ->    set mcnt=mcnt+1;
+    ->    set vincsal=vsal*1.1;
+    ->    update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    ->
+    -> elseif vjob='CLERK' then
+    ->         set ccnt=ccnt+1;
+    -> set vincsal=vsal*1.2;
+    -> update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    ->     elseif vjob='ANALYST' then
+    ->     set acnt=acnt+1;
+    -> set vincsal=vsal*1.25;
+    -> update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    ->     else
+    ->    set other=other+1;
+    ->    set vincsal=vsal*1.08;
+    ->     update emp
+    ->    set sal=vincsal
+    ->    where empno=vempno;
+    -> end if;
+    ->
+    -> select vempno,vename,vjob,vsal,vincsal;
+    -> end loop;
+    ->
+    -> close empcur;
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> delimiter ;
+mysql> call updatesalemp(@c,@m,@a,@o);
++--------+---------+----------+----------+----------+
+| vempno | vename  | vjob     | vsal     | vincsal  |
++--------+---------+----------+----------+----------+
+|     11 | Rajan_A | designer | 37332.36 | 40318.95 |
++--------+---------+----------+----------+----------+
+1 row in set (0.01 sec)
+
++--------+---------+---------+---------+---------+
+| vempno | vename  | vjob    | vsal    | vincsal |
++--------+---------+---------+---------+---------+
+|    122 | Ashwini | Manager | 5023.70 | 5526.07 |
++--------+---------+---------+---------+---------+
+1 row in set (0.01 sec)
+
++--------+--------+-------+----------+----------+
+| vempno | vename | vjob  | vsal     | vincsal  |
++--------+--------+-------+----------+----------+
+|    123 | Deepa  | CLERK | 54813.60 | 65776.32 |
++--------+--------+-------+----------+----------+
+1 row in set (0.01 sec)
+
++--------+----------+---------+----------+----------+
+| vempno | vename   | vjob    | vsal     | vincsal  |
++--------+----------+---------+----------+----------+
+|    124 | Sangeeta | Manager | 50245.80 | 55270.38 |
++--------+----------+---------+----------+----------+
+1 row in set (0.01 sec)
+
++--------+--------+---------+----------+----------+
+| vempno | vename | vjob    | vsal     | vincsal  |
++--------+--------+---------+----------+----------+
+|    125 | Kedar  | Manager | 61245.80 | 67370.38 |
++--------+--------+---------+----------+----------+
+1 row in set (0.02 sec)
+
++--------+--------+-------+---------+---------+
+| vempno | vename | vjob  | vsal    | vincsal |
++--------+--------+-------+---------+---------+
+|   7369 | SMITH  | CLERK | 4770.00 | 5724.00 |
++--------+--------+-------+---------+---------+
+1 row in set (0.03 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7499 | ALLEN  | SALESMAN | 1728.00 | 1866.24 |
++--------+--------+----------+---------+---------+
+1 row in set (0.05 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7521 | WARD   | SALESMAN | 1350.00 | 1458.00 |
++--------+--------+----------+---------+---------+
+1 row in set (0.07 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7566 | JONES  | MANAGER | 3272.50 | 3599.75 |
++--------+--------+---------+---------+---------+
+1 row in set (0.09 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7654 | MARTIN | SALESMAN | 1350.00 | 1458.00 |
++--------+--------+----------+---------+---------+
+1 row in set (0.10 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7698 | BLAKE  | MANAGER | 3135.00 | 3448.50 |
++--------+--------+---------+---------+---------+
+1 row in set (0.11 sec)
+
++--------+---------+-------+----------+----------+
+| vempno | vename  | vjob  | vsal     | vincsal  |
++--------+---------+-------+----------+----------+
+|   7775 | Atharva | UIdev | 60132.24 | 64942.82 |
++--------+---------+-------+----------+----------+
+1 row in set (0.12 sec)
+
++--------+--------+--------+----------+----------+
+| vempno | vename | vjob   | vsal     | vincsal  |
++--------+--------+--------+----------+----------+
+|   7777 | Revati | design | 49332.24 | 53278.82 |
++--------+--------+--------+----------+----------+
+1 row in set (0.12 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7782 | CLARK  | MANAGER | 2695.00 | 2964.50 |
++--------+--------+---------+---------+---------+
+1 row in set (0.14 sec)
+
++--------+--------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vincsal |
++--------+--------+---------+---------+---------+
+|   7788 | SCOTT  | ANALYST | 3750.00 | 4687.50 |
++--------+--------+---------+---------+---------+
+1 row in set (0.15 sec)
+
++--------+--------+-----------+---------+---------+
+| vempno | vename | vjob      | vsal    | vincsal |
++--------+--------+-----------+---------+---------+
+|   7839 | KING   | PRESIDENT | 5400.00 | 5832.00 |
++--------+--------+-----------+---------+---------+
+1 row in set (0.16 sec)
+
++--------+--------+----------+---------+---------+
+| vempno | vename | vjob     | vsal    | vincsal |
++--------+--------+----------+---------+---------+
+|   7844 | TURNER | SALESMAN | 1620.00 | 1749.60 |
++--------+--------+----------+---------+---------+
+1 row in set (0.18 sec)
+
++--------+--------+-------+---------+---------+
+| vempno | vename | vjob  | vsal    | vincsal |
++--------+--------+-------+---------+---------+
+|   7876 | ADAMS  | CLERK | 1320.00 | 1584.00 |
++--------+--------+-------+---------+---------+
+1 row in set (0.18 sec)
+
++--------+--------+-------+---------+---------+
+| vempno | vename | vjob  | vsal    | vincsal |
++--------+--------+-------+---------+---------+
+|   7900 | JAMES  | CLERK | 1140.00 | 1368.00 |
++--------+--------+-------+---------+---------+
+1 row in set (0.18 sec)
+
++--------+--------+------+---------+---------+
+| vempno | vename | vjob | vsal    | vincsal |
++--------+--------+------+---------+---------+
+|   7902 | FORD   | QA   | 7199.28 | 7775.22 |
++--------+--------+------+---------+---------+
+1 row in set (0.20 sec)
+
++--------+--------+-------+---------+---------+
+| vempno | vename | vjob  | vsal    | vincsal |
++--------+--------+-------+---------+---------+
+|   7934 | MILLER | CLERK | 1560.00 | 1872.00 |
++--------+--------+-------+---------+---------+
+1 row in set (0.21 sec)
+
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> select @c,@a,@m,@o;
++------+------+------+------+
+| @c   | @a   | @m   | @o   |
++------+------+------+------+
+|    5 |    1 |    6 |    9 |
++------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp_india
+    -> unionall
+    -> select * from emp_US;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from emp_US' at line 3
+mysql> select * from emp_india
+    -> union all
+    -> select * from emp_US;
+ERROR 1222 (21000): The used SELECT statements have a different number of columns
+mysql> select id from emp_US;
++----+
+| id |
++----+
+|  1 |
+| 21 |
++----+
+2 rows in set (0.05 sec)
+
+mysql> select id from emp_US
+    -> union all
+    -> select id from emp_india;
++----+
+| id |
++----+
+|  1 |
+| 21 |
+|  1 |
+|  2 |
++----+
+4 rows in set (0.00 sec)
+
+mysql> create procedure test()
+    -> begin
+    ->    update emp
+    ->    see sal+0
+    ->  end;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sal+0
+ end' at line 4
+mysql> create procedure test()
+    -> begin
+    ->    update emp
+    ->    set sal+0
+    ->    where deptno=10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+0
+   where deptno=10' at line 4
+mysql>  delimiter //
+mysql> create procedure test()
+    -> begin
+    ->    update emp
+    ->    set sal+0
+    ->    where deptno=10;
+    -> end//
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '+0
+   where deptno=10;
+end' at line 4
+mysql> create procedure test()
+    -> begin
+    ->    update emp
+    ->    set sal=sal+0
+    -> where deptno=10;
+    -> end //
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> call test();
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimeter ;
+    ->
+    -> ^C
+mysql> delimiter ;
+mysql> delimiter //
+mysql> create procedure displaystatus()
+    -> begin
+    -> declare vfinished int default 0;
+    -> declare vempno,vdeptno int;
+    -> declare vename,vjob,vstatus varchar(20);
+    -> declare vsal,vavgsal float(9,2);
+    -> declare empcur cursor for select empno,ename,job,sal,deptno from emp;
+    -> declare continue handler for NOT FOUND set vfinished=1;
+    -> #load the data from table to cursor
+    -> open empcur;
+    -> label1:loop
+    -> fetch empcur into vempno,vename,vjob,vsal,vdeptno;
+    -> if vfinished =1 then
+    ->    leave label1;
+    -> end if;
+    -> select avg(sal) into vavgsal
+    -> from emp
+    -> where deptno=vdeptno;
+    -> if vsal<vavgsal then
+    ->     set vstatus='lesser';
+    -> elseif vsal=vavgsal then
+    ->     set vstatus='equal';
+    -> else
+    ->     set vstatus='greater';
+    -> end if;
+    -> select vempno,vename,vjob,vsal,vdeptno,vavgsal,vstatus;
+    ->
+    -> end loop;
+    -> close empcur;
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> delimiter ;
+mysql> call displaystatus();
++--------+---------+----------+----------+---------+----------+---------+
+| vempno | vename  | vjob     | vsal     | vdeptno | vavgsal  | vstatus |
++--------+---------+----------+----------+---------+----------+---------+
+|     11 | Rajan_A | designer | 40318.95 |      10 | 25593.47 | greater |
++--------+---------+----------+----------+---------+----------+---------+
+1 row in set (0.00 sec)
+
++--------+---------+---------+---------+---------+----------+---------+
+| vempno | vename  | vjob    | vsal    | vdeptno | vavgsal  | vstatus |
++--------+---------+---------+---------+---------+----------+---------+
+|    122 | Ashwini | Manager | 5526.07 |      10 | 25593.47 | lesser  |
++--------+---------+---------+---------+---------+----------+---------+
+1 row in set (0.01 sec)
+
++--------+--------+-------+----------+---------+----------+---------+
+| vempno | vename | vjob  | vsal     | vdeptno | vavgsal  | vstatus |
++--------+--------+-------+----------+---------+----------+---------+
+|    123 | Deepa  | CLERK | 65776.32 |      30 | 11017.81 | greater |
++--------+--------+-------+----------+---------+----------+---------+
+1 row in set (0.01 sec)
+
++--------+----------+---------+----------+---------+----------+---------+
+| vempno | vename   | vjob    | vsal     | vdeptno | vavgsal  | vstatus |
++--------+----------+---------+----------+---------+----------+---------+
+|    124 | Sangeeta | Manager | 55270.38 |      10 | 25593.47 | greater |
++--------+----------+---------+----------+---------+----------+---------+
+1 row in set (0.03 sec)
+
++--------+--------+---------+----------+---------+----------+---------+
+| vempno | vename | vjob    | vsal     | vdeptno | vavgsal  | vstatus |
++--------+--------+---------+----------+---------+----------+---------+
+|    125 | Kedar  | Manager | 67370.38 |      10 | 25593.47 | greater |
++--------+--------+---------+----------+---------+----------+---------+
+1 row in set (0.04 sec)
+
++--------+--------+-------+---------+---------+---------+---------+
+| vempno | vename | vjob  | vsal    | vdeptno | vavgsal | vstatus |
++--------+--------+-------+---------+---------+---------+---------+
+|   7369 | SMITH  | CLERK | 5724.00 |      20 | 4674.09 | greater |
++--------+--------+-------+---------+---------+---------+---------+
+1 row in set (0.05 sec)
+
++--------+--------+----------+---------+---------+----------+---------+
+| vempno | vename | vjob     | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+----------+---------+---------+----------+---------+
+|   7499 | ALLEN  | SALESMAN | 1866.24 |      30 | 11017.81 | lesser  |
++--------+--------+----------+---------+---------+----------+---------+
+1 row in set (0.07 sec)
+
++--------+--------+----------+---------+---------+----------+---------+
+| vempno | vename | vjob     | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+----------+---------+---------+----------+---------+
+|   7521 | WARD   | SALESMAN | 1458.00 |      30 | 11017.81 | lesser  |
++--------+--------+----------+---------+---------+----------+---------+
+1 row in set (0.08 sec)
+
++--------+--------+---------+---------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vdeptno | vavgsal | vstatus |
++--------+--------+---------+---------+---------+---------+---------+
+|   7566 | JONES  | MANAGER | 3599.75 |      20 | 4674.09 | lesser  |
++--------+--------+---------+---------+---------+---------+---------+
+1 row in set (0.10 sec)
+
++--------+--------+----------+---------+---------+----------+---------+
+| vempno | vename | vjob     | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+----------+---------+---------+----------+---------+
+|   7654 | MARTIN | SALESMAN | 1458.00 |      30 | 11017.81 | lesser  |
++--------+--------+----------+---------+---------+----------+---------+
+1 row in set (0.12 sec)
+
++--------+--------+---------+---------+---------+----------+---------+
+| vempno | vename | vjob    | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+---------+---------+---------+----------+---------+
+|   7698 | BLAKE  | MANAGER | 3448.50 |      30 | 11017.81 | lesser  |
++--------+--------+---------+---------+---------+----------+---------+
+1 row in set (0.14 sec)
+
++--------+---------+-------+----------+---------+---------+---------+
+| vempno | vename  | vjob  | vsal     | vdeptno | vavgsal | vstatus |
++--------+---------+-------+----------+---------+---------+---------+
+|   7775 | Atharva | UIdev | 64942.82 |    NULL |    NULL | greater |
++--------+---------+-------+----------+---------+---------+---------+
+1 row in set (0.15 sec)
+
++--------+--------+--------+----------+---------+---------+---------+
+| vempno | vename | vjob   | vsal     | vdeptno | vavgsal | vstatus |
++--------+--------+--------+----------+---------+---------+---------+
+|   7777 | Revati | design | 53278.82 |    NULL |    NULL | greater |
++--------+--------+--------+----------+---------+---------+---------+
+1 row in set (0.16 sec)
+
++--------+--------+---------+---------+---------+----------+---------+
+| vempno | vename | vjob    | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+---------+---------+---------+----------+---------+
+|   7782 | CLARK  | MANAGER | 2964.50 |      10 | 25593.47 | lesser  |
++--------+--------+---------+---------+---------+----------+---------+
+1 row in set (0.17 sec)
+
++--------+--------+---------+---------+---------+---------+---------+
+| vempno | vename | vjob    | vsal    | vdeptno | vavgsal | vstatus |
++--------+--------+---------+---------+---------+---------+---------+
+|   7788 | SCOTT  | ANALYST | 4687.50 |      20 | 4674.09 | greater |
++--------+--------+---------+---------+---------+---------+---------+
+1 row in set (0.18 sec)
+
++--------+--------+-----------+---------+---------+----------+---------+
+| vempno | vename | vjob      | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+-----------+---------+---------+----------+---------+
+|   7839 | KING   | PRESIDENT | 5832.00 |      10 | 25593.47 | lesser  |
++--------+--------+-----------+---------+---------+----------+---------+
+1 row in set (0.20 sec)
+
++--------+--------+----------+---------+---------+----------+---------+
+| vempno | vename | vjob     | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+----------+---------+---------+----------+---------+
+|   7844 | TURNER | SALESMAN | 1749.60 |      30 | 11017.81 | lesser  |
++--------+--------+----------+---------+---------+----------+---------+
+1 row in set (0.23 sec)
+
++--------+--------+-------+---------+---------+---------+---------+
+| vempno | vename | vjob  | vsal    | vdeptno | vavgsal | vstatus |
++--------+--------+-------+---------+---------+---------+---------+
+|   7876 | ADAMS  | CLERK | 1584.00 |      20 | 4674.09 | lesser  |
++--------+--------+-------+---------+---------+---------+---------+
+1 row in set (0.25 sec)
+
++--------+--------+-------+---------+---------+----------+---------+
+| vempno | vename | vjob  | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+-------+---------+---------+----------+---------+
+|   7900 | JAMES  | CLERK | 1368.00 |      30 | 11017.81 | lesser  |
++--------+--------+-------+---------+---------+----------+---------+
+1 row in set (0.25 sec)
+
++--------+--------+------+---------+---------+---------+---------+
+| vempno | vename | vjob | vsal    | vdeptno | vavgsal | vstatus |
++--------+--------+------+---------+---------+---------+---------+
+|   7902 | FORD   | QA   | 7775.22 |      20 | 4674.09 | greater |
++--------+--------+------+---------+---------+---------+---------+
+1 row in set (0.26 sec)
+
++--------+--------+-------+---------+---------+----------+---------+
+| vempno | vename | vjob  | vsal    | vdeptno | vavgsal  | vstatus |
++--------+--------+-------+---------+---------+----------+---------+
+|   7934 | MILLER | CLERK | 1872.00 |      10 | 25593.47 | lesser  |
++--------+--------+-------+---------+---------+----------+---------+
+1 row in set (0.28 sec)
+
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> select empno,ename,sal+ifnull(comm,0)
+    -> from emp;
++-------+----------+--------------------+
+| empno | ename    | sal+ifnull(comm,0) |
++-------+----------+--------------------+
+|    11 | Rajan_A  |           40663.95 |
+|   122 | Ashwini  |            8982.07 |
+|   123 | Deepa    |           70343.32 |
+|   124 | Sangeeta |           59837.38 |
+|   125 | Kedar    |           71937.38 |
+|  7369 | SMITH    |            5724.00 |
+|  7499 | ALLEN    |            2166.24 |
+|  7521 | WARD     |            1958.00 |
+|  7566 | JONES    |            3599.75 |
+|  7654 | MARTIN   |            2858.00 |
+|  7698 | BLAKE    |            3448.50 |
+|  7775 | Atharva  |           70509.82 |
+|  7777 | Revati   |           57845.82 |
+|  7782 | CLARK    |            2964.50 |
+|  7788 | SCOTT    |            4687.50 |
+|  7839 | KING     |            5832.00 |
+|  7844 | TURNER   |            1749.60 |
+|  7876 | ADAMS    |            1584.00 |
+|  7900 | JAMES    |            1368.00 |
+|  7902 | FORD     |            7775.22 |
+|  7934 | MILLER   |            1872.00 |
++-------+----------+--------------------+
+21 rows in set (0.00 sec)
+
+mysql> create function myf1() returns int
+    -> begin
+    ->    return 10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql> delimiter //
+mysql> create function myf1() returns int
+    -> begin
+    ->    return 10;
+    -> end//
+ERROR 1418 (HY000): This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)
+mysql> set GLOBAL log_bin_trust_function_creators=1;
+    -> //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select empno,ename,floor(datediff(curdate(),hiredate)/365)
+    -> from emp;
+    -> //
++-------+----------+-----------------------------------------+
+| empno | ename    | floor(datediff(curdate(),hiredate)/365) |
++-------+----------+-----------------------------------------+
+|    11 | Rajan_A  |                                       3 |
+|   122 | Ashwini  |                                       2 |
+|   123 | Deepa    |                                       2 |
+|   124 | Sangeeta |                                       2 |
+|   125 | Kedar    |                                       2 |
+|  7369 | SMITH    |                                      43 |
+|  7499 | ALLEN    |                                      43 |
+|  7521 | WARD     |                                      43 |
+|  7566 | JONES    |                                      43 |
+|  7654 | MARTIN   |                                      42 |
+|  7698 | BLAKE    |                                      42 |
+|  7775 | Atharva  |                                       3 |
+|  7777 | Revati   |                                       4 |
+|  7782 | CLARK    |                                      42 |
+|  7788 | SCOTT    |                                      41 |
+|  7839 | KING     |                                      42 |
+|  7844 | TURNER   |                                      42 |
+|  7876 | ADAMS    |                                      41 |
+|  7900 | JAMES    |                                      42 |
+|  7902 | FORD     |                                      42 |
+|  7934 | MILLER   |                                      42 |
++-------+----------+-----------------------------------------+
+21 rows in set (0.00 sec)
+
+mysql> create function calcexperience(ehiredate date) returns int
+    -> begin
+    ->    declare vexp int;
+    ->    set vexp=floor(datediff(curdate(),ehiredate)/365);
+    ->    return vexp;
+    -> end//
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select empno,ename,hiredate,calcexperience(hiredate)
+    -> from emp;
+    -> //
++-------+----------+------------+--------------------------+
+| empno | ename    | hiredate   | calcexperience(hiredate) |
++-------+----------+------------+--------------------------+
+|    11 | Rajan_A  | 2020-11-11 |                        3 |
+|   122 | Ashwini  | 2022-01-01 |                        2 |
+|   123 | Deepa    | 2022-03-02 |                        2 |
+|   124 | Sangeeta | 2022-03-02 |                        2 |
+|   125 | Kedar    | 2022-03-02 |                        2 |
+|  7369 | SMITH    | 1980-12-17 |                       43 |
+|  7499 | ALLEN    | 1981-02-20 |                       43 |
+|  7521 | WARD     | 1981-02-22 |                       43 |
+|  7566 | JONES    | 1981-04-02 |                       43 |
+|  7654 | MARTIN   | 1981-09-28 |                       42 |
+|  7698 | BLAKE    | 1981-05-01 |                       42 |
+|  7775 | Atharva  | 2021-01-01 |                        3 |
+|  7777 | Revati   | 2020-01-01 |                        4 |
+|  7782 | CLARK    | 1981-06-09 |                       42 |
+|  7788 | SCOTT    | 1982-12-09 |                       41 |
+|  7839 | KING     | 1981-11-17 |                       42 |
+|  7844 | TURNER   | 1981-09-08 |                       42 |
+|  7876 | ADAMS    | 1983-01-12 |                       41 |
+|  7900 | JAMES    | 1981-12-03 |                       42 |
+|  7902 | FORD     | 1981-12-03 |                       42 |
+|  7934 | MILLER   | 1982-01-23 |                       42 |
++-------+----------+------------+--------------------------+
+21 rows in set (0.00 sec)
+
+mysql> delimiter //
+mysql> create function calculatebonus(esal float(9,2),ejob varchar(20))
+    -> returns float
+    -> begin
+    ->   declare vbonus float(9,2);
+    ->   if ejob='CLERK' and esal>2000 then
+    ->      set vbonus=esal*0.10;
+    ->   elseif ejob='SALESMAN' and esal>3000 then
+    ->      set vbonus=esal*0.20;
+    ->   else
+    ->      set vbonus=esal*0.15;
+    ->   end if;
+    ->   return vbonus;
+    -> end//
+Query OK, 0 rows affected, 2 warnings (0.06 sec)
+
+mysql> delimiter ;
+mysql> select empno,ename,sal,job,calculatebonus(sal,job)
+    -> from emp;
++-------+----------+----------+-----------+-------------------------+
+| empno | ename    | sal      | job       | calculatebonus(sal,job) |
++-------+----------+----------+-----------+-------------------------+
+|    11 | Rajan_A  | 40318.95 | designer  |                 6047.84 |
+|   122 | Ashwini  |  5526.07 | Manager   |                  828.91 |
+|   123 | Deepa    | 65776.32 | CLERK     |                 6577.63 |
+|   124 | Sangeeta | 55270.38 | Manager   |                 8290.56 |
+|   125 | Kedar    | 67370.38 | Manager   |                 10105.6 |
+|  7369 | SMITH    |  5724.00 | CLERK     |                   572.4 |
+|  7499 | ALLEN    |  1866.24 | SALESMAN  |                  279.94 |
+|  7521 | WARD     |  1458.00 | SALESMAN  |                   218.7 |
+|  7566 | JONES    |  3599.75 | MANAGER   |                  539.96 |
+|  7654 | MARTIN   |  1458.00 | SALESMAN  |                   218.7 |
+|  7698 | BLAKE    |  3448.50 | MANAGER   |                  517.27 |
+|  7775 | Atharva  | 64942.82 | UIdev     |                 9741.42 |
+|  7777 | Revati   | 53278.82 | design    |                 7991.82 |
+|  7782 | CLARK    |  2964.50 | MANAGER   |                  444.68 |
+|  7788 | SCOTT    |  4687.50 | ANALYST   |                  703.12 |
+|  7839 | KING     |  5832.00 | PRESIDENT |                   874.8 |
+|  7844 | TURNER   |  1749.60 | SALESMAN  |                  262.44 |
+|  7876 | ADAMS    |  1584.00 | CLERK     |                   237.6 |
+|  7900 | JAMES    |  1368.00 | CLERK     |                   205.2 |
+|  7902 | FORD     |  7775.22 | QA        |                 1166.28 |
+|  7934 | MILLER   |  1872.00 | CLERK     |                   280.8 |
++-------+----------+----------+-----------+-------------------------+
+21 rows in set (0.01 sec)
+
+mysql> delimiter //
+mysql> create procedure displaybonus()
+    -> begin
+    -> declare vempno,vfinished int default 0;
+    -> declare vename,vjob varchar(20);
+    -> declare vsal,vbonus float(9,2);
+    -> declare empcur cursor for select empno,ename,job,sal from emp;
+    -> declare continue handler for NOT FOUND set vfinished=1;
+    -> open empcur;
+    -> label1:loop
+    ->   fetch empcur into vempno,vename,vjob,vsal;
+    ->   if vfinished=1 then
+    ->      leave label1;
+    ->   end if;
+    ->   set vbonus=calculatebonus(vsal,vjob);
+    ->   select vempno,vename,vsal,vjob,vbonus;
+    -> end loop;
+    -> close empcur;
+    ->
+    -> end//
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> delimiter ;
+mysql> call displaybonus();
++--------+---------+----------+----------+---------+
+| vempno | vename  | vsal     | vjob     | vbonus  |
++--------+---------+----------+----------+---------+
+|     11 | Rajan_A | 40318.95 | designer | 6047.84 |
++--------+---------+----------+----------+---------+
+1 row in set (0.01 sec)
+
++--------+---------+---------+---------+--------+
+| vempno | vename  | vsal    | vjob    | vbonus |
++--------+---------+---------+---------+--------+
+|    122 | Ashwini | 5526.07 | Manager | 828.91 |
++--------+---------+---------+---------+--------+
+1 row in set (0.01 sec)
+
++--------+--------+----------+-------+---------+
+| vempno | vename | vsal     | vjob  | vbonus  |
++--------+--------+----------+-------+---------+
+|    123 | Deepa  | 65776.32 | CLERK | 6577.63 |
++--------+--------+----------+-------+---------+
+1 row in set (0.02 sec)
+
++--------+----------+----------+---------+---------+
+| vempno | vename   | vsal     | vjob    | vbonus  |
++--------+----------+----------+---------+---------+
+|    124 | Sangeeta | 55270.38 | Manager | 8290.56 |
++--------+----------+----------+---------+---------+
+1 row in set (0.02 sec)
+
++--------+--------+----------+---------+----------+
+| vempno | vename | vsal     | vjob    | vbonus   |
++--------+--------+----------+---------+----------+
+|    125 | Kedar  | 67370.38 | Manager | 10105.56 |
++--------+--------+----------+---------+----------+
+1 row in set (0.04 sec)
+
++--------+--------+---------+-------+--------+
+| vempno | vename | vsal    | vjob  | vbonus |
++--------+--------+---------+-------+--------+
+|   7369 | SMITH  | 5724.00 | CLERK | 572.40 |
++--------+--------+---------+-------+--------+
+1 row in set (0.04 sec)
+
++--------+--------+---------+----------+--------+
+| vempno | vename | vsal    | vjob     | vbonus |
++--------+--------+---------+----------+--------+
+|   7499 | ALLEN  | 1866.24 | SALESMAN | 279.94 |
++--------+--------+---------+----------+--------+
+1 row in set (0.06 sec)
+
++--------+--------+---------+----------+--------+
+| vempno | vename | vsal    | vjob     | vbonus |
++--------+--------+---------+----------+--------+
+|   7521 | WARD   | 1458.00 | SALESMAN | 218.70 |
++--------+--------+---------+----------+--------+
+1 row in set (0.08 sec)
+
++--------+--------+---------+---------+--------+
+| vempno | vename | vsal    | vjob    | vbonus |
++--------+--------+---------+---------+--------+
+|   7566 | JONES  | 3599.75 | MANAGER | 539.96 |
++--------+--------+---------+---------+--------+
+1 row in set (0.09 sec)
+
++--------+--------+---------+----------+--------+
+| vempno | vename | vsal    | vjob     | vbonus |
++--------+--------+---------+----------+--------+
+|   7654 | MARTIN | 1458.00 | SALESMAN | 218.70 |
++--------+--------+---------+----------+--------+
+1 row in set (0.10 sec)
+
++--------+--------+---------+---------+--------+
+| vempno | vename | vsal    | vjob    | vbonus |
++--------+--------+---------+---------+--------+
+|   7698 | BLAKE  | 3448.50 | MANAGER | 517.27 |
++--------+--------+---------+---------+--------+
+1 row in set (0.12 sec)
+
++--------+---------+----------+-------+---------+
+| vempno | vename  | vsal     | vjob  | vbonus  |
++--------+---------+----------+-------+---------+
+|   7775 | Atharva | 64942.82 | UIdev | 9741.42 |
++--------+---------+----------+-------+---------+
+1 row in set (0.13 sec)
+
++--------+--------+----------+--------+---------+
+| vempno | vename | vsal     | vjob   | vbonus  |
++--------+--------+----------+--------+---------+
+|   7777 | Revati | 53278.82 | design | 7991.82 |
++--------+--------+----------+--------+---------+
+1 row in set (0.14 sec)
+
++--------+--------+---------+---------+--------+
+| vempno | vename | vsal    | vjob    | vbonus |
++--------+--------+---------+---------+--------+
+|   7782 | CLARK  | 2964.50 | MANAGER | 444.68 |
++--------+--------+---------+---------+--------+
+1 row in set (0.16 sec)
+
++--------+--------+---------+---------+--------+
+| vempno | vename | vsal    | vjob    | vbonus |
++--------+--------+---------+---------+--------+
+|   7788 | SCOTT  | 4687.50 | ANALYST | 703.12 |
++--------+--------+---------+---------+--------+
+1 row in set (0.17 sec)
+
++--------+--------+---------+-----------+--------+
+| vempno | vename | vsal    | vjob      | vbonus |
++--------+--------+---------+-----------+--------+
+|   7839 | KING   | 5832.00 | PRESIDENT | 874.80 |
++--------+--------+---------+-----------+--------+
+1 row in set (0.18 sec)
+
++--------+--------+---------+----------+--------+
+| vempno | vename | vsal    | vjob     | vbonus |
++--------+--------+---------+----------+--------+
+|   7844 | TURNER | 1749.60 | SALESMAN | 262.44 |
++--------+--------+---------+----------+--------+
+1 row in set (0.21 sec)
+
++--------+--------+---------+-------+--------+
+| vempno | vename | vsal    | vjob  | vbonus |
++--------+--------+---------+-------+--------+
+|   7876 | ADAMS  | 1584.00 | CLERK | 237.60 |
++--------+--------+---------+-------+--------+
+1 row in set (0.23 sec)
+
++--------+--------+---------+-------+--------+
+| vempno | vename | vsal    | vjob  | vbonus |
++--------+--------+---------+-------+--------+
+|   7900 | JAMES  | 1368.00 | CLERK | 205.20 |
++--------+--------+---------+-------+--------+
+1 row in set (0.24 sec)
+
++--------+--------+---------+------+---------+
+| vempno | vename | vsal    | vjob | vbonus  |
++--------+--------+---------+------+---------+
+|   7902 | FORD   | 7775.22 | QA   | 1166.28 |
++--------+--------+---------+------+---------+
+1 row in set (0.26 sec)
+
++--------+--------+---------+-------+--------+
+| vempno | vename | vsal    | vjob  | vbonus |
++--------+--------+---------+-------+--------+
+|   7934 | MILLER | 1872.00 | CLERK | 280.80 |
++--------+--------+---------+-------+--------+
+1 row in set (0.28 sec)
+
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> select * from dept;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     12 | admin      | pune     |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+5 rows in set (0.05 sec)
+
+mysql> desc dept;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | int         | NO   | PRI | NULL    |       |
+| DNAME  | varchar(14) | YES  |     | NULL    |       |
+| LOC    | varchar(13) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into dept values(10,'xxx',pune');
+    '> ;
+    '> //
+    '> ^C
+mysql> insert into dept values(10,'xxx','pune');
+ERROR 1062 (23000): Duplicate entry '10' for key 'dept.PRIMARY'
+mysql> delimiter //
+mysql> create procedure insdeptrec(did int,pdname varchar(20),pdloc varchar(20))
+    -> begin
+    ->    declare continue handler for SQLEXCEPTION select "error occured";
+    ->    insert into dept values(did,pdname,pdloc);
+    ->    select did,pdname,pdloc,"duplicate value not inserted";
+    -> end//
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter ;
+mysql> call insdeptrec(10,'xxxx','yyy');
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.05 sec)
+
++------+--------+-------+------------------------------+
+| did  | pdname | pdloc | duplicate value not inserted |
++------+--------+-------+------------------------------+
+|   10 | xxxx   | yyy   | duplicate value not inserted |
++------+--------+-------+------------------------------+
+1 row in set (0.05 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> drop procedure insdeptrec;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter //
+mysql> create procedure insdeptrec(did int,pdname varchar(20),pdloc varchar(20))
+    -> begin
+    ->    declare exit handler for SQLEXCEPTION select "error occured";
+    ->    insert into dept values(did,pdname,pdloc);
+    ->    select did,pdname,pdloc,"duplicate value not inserted";
+    -> end//
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter ;
+mysql> call delimiter //
+    -> create procedure insdeptrec(did int,pdname varchar(20),pdloc varchar(20))
+    -> begin
+    ->    declare exit handler for SQLEXCEPTION select "error occured";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '//
+create procedure insdeptrec(did int,pdname varchar(20),pdloc varchar(20))
+beg' at line 1
+mysql>    insert into dept values(did,pdname,pdloc);
+ERROR 1054 (42S22): Unknown column 'did' in 'field list'
+mysql>    select did,pdname,pdloc,"duplicate value not inserted";
+ERROR 1054 (42S22): Unknown column 'did' in 'field list'
+mysql> end//
+    -> delimiter ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'end//
+delimiter' at line 1
+mysql> call insdeptrec(10,'xxx','yyy');
++---------------+
+| error occured |
++---------------+
+| error occured |
++---------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show procedure status where db='iacsd0324_dbda'
+    -> ;
++----------------+------------------+-----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| Db             | Name             | Type      | Definer        | Modified            | Created             | Security_type | Comment | character_set_client | collation_connection | Database Collation |
++----------------+------------------+-----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| iacsd0324_dbda | displayallemp    | PROCEDURE | root@localhost | 2024-03-30 20:54:14 | 2024-03-30 20:54:14 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | displaynumloop   | PROCEDURE | root@localhost | 2024-03-30 19:44:05 | 2024-03-30 19:44:05 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | displaynumrepeat | PROCEDURE | root@localhost | 2024-03-30 19:36:02 | 2024-03-30 19:36:02 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | displaynumwhile  | PROCEDURE | root@localhost | 2024-03-30 19:28:55 | 2024-03-30 19:28:55 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | finddata         | PROCEDURE | root@localhost | 2024-03-30 18:27:49 | 2024-03-30 18:27:49 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | getempdetails    | PROCEDURE | root@localhost | 2024-03-30 18:39:50 | 2024-03-30 18:39:50 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | getRemark        | PROCEDURE | root@localhost | 2024-03-30 18:56:34 | 2024-03-30 18:56:34 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | getremark1       | PROCEDURE | root@localhost | 2024-03-30 19:13:53 | 2024-03-30 19:13:53 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | increasecnt      | PROCEDURE | root@localhost | 2024-03-30 18:41:32 | 2024-03-30 18:41:32 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324_dbda | insertdept       | PROCEDURE | root@localhost | 2024-03-30 18:11:32 | 2024-03-30 18:11:32 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++----------------+------------------+-----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+10 rows in set (0.02 sec)
+
+mysql>
+mysql> to see the definition of the procedure
+    -> select routine_defination
+    -> from information_schema.Routines
+    -> where specific_name=’procedure name’;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to see the definition of the procedure
+select routine_defination
+from informatio' at line 1
+mysql> select routine_defination
+    -> from information_schema.Routines
+    -> where specific_name='getremark1'
+    -> ;
+ERROR 1054 (42S22): Unknown column 'routine_defination' in 'field list'
+mysql> desc information_schema.routines;
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-----+---------+-------+
+| Field                    | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Null | Key | Default | Extra |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-----+---------+-------+
+| SPECIFIC_NAME            | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | NO   |     | NULL    |       |
+| ROUTINE_CATALOG          | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |       |
+| ROUTINE_SCHEMA           | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |       |
+| ROUTINE_NAME             | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | NO   |     | NULL    |       |
+| ROUTINE_TYPE             | enum('FUNCTION','PROCEDURE')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | NO   |     | NULL    |       |
+| DATA_TYPE                | longtext                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | YES  |     | NULL    |       |
+| CHARACTER_MAXIMUM_LENGTH | bigint                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | YES  |     | NULL    |       |
+| CHARACTER_OCTET_LENGTH   | bigint                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | YES  |     | NULL    |       |
+| NUMERIC_PRECISION        | int unsigned                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | YES  |     | NULL    |       |
+| NUMERIC_SCALE            | int unsigned                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | YES  |     | NULL    |       |
+| DATETIME_PRECISION       | int unsigned                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | YES  |     | NULL    |       |
+| CHARACTER_SET_NAME       | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |       |
+| COLLATION_NAME           | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |       |
+| DTD_IDENTIFIER           | longtext                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | YES  |     | NULL    |       |
+| ROUTINE_BODY             | varchar(3)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | NO   |     |         |       |
+| ROUTINE_DEFINITION       | longtext                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | YES  |     | NULL    |       |
+| EXTERNAL_NAME            | binary(0)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | YES  |     | NULL    |       |
+| EXTERNAL_LANGUAGE        | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | NO   |     | SQL     |       |
+| PARAMETER_STYLE          | varchar(3)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | NO   |     |         |       |
+| IS_DETERMINISTIC         | varchar(3)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | NO   |     |         |       |
+| SQL_DATA_ACCESS          | enum('CONTAINS SQL','NO SQL','READS SQL DATA','MODIFIES SQL DATA')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | NO   |     | NULL    |       |
+| SQL_PATH                 | binary(0)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | YES  |     | NULL    |       |
+| SECURITY_TYPE            | enum('DEFAULT','INVOKER','DEFINER')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | NO   |     | NULL    |       |
+| CREATED                  | timestamp                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | NO   |     | NULL    |       |
+| LAST_ALTERED             | timestamp                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | NO   |     | NULL    |       |
+| SQL_MODE                 | set('REAL_AS_FLOAT','PIPES_AS_CONCAT','ANSI_QUOTES','IGNORE_SPACE','NOT_USED','ONLY_FULL_GROUP_BY','NO_UNSIGNED_SUBTRACTION','NO_DIR_IN_CREATE','NOT_USED_9','NOT_USED_10','NOT_USED_11','NOT_USED_12','NOT_USED_13','NOT_USED_14','NOT_USED_15','NOT_USED_16','NOT_USED_17','NOT_USED_18','ANSI','NO_AUTO_VALUE_ON_ZERO','NO_BACKSLASH_ESCAPES','STRICT_TRANS_TABLES','STRICT_ALL_TABLES','NO_ZERO_IN_DATE','NO_ZERO_DATE','ALLOW_INVALID_DATES','ERROR_FOR_DIVISION_BY_ZERO','TRADITIONAL','NOT_USED_29','HIGH_NOT_PRECEDENCE','NO_ENGINE_SUBSTITUTION','PAD_CHAR_TO_FULL_LENGTH','TIME_TRUNCATE_FRACTIONAL') | NO   |     | NULL    |       |
+| ROUTINE_COMMENT          | text                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | NO   |     | NULL    |       |
+| DEFINER                  | varchar(288)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | NO   |     | NULL    |       |
+| CHARACTER_SET_CLIENT     | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | NO   |     | NULL    |       |
+| COLLATION_CONNECTION     | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | NO   |     | NULL    |       |
+| DATABASE_COLLATION       | varchar(64)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | NO   |     | NULL    |       |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-----+---------+-------+
+31 rows in set (0.00 sec)
+
+mysql> select ROUTINE_DEFINITION
+    -> from information_schema.Routines
+    -> where specific_name='getremark1'
+    -> ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ROUTINE_DEFINITION                                                                                                                                                                                                                                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| begin
+    declare netsal float(9,2) default 0;
+select sal+ifnull(comm,0) into netsal
+from emp
+where empno=eid;
+if netsal <  1000 then
+    set remark='less';
+elseif netsal < 2000 then
+set remark='ok ';
+elseif netsal <3000 then
+set remark='good';
+else
+    set remark='better';
+end if;
+select netsal,remark;
+end |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> show function status where db='iacsd0324_dbda';
+Empty set (0.00 sec)
+
+mysql> show function status where db='iacsd0324';
++-----------+----------------+----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| Db        | Name           | Type     | Definer        | Modified            | Created             | Security_type | Comment | character_set_client | collation_connection | Database Collation |
++-----------+----------------+----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+| iacsd0324 | calcexperience | FUNCTION | root@localhost | 2024-03-31 12:23:29 | 2024-03-31 12:23:29 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
+| iacsd0324 | calculatebonus | FUNCTION | root@localhost | 2024-03-31 12:51:39 | 2024-03-31 12:51:39 | DEFINER       |         | cp850                | cp850_general_ci     | utf8mb4_0900_ai_ci |
++-----------+----------------+----------+----------------+---------------------+---------------------+---------------+---------+----------------------+----------------------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql>
