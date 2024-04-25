@@ -5,9 +5,13 @@ public class BankAccount {
 	private String accountHolderName;
 	private double balance;
 	
-	public BankAccount(int accountNumber,String accountHolderName,double balance){
+	public BankAccount(int accountNumber,String accountHolderName,double balance) throws Exception{
 //			accountNumber++;
 			this.accountNumber=accountNumber;
+			if(isDigit(accountHolderName)) {
+				throw new BankException("Please enter character only!!");
+				//break;
+			}
 			this.accountHolderName=accountHolderName;
 			this.balance = balance;
 		}
@@ -15,7 +19,9 @@ public class BankAccount {
 //		public double checkBalance() {
 //			return this.balance;
 //		}
-	
+		public static boolean isDigit(String accountHolderName) {
+			return true;
+		}
 		public String toString() {
 			return "Account number: "+accountNumber+" Account holder name: "+this.accountHolderName+" Balance: "+this.balance;
 		}
