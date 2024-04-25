@@ -9,7 +9,7 @@ public class BankUtility {
 	int no;
 	String name;
 	double balance;
-	public void acceptCustomerDetails(BankAccount[] ba) {
+	public void acceptCustomerDetails(BankAccount[] ba) throws Exception{
 		Scanner sc = new Scanner(System.in);
 		for(int i=0;i<ba.length;i++) {
 			
