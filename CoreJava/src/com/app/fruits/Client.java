@@ -9,20 +9,18 @@ public class Client {
 		System.out.println("Enter size: ");
 		int s=sc.nextInt();
 		Fruit[] f = new Fruit[s];
-//		Fruit fr=new Mango()
-//		Fruit fresh = new Fruit();
 		FruitUtility fu = new FruitUtility();
 		
 		
 		while(true) {
 			System.out.println();
 //			System.out.println("\n1.Mango\n2.Orange\n3.Apple\n");
-			System.out.println("\n0.Exit\n1.Add fruit\n2.Display details\n3.Mark Stale\n4.Mark Sour");
+			System.out.println("\n0.Exit\n1.Add fruit\n2.Display details\n3.Mark Stale\n4.Mark Sour\n5.Call specialised methods");
 			System.out.println("Enter choice: ");
 			int choice = sc.nextInt();
 				switch(choice) {
 				case 1:
-						System.out.println("SELECT 1.Fresh\n2.Stale");
+						System.out.println("SELECT 1.Fresh\n\t2.Stale");
 						System.out.println("Enter your choice: ");
 						int ch=sc.nextInt();
 						
@@ -62,13 +60,18 @@ public class Client {
 						else if(f[j] instanceof Orange) {
 							Orange o =(Orange) f[j];
 							taste = o.taste();	
+//							System.out.println(taste);
+							
 						}
 						else if(f[j] instanceof Apple) {
 							Apple a =(Apple) f[j];
 							taste = a.taste();	
 						}
+						for(int k=0; k<f.length; k++) {
 						if(taste.equals("sour")) {
-							IsFresh fr = IsFresh.STALE;
+							//IsFresh fr = IsFresh.STALE;
+							f[k].setFresh(IsFresh.STALE);
+						}
 						}
 					}
 					break;
