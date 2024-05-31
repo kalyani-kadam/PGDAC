@@ -1,0 +1,172 @@
+Exception handling
+
+ 
+Refer :"day1-data\day1_help\exception handling\readme.txt" 
+
+What is Exception ? : Run time error , detected by JVM (currently by main thread)
+
+Why Exception handling ?
+1. To allow the continuation of java app , even in case of run time errors.
+2. Reduces the need for checking validation of ret types.
+3. Allows a Separation between business logic n error handling
+
+
+Flow , inheritance hierarchy , checked vs un checked excs
+keywords : try, catch , finally , throw , throws , try-with-resources
+
+checked vs un checked exceptions
+who differentiates between the two ? javac
+JVM does not !
+Meaning --If there is un handled(i.e no try-catch) checked or un checked exc -- JVM aborts the code
+
+Javac forces handling of the checked exceptions n does not force handling of the un checked excs.
+
+How to satisfy javac for checked excs ?
+1. Add try-catch block
+(actual handling of the exception --after that code will continue in normal manner)
+OR
+2.use throws keyword 
+To tell javac current method IS NOT handling the exception , BUT it's caller will.
+
+throws --keyword in java , used for delegating exc handling to the caller.
+
+When is using throws keyword mandatory ?
+Ans -- For un handled n checked exceptions its mandatory.
+It's optional BUT recommended even for un handled , un checked excs.
+
+syntax of throws keyword 
+It appears in method declaration
+eg : method declaration throws exc1 ,exc2,...
+{ method definition }
+
+To find out more details about the run time error
+Methods of java.lang.Throwable
+1. public String getMessage() -rets the error message
+
+2. public String toString() - rets name of exc class + error message
+
+3. public void printStackTrace() --Prints on the console 
+ name of exc class ,  error message , location details
+
+
+eg : Fruit f=new Mango(...);//up casting
+ f.taste();//JVM calls taste() : Mango
+f=new Orange(...);
+f.taste(); //JVM calls taste() : Orange
+f.juice();//javac err ! can't find juice() in Fruit !
+((Orange)f).juice();
+f=new Banana(...);
+if(f instanceof Orange) 
+ ((Orange)f).juice();//run time err : java.lang.ClassCastException --Banana can't be cast to Orange !!!!!
+else 
+sop("not a juicy fruit!!!!!");
+
+
+About "throw" -
+Keyword in java to raise the exception.
+JVM uses it to raise -- built in excs (eg --NullPOinterExc, NumberFormatExc , IOExc,FileNotFoundExc, SQLException....)
+AND
+Programmer uses it to raise custom exceptions
+syntax - throw Throwable instance;
+eg : JVM -- throw new ArithmeticException("div by 0");
+Prog -- throw new AccountOverdrawnException(" min bal condition....");
+
+About "finally"
+--Keyword in exception handling , to represent a block , which gets executed always(i.e in the presence as well as absence of the exception) except in case of terminating the app. (eg -System.exit(0))
+syntax --
+1. try{ ...} catch (Exception e) {..} finally {...}
+2. try{ ...} catch (AE e) {..} finally {...}
+3. try {...} finally {..}
+
+try-with-resources
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Custom exceptions
+Objective : Validate speed of running vehicle on a highway
+min speed : 40
+max speed : 80
+
+
+In case of speed outside the range --Prog will have to detect the err --create instance of user defined exc class --explicitly throw custom exc to the code. The alteration in flow will be managed by JVM.
+
+
+Steps
+1.Create custom exception class : extends Throwable/Error/Exception/RuntimeExc....
+eg : public class SpeedOutOfRangeException extends Exception{}
+1.1  Add parameterized constr : to init err mesg
+
+2. Create a separate class  eg :  ValidationUtils --
+add a static method for validation of the speed
+
+3. Create Tester : UI --scanner --accept the speed n simply call validateSpeed of the SpeedUtils  class
+-------------------------
+
+4. String Handling
+4.1 Immutability of strings
+4.2 == vs equals
+4.3 literal vs non literal string
+4.4 API
+1. String class API
+
+2. StringBuilder API
+
+5.Date Time Handling (refer to : readme_strings_date_varargs.txt)
+
+java.util.Date : represents Date n time both , till precision msec.
+Constrs : 
+Date() : Creates date class instance : current date n time 
+Date(long msec) : Creates date class instance : that represents date n time , of msecs elapsed after Epoch(1st Jan 1970)
+Methods : toString , before ,after,compareTo,equals
+eg : d1.compareTo(d2) :  -1 => d1 before d2
+0 => d1.equals (d2)
+1 => d1 after d2
+------------------------------------
+Case study : Showroom management system.
+
+Objective : Accept vehicle details : chasisNo(string) : unique: PK, color(string) , price(double) , manufactureDate(Date)
+
+What is a relationship between Vehicle n chasisNo(string) : unique, color(string) , price(double) , manufactureDate(Date) ? HAS-A
+
+How will you accept manufactureDate from user ?
+
+
+Steps
+1. Create instance of a class : java.text.SimpleDateFormat
+
+2. Parsing (string --> Date) API 
+
+3. Formatting API (Date --> string) 
+
+
+var-args
+refer to :  readme_strings_date_varargs.txt
+
