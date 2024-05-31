@@ -1,0 +1,58 @@
+Revise
+Exception Handling 
+Assignment status ????????????
+try-with-resources
+Custom exceptions
+Strings
+Date Time Handling
+
+1. Objective :
+Check the speed of vehicle on a freeway
+Accept the speed using Scanner : can be speed too low(exc) or too high(exc) or in range
+min speed -- 40
+max speed -- 80
+
+2. String handling again
+2.1 immutability of strings
+2.2 == vs equals
+== implies reference equality.
+Regarding equals ?
+It's a method from java.lang.Object class
+public boolean equals(Object anotherObject)
+this => invoker object ref.
+arg => another obj ref.
+It rets true iff 2 refs(this n arg) are referring to the SAME instance
+=> reference equality.
+o.w rets false
+
+java.lang.String class -- has overridden the inherited equals method to replace ref equality by content equality (ie. char seq equality in case sensitive manner)
+
+
+2.3 literal vs non literal strings
+2.4 String n StringBuilder API
+java.lang.StringBuilder -- class to represent mutable seq of chars.
+It has public int length() :returns  no of chars in a string builder
+public int capacity() : return current capacity of the string builder
+It is inherently thread un safe(un synchronized)
+Offers faster perfomance than StringBuffer.
+Constructors -
+1. StringBuilder() -- Creates empty string builder , with length=0, init capa =16 chars
+2. StringBuilder(int initCapa) -- Creates empty string builder , with length=0, init capa =initCapa
+
+3. StringBuilder(String str) -- Create non empty (populated) SB , with 
+len : str.lenth  capa : str.lenth+ 16 chars
+
+Methods
+append , insert , delete
+
+3. 
+3.1 Legacy(older) Date Time handling API till Java SE 7 (Pending !!!)
+java.util.Date
+java.text.SimpleDateFormat
+
+
+
+
+
+
+
