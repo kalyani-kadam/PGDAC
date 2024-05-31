@@ -1,0 +1,119 @@
+How to override equals method in the Customer class ?
+PK : email n dob
+@Override
+public boolean equals(Object o)
+{
+ sop("in cust equals");
+ if(o instanceof Customer) {
+ Customer c=(Customer)o;
+  return this.email.equals(c.email) && this.dob.equals(c.dob);
+ } 
+  return false;
+}
+
+chekc for dups
+public static void checkForDup(String email,LocalDate dob,Customer[] customers) throws CMSExc
+{
+   Customer cust=new Customer(email,dob);
+   for(Customer c : customers)
+   if(c != null && c.equals(cust))
+    throw new CMSExc("dup found!!!!");
+
+}
+Today's topics -
+Revision of -
+Generics 
+New Topics -
+Collection Framework Overview
+List Handling
+API
+Practice API with Integer List
+Apply it to  Banking Case study based upon ArrayList (CRUD ,searching , sorting) 
+sorting : PENDING !
+
+Revise 
+1. Why generics ?
+To get flexibility along with type safety , where type un safe operations will be detected as javac errors.
+
+1.1 To access the data , explicit downcasting IS NOT required
+1.2 No chance of ClassCastException
+
+eg : Holder<Customer> customerHolder=new Holder<>("abcdef");//javac err 
+Holder<Customer> customerHolder=new Holder<>(12345);//javac err
+Holder<Customer> customerHolder=new Holder<> (new Customer(...));//no err
+Customer cust=customerHolder.getRef();//no err
+
+Holder<BankAccount> acctHolder=new Holder<>("abcdef");//javac err
+acctHolder=new Holder<>(new SavingAccount(....));//no err!
+
+2.Collection Framework Overview
+Refer to slides n diagram
+eg : c1 - 1,2,3,4,5
+c2 - 2,3
+c1.retainAll(c2);
+
+
+
+
+3. List Features -
+
+
+3.1 List API
+
+3.2 List implementation classes - ArrayList
+
+3.3 Constructors n methods
+
+3.4 Integer List
+To understand basic List operations
+
+3.5 Banking case study using Collection framework (ArrayList)
+
+Fetaures(Services)
+1. Open bank account
+2. Deposit
+3. Withdraw
+4. Funds transfer
+5. Display All accounts (for bank manager role)
+6. Close account
+
+For testing any of the above B.L , what is it you will have to do first ?
+Every time you start the application , you will have to add bank accounts first , right ?
+So is there any easy way to jump in to testing directly ?
+Yes 
+Add a method to return list of accounts to the caller.
+eg  : BankingUtils.populateList	
+
+
+Sample data -
+BankAccount a1 = new BankAccount(101, "a1", "b1", AcType.SAVINGS, LocalDate.parse("1990-12-17"),
+				LocalDate.parse("2011-12-17"), 15000);
+BankAccount a2 = new BankAccount(10, "a2", "b2", AcType.CURRENT, LocalDate.parse("1991-11-18"),
+				LocalDate.parse("2012-12-17"), 8000);
+BankAccount a3 = new BankAccount(45, "a3", "b3", AcType.SAVINGS, LocalDate.parse("1993-12-17"),
+				LocalDate.parse("2013-12-17"), 18000);
+BankAccount a4 = new BankAccount(56, "a4", "b4", AcType.FD, LocalDate.parse("1992-01-17"),
+				LocalDate.parse("2020-12-17"), 150000);
+BankAccount a5 = new BankAccount(25, "a5", "b5", AcType.LOAN, LocalDate.parse("1991-10-27"),
+				LocalDate.parse("2019-12-17"), 25000);
+BankAccount a6 = new BankAccount(40, "a6", "b6", AcType.SAVINGS, LocalDate.parse("1994-06-15"),
+				LocalDate.parse("2018-12-17"), 23000);
+BankAccount a7 = new BankAccount(60, "a7", "b7", AcType.SAVINGS, LocalDate.parse("1991-03-17"),
+				LocalDate.parse("2018-12-11"), 35000);
+
+Sorting in Java (pending !)
+
+4. Add more options in the tester  for sorting account details
+4.1 Sort the accounts as per asc order of account nos
+4.2 Sort the accounts as per asc order of balance
+4.3 Sort the accounts as per asc order of DoB n desc order of balance
+(Lab work)
+
+
+
+
+
+
+
+
+

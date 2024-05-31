@@ -1,0 +1,130 @@
+Today's Topics
+
+Revise List API
+Sorting in Java
+Iterator , ListIterator , exceptions associated with them 
+ArrayList vs Vector 
+ArrayList vs LinkedList
+Enter Sets (Pending !)
+
+1. Solve -
+Given : Fruit class is not abstract.
+What will happen ?
+ArrayList<Fruit> fruits=new AL<>();
+fruits.add(new Mango());
+fruits.add(new Fruit());
+fruits.add(new Apple());
+fruits.add(new Alphonso());
+fruits.add(new Date());//javac err
+fruits.add(new Emp(...));//javac err
+
+2. Solve :
+ArrayList<Fruit> fruits=new AL<>(collection);
+Choose correct options for the collection
+1. HashSet<Mango>
+2. LinkedList<Apple>
+3. TreeSet<Alphonso>
+4. HashMap<String,Fruit>
+5. ArrayList<Cherry>
+6. ArrayList<Emp>
+
+Ans : 1,2,3,5
+
+2. Sorting in Java 
+
+2. Add more options for sorting account details
+2.1 Sort the accounts as per asc order of account nos
+Natural ordering note : 
+Typically N.O criteria is consistent with equals method
+(eg : If ref1.equals(ref2) : true , then typically ensure : 
+ref1.compareTo(ref2) : 0)
+
+2.2 Sort the accounts as per asc order of balance
+2.3 Sort the accounts as per asc order of DoB of the bank customer
+2.4 Sort the accounts as per asc order of DoB of the bank customer n desc order of balance
+
+2.5 Sort the accounts as per asc order of DoB of the bank customer , asc order of balance n a/c type : lab work !
+
+
+
+3. Iterators in Java
+3.1 Attach Iterator to Integer List
+3.2 Any exceptions ? (Popular questions!)
+3.3 Any limitations ?
+3.4 Enter ListIterator
+
+4. Solve
+4.1 String[] names= {"one","two","three","four","five"};
+ArrayList<String> strings=new ArrayList<>();
+for(String s : names)
+ strings.add(s); 
+for(int i=0;i<strings.size();i++)
+ strings.remove(i);
+System.out.println(strings); 
+
+4.2 Try to remove the strings using for-each
+--will throw ConcurrentModificationException
+
+4.3 Point - Any time to remove the elems from the Collection(List n Set implementation classes) , BEST option : use Iterator's remove.
+ONLY till you enter - functional programming !
+
+
+4.4 ListIterator API
+public boolean hasPrevious()
+public E previous();
+public int previousIndex()
+public int nextIndex()
+public void add(E element)
+
+
+Objective : Display account list in the reverse order, using ListIterator
+eg : List<BankAccount> accounts=new LinkedList<>();
+accounts.add(a1) .... a100;
+ListIterator<BankAccount> listItr=accounts.listIterator(account.size());
+while(listItr.hasPrevious())
+ sop(listItr.previous());
+
+5. ArrayList vs Vector
+List implementation classes, backed up by resizable array
+add/remove from anywhere -- O(n) => variable time performance
+get/set , size --O(1) => constant time performance
+
+Differences 
+ 1. Vector : legacy class , inherently thread safe .(synchronized)
+ Wherever possible , use ArrayList, in place of Vector , for faster perfomance.
+2. In case of ArrayList , JVM chooses it's own capa increment(typically new capa=curnt capa*1.5)
+In Vector --
+Vector(int initCapa,int capaIncrement) => prog can specify capa Increment.
+
+6. LinkedList
+Refer - "day6_help\linked_list"
+
+ArrayList vs LinkedList
+1.AL implements RandomAccess i/f , LinkedList does not !
+For get/set -- AL : O(1)
+LL -- O(n)
+2. Data structure
+AL -- resizable array
+LL -- doubly linked chain of nodes (prev,elem,next)
+3. Time complexity for add/remove operations
+AL - O(n)
+LinkedList -- O(1) --for insert / delete for head n tail position
+Faster perfomance than  AL for any other position.
+
+4. Memory requirements 
+LinkedList will need more memory than AL , to store prev, elem, next .
+
+-------------------Pending----------------------
+
+7. Sets Overview 
+Refer - "day12_help\sets handling"
+Inheritance Hierarchy
+Different Types of Set implementation classes
+HashSet<E> , LinkedHashSet<E> , TreeSet<E>
+Hashing algorithm
+
+
+
+
+
+
