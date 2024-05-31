@@ -1,0 +1,33 @@
+Revise
+1. String handling using code samples
+2. Wrappers
+New topics
+Date time handling (Legacy)
+Date time handling (Modern)
+Start with Banking case study.
+
+
+Is Java pure OOP language ? NO
+Can Object type of a reference , refer to ANY type(primitive n ref types) in Java ?
+YES
+eg : Object o="hello";//up casting
+o=new Emp(.....);
+o=100;//auto boxing --> up casting
+
+New topics
+Date time handling (Legacy)
+eg : d1, d2 : Date 
+d1.compareTo(d2) : -1 (if d1 is before d2)
+0 (d1.equals(d2) : true)
+1 : d1.after(d2) : true
+
+String class API
+eg : s1.compareTo(s2)
+Rets < 0 : if s1 's Unicode < s2 's Unicode value
+Rets 0 : s1.equals(s2) : true
+Rets > 0 : if s1 's Unicode > s2 's Unicode value
+This method is used for sorting strings in Java.
+
+Date time handling (Modern)
+Start with Banking case study.
+
