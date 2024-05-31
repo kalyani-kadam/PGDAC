@@ -1,0 +1,63 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   AcType.java
+
+package com.app.banking;
+
+
+public final class AcType extends Enum
+{
+
+    private AcType(String s, int i, double minBalance)
+    {
+        super(s, i);
+        this.minBalance = minBalance;
+    }
+
+    public String toString()
+    {
+        return (new StringBuilder(String.valueOf(name()))).append(" : ").append(minBalance).toString();
+    }
+
+    public double getMinBalance()
+    {
+        return minBalance;
+    }
+
+    public static AcType[] values()
+    {
+        AcType aactype[];
+        int i;
+        AcType aactype1[];
+        System.arraycopy(aactype = ENUM$VALUES, 0, aactype1 = new AcType[i = aactype.length], 0, i);
+        return aactype1;
+    }
+
+    public static AcType valueOf(String s)
+    {
+        return (AcType)Enum.valueOf(com/app/banking/AcType, s);
+    }
+
+    public static final AcType SAVINGS;
+    public static final AcType CURRENT;
+    public static final AcType FD;
+    public static final AcType LOAN;
+    public static final AcType DMAT;
+    public static final AcType NRE;
+    private double minBalance;
+    private static final AcType ENUM$VALUES[];
+
+    static 
+    {
+        SAVINGS = new AcType("SAVINGS", 0, 10000D);
+        CURRENT = new AcType("CURRENT", 1, 5000D);
+        FD = new AcType("FD", 2, 50000D);
+        LOAN = new AcType("LOAN", 3, 25000D);
+        DMAT = new AcType("DMAT", 4, 40000D);
+        NRE = new AcType("NRE", 5, 150000D);
+        ENUM$VALUES = (new AcType[] {
+            SAVINGS, CURRENT, FD, LOAN, DMAT, NRE
+        });
+    }
+}
