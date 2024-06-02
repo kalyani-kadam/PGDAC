@@ -1,0 +1,332 @@
+Generics Revision
+Java 8 New Features 
+Java 8 Functional streams
+
+1. Solve : 
+In variance 
+List<Vehicle> workshop = new ArrayList<>();
+workshop.add(new Car());
+workshop.add(new Bike());
+workshop.add(new Bus());
+Vehicle firstVehicle =workshop.get(0);
+
+List<Car> carWorkshop = new ArrayList<>();
+workshop = cars;   //javac err
+Why ?      Due to in variant type of the collection
+Even though Car IS A Vehicle  , List<Car> IS NOT A  List<Vehicle>
+List<Vehicle> IS NOT A List<Car>
+
+
+
+What will happen ?  javac error !
+
+2. Is there any way to add the flexibility ?
+? - un bounded wild card
+Represents ANY type (can be replaced by ANY Type)
+eg : Collections class's shuffle
+
+3. Bounded wild cards
+eg : ? extends Fruit => Fruit or it's sub type
+extends : Collection acts like a Producer(=supplies data)
+As a user : you will use this collection to get the elements
+The type to retrieve : Fruit
+eg : Method argument for tasting fruits : List<? extends Fruit>
+public void tasteAllFruits(List<? extends Fruit> basket)
+{
+   for(Fruit f : basket)
+    f.taste();
+//basket.add(......);
+
+}
+What all will be legal args to invoke the method
+AL/LL/Vector 
+Fruit / Orange/Apple/Mango/Alphonso
+
+What all you will be able to add to the above list ? : 
+Object
+Fruit 
+Mango
+Alphonso
+Orange 
+null : legal
+
+Refer to ArrayList 's addAll method
+eg : public void addAll(Collection<? extends E> collection)
+E : Fruit
+Meaning : You can add (append) all the elements (ref) from the specified Collection(List or Set imple classes) of the generic type --Fruit or it's sub type  , to this ArrayList<Fruit>
+
+This arg - Collection<? extends E> : is acting as the Producer
+
+Refer to Collections' addAll method
+public static <T> boolean addAll(Collection<? super T> collection, T... elements)
+T : Orange
+Meaning --This method adds Orange or it's sub type(eg : Mandarin / NagpurOrange) to ANY Collection(AL/LL/Vector OR HS/LHS/TS) of the type Fruit or it's super type
+What are the legal types of the arg ?
+1. AL<Mango>
+2. HS<Object>
+3. TS<Orange>
+4. Vector<Mandarin>
+5. LL<Fruit>
+
+Ans : 2 , 3 , 5
+
+PECS => Producer (ie. you will access the elems /get) :  extends
+Consumer(i.e you want to add elems) : super
+
+eg : ? extends Comparable => Comparable or it's sub type
+It actually means : a class that implements Comparable
+(no implements keyword in the generics)
+
+eg : T extends Number & Comparable & Serializable
+=> T must be a sub class of the Number n must imple. Comparable i/f n Serializable i/f
+(eg of multiple bounds)
+
+
+eg : Ctor of ArrayList<E> 
+ArrayList(Collection<? extends E> coll)
+E : Emp
+Meaning :
+
+
+4. Solve -
+AL<? extends Emp> list = ????
+What all are legal options of RHS ?
+1. AL<Emp> : 
+2. AL<Mgr>
+3. AL<Worker>
+4. AL <SalesMgr>
+5. AL <Object>
+6. AL<Fruit>
+7. AL<Vehicle>
+Ans :
+
+5. 
+
+AL<? super Mgr> list = ????
+What all are legal options of RHS ?
+1. AL<Emp> : 
+2. AL<Mgr>
+3. AL<Worker>
+4. AL <SalesMgr>
+5. AL <Object>
+6. AL<Fruit>
+7. AL<Vehicle>
+Ans : 
+
+
+6. 
+Enter Functional programming in Java 
+
+Refer to "java8_new_features.txt"
+default methods in the interface keyword
+static methods in the interface keyword
+Functional interface
+Lambda expression
+
+
+1. Create your own functional interface n use it in lambda expression
+
+eg : Perform ANY arithmetic operation on 2 double values & return the result
+eg --add/multiply/subtract/divide....  ANY such operation !
+
+
+1.1 Create i/f : SAM => Functional i/f
+eg : Computable 
+
+1.2 How to make use of this interface ?
+In traditional/conventional manner ?
+
+1.3 Create a Tester n use it.
+Operations to perform : add/multiply/subtract/divide ....
+
+
+Regarding FP -
+Earlier programming paradigm ,where programmer has to supply ENTIRE details consisting of "WHAT" n "HOW" , is called as imperative style.
+
+Modern approach is declarative style or functional programming style
+
+OOP uses imperative style of programming (where you will have to specify what's to be done & how --both) .
+FP uses declarative style of programming (where you will just have to specify what's to be done )
+
+What is a functional programming  paradigm ?
+A language where below features are supported.
+
+Functions are treated as a first class citizens.
+Meaning :  You can 
+1.1  define anonymous functions
+1.2  assign a function to a variable (function literal)
+1.3  pass function as a parameter
+1.4  return function as a return value
+
+Why FP ?
+
+1. To write more readable , maintainable , clean & concise code.
+2. To use Stream APIs easily n effectively.
+3. To enable parallel processing 
+
+eg : Objective 
+Find out the average salary of emp from the specified dept.
+
+How will you do it in imperative manner? 
+eg : Suppose you have a populated ArrayList of emps : l1: AL<Emp>
+sop("Enter dept name");
+String dept=sc.next();
+double total=0;
+int num=0;
+for(Emp e : l1)
+  if(e.getDept().equals(dept)) {
+   total += e.getSal();
+   num++;
+  }
+sop(total/num);
+
+
+
+Vs
+How to do it in declarative style ?
+eg : 
+l1.stream().filter(e->e.getDept().equals(dept)).mapToDouble(Emp::getSal).average().getAsDouble();
+
+
+Explore Existing higher order functions/methods
+
+
+
+Solve :  Create immutable List of double values , display the same
+List<Double> doubles=List.of(1.0,2.7,3.8,45.9);
+for(double d : doubles)
+  sop(d);
+OR
+API : 
+Iterable<T> i/f method
+Higher order method
+public default void forEach(Consumer<? super T> action)
+Desc - This method will invoke specified action on all elems of the Iterable.
+
+Is Consumer a func i/f ? YES (why SAM : accept)
+java.util.function.Consumer<T>
+SAM : 
+public void accept(T o)
+
+
+2. Map i/f method(higher order)
+public default void forEach(BiConsumer<? extends K,? extends V> consumer)
+
+Desc - This method will invoke specified action on all entries of the Map.
+
+Is BiConsumer a func i/f ? YES (why SAM : accept)
+java.util.function.BiConsumer<T,U>
+SAM : 
+public void accept(T o1,U o2)
+
+Objective : Display product id n product name n price from the product map
+(using functional prog )
+eg : productMap.forEach((k,v) ->sop(k+" "+v.getName()+" "+v.getPrice()));
+
+1.
+Display all products (from a product list)
+API :  Iterable : forEach 
+
+
+2. 
+Remove all the products from the list  of a specific category
+i/p : category
+API of Collection i/f
+public default boolean removeIf(Predicate<? super T> filter)
+Removes all the elems from underlying collection , if it matches the filtering condition
+
+java.util.function.Predicate : func i/f
+SAM -- public boolean test(T o)
+eg : Category chosenCategory=....
+productList.removeIf(p -> p.getCategory()==chosenCategory);
+
+OR 
+Iterator<Product> itr=productList.iterator();
+while(itr.hasNext())
+{
+ if(itr.next().getCategory()==chosenCategory)
+  itr.remove();
+}
+
+3. 
+Remove all the products from the map  of a specific category
+i/p : category
+
+4. Sort the products in the list as per : manufacture date n display the sorted list
+(Using FP)
+eg : 
+String s1="hello";
+int a=12345;
+//func literal = Assigning anonymous function definition to Functional i/f
+
+Comparator<Product> prodComp=(p1,p2) ->p1.getDate().compareTo(p2.getDate());
+
+Collections.sort(productList,prodComp);
+productList.forEach(p -> sop(p));
+
+
+
+
+3. 
+Display all products (from a product map)
+Ans this 
+Is Map Iterable ?
+Can u attach DIRECTLY a for-each loop to the map ? 
+
+Imperative style
+for(Product p : map.values())
+ sop(p);
+Any Declarative (Functional prog solution ?)
+
+4. Sort the products from the list , as per date : custom ordering
+How ?
+
+
+5 Use Function literal
+
+
+6. Using above API(higher order funcs) , can you chain multiple operations like sorting & displaying the sorted data ? NO
+
+OR
+Filter the elements n display filtered list.  : NO
+
+Objective : Accept product category from user
+remove all products from specified category n display remaining list : multiple ops can't be chained !
+
+
+3. Enter Java 8 Functional Streams
+
+Refer to <streams> : diagrams
+collections vs streams n streams basics
+
+
+Refer to "streams_sequence"
+
+Solve for more practice : 
+
+3.1  Display all product names of a particular category , exceeding specific price.
+I/P category name & price.
+
+
+3.2  Prompt user for category n discount.
+Apply that discount on all products of specified category n print it.
+i/p : category n discount
+
+3.3 Continue with your student based scenario.
+(copy from ready code - "day9-data\ready code")
+1. Display all student details from a student list
+
+2. Display all student details(list) sorted as per GPA 
+Use custom ordering
+
+3. Remove all failed students 
+(gpa < 6 => failure)
+
+3. Write a tester to print average of  gpa of students for the specified course/subject
+
+4 Print name of specified subject  topper
+
+5 Print no of  failures for the specified subject chosen  from user.
+(gpa < 6 : failed case)
+
+6. Display all student details from a student map
