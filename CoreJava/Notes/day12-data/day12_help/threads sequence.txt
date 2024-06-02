@@ -1,0 +1,77 @@
+Revise Multi threading (Thread state transitions n Threads API) through questions
+Apply threads to Collections n I/O ( lab assignment) --discussion
+join n interrupt
+Synchronization
+Collections n thread safety
+User threads vs daemon threads
+
+
+Important Questions
+
+1. What will happen if you don't implement run() method in implements scenario
+
+2. What will happen if you don't override run() method in extends scenario
+
+3. What will happen if you invoke run() method instead of start ?
+NO javac err or run time error , BUT causes sequential execution!
+FATAL logical error !
+
+4. What will happen if you call start() on a runnable thread?
+
+5. What will happen if you call start() on a dead thread?
+
+6. Name the un blocking triggers for a thread blocked on sleep?
+
+
+7. Name the un blocking triggers for a thread blocked on read (using java.io)?
+
+
+8. What will happen if another thread sends interrupt to a thread blocked on read (using java.io)?
+
+
+9. Name the un blocking triggers for a thread blocked on join?
+eg : t1 n t2
+In t1' s run()
+t2.join(10000);
+Ans - Un blocking triggers : t2 dead | interrupt | timeout
+
+
+1. Refer to join account scenario , complete it n test !
+
+
+1.1 Write a multi threaded application to share a joint account among multiple bank customers . 
+Services : update balance
+check balance
+Ensure no orphans .
+Refer to synchronization readme
+(day12-data\day12_help\readme synchronization.txt)
+
+
+1.2 eg code for generating  random no 
+Use - java.util.Random class
+1. Random r1=new Random();//creates random no generator
+Methods -
+int nextRandomInt=r1.nextInt();//generates any random int
+nextRandomInt=r1.nextInt(100);//generates random int 0-99
+
+
+1.3 Understand the problem --w /o synchronization
+(invalid balance !!!!)
+
+1.4 Apply synchronization using synchronized methods
+
+
+1.5 Apply synchronization using synchronized blocks
+
+
+
+IMPORTANT Rule
+Lambda expression OR anonymous inner class or method local inner class 
+CAN NOT modify the value of the local variable declared in the enclosing scope.
+(i.e declare them as final or effectively final !)
+
+
+3. User Threads vs Daemon Threads
+
+
+

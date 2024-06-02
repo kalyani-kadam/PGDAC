@@ -1,0 +1,417 @@
+Day 1
+1. import day1.1 , in your workspace to revise exception handling
+
+2. 
+To revise inheritance , run time polymorphism m up casting , down casting n abstraction (using abstract class ) with array of references
+Hands on 
+Read complete assignment n then only solve.
+
+2.1 Can you arrange Fruit,Apple,Orange,Mango in inheritance hierarchy ?
+Use tight encapsulation.
+
+2.2 Properties (instance variables)  : color : String , weight : double , name:String, fresh : boolean
+
+2.3 Add suitable constructor
+
+2.4 Override  toString correctly to return state of all fruits (return only  : name ,color , weight )
+
+2.5 Add a taste() method : public String taste()
+
+For Fruit : Can you identify taste of any general fruit ? NO
+So add a taste() with this definition : returns "no specific taste" 
+OR is there any BETTER solution ????
+
+Apple : should return  "sweet n sour"
+Mango : should return  "sweet"
+Orange : should return  "sour"
+
+2.6 Add specific functionality , in the sub classes
+In Mango : public void pulp() {Display name n color of the fruit + a mesg  creating  pulp!}
+In Orange : public void juice() {Display name n weight of the fruit + a mesg extracting juice!}
+In Apple : public void jam() {Display name of the fruit + a mesg  making jam!}
+
+2.7 Add all of above classes under the package "com.app.fruits"
+2.8 Create java application FruitBasket , with main method , as a tester
+2.9 Prompt user for the basket size n create suitable data structure
+
+2.10 Supply options
+1. Add Mango
+2. Add Orange
+3. Add Apple
+NOTE : You will be ALWAYS adding a fresh fruit in the basket , in all of above options.
+
+2. Display names of all fruits in the basket.
+
+5. Display name,color,weight , taste of all fresh fruits , in the basket.
+
+
+6. Mark a fruit in a basket , as stale(=not fresh)
+i/p : index 
+o/p : error message (in case of invalid index) or mark it stale
+
+7. Mark all sour fruits stale 
+Hint : Use equals() method of the String class.
+
+8. Invoke fruit specific functionality (pulp / juice / jam)
+i/p : index
+Invoke correct functionality (pulp / juice / jam)
+
+9. Exit 
+
+
+
+Day2
+1. import day2.1 
+to revise 
+1.1 try-with-resources
+1.2 custom exceptions
+
+2. import day2.2 
+to revise 
+2.1 strings (immutabilty , equality n literal vs non literal strings)
+
+3. Complete pending work
+
+4. Optional work (if you have completed earlier work)
+
+Create java application , to revise enums , custom exception , validation rules n writing menu driven application.
+
+Steps -
+
+1.1 Create Vehicle class 
+Add non static fields -- chasisNo (string) : Unique ID , color : enum Color(WHITE , SILVER , BLACK , RED , BLUE) , price , manufactureDate: Date , insuranceExpDate : Date  , pollutionLevel : double
+
+1.2 Create suitable custom exception class or multiple classes.
+(you decide !)
+
+1.3 Create a separate class for Vehicle Validation rules
+
+Validation rules
+pollutionLevel < 20 %
+color should be supported color (from within enum Color)
+
+1.4 Create a Tester class , menu driven application  for the following options
+
+1. Add new vehicle 
+i/p : all vehicle details  (including chasis no)
+(Since we have NOT completed Date time handling , you can skip that part !)
+Iff color based  validation rule succeed , then only adding a vehicle  should be successful 
+O.w --throw suitable custom exception n display error mesg via catch block.
+
+2. Drive a vehicle
+i/p -- Kilometers 
+You can decide based upon Kms --the pollution level
+If pollution level exceed , throw custom exception n display error message via catch block.
+
+
+Day 3
+In a combined lab session -
+1. import day3.1 , to revise
+1.1 Wrapper classes
+1.2 Date time handling -legacy n modern 
+
+
+2. import day3.2 to revise 
+Banking case study
+Understand the classes involved.
+
+3. Hands on  In a combined lab 
+ Complete n test validation rules 
+
+3.1 min balance condition , while opening new account
+(validate balance)
+3.2 account type must be the supported type
+(validate a/c type)
+3.3  No two accounts can have same account no (i.e a/c nos can't be duplicate)
+
+4. In individual labs , complete pending work.
+
+
+Day 4
+In combined lab session -
+1. import day4.1_banking in your workspace , to revise 
+1.1 Additional validation rules
+1.2 overriding of equals method
+
+2. Solve 
+2.1 Add options in the Banking case study
+1. Display a/c summary
+i/p : acct no
+o/p : in case of valid acct no , display a/c details , otherwise , throw custom exception n display suitable error mesg.
+
+2. Withdraw funds 
+i/p : acct no n withdraw amount.
+o/p : in case of valid acct no n sufficient funds , withdraw n display updated a/c details , otherwise , throw custom exception n display suitable error mesg.
+
+3. Discuss design of CMS(Customer management system) case study
+
+In individual labs -
+1. import day4.2 , to revise generics.
+2. Start implementing the case study
+
+
+Day 5
+1. In the combined lab session - let's start with some hands on , for coding practice first
+
+Hands on 
+1.Have you completed 
+1.1 Customer class with ServicePlan enum, with plan charges ?
+1.2 Validation rules for
+dup checking
+service plan n reg amount validation.
+ 
+1.3 Replace array data structure by dyn , growable ArrayList 
+Solve CRUD 
+Customer registration 
+Customer login
+update password
+delete customer details(un subscribe)
+
+
+Extra OPTIONAL work (in case of anyone has completed the earlier work)
+
+2 customers can't have same email n dob.
+What will be the changes required ???
+
+c1 -- em1,dob1
+c2-- em1,dob2
+c3 -- em2,dob1,
+c4 --em1,dob1  //dup !
+c5 -- em3,dob3
+
+
+
+
+2. In the individual labs , first revise n then continue with CMS case study.
+
+
+Day 6 
+1. Complete pending work of yesterday.
+(Refer to case study -- CMS)
+Solve CRUD 
+Customer registration 
+Customer login
+update password
+delete customer details(un subscribe)
+
+2. Add sorting options
+2.1 Display customer details sorted as per the email (asc) : using natural ordering
+2.2 Display customer details sorted as per the dob n last name  : using custom ordering , using anonymous inner class.
+
+
+3. Removal operation
+Remove all customer details from specified plan born after specified date.
+i/p : plan n date
+
+Day 7
+1. No new assignments . But complete pending work .
+If any specific help is required , we can discuss it in the combined lab.
+
+2. Revise hashing algorithm (in the combined lab)
+
+3. Completely OPTIONAL work , for further revision of hashing 
+
+For Phone Book Application 
+Define a class Contact with the following fields – 
+a.	Phone Number (Required,Updatable)
+b.	Name (Required, Non-Updatable)
+c.	Date of Birth (Required, Non-Updatable)
+d.	Email (Required, Updatable)
+
+Use appropriate java collection to store contacts in memory - to ensure no duplicates + constant time performance O(1)
+Constraints:  
+Two persons cannot have same Name & Date of Birth
+
+
+Day 8
+1. import day8_banking_map in your worspace , to revise
+Maps , CRUD functionality n sorting options.
+
+2. import day8.1 , to revise advanced generic syntax
+
+3. Solve (Hands on)
+Port CMS case study (day6 assignment) to Maps.
+Replace List by Map
+
+4. For more practice in generics 
+? extends T => T or it's sub type
+4.1 Solve -
+T : Emp 
+AL<? extends Emp> list = ????
+What all are legal options of RHS ?
+1. AL<Emp> : 
+2. AL<Mgr>
+3. AL<Worker>
+4. AL <SalesMgr>
+5. AL <Object>
+6. AL<Fruit>
+7. AL<Vehicle>
+Ans :
+
+4.2 super : represents lower bound in generics
+? super T => T or it's super types
+
+eg
+AL<? super Mgr> list = ????
+What all are legal options of RHS ?
+1. AL<Emp> : 
+2. AL<Mgr>
+3. AL<Worker>
+4. AL <SalesMgr>
+5. AL <Object>
+6. AL<Fruit>
+7. AL<Vehicle>
+Ans : 
+
+4.3 Solve
+"day8-data\day8_help\generic-questions.txt"
+
+
+4.4 If time permits , spot the differences between
+
+Collection i/f method 
+boolean addAll(Collection<? extends E> c);
+
+vs 
+Collections class method 
+public static <T> boolean addAll(Collection<? super T> c, T... elements);
+
+4.5 Study Collections.copy method
+
+
+Day 9
+For more practice of Functional programming - solve (hands on)
+1. 
+ Refer to  student based scenario.
+(copy the packages , from ready code, in new eclipse project  - "day9-data\ready code")
+1.1 Display all student details from a student list
+1.2  Display all student details from a student map
+1.3 Display all student details(from the list) sorted as per GPA (desc order)
+Use custom ordering
+1.4 Remove all failed students from the map n display the map again
+(gpa < 6 => failure)
+
+2.Understand Functional Streams (Theory topic)
+Solve - 
+2.1 Create stream of ints between 1-100 & display all even elements.
+2.2  Create Stream<Integer> from a fixed size list (un sorted ) of integers , sort n display it. (all in single java statement , using chain/pipe line of operations)
+2.3 Display all product names of a particular category , exceeding specific price.
+I/P category name & price.
+
+2.4  Prompt user for category n discount.
+Apply that discount on all products of specified category n print it.
+
+2.5 Display sum of all even nos between 1-100 .
+Hint : IntStream --range --filter --reduce(sum)
+
+2.6 Display average of all odd nos between 1-100 .
+
+2.7 Print avg of odd numbers between 10 & 50 ((if strm is empty print -100 or else print avg)
+
+2.8 Display sum of product prices of a specific category.
+I/P category name
+Products are stored in a map
+o/p sum.
+
+2.9 Display average of product prices of a specific category.
+I/P category name
+o/p average
+
+10. Sort products of a specific category as per price n display their names.
+i/p category name
+
+Day 10
+1. In the following theory session 
+1.1 Solve 
+Suppose you have student details in a map. Can you store these details sorted as per name in a text file , in a buffered manner ?
+
+1.2 Continue with binary streams
+Integration of Collection + I/O
+Store student details from the map of students in the bin file
+Restore the student details in to Map from bin file
+
+1.3 
+In a combined lab , spend some time , w/o IDE (using cmd prompt) to revise packages n classpath.
+
+
+2. In the individual labs 
+2.1 Revise functional streams n I/O
+eclipse projects - day10.1 , day 10.2
+
+2.2 For more practice of functional streams
+Solve - (refer : day9.1 n copy the packages for products -
+com.shop.core,custom_exceptions, utils)
+
+2.3 Display all product names of a particular category , exceeding specific price.
+I/P category name & price.
+
+2.4  Prompt user for category n discount.
+Apply that discount on all products of specified category n print it.
+
+2.5 Display average of all odd nos between 1-100 .
+
+
+2.6 Display average of product prices of a specific category.
+I/P category name
+o/p average
+
+2.7 Sort products of a specific category as per manufacture date n price n display their names.
+i/p category name
+
+
+3. Practical requirement (optional interesting work : completely EXTRA)
+Suppose you have a text data file : emps.txt
+
+Emp ID Name  		DeptId 	Designation   Salary  JoinDate
+1          Rama Patil   Testing        SD		    34567  2023-10-20
+........
+
+Display average salary of all SDs in the organization
+Sort all Data Scientists in the organazition , as per their join date
+Display name of the employee earning min salary from the specified dept.
+n many more .....
+
+
+
+Day 11
+In the extended Theory session
+1. Test concurrency using extends Thread n later implements Runnable scenario
+2. Use Thread class API
+sleep , interrupt , join
+
+In the combined lab session 
+1. import day11.1 , to revise serialization n de-serialization
+
+2. Confirm pre requisites of de-serialization n understand
+exceptions
+Serial Ver UID
+
+
+Day 12
+
+1. Revise synchronization 
+eclipse projects -- day12.3 .
+
+2. Create a JAR file to export the dependency (JointAccount.class). Add it in the build path of day12.4 . 
+Are there any problems ?
+Fix it !
+
+3. User Threads vs Daemon Threads.
+
+4. Solve (hands on) 
+4.1 Write a multi thread application for the following
+Sort student details as per the DoB n save the details in one file
+Save student details of the specified subject sorted as per GPA in another file
+
+
+4.2 Solve 
+day12-data\day12_help\practice code for synchronization
+
+
+
+
+
+
+
+
+
