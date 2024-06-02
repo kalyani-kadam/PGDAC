@@ -1,0 +1,189 @@
+Map API n implementation
+Generic methods , ? , super , extends
+Java 8/11 more new features (If time permits !)
+
+
+1. Map API n implementation of Banking in Maps
+MANDATORY :
+given : Fruit class in not abstract
+Fruit f=new Fruit(...);
+Fruit f2=new Mango(...);//up casting
+f2.taste();//taste() : Mango
+((Mango)f2).pulp();
+
+Mango m=(Mango)f;//no javac err , ClassCastException
+m.pulp();
+
+
+2. Generic methods 
+eg : Arrays.asList , Collections.sort
+
+
+3.Create GenericUtils class - non generic class
+--Add a static method
+3.1  Add a method to print all elements from any of the following
+ Test cases : AL<String> , LL<Integer> , Vector<LocalDate> , HS<Double> , LHS<Emp> ,TS<Fruit> ......
+
+eg : public class GenericUtils {
+  //static method 
+  public static void printAllElements(Collection<Object> collection) {
+    for(Object o : collection)
+    sop(o);
+ }
+}
+Till this point , no err !
+List<Integer> intList=Arrays.asList(1,2,3,4,5,7,8);
+printAllElements(intList);//javac err !
+Reason : Even though Object is a universal super class of all Java classes (i.e Integer IS-A Object) , Collection<Object> IS NOT a super type of Collection<Integer>
+Meaning : inheritance in generics --works differently than otherwise
+Why -- generic types(generic collections) are : Invariant (i.e can't be replaced by any other types)
+
+Solutions for the flexibilty
+1. generic method : <T>
+//static method 
+  public static <T> void printAllElements(Collection<T> collection) {
+    for(T o : collection)
+    sop(o);
+ }
+OR
+2  wild card : ?
+Represents ANY un known type , that can be replaced by any Java Type
+
+
+2. Emp inheritance hierarchy
+write static method in the Utils class --
+to return sum of salaries of all emps from the specified list.
+
+Test cases -- AL<Mgr> , Vector<TempWorker> , LinkedList<SalesMgr> ......
+public static double computeSumOfSalaries(List<? extends Emp> emps)
+{
+  double sum=0;
+ for(Emp o : emps)  
+  sum += o.computeSalary();
+  return sum;
+}
+
+AL<Mgr> mgrs=new AL<>();
+mgrs.add(m1)......
+computeSumOfSalaries(mgrs);
+
+? => un bounded wild card (i.e can be replaced by ANY type, no restrictions!)
+extends => upper bound
+super => lower bound
+
+? extends T => T or any of it's sub type (restricted freedom --upper bounded )
+extends : used for co varinace (or co variant)
+
+super => lower bound
+? super T => T or it's super type (restricted freedom --lower bounded )
+
+Is there any rule regarding when to use extends (upper bound) or super (lower bound) ?
+Yes !
+Any time you are accessing the elements from the collection --use extends
+=> co varinace
+Any time you are adding the elements to the collection --use super
+=> contra variance
+If you want to do both (i.e add n retrieve) : use the actual type directly
+=> in varinace 
+
+	
+2. Add a method to find sum of salary of emps from any List 
+Test cases : AL<Mgr> ,LL<Worker> , Vector<SM> ....
+
+
+public static double computeSalarySum(List<Emp> emps)
+{
+  double sum=0;
+  for(Emp e : emps)
+   sum += e.computeNetSal();
+  return sum;
+}
+
+? => any unknow type , can be replaced by any java type
+extends => upper bound
+super => lower bound
+
+? extends T => T or it's sub type
+? super T => T or it's super type
+
+eg : Ctor of ArrayList<E> 
+ArrayList(Collection<? extends E> coll)
+E : Emp
+Meaning : Creates populated AL of type Emp from
+ANY Collection(eg : List n Set vimplementation classes) of type
+Emp or any of its sub type(eg : Mgr, Worker, SalesMgr....)
+
+
+3. Explain :
+public ArrayList​(Collection<? extends E> c)
+E : Emp 
+=> ????
+
+4. Add a method to hire a any worker to the list
+What should be the type of the List ?
+
+Solve -
+T : Emp 
+AL<? extends Emp> list = ????
+What all are legal options of RHS ?
+1. AL<Emp> : 
+2. AL<Mgr>
+3. AL<Worker>
+4. AL <SalesMgr>
+5. AL <Object>
+6. AL<Fruit>
+7. AL<Vehicle>
+Ans :
+
+super : represents lower bound in generics
+? super T => T or it's super types
+
+eg
+AL<? super Mgr> list = ????
+What all are legal options of RHS ?
+1. AL<Emp> : 
+2. AL<Mgr>
+3. AL<Worker>
+4. AL <SalesMgr>
+5. AL <Object>
+6. AL<Fruit>
+7. AL<Vehicle>
+Ans : 
+
+
+2. 
+Solve (What will happen)
+Given : Emp hierarchy
+Emp e =new Mgr(...);
+e=new Worker(...);
+List<Emp> emps=new ArrayList<>();
+emps.add(new Mgr(...));
+emps.add(new TempWorker(...));
+
+Understanding inheritance/flexibilty in generics -
+ArrayList<Emp> emps=new ArrayList<Mgr>();
+Reason : 
+
+ArrayList<Object> emps=new ArrayList<Mgr>();//javac err !
+List<Emp> emps=new Vector<Worker>();//javac err !
+emps=new LinkedList<SalesMgr>();//javac err !
+
+Above states --loss of flexibility!!!
+So what's the solution for getting back this flexibility ?
+wild card in generics : ? 
+? => any unknown type 
+How do you create list of unknown type ???
+List<?> anyList;
+anyList=new ArrayList<Mgr>();//no err
+anyList=new Vector<Worker>();
+anyList=new LinkedList<SalesMgr>();
+anyList=new HashSet<>();//javac err , HS IS NOT a List
+anyList=new Vector<Fruit>();//works
+
+List<T> anyList;	
+
+
+
+
+
+
