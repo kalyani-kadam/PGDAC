@@ -1,0 +1,78 @@
+JDBC revision
+JDBC Driver Types
+Enter ORM n layered architecture.
+
+Develop DB application using layered architecture --
+1. User signin 
+User Dao i/f
+add a method for user sign in
+DAO i/f method
+eg - 	User signIn(String email,String password) throws SQLException;
+
+
+1. Display all users(not admin) details born between specified dates.
+2. Register new voter
+3. Update voter's password
+i/p : email , old pwd , new pwd
+o/p : string message 
+4. Delete voter  details
+i/p : voter id
+o/p : string message 
+
+
+5. Copy stored procedure in DB n invoke it from Java
+5.1 Create a CallableStament form Connection
+5.1.1 invocation syntax for calling a procedure -
+"{call proc_name(?,?.....,?)}"
+{} => esc sequence meant for JDBC driver , to translate the invocation into DB specific syntax.
+ ? - IN | OUT | IN OUT
+
+5.1.2 invocation syntax for calling a function -
+"{?=call func_name(?,?.....,?)}"
+{} => esc sequence meant for JDBC driver , to translate the invocation into DB specific syntax.
+ ? - IN | OUT | IN OUT
+
+5.2 Register OUT parameters(to be performed for OUT)
+It means specifyng JDBC data type of the OUT param to the JVM.
+API of CallableStatement 
+public void registerOutParameter(int paramIndex,int jdbcType) throws SQLException
+
+5.3 Set IN params(inherited from PreparedStatement i/f)
+public void setType(int paramIndex,Type value) throws SQLException
+
+5.4 Execute stored procedure/function
+public boolean execute() throws SQLException
+(ret value is ignored here)
+
+5.5 Get the results from OUT param
+Method of CallableStatement
+public Type getType(int paramIndex) throws SQLException
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If time permits
+1. More on Java 8/11 functional streams
+2. Cloning in Java.
+
