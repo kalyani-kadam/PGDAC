@@ -1,0 +1,18 @@
+Revise 
+Synchronization
+Enter ITC
+JDBC
+Refer to JDBC sequence
+
+Method reference -
+eg : list.forEach(s -> System.out.println(s));
+list.forEach(System.out::println);
+
+
+list.forEach(s -> System.out.print(s+" "));//this CAN NOT be replaced by a method ref.
+
+
+
+
+
+
