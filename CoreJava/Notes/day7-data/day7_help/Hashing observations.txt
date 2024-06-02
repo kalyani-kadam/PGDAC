@@ -1,0 +1,87 @@
+Hashing observations
+1. Emp class - equals n hashCode --wasn't overridden
+Obs : Dups were getting added (since UID based equals method wasn;t supplied)
+
+2. Emp class - equals : overridden based upon id BUT hashCode --wasn't overridden
+Obs : Dups were getting added (since mandatory part of the contract wasn't satsfied)
+
+3. Emp class - equals : overridden based upon id  , hashCode - overridden to ret constant value eg : 100
+Obs : Dups were NOT getting added (since mandatory part of the contract was satsfied) BUT offers : O(n) => no of times equals method getting called was increasing linearly !
+
+in hashCode
+Added true
+in hashCode
+in emp's equals
+Added false
+in hashCode
+in emp's equals
+Added false
+in hashCode
+in emp's equals
+Added true
+in hashCode
+in emp's equals
+in emp's equals
+Added true
+in hashCode
+in emp's equals
+in emp's equals
+in emp's equals
+Added true
+size 4
+Employee [id=101, name=Rama Patil, salary=10000.0]
+Employee [id=10, name=Ram Patil, salary=10000.0]
+Employee [id=57, name=Kiran Mujumdar, salary=15000.0]
+Employee [id=45, name=Riya Pant, salary=13000.0]
+
+
+
+4. Emp class - equals : overridden based upon id  , hashCode - overridden to ret id 
+
+Obs : Dups were NOT getting added (since mandatory part of the contract was satsfied) BUT offers : O(1) => no of times equals method getting called was NOT increasing linearly ! --reason being optional part of the contract was also followed.
+
+in hashCode
+Added true
+in hashCode
+in emp's equals
+Added false
+in hashCode
+in emp's equals
+Added false
+in hashCode
+Added true
+in hashCode
+Added true
+in hashCode
+Added true
+size 4
+Employee [id=101, name=Rama Patil, salary=10000.0]
+Employee [id=57, name=Kiran Mujumdar, salary=15000.0]
+Employee [id=10, name=Ram Patil, salary=10000.0]
+Employee [id=45, name=Riya Pant, salary=13000.0]
+-------------------------------
+If UID i.e  emp id : String
+What will be the changes required to follow the contract ?
+How will you override equals n hashCode ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

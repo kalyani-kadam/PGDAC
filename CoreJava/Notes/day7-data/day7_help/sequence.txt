@@ -1,0 +1,29 @@
+Today's topics
+Revision of sorting 
+Sets Overview (HashSet , LInkedHashSet , TreeSet)
+Hashing algorithm n hashtable
+
+Maps overview
+
+1. Solve  Removal operation
+Remove all customer details from specified plan born after specified date.
+i/p : plan n date
+Since it's removal by non PK -- for-each OR Iterator OR ListIterator
+eg : sop("Enter plan n date");
+ServicePlan chosenPlan=parsePlan(sc.next());
+LocalDate date=parseDateDate(sc.next());
+Iterator<Customer> custItr=customerList.iterator();
+while(custItr.hasNext())
+{
+   Customer c=custItr.next();
+   if(c.getPlan() == chosenPlan && c.getDob().isAfter(date))
+    custItr.remove();
+}
+
+2. For sets , refer -
+"day7-data\day7_help\sets handling\Regarding sets.png"
+Refer to the contract n Hashing algo internals
+
+3. For Maps , refer -
+"day7-data\day7_help\maps handling"
+
