@@ -1,0 +1,249 @@
+Today's Topics
+
+Revise  interfaces(i/f)
+Solve specific queries (If any)
+Continue with interfaces.
+Exception handling
+EOD - solve / discuss FruitBasket assignment n it's memory pic.
+
+Revision
+
+What is an interface ?
+
+
+Why Interfaces ?
+
+
+Syntax
+default/public interface InterfaceName extends i/f1,i/f2.....
+{
+  Implicitely : 
+  data members : public static final
+  methods : public abstract
+}
+
+When to use extends keyword ?
+sub class extends super class
+sub i/f extends multiple super i/fs
+
+When to use implements  keyword  ?
+imple class implements multiple i/fs
+ 
+
+Can a class implement multiple i/fs ?  yes
+
+Can a class extend from  multiple super classes ? no
+
+Can an i/f extend from  multiple super i/fs ? yes
+
+Developing i/fs alone , sufficient or not ? insufficient
+
+Can you create i/f instance ? NO 
+
+What is the meaning of the term i/f instance ?
+=it's implementation class instance
+
+(Reminder : Can a super cls ref DIRECTLY refer to ANY sub class instance ? YES:
+up casting
+eg : Emp e =new SalesMgr(.....);
+e=new TempWorker(...);
+
+Cam such super class ref access COMPLETE Details of the sub class ? NO
+only common func. : present in Emp class
+To invoke additional func : downcasting
+
+If you do the downcasting w/o checking -- ClassCastExc
+Fruit f=new Mango(...);
+f.pulp();..javac err
+((Mango)f).pulp();//no err , o/p
+
+f=new Orange(....);
+((Mango)f).pulp();//no javac err ! , ClassCastExc -Orange can't be cast to Mango!
+soln : instanceof -- run time , type comparison operator
+Checks the object against the specified type
+
+f=new Orange(....);
+if(f instanceof Mango)
+ ((Mango)f).pulp();
+else 
+sop(err mesg!!!);
+)
+
+Can you achieve indirect referencing using i/fs ? YES
+I/f reference can DIRECTLY (w/o type casting) refer to ANY implementation class instance
+eg : Bank : i/f
+imple classes : BOI , HDFC , ICICI....
+Bank myBank=new Bank();//javac err on RHS
+myBank=new HDFC(....);//indirect ref.
+//suppose HDFC : added new service --managePortfolio
+myBank.openAccount(....);//JVM will call openAccount : HDFC => run time poly.
+myBank=new ICICI(....);
+myBank.openAccount(....);//JVM will call openAccount : ICICI=> run time poly.
+
+
+//suppose HDFC : added new service --managePortfolio
+Bank myBank;
+myBank=new HDFC(....);//indirect ref.
+myBank.managePortfolio(....);//javac err
+//soln : down casting
+((HDFC)myBank).managePortfolio(....);//no errs , o/p
+myBank=new ICICI(....);
+((HDFC)myBank).managePortfolio(....);//run time err !!!! ClassCastExc - ICICI can't be cast HDFC
+
+soln : instanceof chekcing
+Bank myBank=new ICICI(....);
+if(myBank instanceof Bank)  //true
+ ((HDFC)myBank).managePortfolio(....);//run time err !!!! ClassCastExc - ICICI can't be cast HDFC
+else 
+ sop(err mesg!!!!);
+
+
+ 
+eg : java.util.List : i/f
+implementation classes : ArrayList,LinkedList,Vector
+Write an example 
+List myList=new Vector();//up casting
+myList=new ArrayList();
+myList=new LinkedList();
+
+
+
+
+
+
+
+Objectives
+1. Create different type of Printers(ConsolePrinter, FilePrinter ,NetworkPrinter) n access it's common functionality  in a single for-each loop.
+
+eg : Printer[] printers={new CP(),new FP(),new NP()};//indirect ref. --up casting
+printers : array of i/f type of refs
+how many obj : 1(array) + 3 implemention class instance
+for (Printer p : printers)//p=printers[0]
+ p.print("some mesg!!!!");//run time poly.
+
+1.5  Create different type of Printers(ConsolePrinter, FilePrinter ,NetworkPrinter) n access it's common functionality n specific functionality in a single for-each loop.
+
+Printer[] printers={new FP(),new CP(),new NP()};//indirect ref. --up casting
+printers : array of i/f type of refs
+how many obj : 1(array) + 3 implemention class instance
+for (Printer p : printers)//p=printers[1] 
+{
+ if(p instanceof FilePrinter) {
+ ((FilePrinter)p).openFile("sample.txt");//no javac err
+ p.print("some mesg!!!!");//run time poly.
+ ((FilePrinter)p).closeFile();// no javac err
+}
+else 
+p.print("some mesg!!!!");//run time poly.
+
+
+}
+
+
+
+2. Why Java does not allow multiple inheritance through classes ?
+ambiguity (diamond problem)
+
+3. Confirm - What will happen with i/fs ?
+Demo : Create a class implementing multiple i/fs with duplicate behaviour ? : 
+What about duplicate data members ?
+
+NOTE : Duplicate method implementation will surely cause an ambiguity --that's why Java DOES NOT support multiple inheritance thro' classes
+
+
+Duplicate method declaration (from i/fs)  will NEVER  cause an ambiguity --that's why Java DOES support multiple inheritance thro' interfaces.
+
+4. Demo : 1 i/f extending multiple super i/fs , n then write imple class
+In order to create concrete imple class : MUST implement all abstract func inherited from all of i/fs
+
+
+Other than regular interfaces , Java also supports
+
+1. Nested interface
+eg : java.util - Map.Entry
+Map : Outer i/f
+Entry : statically nested i/f
+
+2. Marker i/f : Empty (Tag i/f) i/f --NO data members n no methods
+eg : Serializable , Cloneable,RandomAccess
+Purpose : To supply run time marker (for JVM)
+
+3. Functional i/f : i/f containing single abstract method (SAM)
+eg : Predicate , Runnable , Consumer, Supplier , Comparator ....
+
+-----------------------
+
+Enter Exception Handling : 
+Refer : readme 
+
+What is Exception ? : Run time error , detected by JVM (currently by main thread)
+
+Why Exception handling ?
+1. To allow the continuation of java app , even in case of run time errors.
+2. Reduces the need for checking validation of ret types.
+3. Allows a Separation between business logic n error handling
+
+
+Flow , inheritance hierarchy , checked vs un checked excs
+keywords : try, catch , finally , throw , throws , try-with-resources
+
+Custom exceptions
+Objective : Validate speed of running vehicle on a highway
+min speed : 40
+max speed : 80
+
+
+In case of speed outside the range --Prog will have to detect the err --create instance of user defined exc class --explicitly throw custom exc to the code. The alteration in flow will be managed by JVM.
+
+
+Steps
+1.Create custom exception class : extends Throwable/Error/Exception/RuntimeExc....
+eg : public class SpeedOutOfRangeException extends Exception{}
+1.1  Add parameterized constr : to init err mesg
+
+2. Create a separate class  eg :  ValidationUtils --
+add a static method for validation of the speed
+
+3. Create Tester : UI --scanner --accept the speed n simply call validateSpeed of the SpeedUtils  class
+-------------------------
+
+4. String Handling
+4.1 Immutability of strings
+4.2 == vs equals
+4.3 literal vs non literal string
+4.4 API
+1. String class API
+
+2. StringBuilder API
+
+5.Date Time Handling (refer to : readme_strings_date_varargs.txt)
+
+java.util.Date : represents Date n time both , till precision msec.
+Constrs : 
+Date() : Creates date class instance : current date n time 
+Date(long msec) : Creates date class instance : that represents date n time , of msecs elapsed after Epoch(1st Jan 1970)
+Methods : toString , before ,after,compareTo,equals
+eg : d1.compareTo(d2) :  -1 => d1 before d2
+0 => d1.equals (d2)
+1 => d1 after d2
+------------------------------------
+Case study : Showroom management system.
+
+Objective : Accept vehicle details : chasisNo(string) : unique: PK, color(string) , price(double) , manufactureDate(Date)
+
+What is a relationship between Vehicle n chasisNo(string) : unique, color(string) , price(double) , manufactureDate(Date) ? HAS-A
+
+How will you accept manufactureDate from user ?
+
+
+Steps
+1. Create instance of a class : java.text.SimpleDateFormat
+
+2. Parsing (string --> Date) API 
+
+3. Formatting API (Date --> string) 
+
+
+var-args
+refer to :  readme_strings_date_varargs.txt
+
