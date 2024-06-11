@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.app.exceptions.CustomeException.java&apos; to &apos;PenException.java&apos;&#x0D;&#x0A;- Original project: &apos;StyleWithPenAsgn&apos;&#x0D;&#x0A;- Original element: &apos;com.app.exceptions.CustomeException.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.app.exceptions.PenException.java&apos;" description="Rename compilation unit &apos;CustomeException.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.app.exceptions{CustomeException.java" name="PenException.java" references="false" stamp="1717350195201" version="1.0"/>
+</session>

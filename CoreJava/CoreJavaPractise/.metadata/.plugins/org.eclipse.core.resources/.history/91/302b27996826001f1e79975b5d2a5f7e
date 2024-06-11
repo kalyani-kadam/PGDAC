@@ -1,0 +1,72 @@
+package com.app.utils;
+
+import java.time.LocalDate;
+import java.util.Map;
+
+import com.app.customExc.*;
+import com.app.entity.Employee;
+
+public class Utils {
+	public static Employee addFullTimeEmp(String name, String dateOfJoining, String phoneNumber, String aadhaarNumber,double salary) throws EmployeeException {
+		LocalDate Doj = LocalDate.parse(dateOfJoining);
+		
+		validatePhoneNo(phoneNumber);
+//		int pno = Integer.parseInt(phoneNumber);
+		
+		validateAdhaareNo(aadhaarNumber);
+//		int adhNo = Integer.parseInt(aadhaarNumber);
+		
+		return new Employee(name,Doj,phoneNumber,aadhaarNumber,salary);
+	}
+	
+	public static Employee addPartTimeEmp(String name, String dateOfJoining, String phoneNumber, String aadhaarNumber,double salary) throws EmployeeException {
+		LocalDate Doj = LocalDate.parse(dateOfJoining);
+		
+		validatePhoneNo(phoneNumber);
+//		int pno = Integer.parseInt(phoneNumber);
+		
+		validateAdhaareNo(aadhaarNumber);
+//		int adhNo = Integer.parseInt(aadhaarNumber);
+		
+//		System.out.println("Enter hourly salary:");
+	
+		return new Employee(name,Doj,phoneNumber,aadhaarNumber,salary);
+	}
+	
+	public static void validateAdhaareNo(String aadhaarNumber) throws EmployeeException {
+		String regex = "^\\S+$";
+		if(!(aadhaarNumber.matches(regex)) && aadhaarNumber.length()==12) {
+			throw new EmployeeException("Invalid adhaar no");
+		}
+		System.out.println("Adhaar no validated!!");
+	}
+
+	public static void validatePhoneNo(String pno) throws EmployeeException {
+//		if(pno)
+		String regex = "^[0-9]*$";
+		if(!(pno.matches(regex)) && pno.length()==10) {
+			throw new EmployeeException("Invalid mobile no");
+		}
+		System.out.println("Mobile validated!!");
+		
+//		int length = (int) (Math.log10(pno) + 1);
+//		if(length == 10)
+//			return true;
+//		return false;
+	}
+	
+	public static void deleteById(int id,Map<Integer,Employee> emps) throws EmployeeException {
+//		Employee e = new Employee(id);
+//		int emp = emps.get(e).getEmpId();
+		Employee emp = emps.get(id);
+		if(emp == null) {
+			throw new EmployeeException("invalid id");
+		}
+		System.out.println("Removing details of "+emp);
+		emps.remove(id);
+	}
+	
+	public static void searchByAdhaarNo(String adhaarNo,Map<Integer,Employee> emps){
+		Employee emp = emps.get(adhaarNo)
+	}
+}

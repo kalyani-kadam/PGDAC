@@ -1,0 +1,5 @@
+package com.app.authorizationexception;
+
+public class AuthorizationException extends Exception {
+
+}

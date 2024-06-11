@@ -1,0 +1,91 @@
+package com.app.utils;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import com.app.entity.Pen;
+import com.app.exceptions.PenException;
+
+public class PenUtil {
+
+	public static void UpdateStock(int id, int stock, List<Pen> pens) throws PenException {
+//		Iterator<Pen> penItr = pens.iterator();
+//		Brand penbrand = Brand.valueOf(brand.toUpperCase());
+//		Pen pen = findById(id,pens);
+		Pen p = new Pen(id);
+		int pen = pens.indexOf(p);
+		if (pens.indexOf(p) == -1) {
+			throw new PenException("Pen not found");
+		}
+//		if (pen!=null) {
+		pens.get(pen).setStock(stock);
+//		p.setStockUpdateDate(LocalDate.now());
+		pens.get(pen).setStockUpdateDate(LocalDate.now());
+		System.out.println("Stock updated to : " + pens.get(pen).getStock() + " for pen ID = " + pens.get(pen).getID()
+				+ " successfully!!");
+//		System.out.println("Stock details updated successfully!!");
+//		}else {
+//			System.out.println("Pen not found!!");
+//		}
+	}
+
+//	public static Pen findById(int id, List<Pen> pens) throws PenException {
+////		for (Pen pen : pens) {
+////			if (pen.getID() == id) {
+////				return pen;
+////			}
+////		}
+////		return null;
+//		Pen p = new Pen(id);
+//		int pen = pens.indexOf(p);
+//		if(pens.indexOf(p) == -1) {
+//			throw new PenException("Pen not found");
+//		}
+//		return pen;
+//	}
+
+	public static void setDiscount(List<Pen> pens) {
+		LocalDate threemonthsago = LocalDate.now().minusMonths(3);
+
+//		Pen p = new Pen();
+//		for (Pen pen : pens) {
+//			if (pen.getStockUpdateDate().isBefore(threemonthsago)) {
+////				pen.setDiscount(20);
+//				pens.get(pen.getID()).setDiscount(20);
+//				System.out.println("Discount set for this pen :" + pen);
+//			}
+//		}
+//		System.out.println("Discount set for unsold pens.");
+//		pens.get(p);
+		for (Pen p : pens) {
+			System.out.println(p);
+			int index = pens.indexOf(p);
+			System.out.println(index);
+			boolean date = p.getStockListingDate().isBefore(threemonthsago);
+			System.out.println(date);
+			if (date) {
+				p.setDiscount(20);
+				System.out.println("Discount applied");
+			} else {
+				System.out.println("Cant update discount");
+			}
+		}
+	}
+
+	public static void removePen(List<Pen> pens) {
+		LocalDate notSoldIn9months = LocalDate.now().minusMonths(9);
+		
+		for (Pen pen : pens) {
+			boolean date = pen.getStockListingDate().isBefore(notSoldIn9months);
+//			boolean date = pens.removeIf(p -> p.getStockListingDate().isBefore(notSoldIn9months));
+//				pens.remove(pen);
+			if(date)
+				System.out.println("Old unsold pens removed.");
+			else
+				System.out.println("Old unsold pens not removed.");
+//			}
+//		}
+			
+		}
+	}
+}

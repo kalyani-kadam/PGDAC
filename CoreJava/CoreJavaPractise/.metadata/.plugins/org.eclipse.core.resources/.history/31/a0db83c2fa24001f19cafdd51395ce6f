@@ -1,0 +1,59 @@
+package com.app.tester;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+import com.app.entity.Item;
+import static com.app.utils.Utils.*;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		try(Scanner sc = new Scanner(System.in)){
+			
+			Map<String,Item> items = new HashMap<>();
+			
+			try {
+				boolean exit = false;
+				while(!exit) {
+					System.out.println("1.Add item\n2.Display all item\n3.Sort by Item code\n4.Sort by shipment Date");
+					System.out.println("Enter choice");
+					switch(sc.nextInt()) {
+					
+					case 0:
+						exit = true;
+						break;
+					
+					case 1:
+						System.out.println("Enter details:code,desc, price, Shipment date ");
+						Item item = addNewItem(sc.next(),sc.next(),sc.nextDouble(),sc.next(),items);
+						items.put(item.getItemCode(), item);
+						System.out.println("Item added");
+						break;
+						
+					case 2:
+//						items.forEach(i -> System.out.println(i));
+						for(Item i:items.values()) {
+							System.out.println(i);
+						}
+						break;
+						
+					case 3:
+						List<Item> Ilist = new ArrayList<Item>(items.values());
+						Collections.sort(Ilist,Comparator.comparing(Item::getItemCode));
+						break;
+					}
+				}
+				}catch(Exception e) {
+				e.printStackTrace();
+				sc.nextLine();
+			}
+		}
+	}
+
+}

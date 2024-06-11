@@ -1,0 +1,35 @@
+package com.app.practise;
+
+import java.util.Scanner;
+
+//Write a program to accept an array of n elements and a number say key. Check whether key is present 
+//in the array or not.
+public class FindTarget {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter size of array: ");
+		int arr[] = new int[sc.nextInt()];
+		System.out.println("Enter array elements: ");
+		for(int i=0;i<arr.length;i++) {
+			arr[i]=sc.nextInt();
+		}
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+		System.out.println();
+		System.out.println("Enter element to search: ");
+		int target = sc.nextInt();
+		boolean flag = false;
+		for(int i=0;i<arr.length;i++) {
+			
+			if(arr[i] == target) {
+				flag=true;
+				System.out.println("key is present");
+			}
+		}
+		if(flag == false) {
+			System.out.println("key is not present");
+		}
+	}
+}

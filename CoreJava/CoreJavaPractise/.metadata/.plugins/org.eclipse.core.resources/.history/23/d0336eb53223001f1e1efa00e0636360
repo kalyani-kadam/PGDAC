@@ -1,0 +1,14 @@
+package com.app.entity;
+
+//Pet ( petId, name, category, unitPrice, stocks)
+//Category is an enum with values like (CAT, DOG, RABBIT, FISH)
+
+public class Pet {
+	private int id;
+	private String name;
+	private Category category;
+	private double unitPrice;
+	private int stocks;
+	
+	
+}

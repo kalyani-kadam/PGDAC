@@ -1,0 +1,71 @@
+package com.app.tester;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+import com.app.entity.Employee;
+import static com.app.utils.Utils.*;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		Map<String,Employee> emps = new HashMap<>();
+
+		try(Scanner sc = new Scanner(System.in)){
+			boolean exit = false;
+			while(!exit) {
+				try {
+					System.out.println("1.Add full time employee\r\n"
+							+ "2. Add part time employee\r\n"
+							+ "3. Delete an employee by Emp Id\r\n"
+							+ "4. Search employee details by Aadhaar number\r\n"
+							+ "5. Display all employee details\r\n"
+							+ "6. Display all employee details sorted by date of joining\r\n"
+							+ "7. Exit\r\n"
+							+ "");
+					System.out.println("Enter option");
+					switch(sc.nextInt()) {
+						case 0:
+							exit= false;
+							break;
+							
+						case 1:
+							System.out.println("enter Full time emp details -  Name, DateOfJoining, PhoneNumber, AadhaarNumber ,salary");
+							Employee emp = addFullTimeEmp(sc.next(),sc.next(),sc.next(),sc.next(),sc.nextDouble());
+//							emps.putIfAbsent(emp.getAadhaarNumber(), emp);
+							emps.put(emp.getAadhaarNumber(), emp);
+							System.out.println("Emp added");
+							break;
+							
+//							kk 2023-01-11 1234567890 123456789012 79000
+							
+						case 2:
+							System.out.println("enter Full time emp details -  Name, DateOfJoining, PhoneNumber, AadhaarNumber ,salary");
+							Employee emp1 = addFullTimeEmp(sc.next(),sc.next(),sc.next(),sc.next(),sc.nextDouble());
+//							emps.putIfAbsent(emp.getAadhaarNumber(), emp);
+							emps.put(emp1.getAadhaarNumber(), emp1);
+							System.out.println("Emp added");
+							break;
+							
+						case 3:
+							System.out.println("Enter emp id");
+							deleteById(sc.nextInt(),emps);
+							break;
+							
+						case 4:
+							
+							break;
+							
+						case 5:
+							emps.forEach(p -> System.out.println(p));
+							break;
+					}
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+}

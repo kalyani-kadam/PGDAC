@@ -1,0 +1,12 @@
+package com.app.entity;
+
+public class Item {
+//	Item Code ( String) : primary key
+//	Description : String
+//	Price : double
+//	Shipment Date : Date
+	
+	private static String cnt;
+	private String itemCode;
+	
+}

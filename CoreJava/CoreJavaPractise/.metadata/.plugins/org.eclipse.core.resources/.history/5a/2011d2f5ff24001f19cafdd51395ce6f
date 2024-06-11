@@ -1,0 +1,5 @@
+package com.app.storedetails;
+
+public interface ItemStore {
+
+}

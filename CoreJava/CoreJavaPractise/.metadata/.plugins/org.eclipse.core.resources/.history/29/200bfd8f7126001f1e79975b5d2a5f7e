@@ -1,0 +1,5 @@
+package com.app.stockExc;
+
+public class StockException extends Exception {
+
+}

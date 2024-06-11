@@ -1,0 +1,128 @@
+package com.app.tester;
+
+//import static com.app.utils.Utils.addNewFunctionality;
+//import static com.app.utils.Utils.checkAdminAccess;
+//import static com.app.utils.Utils.logIn;
+import static com.app.utils.Utils.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+import com.app.entity.Order;
+import com.app.entity.Pet;
+
+public class Tester {
+
+	private static Map<String, String> users = new HashMap<>();
+	private static List<Pet> pets = new ArrayList<>();
+	private static List<Order> orders = new ArrayList<>();
+
+	// Map<Integer,Category> categories = new HashMap<>();
+//	Map<Integer,Order> orders = new HashMap<>();
+
+	static String loggedInUser = null;
+	static {
+		users.put("admin", "admin");
+		users.put("c1", "c1");
+	}
+
+	public static void main(String[] args) {
+		try (Scanner sc = new Scanner(System.in)) {
+//			Map<String, String> users = new HashMap<>();
+//			List<Pet> pets = new ArrayList<>();
+//			List<Order> orders = new ArrayList<>();
+//			//Map<Integer,Category> categories = new HashMap<>();
+////			Map<Integer,Order> orders = new HashMap<>();			
+//			String loggedInUser = null; 			
+//			static {
+//		        users.put("admin", "admin");
+//		        users.put("c1", "c1");
+//		    }
+			boolean exit = false;
+			while (!exit) {
+				try {
+					System.out.println("1. Login\r\n" 
+							+ "2. Add new Pet (Admin only functionality)\r\n"
+							+ "3. Update Pet details (Admin only functionality)\r\n"
+							+ "4. Display all available pets\r\n" 
+							+ "5. Order a Pet\r\n"
+							+ "6. Check order status by Order Id\r\n"
+							+ "7. Update order status (Admin only functionality)\r\n" + "8. Exit\r\n" + "");
+
+					System.out.println("Enter option");
+					switch (sc.nextInt()) {
+					
+					case 1:
+						System.out.println("Enter loginId n password");
+						logIn(sc.next(), sc.next(), loggedInUser, users);
+						break;
+						
+					case 2:
+						System.out.println("Enter name, category, unitPrice, stocks");
+//						if (loggedInUser == "admin") {
+						checkAdminAccess(loggedInUser);
+						Pet pet = addNewFunctionality(sc.next(), sc.next(), sc.nextDouble(), sc.nextInt(), pets);
+						pets.add(pet);
+						System.out.println("Added pet with ID="+pet.getId());
+						
+//						}
+//						else {
+//							throw new AuthorizationException("Invalid user! User should be admin only!!");
+//						}
+						break;
+						
+					case 3:
+						checkAdminAccess(loggedInUser);
+						System.out.println("Enter id n name, category, unitPrice, stocks for updating");
+						updatePetDetails(sc.nextInt(),sc.next(), sc.next(), sc.nextDouble(), sc.nextInt(), pets);
+						break;
+						
+					case 4:
+						System.out.println("----------Pets details---------");
+						pets.forEach(p->System.out.println(p));
+						break;
+						
+					case 5:
+						System.out.println("enter petid, qty ");
+						orderPet(sc.nextInt(),sc.nextInt(),pets,orders);
+						break;
+						
+					case 6:
+						System.out.println("enter orderid");
+						checkOrderStatus(sc.nextInt(),orders);
+						break;
+						
+					case 7:
+						checkAdminAccess(loggedInUser);
+						System.out.println("Enter orderId");
+						updateOrderStatus(sc.nextInt(),orders);
+						break;
+						
+					case 8:
+						System.out.println("Thank u!!");
+						exit = true;
+						break;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					sc.nextLine();
+				}
+//				catch(AuthenticationException e) {
+//					e.printStackTrace();
+//				}
+//				catch(OutOfStockException e) {
+//					e.printStackTrace();
+//				}
+//					catch(AuthorizationException e) {
+//					e.printStackTrace();
+//				}
+			}
+
+		}
+
+	}
+
+}

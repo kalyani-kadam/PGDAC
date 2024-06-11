@@ -1,0 +1,102 @@
+package com.app.tester;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;
+
+import com.app.entity.Employee;
+import static com.app.utils.Utils.*;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		Map<Integer,Employee> emps = new HashMap<>();
+
+		try(Scanner sc = new Scanner(System.in)){
+			boolean exit = false;
+			while(!exit) {
+				try {
+					System.out.println("1.Add full time employee\r\n"
+							+ "2. Add part time employee\r\n"
+							+ "3. Delete an employee by Emp Id\r\n"
+							+ "4. Search employee details by Aadhaar number\r\n"
+							+ "5. Display all employee details\r\n"
+							+ "6. Display all employee details sorted by date of joining\r\n"
+							+ "0. Exit\r\n"
+							+ "");
+					System.out.println("Enter option");
+					switch(sc.nextInt()) {
+						case 0:
+							System.out.println("thank u");
+							exit= true;
+							break;
+							
+						case 1:
+							System.out.println("enter Full time emp details -  Name, DateOfJoining, PhoneNumber, AadhaarNumber ,salary");
+							Employee emp = addFullTimeEmp(sc.next(),sc.next(),sc.next(),sc.next(),sc.nextDouble());
+//							emps.putIfAbsent(emp.getAadhaarNumber(), emp);
+							emps.put(emp.getEmpId(), emp);
+							System.out.println("Emp added");
+							break;
+							
+//							hk 2023-01-11 1234567890 123456789012 79000
+//							mk 2002-11-21 1234567890 123456789012 49000
+							
+						case 2:
+							
+							System.out.println("Enter how many hours you worked:");
+							int hr=sc.nextInt();
+							double salary=0,salarysum=0;
+							int cnt=0;
+							while(cnt<hr) {
+								System.out.println("Enter hourly salary:");
+								salary = sc.nextDouble();
+								salarysum+=salary;
+								++cnt;
+							}
+							System.out.println("enter part time emp details -  Name, DateOfJoining, PhoneNumber, AadhaarNumber");
+							Employee emp1 = addPartTimeEmp(sc.next(),sc.next(),sc.next(),sc.next(),salarysum);
+//							emps.putIfAbsent(emp.getAadhaarNumber(), emp);
+							emps.put(emp1.getEmpId(), emp1);
+							System.out.println("Emp added");
+							break;
+//							kalyani 2023-02-02 7893209327 280973288888
+//							nk 2001-12-11 7894567890 1234567890144
+						case 3:
+							System.out.println("Enter emp id");
+							deleteById(sc.nextInt(),emps);
+							break;
+							
+						case 4:
+							System.out.println("enter adhaar no");
+							searchByAdhaarNo(sc.next(),emps);
+							break;
+							
+						case 5:
+							emps.forEach((k,v) -> System.out.println(v));
+							break;
+							
+						case 6:
+							LinkedList<Employee> elist = new LinkedList<Employee>(emps.values());
+							Collections.sort(elist,new Comparator<Employee>(){
+								@Override
+								public int compare(Employee o1, Employee o2) {
+									System.out.println("in annonymous classs");
+									return o1.getDateofjoining().compareTo(o2.getDateofjoining());
+								}
+								
+							});
+							elist.forEach(e -> System.out.println(e));
+							break;
+					}
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+}

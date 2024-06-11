@@ -1,0 +1,15 @@
+package com.app.entity;
+
+import java.time.LocalDate;
+
+//stock id (unique : string), stock name (string), company name(string) , price (double), closing date (Date) , quantity (int)
+
+public class Stock {
+
+	private String stockId;
+	private String stockName;
+	private String companyName;
+	private double price;
+	private LocalDate closingDate;
+	private int quantity;
+}

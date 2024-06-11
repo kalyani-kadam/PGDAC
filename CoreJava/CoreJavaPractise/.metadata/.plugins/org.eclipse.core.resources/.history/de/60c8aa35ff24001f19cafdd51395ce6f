@@ -1,0 +1,13 @@
+package com.app.utils;
+
+import java.time.LocalDate;
+import java.util.Map;
+
+import com.app.entity.Item;
+
+public class Utils {
+	public static Item addNewItem(String code,String desc, double price, String sdate,Map<String,Item>item) {
+		LocalDate shipmentDate = LocalDate.parse(sdate);
+		return new Item(code,desc,price,shipmentDate);
+	}
+}

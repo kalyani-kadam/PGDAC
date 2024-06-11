@@ -1,0 +1,5 @@
+package com.app.customExc;
+
+public class EmployeeException extends Exception {
+
+}

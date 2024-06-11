@@ -1,0 +1,59 @@
+package com.app.tester;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.app.entity.Cricketer;
+import static com.app.utils.Utils.addNewCricketer;;
+public class Tester {
+
+	public static void main(String[] args) {
+		try(Scanner sc= new Scanner(System.in)){
+			List<Cricketer> cricketers = new ArrayList<>();
+			boolean exit=false;
+			while(!exit) {
+				try {
+					System.out.println("1.Accept minimum 5 Cricketers in the collection.\r\n"
+							+ "\r\n"
+							+ "2.Modify Cricketer's rating\r\n"
+							+ "\r\n"
+							+ "3.Search Cricketer by name\r\n"
+							+ "\r\n"
+							+ "4. Display all Cricketers added in collection.\r\n"
+							+ "\r\n"
+							+ "5.Display All Cricketers in sorted form by rating.\r\n"
+							+ "");
+					System.out.println("Enter option");
+					switch(sc.nextInt()) {
+					case 0:
+						System.out.println("thank u");
+						exit=true;
+						break
+					case 1:
+						System.out.println("Enter name,age,email_id,Phone,rating");
+						Cricketer crt = addNewCricketer(sc.next(),sc.nextInt(),sc.next(),sc.next(),sc.nextInt());
+						cricketers.add(crt);
+						System.out.println("Addded cricketer details");
+						break;
+//						kk 22 kk@gmail.com 70283803 5
+//						mk 22 mk@gmail.com 80283803 5
+//						uk 22 uk@gmail.com 9011283803 5
+//						bk 22 bk@gmail.com 890283803 5
+//						hk 22 hk@gmail.com 92283803 5
+					case 2:
+//						for(Cricketer c:cricketers) {
+							System.out.println("----Cricketers details----");
+//						}
+						cricketers.forEach(c-> System.out.println(c));
+						break;
+					}
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}
+
+}

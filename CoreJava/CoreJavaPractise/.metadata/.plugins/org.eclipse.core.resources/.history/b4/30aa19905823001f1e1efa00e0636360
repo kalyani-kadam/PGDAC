@@ -1,0 +1,14 @@
+package com.app.entity;
+
+
+//Application captures following details for each employee whether FTE or PTE:
+//    Name, Date of joining, Phone Number, Aadhaar number  
+//For FTE, monthly salary is also captured.
+//For PTE, hourly payment amount is also captured.
+
+public class Employee {
+	private String name;
+	private LocalDate dateofjoining;
+	private int phoneNumber;
+	private int aadhaarNumber; 
+}
