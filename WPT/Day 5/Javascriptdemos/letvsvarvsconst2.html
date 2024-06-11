@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Internal javascript-->
+    <script>
+        var a=12;
+        var a="Kishori";
+        let b=34;
+        //let b="xxx";
+        function f1(){
+            var a=45;
+            document.write("inside function :",a);
+            if(a>10){
+                var x=34;
+                let y=45;
+                document.write("inside if ",x,"  ",y)
+            }
+            document.write("outside if ",x)
+           // document.write("outside if ",y) //error
+        }
+        f1() // calling a function f1
+        document.write("outside function :",a);
+
+        document.write("The value of k : ",k);
+        var k=34;
+       // document.write("The value of x1 : ",x1);  //error
+        //let x1=34;
+
+        const c=300;
+        c=3; //error
+    </script>
+</body>
+</html>

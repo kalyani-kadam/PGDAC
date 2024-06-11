@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[{pid:1,pname:"chair",qty:34,price:3400},
+        {pid:2,pname:"Table",qty:5,price:4000},
+        {pid:3,pname:"Shelf",qty:10,price:2000}]
+        const displaytable=function(){
+            var str="<table border='2'><tr><th>Product Id</th><th>Name</th><th>Quantity</th><th>Price</th></tr>"
+            for(var p of arr){
+                str+=`<tr><td>${p.pid}</td><td>${p.pname}</td><td>${p.qty}</td><td>${p.price}</td></tr>`
+            }
+            str+="</table>"
+            document.getElementById("mytable").innerHTML=str;
+        } 
+        function clearform(){
+           document.getElementById("pid").value="";
+           document.getElementById("pname").value="";
+            document.getElementById("qty").value="";
+            document.getElementById("price").value="";
+            document.getElementById("pid").focus();
+        }
+        function addproduct(){
+            var pid=parseInt(document.getElementById("pid").value);
+            var pnm=document.getElementById("pname").value;
+            var qty=parseInt(document.getElementById("qty").value);
+            var price=parseFloat(document.getElementById("price").value);
+            var p={pid:pid,pname:pnm,qty:qty,price:price};
+            arr.push(p);
+            displaytable();
+            clearform();
+        }
+        function deleteproduct(){
+            var id=parseInt(document.getElementById("pid").value)
+            var pos=arr.findIndex(ob=>ob.pid===id)
+            if(pos!=-1){
+                arr.splice(pos,1);
+                displaytable();
+            }
+        }
+        function displayproduct(){
+            var id=parseInt(document.getElementById("pid").value);
+            var ob=arr.find(ob=>ob.pid===id);
+            if(ob!==undefined){
+                document.getElementById("pname").value=ob.pname;
+                document.getElementById("qty").value=ob.qty;
+                document.getElementById("price").value=ob.price;
+            }
+        }
+        function updateproduct(){
+            var pid=parseInt(document.getElementById("pid").value);
+            var pnm=document.getElementById("pname").value;
+            var qty=parseInt(document.getElementById("qty").value);
+            var price=parseFloat(document.getElementById("price").value);
+            var p={pid:pid,pname:pnm,qty:qty,price:price};
+            var pos=arr.findIndex(ob=>ob.pid===pid);
+            if(pos!=-1){
+                arr.splice(pos,1,p);
+                displaytable();
+            }
+        }
+    </script>
+</head>
+<body onload="displaytable()">
+    <form>
+        Product id : <input type="text" name="pid" id="pid"><br>
+        Product Name : <input type="text" name="pname" id="pname"><br>
+        Product Qty : <input type="text" name="qty" id="qty"><br>
+        Product price : <input type="text" name="price" id="price"><br>
+        <button type="button" name="add" id="add" onclick="addproduct()">Add new Product</button>
+
+        <button type="button" name="Delete" id="Delete" onclick="deleteproduct()">Delete Product</button>
+
+        <button type="button" name="display" id="display" onclick="displayproduct()">Display Product</button>
+
+        <button type="button" name="Update" id="Update" onclick="updateproduct()">Update Product</button>
+    </form>
+    <div id="mytable"></div>
+    
+</body>
+</html>

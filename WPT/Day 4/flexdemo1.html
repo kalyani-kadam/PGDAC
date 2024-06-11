@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fcontainer,.fcontainer2{
+            height:500px;
+            background-color: aquamarine;
+            display:flex;
+            /*flex-direction: row-reverse;*/
+            /*flex-wrap: wrap;*/
+            justify-content: center;
+            align-items: flex-end;
+            /*align-items: center;*/
+        }
+        .fcontainer2{
+            background-color: blanchedalmond;
+            align-items: baseline;
+        }
+        .fitem{
+            height:100px;
+            width:100px;
+            background-color: blue;
+            color:white;
+            border:2px solid red;
+        }
+        .item1{
+            order:2;
+            flex-shrink:0
+        }
+        .item4{
+            order:3;
+            flex-grow:2;
+            align-self: center;
+        }
+        .item2{
+            order:5
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fcontainer">
+        <div class="fitem item1" >1</div>
+        <div class="fitem item2">2</div>
+        <div class="fitem item3">3</div>
+        <div class="fitem item4">4</div>
+        <div class="fitem">5</div>
+        <div class="fitem">6</div>
+        <div class="fitem">7</div>
+        <div class="fitem">8</div>
+    </div>
+    <div class="fcontainer2">
+        <div class="fitem"><h1>1</h1></div>
+        <div class="fitem"><h4>4</h4></div>
+        <div class="fitem"><h2>2</h2></div>
+    </div>
+</body>
+</html>

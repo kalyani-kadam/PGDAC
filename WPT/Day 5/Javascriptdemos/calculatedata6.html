@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*function calculate(op){
+            switch(op){
+
+            }
+        }*/
+        function factorial(n){
+            var fact=1;
+            for(var i=1;i<=n;i++){
+                fact=fact*i;
+            }
+            return fact;
+        }
+        function calculate(event){
+            var id=event.target.id;
+            var n1=parseInt(document.getElementById("num1").value);
+            switch(id){
+                case "Add":
+                    var n2=parseInt(document.getElementById("num2").value);
+                    var result=n1+n2;
+                    break;
+                case "Sub":
+                var n2=parseInt(document.getElementById("num2").value);
+                var result=n1-n2;
+                    break;
+                case "Fact":
+                    var result=factorial(n1);
+                    break;
+                    
+            }
+            document.getElementById("mydiv").innerHTML=result;
+            document.getElementById("Result").value=result;
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        Number1 : <input type="text" name="n1" id="num1" placeholder="enter number 1">
+        Number2 : <input type="text" name="n2" id="num2" placeholder="enter number 2">
+        Result : <input type="text" name="Result" id="Result" placeholder="Result" readonly>
+        <button type="button" name="btn" id="Add" value="add" onclick="calculate(event)">Add</button>
+        <button type="button" name="btn" id="Sub" value="Sub" onclick="calculate(event)">Subtract</button>
+        <button type="button" name="btn" id="Fact" value="Fact" onclick="calculate(event)">Factorial</button>
+        
+    </form>
+    <div id="mydiv"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //popup box with only ok  button
+        alert("Hello world!!");
+        //popup box with ok and cancel button
+        var ans=confirm("do you wan to continue")
+        if(ans){ //ans==true
+            document.write("<h1>You clicked ok</h1>")
+        }else{
+            document.write("<h1>You clicked cancel</h1>")
+        }
+        //popup box with text box
+        var name=prompt("Enter name");
+        document.write("Name : "+name);
+        console.log("Name : "+name);
+
+    </script>
+</body>
+</html>

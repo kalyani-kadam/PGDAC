@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var d=new Date(2023,11,11);
+        alert(d.getMonth())
+        var d1=new Date(2024,11,11);
+        var diff=d1.getTime()-d.getTime();
+        document.write("difference : "+(diff/(1000*60*60*24))+"<br>")
+        document.write("date : "+d.getDate()+"/"+(d.getMonth())+"/"+d.getFullYear())
+    </script>
+</body>
+</html>

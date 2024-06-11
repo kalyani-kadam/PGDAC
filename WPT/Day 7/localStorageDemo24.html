@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+        function getdata(){
+            if(localStorage.count!==undefined){
+                localStorage.count=parseInt(localStorage.count)+1
+            }else{
+                localStorage.count=1;
+                //localStorage.setItem("count",1);
+            }
+            document.getElementById("mydiv").innerHTML="You clicked "+localStorage.count+" times"
+
+        }
+        function decreasedata(){
+            if(localStorage.count!==undefined){
+                localStorage.count=parseInt(localStorage.count)-1
+                document.getElementById("mydiv").innerHTML="You clicked "+localStorage.count+" times"
+                //localStorage.getItem("count");
+            }
+        }
+        function removedata(){
+            if(localStorage.count!==undefined){
+                //to delete specific property
+                 localStorage.removeItem("count");
+                 //to delete all the properties
+                 //localStorage.clear()
+            }
+        }
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn" onclick="getdata()">Click me</button>
+    <button type="button" name="btn" id="btn" onclick="decreasedata()">decrease count</button>
+    <div id="mydiv"></div>
+    <button type="button" name="btn" id="btn" onclick="removedata()">remove count</button>
+    <div id="mydiv"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=new Array(1,2,3,4)
+        var arr2=[12,13,17,15]
+        document.write("The array :  "+arr+"<br>")
+        var pos=arr2.indexOf(17);
+        document.write("The position of 17 : "+pos+"<br>")
+        var pos=arr2.indexOf(5);
+        document.write("The position of 5 : "+pos+"<br>")
+        var pos=arr2.findIndex((val,index,a)=>val%2!==0)
+        document.write("The position of number not divisible by 2 : "+pos+"<br>")
+        var pos=arr2.findIndex((val,index,a)=>val%7===0)
+        document.write("The position of number not divisible by 7 : "+pos+"<br>")
+        var val=arr2.find((val,index,arr)=>val%2!==0);
+        document.write("The  number not divisible by 2 : "+val+"<br>")
+        var val=arr2.find((val,index,arr)=>val%7===0);
+        document.write("The  number  divisible by 7 : "+val+"<br>")
+        var arr1=arr2.filter((val,index,arr)=>val%2!==0);
+        document.write("All numbers not divisible by 2 : "+arr1+"<br>")
+    </script>
+</body>
+</html>

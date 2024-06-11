@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            background-color: blue;
+            color:white;
+            font-size: 40px;
+            border:2px solid red;
+            border-radius:20px;
+            padding-left:500px
+        }
+        footer{
+            position:fixed;
+            bottom:0;
+            left:500px;
+            font-size: 40px;
+        }
+        span{
+            color:red;
+        }
+        .myclass{
+            float:left;
+            border:2px solid red;
+            border-radius: 20px;
+            margin:80px
+        }
+    </style>
+</head>
+<body>
+    <header>FeedBack form</header>
+    <br><br>
+    <h4>Names: Rajan Khadilkar, Atharva Kulkarni</h4>
+    <p>Pls fill the feedback about the experience of using our website, check all the problems you faced and add details below</p>
+    <div style="width:400px" class="myclass">
+    <fieldset>
+        <legend>Complaints</legend>
+    <input type="checkbox" name="complaint" id="technical" value="technical"><label for="technical">Technical</label><br>
+
+    <input type="checkbox" name="complaint" id="available" value="available"><label for="available">Product not available</label><br>
+
+    <input type="checkbox" name="complaint" id="missing" value="missing"><label for="missing">Missing information ablout the product</label>
+</fieldset>
+</div>
+<div class="myclass">
+    <table>
+        <tr>
+            <th>UserName<span>*</span>:</th><td> <input type="text" name="uname" id="nm" required></td>
+        </tr>
+        <tr>
+            <th>Email <span>*</span>:</th>
+            <td> <input type="email" name="email" id="email" required></td>
+        </tr>
+        <tr>
+            <th>Location<span>*</span>: </th>
+            <td><input type="text" name="location" id="location" required></td>
+        </tr>
+        <tr>
+            <th>Phone<span>*</span>: </th>
+            <td><input type="text" name="phone" id="phone" required></td>
+        </tr>
+</table>
+</div>
+<br clear="all">
+<div>
+    Description: <br><textarea rows="5" cols="80"></textarea>
+</div>
+    <footer>&copy; copyrights reserved</footer>
+</body>
+</html>

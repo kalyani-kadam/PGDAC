@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes animation1 {
+            from{
+                background-color: blue;
+                margin:20px
+            }
+            to{background-color: pink;
+            margin:80px}
+        }
+        @keyframes animation2 {
+            10%{
+                background-color: blue;
+                margin:20px
+            }
+           25%{
+                background-color: pink;
+                margin:40px;
+                width:200px;
+                height:50px;
+            }
+            50%{
+                background-color: cyan;
+                margin:20px;
+                width:300px
+            }
+            100%{
+                background-color: violet;
+                margin:20px
+            }
+        }
+        div{
+            border:2px solid red;
+            background-color: cyan;
+            width:200px;
+            height:200px;
+            animation:animation2;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-iteration-count: 2;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        This is div
+    </div>
+</body>
+</html>

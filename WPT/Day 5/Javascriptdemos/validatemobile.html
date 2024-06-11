@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const validatemob=function(){
+            var mob=document.getElementById("mobile").value;
+            if(isFinite(mob) && mob.length==10){
+                document.getElementById("errmob").innerHTML="valid mobile"
+            }else{
+                document.getElementById("errmob").innerHTML="invalid mobile"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Mobile number: <input type="text" name="mobile" id="mobile">
+        <span id="errmob"> </span><br>
+        <button type="button" name="btn" id="btn" onclick="validatemob()">check mobile</button>
+    </form>
+</body>
+</html>

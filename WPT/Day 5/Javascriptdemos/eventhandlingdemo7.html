@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkprime(){
+            var n1=parseInt(document.getElementById("n1").value);
+            var result="It is prime "+n1;
+            for(var i=2;i<n1;i++){
+                if(n1%i==0){
+                    var result="not prime: "+n1;
+                    break;
+                }
+                
+            }
+            //assign the result to the text box
+            document.getElementById("mydiv").innerHTML=result;
+            //clear the text box
+            document.getElementById("n1").value="";
+            //focus event via javascript code
+            document.getElementById("n1").focus();
+        }
+        function printtable(){
+            var n1=parseInt(document.getElementById("n1").value);
+            for(var i=1;i<=10;i++){
+                var result=n1+" * "+i+" = "+(n1*i);
+                //assign the result to the text box
+                document.getElementById("mydiv").innerHTML+=result+"<br>";
+            } 
+            //clear the text box
+            document.getElementById("n1").value="";
+            //focus event via javascript code
+            document.getElementById("n1").focus();
+        }
+    </script>
+</head>
+<body>
+    Number : <input type="text" name="num1" id="n1">
+    <button type="button" name="btn" id="prime" value="prime" onclick="checkprime()">Check prime</button>
+    <button type="button" name="btn" id="table" value="table" onclick="printtable()">Print table</button>
+    <div id="mydiv"></div>
+</body>
+</html>

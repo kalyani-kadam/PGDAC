@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/addproductform">
+        <button type="submit" name="btnadd" id="add" value="add">Add new product</button>
+    </form>
+    <table border="2">
+        <tr><th>Product id</th>
+            <th>Product name</th>
+            <th>Quantity</th>
+            <th>price</th>
+            <th>action</th>
+        </tr>
+        <% for(var i=0;i<proddata.length;i++){%>
+            <tr>
+                <td><%=proddata[i].pid%></td>
+                <td><%=proddata[i].pname%></td>
+                <td><%=proddata[i].qty%></td>
+                <td><%=proddata[i].price%></td>
+                <td>
+                    <a href="deleteproduct/<%=proddata[i].pid%>">delete</a>/
+                    <a href="editproduct/<%=proddata[i].pid%>">edit</a>
+                </td>
+            </tr>
+        <%}%>
+    </table>
+</body>
+</html>

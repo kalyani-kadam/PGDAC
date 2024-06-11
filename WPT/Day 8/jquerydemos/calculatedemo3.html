@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            function factorial(n1){
+                var fact=1;
+                for(var i=1;i<=n1;i++){
+                    fact=fact*i;
+                }
+                return fact
+            }
+
+            //assign click event to add button
+            $('#add').click(function(){
+                //it will retrieve the value from the given text box
+                var n1=parseInt($('#n1').val())
+                var n2=parseInt($('#n2').val())
+                var addition=n1+n2;
+                //it will assign the value of variable addition to the text box
+                $('#result').val(addition)
+                $('#mydiv').html("Addition : "+addition)
+            })
+            $('#sub').click(function(){
+                 var n1=parseInt($('#n1').val())
+                 var n2=parseInt($('#n2').val())
+                 var sub=n1-n2;
+                 $('#result').val(sub);
+                 $('#mydiv').html("subtraction: "+sub);
+            })
+            $('#fact').click(function(){
+                var n1=parseInt($('#n1').val())
+                var ans=factorial(n1);
+                $('#result').val(ans);
+                 $('#mydiv').html("Factorial: "+ans);
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <form>
+        number1 : <input type="text" name="num1" id="n1"><br>
+        Number 2: <input type="text" name="num1" id="n2"><br>
+        Result : <input type="text" name=" result" id="result"><br>
+        <button type="button" name="add" id="add">Addition</button>
+        <button type="button" name="sub" id="sub">Subtraction</button>
+        <button type="button" name="fact" id="fact">Factorial</button>
+    </form>
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

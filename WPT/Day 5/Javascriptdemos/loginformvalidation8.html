@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validatetextbox(id,errid){
+            var data=document.getElementById(id).value;
+            if(data.trim().length>=4){
+                document.getElementById(errid).innerHTML=""
+                return true;
+            }
+            document.getElementById(errid).innerHTML="data cannot be only spaces"
+            return false;
+        }
+       function validatedata(){
+           var flag1=validatetextbox("unm","erruname");
+           var flag2=validatetextbox("pass","errpass");
+           return flag1 && flag2;
+       }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validatedata()" method="post">
+        User name : <input type="text" name="uname" id="unm" required minlength="4" maxlength="7"><span id="erruname" style="color:red"></span><br>
+        Password : <input type="text" name="passwd" id="pass" required minlength="4" maxlength="8" ><span id="errpass" style="color:red"></span><br>
+        <button type="submit" name="btn" id="login">Login</button>
+    </form>
+</body>
+</html>

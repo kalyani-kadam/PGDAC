@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addition(ev){
+         //alert("in addition");
+         //console.log(ev);
+         var n1=parseInt(document.getElementById("num1").value);
+         var n2=parseInt(document.getElementById("num1").value);
+         var addition=n1+n2;
+         document.getElementById("mydiv").innerHTML="Addition: "+addition;
+        }
+        function subtract(){
+           // alert("in subtract ")
+           var n1=parseInt(document.getElementById("num1").value);
+           var n2=parseInt(document.getElementById("num2").value)
+           document.getElementById("mydiv").innerHTML="Subtraction: "+(n1-n2);
+        }
+        function factorial(){
+            var n1=parseInt(document.getElementById("num1").value);
+            var fact=1;
+            for(var i=1;i<=n1;i++){
+                fact=fact*i;
+            }
+            document.getElementById("mydiv").innerHTML="Factorial : "+fact;
+        }
+    </script>
+</head>
+<body>
+   
+    <form>
+        
+        Number2 : <input type="text" name="n2" id="num2" placeholder="enter number 2">
+        <button type="button" name="add" id="add" value="add" onclick="addition(event)">Add</button>
+        <button type="button" name="sub" id="Subtract" value="Sub">Subtract</button>
+        <button type="button" name="Fact" id="Fact" value="Fact" onclick="factorial()">Factorial</button>
+        
+    </form>
+    <div id="mydiv"></div>
+    <script>
+        document.getElementById("Subtract").addEventListener("click",subtract)
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header,footer{
+            background-color: aqua;
+            color: blue;
+            border:2px solid red;
+            border-radius: 20px;
+            padding-left:200px
+        }
+        footer{
+            position:fixed;
+            bottom:0;
+            width:100%
+        }
+    </style>
+    <script src="./script/jquery.js"></script>
+    <script>
+        //display the dropdown box
+        function displaydropdown(arr){
+            var str="<select id='id' name='id'>"
+            for(var p of arr){
+                str+=`<option value='${p.id}'>${p.id}</option>`
+            }
+            str+="</select>"
+            $('#mydropdown').html(str);
+            //assign change event to the newly added dropdown box
+            $('#id').change(function(){
+                sendrequest()
+            })
+        }
+        //convert one object into a string and display it
+        function displaydata(ob){
+           var str=`userId : ${ob.userId}<br>Id: ${ob.id}<br> title: ${ob.title} <br> Body: ${ob.body}`
+           //var str=JSON.stringify(ob)
+            $('#onepost').html(str);
+        }
+        //this function will be called when change event occur on the dropdown box
+        function sendrequest(){
+            var id=$('#id option:selected').val();
+            $.ajax({
+                url:"https://jsonplaceholder.typicode.com/posts/"+id,
+                type:"GET",
+                success:function(result){
+                   displaydata(result);
+                },
+                error:function(err){
+                    console.log(err)
+                }
+            }) 
+        }
+        //convert employee array into table
+        function displaytableemp(arr){
+             var str="<table border='2'><tr><th>Id</th><th>Name</th><th>Salary</th><th>Age</th></tr>"
+            for(var p of arr){
+                str+=`<tr><td>${p.id}</td><td>${p.employee_name}</td><td>${p.employee_salary}</td><td>${p.employee_age}</td></tr>`
+
+           }
+            str+="</table>"
+            $('#mytable').html(str);
+        }
+        //convert the array into table
+        function displaytable(arr){
+            var str="<table border='2'><tr><th>UserId</th><th>Id</th><th>title</th><th>Body</th></tr>";
+            for(var p of arr){
+                str+=`<tr><td>${p.userId}</td><td>${p.id}</td><td>${p.title}</td><td>${p.body}</td></tr>`
+            }
+            str+="</table>"
+            $('#mytable').html(str);    
+        }
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                //sending ajax request using jquery
+                $.ajax({
+                    url:"https://jsonplaceholder.typicode.com/posts",
+                    type:"GET",
+                    success:function(result){ 
+                        console.log(result);
+                        //it will display data in table format
+                        displaytable(result)
+                        //display data in dropdown format
+                        displaydropdown(result);
+                    },
+                    error:function(err){
+                        console.log(err)
+                    }
+                } )
+            })
+            $('#btn1').click(function(){
+                $.ajax({
+                    url:"https://dummy.restapiexample.com/api/v1/employees",
+                    type:"GET",
+                    success:function(result){
+                        console.log(result);
+                        displaytableemp(result.data)
+                    },
+                    error:function(err){
+
+                    }
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <header><h1>AJAX using jQuery</h1></header>
+    <button type="button" name="btn" id="btn">get data</button>
+    <button type="button" name="btn" id="btn1">get Employee data</button>
+    <div id="mydropdown"></div><div id="onepost"></div>
+    <div id="mytable"></div>
+    <footer>@ copy rights reserved</footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(pid, pname,mob){
+                this.pid=pid;
+                this.pname=pname;
+                this.mobile=mob;
+
+            }
+            display(){
+                //template operator
+                return `Id : ${this.pid} Name : ${this.pname} Mobile: ${this.mobile}`
+            }
+        }
+        class Employee extends Person{
+            constructor(pid,nm,mob,dept,desg){
+                super(pid,nm,mob);
+                this.dept=dept;
+                this.desg=desg;
+            }
+            display(){
+                return super.display()+` Department : ${this.dept} Designation : ${this.desg}`
+            }
+        }
+        var ob=new Person(1,"Rujuta",33333);
+        document.write(ob.display()+"<br>")
+        var e1=new Employee(1,"Gauri",3456,"doctor","psycology")
+        document.write(e1.display()+"<br>")
+        e1.address="baner";
+        var e2=new Employee(1,"Manjiri",3456,"receptionist","psycology")
+        
+
+    </script>
+</body>
+</html>

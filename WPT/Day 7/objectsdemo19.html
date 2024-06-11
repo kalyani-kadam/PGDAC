@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ob={name:"Rajan",desg:"designer"}
+        alert(ob.name+"----"+ob.desg)
+        alert(ob['name']+"----"+ob['desg']);
+        ob.address="Baner";
+        for(var p in ob){
+            document.write(p+"--->"+ob[p]+"<br>")
+            
+        }
+        document.write(`-----------------------<br>`)
+        for(var p in ob){
+           
+            document.write(`${p}-----${ob[p]}<br>`)
+        }
+
+        //constructor function
+        var Employee=function(nm,desg,email){
+            this.name=nm;
+            this.desg=desg;
+            this.email=email;
+            this.display=function(){
+                return `name: ${this.name} Desg : ${this.desg} email: ${this.email}`
+            }
+        }
+        var ob=new Employee("Revati","UX designer","rev@gmail.com")
+
+    </script>
+</body>
+</html>

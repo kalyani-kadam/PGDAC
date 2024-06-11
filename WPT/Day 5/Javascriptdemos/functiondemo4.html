@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(x,y){
+            document.write("from self calling function",x,y,"<br>")
+        })(10,12)
+        function f1(){
+            var m1=20;
+            //closure function
+            function f2(){
+               var m2=34; 
+               alert("parent scope: "+m1);
+               alert("own scope"+m2)
+            }
+            f2(); //call f2 function
+        }
+        f1()   //call f1 fun ction
+    </script>
+</body>
+</html>

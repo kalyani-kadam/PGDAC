@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var names=["Rajan","Revati","Atharva","Mugdha"]
+        function addname(){
+            console.log("in add function")
+            var nm=document.getElementById("name").value;
+            names.push(nm);
+            document.getElementById("name").value="";
+            document.getElementById("name").focus();
+            displaylist()
+        }
+        function deletename(){
+            var nm=document.getElementById("name").value;
+            var pos=names.indexOf(nm);
+            names.splice(pos,1);
+            displaylist()
+            document.getElementById("name").value="";
+            document.getElementById("name").focus();
+        }
+        function updatename(){
+            //accept new name
+            var newname=prompt("enetr new name");
+            //get data from text box
+            var nm=document.getElementById("name").value;
+            //find the position of the name
+            var pos=names.indexOf(nm);
+            if(pos!=-1){
+                //delete the old name and replace it with new name
+                names.splice(pos,1,newname)
+            }
+            displaylist()
+            document.getElementById("name").value="";
+            document.getElementById("name").focus();
+
+        }
+        function displaylist(){
+            var str="<ul>"
+            for(var i=0;i<names.length;i++){
+                str+="<li>"+names[i]+"</li>"
+            }
+                
+            str+="</ul>";
+            document.getElementById("mylist").innerHTML=str;
+        }
+    </script>
+</head>
+<body onload="displaylist()">
+    <form>
+    Name : <input type="text" name="nm" id="name">
+    <button type="button" name="add" id="add" value="add" onclick="addname()">Add Name</button>
+
+    <button type="button" name="add" id="add" value="add" onclick="deletename()">Delete Name</button>
+
+    <button type="button" name="add" id="add" value="add" onclick="updatename()">Modify Name</button>
+   </form>
+   <div id="mylist">
+    
+   </div>
+</body>
+</html>

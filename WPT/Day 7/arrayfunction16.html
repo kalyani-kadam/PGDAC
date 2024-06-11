@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[2,3,12,4,5,6]
+        document.write("The array : : "+ arr+"<br>")
+        var arr2=arr.map((val,index,arr)=>val*val);
+        document.write("squares of numbers : "+ arr2+"<br>")
+        var sum=arr.reduce((acc,num)=>acc+num)
+        document.write("sum of numbers : "+ sum+"<br>")
+        var sum=arr.reduce((acc,num)=>acc+num,100)
+        document.write("sum of numbers : "+ sum+"<br>")
+        var data=["python","perl","linux","os","java"]
+        var str=data.reduce((acc,num)=>acc+num)
+        document.write("concatenate strings : "+ str+"<br>")
+        //to find max value from arr array
+        var max=arr.reduce((acc,val)=>acc>val?acc:val)
+        document.write("Maximum value : "+ max+"<br>")
+        //to find a string with max length
+        var maxstr=data.reduce((acc,val)=>acc.length>val.length?acc:val)
+        document.write("Maximum length string : "+ maxstr+"<br>")
+    </script>
+</body>
+</html>
