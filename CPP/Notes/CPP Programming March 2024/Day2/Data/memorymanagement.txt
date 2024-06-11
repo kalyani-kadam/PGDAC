@@ -1,0 +1,25 @@
+ C++ Memory Management
+
+What Is  C++ Memory Management?Why Do We Need Memory Management, and How Does It Work?Allocation and Deallocation of Memory New and Delete Operator for ArraysAdvantages of New Operator Over Malloc FunctionView More
+In C++, we can efficiently allocate the memory at runtime and deallocate it when not required. With this feature, we get the flexibility of allocation and deallocation of memory as per requirement. In this article on C++ memory management, we will learn about the dynamic allocation of memory and understand its working in detail.
+
+
+What Is  C++ Memory Management?
+Memory management can be defined as a process in which management of a computer’s memory occurs, for example assigning memory to programs, variables etc., in such a way that it doesn’t affect the overall performance. Sometimes, the computer’s data can range up to terabytes, so efficient use of memory is necessary to minimize memory wastage and boost up performance.
+
+Why Do We Need Memory Management, and How Does It Work?
+Memory management is required to ensure that there is no wastage of memory and that allocation takes place efficiently. The memory that a C++ program uses is divided into different parts. Here, we will discuss two, i.e. stack and heap.
+
+Stack: In stack, all the variables that are declared inside the function and other information related to the function are stored.
+Heap: Heap is unused memory and the part from where the memory is allocated dynamically when the program runs. 
+During the declaration of an array, there are times when the correct memory is not determined until runtime. To avoid such scenarios, we usually declare an array of the maximum size. However, because of this full size, some memory remains unused. For example, let us suppose we have declared an array of size 30, and after declaring the array, it turns out that we only need space of 10 size, so the rest of the space is of no use, or we can say it will get wasted. 
+
+To avoid such cases, we use memory allocation. We can allocate the memory at runtime from the heap using an operator.
+
+Allocation and Deallocation of Memory 
+Other programming languages like java, python, etc., don’t need to allocate memory dynamically. In C language, we use the malloc() or calloc() functions to allocate the memory dynamically at run time, and C++ also supports these functions. But, in C++, allocation and deallocation are done manually.
+
+In C++, two operators are used for the allocation and deallocation of memory i.e
+
+new operator
+delete operator

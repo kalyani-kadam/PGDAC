@@ -1,0 +1,23 @@
+C++ Pointers
+The pointer in C++ language is a variable, it is also known as locator or indicator that points to an address of a value.
+
+The symbol of an address is represented by a pointer. In addition to creating and modifying dynamic data structures, they allow programs to emulate call-by-reference. One of the principal applications of pointers is iterating through the components of arrays or other data structures. The pointer variable that refers to the same data type as the variable you're dealing with has the address of that variable set to it (such as an int or string).
+
+datatype *var_name;   
+int *ptr;   // ptr can point to an address which holds int data   
+
+How to use a pointer?
+1:Establish a pointer variable.
+2:employing the unary operator (&), which yields the address of the variable, to assign a pointer to a variable's address.
+3:Using the unary operator (*), which gives the variable's value at the address provided by its argument, one can access the value stored in an address.
+Since the data type knows how many bytes the information is held in, we associate it with a reference. The size of the data type to which a pointer points is added when we increment a pointer.
+
+Advantage of pointer
+1) Pointer reduces the code and improves the performance, it is used to retrieving strings, trees etc. and used with arrays, structures and functions.
+2) We can return multiple values from function using pointer.
+3) It makes you able to access any memory location in the computer's memory.
+
+
+Symbol	                Name			Description
+& (ampersand sign)	Address operator	Determine the address of a variable.
+∗ (asterisk sign)	Indirection operator	Access the value of an address.

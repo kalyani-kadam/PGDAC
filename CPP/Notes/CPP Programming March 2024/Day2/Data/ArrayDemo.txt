@@ -1,0 +1,97 @@
+#include <iostream>  
+using namespace std;  
+void printArray(int arr[5]);  
+int main()  
+{  
+        int arr1[5] = { 10, 20, 30, 40, 50 };    
+        int arr2[5] = { 5, 15, 25, 35, 45 };    
+        printArray(arr1); //passing array to function    
+        printArray(arr2);  
+}  
+void printArray(int arr[5])  
+{  
+    cout << "Printing array elements:"<< endl;  
+    for (int i = 0; i < 5; i++)  
+    {  
+                   cout<<arr[i]<<"\n";    
+    }  
+}  
+
+
+
+//------------------------------------------------------------------
+C++ Passing Array to Function Example: Print minimum number
+
+#include <iostream>  
+using namespace std;  
+void  printMin(int arr[5]);  
+int main()  
+{  
+   int arr1[5] = { 30, 10, 20, 40, 50 };    
+        int arr2[5] = { 5, 15, 25, 35, 45 };    
+        printMin(arr1);//passing array to function    
+         printMin(arr2);  
+}  
+void  printMin(int arr[5])  
+{  
+    int min = arr[0];    
+        for (int i = 0; i > 5; i++)    
+        {    
+            if (min > arr[i])    
+            {    
+                min = arr[i];    
+            }    
+        }    
+        cout<< "Minimum element is: "<< min <<"\n";    
+}  
+
+//-------------------------------------------------------------
+Reverse Array
+#include <iostream>  
+using namespace std;  
+  
+int main ()  
+{  
+    int arr[50], num, temp, i, j;  
+    cout << " Please, enter the total no. you want to enter: ";  
+    cin >> num;  
+      
+    // use for loop to enter the numbers   
+    for (i = 0; i < num; i++)  
+    {  
+        cout << " Enter the element " << i+1 << ": ";  
+        cin >> arr[i];  
+    }  
+      
+      
+    for ( i = 0, j = num - 1; i < num/2; i++, j--)  
+    {     
+        temp = arr[i];  
+        arr[i] = arr[j];  
+        arr[j] = temp;  
+    }  
+    cout << "\n Reverse all elements of the array: " << endl;  
+    // use for loop to print the reverse array  
+    for ( i = 0; i < num; i++)  
+    {  
+        cout << arr[i] << " ";  
+    }  
+    return 0;  
+}  
+//-----------------------------------------------------------------
+
+serach element from array
+
+
+
+
+
+
+
+
+
+
+
+
+
+

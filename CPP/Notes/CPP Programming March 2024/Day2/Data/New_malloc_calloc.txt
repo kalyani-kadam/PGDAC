@@ -1,0 +1,51 @@
+****malloc:
+Purpose: Used for dynamic memory allocation in C and C++.
+Usage: void* malloc(size_t size);
+Initialization: Memory allocated using malloc is not initialized; it contains garbage values.
+Example:
+int* arr = (int*)malloc(10 * sizeof(int));
+
+
+****calloc:
+Purpose: Used for dynamic memory allocation in C and C++.
+Usage: void* calloc(size_t num_elements, size_t element_size);
+Initialization: Memory allocated using calloc is initialized to zero.
+Example:
+int* arr = (int*)calloc(10, sizeof(int));
+
+****realloc:
+
+Purpose: Used to resize or reallocate previously allocated memory.
+Usage: void* realloc(void* ptr, size_t new_size);
+Initialization: If the memory is expanded, the new space is not initialized. If the memory is shrunk, data may be lost.
+Example:
+int* arr = (int*)malloc(10 * sizeof(int));
+int* new_arr = (int*)realloc(arr, 20 * sizeof(int));
+
+*****new (C++ only):
+
+Purpose: Used for dynamic memory allocation and object construction in C++.
+Usage: T* new T; or T* new T[N];
+Initialization: Memory allocated using new is initialized by calling the constructor of the object type.
+Example:
+cpp
+Copy code
+int* arr = new int[10];
+
+---------------------diff malloc---calloc----realloc----new------------
+
+
+malloc and calloc are C functions, while new is a C++ 
+
+malloc and calloc return void*, which needs to be cast to the appropriate pointer type.
+new returns a pointer of the correct type.
+
+new is type-safe and automatically calls constructors and destructors in C++, making it a preferred choice in C++ for allocating objects with complex lifetimes.
+
+realloc is specifically for resizing previously allocated memory, while the others are for initial allocation.
+
+calloc initializes memory to zero, which can be useful for avoiding undefined behavior when working with uninitialized data.
+
+realloc can be used to expand or shrink the memory block, but it may involve copying data, and if the new size is larger, the newly allocated memory is not initialized.
+
+In modern C++ code, it's recommended to use new for dynamic object allocation and rely on standard library containers like std::vector or smart pointers like std::shared_ptr and std::unique_ptr to manage memory in a safer and more convenient manner. Avoid using malloc and calloc in C++ unless you have a specific reason to do so, and prefer using the C++ memory management features for object-oriented code.

@@ -1,0 +1,124 @@
+C++ Conditions and If Statements
+You already know that C++ supports the usual logical conditions from mathematics:
+
+Less than: a < b
+Less than or equal to: a <= b
+Greater than: a > b
+Greater than or equal to: a >= b
+Equal to a == b
+Not Equal to: a != b
+You can use these conditions to perform different actions for different decisions.
+
+C++ has the following conditional statements:
+
+Use if to specify a block of code to be executed, if a specified condition is true
+Use else to specify a block of code to be executed, if the same condition is false
+Use else if to specify a new condition to test, if the first condition is false
+Use switch to specify many alternative blocks of code to be executed
+
+------------------------------------------------------------------
+if (condition1) {
+  // block of code to be executed if condition1 is true
+} else if (condition2) {
+  // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  // block of code to be executed if the condition1 is false and condition2 is false
+}
+---------------------------------------------------------------------
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+-------------------------------------------------------------
+This is how it works:
+
+The switch expression is evaluated once
+The value of the expression is compared with the values of each case
+If there is a match, the associated block of code is executed
+The break and default keywords are optional, and will be described later in this chapter
+
+The break Keyword
+When C++ reaches a break keyword, it breaks out of the switch block.
+
+This will stop the execution of more code and case testing inside the block.
+
+When a match is found, and the job is done, it's time for a break. There is no need for more testing.
+-----------------------------------------------------------------------------------
+C++ Loops
+
+Loops can execute a block of code as long as a specified condition is reached.
+
+Loops are handy because they save time, reduce errors, and they make code more readable.
+
+C++ While Loop
+The while loop loops through a block of code as long as a specified condition is true:
+
+Syntax
+while (condition) {
+  // code block to be executed
+}
+
+---------------------------------------------------------------------------
+The Do/While Loop
+The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+
+Syntax
+do {
+  // code block to be executed
+}
+while (condition);
+
+-------------------------------------------------------------------------------
+C++ For Loop
+
+C++ For Loop
+When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:
+
+Syntax
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+Statement 1 is executed (one time) before the execution of the code block.
+
+Statement 2 defines the condition for executing the code block.
+
+Statement 3 is executed (every time) after the code block has been executed.
+--------------------------------------------------------------------------------------
+
+C++ Break and Continue
+C++ Break
+The break statement can also be used to jump out of a loop.
+
+This example jumps out of the loop when i is equal to 4:
+
+Example
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  cout << i << "\n";
+}
+
+-----------------------------------------------------------------------------------------------
+C++ Continue
+The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  cout << i << "\n";
+}
+
+
+
+
+
+
+

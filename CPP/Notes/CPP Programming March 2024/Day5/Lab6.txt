@@ -1,0 +1,54 @@
+1 Solve this.
+Fresh business scenario to apply inheritance , polymorphism   to emp based organization scenario.
+
+Create Emp based organization structure --- Emp , Mgr , Worker
+
+
+1.1 Emp state--- id(int), name, deptId , basicSalary(double)
+Accept all of above in constructor arguments.
+
+Methods ---
+1.2. compute net salary ---ret 0
+(eg : public double computeNetSalary(){return 0;})
+
+1.2 Mgr state  ---id,name,basic,deptId , perfBonus
+Add suitable constructor
+Methods ----
+1. compute net salary (formula: basic+perfBonus) -- override computeNetSalary
+
+
+1.3 Worker state  --id,name,basic,deptId,hoursWorked,hourlyRate
+Methods : 
+1.  compute net salary (formula:  = basic+(hoursWorked*hourlyRate) --override computeNetSalary
+2. get hrlyRate of the worker  -- add a new method to return hourly rate of a worker.(getter)
+
+Create suitable array to store organization details.
+Provide following options
+1. Hire Manager
+I/P : all manager details
+
+2. Hire Worker  
+I/P : all worker details
+
+3. Display information of all employees net salary (by invoking computeNetSal), 
+
+4. Exit
+----------------------------------------------------
+
+
+2:Create cpp application for bank account handling.
+2.1. Create a class BankAccount -- acct no(int),customer name(string),balance(double)
+Add  constr. (2 constrs : first to accept all details )
+
+2.2 Add Business logic methods
+Methods
+public void withdraw(double amt) 
+public void deposit(double amt)
+
+2.3: Create object of account class and test withdraw and deposit methods.
+---------------------------------------------------------------------------------
+
+3:Create a abstract class Shape with pure virtual method area;
+Create Rectangle,Circle,Square class..inherit them from Shape class..Override area method.
+Test these all classes by creating object of respective class.
+
