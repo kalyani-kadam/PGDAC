@@ -1,0 +1,48 @@
+1. Page Navigation with server pull.
+
+New Scenario
+1.1 Student Admission Form
+
+Accept student details : first name , last name , entrance test score,course
+Submit this info to Student Admission Servlet. Validate if student has sufficient score required for a specific course .
+Accordingly give admission or deny admission. 
+Navigate the client to result page n display suitable message(using server pull)
+(refer to flow diagram)
+
+
+Request Dispatching technique (Server Pull)
+
+refer : readme n diagrams
+
+Student Admission
+1. Student POJO
+firstName,lastName, --string
+course : enum
+score : int
+admissionStatus : boolean
+
+1.2RD's forward scenario
+
+1.3  RD's include scenario
+
+
+2. Complete Servlet Life cycle (including thread pool)
+Executor Framework (used by WC to support concurrent handling of multiple client requests)
+CGI Vs Servlets :(reading H.W)
+
+
+3. Web app listeners (Will be covered in JSP)
+Add a listener in the existing web app n test it.
+
+
+4. 
+Enter JSP
+
+What is it ?
+Why ?
+API n life cycle
+JSP syntax
+
+
+Discuss weekend assignment (Health Care)
+
