@@ -1,0 +1,87 @@
+Day 1
+In the combined lab , 
+Confirm first 
+JDK version : JDK 11
+IDE : Eclipse STS 3.9.18
+1. Create new workspace
+2. Change perspective to Java EE 
+3. Delete earlier web server.
+4. Add Apache tomcat (,.0,76) in IDE.
+5. Create dynamic web project n test welcome page(HTML contents)
+6. Extract Java EE docs from : "day1_help\JavaEE_help\Web Server n Java EE docs\javaee-api-8.0-javadoc.jar"
+7. In index.html , add a link to test the servlet , deployed using annotations
+(Servlet1)
+Confirm complete servlet life cycle (init , service , destroy)
+(by printing messages on the server console)
+
+8. In index.html , add another link to test the servlet , deployed using xml tags
+Copy Servlet1 into Servlet2 (make some changes in the print statements)
+Confirm complete servlet life cycle again
+
+9. Let's start solving online voting case study
+
+9.1 Voter authentication
+i/p : email , password
+
+
+In individual lab session 
+1. MUST revise till Servlet deployment steps.
+
+2. Complete JDBC assignment of DAO layer for
+
+2.1  Get all candidates. 
+2.2  Update Voting status
+2.3  Increment candidate votes
+
+
+Day 2
+1. import day2.1 , in the Java EE workspace
+Correct Build path errors if any !
+Edit DBUtils , as per your DB settings.
+
+1.1 Revise the flow of Online voting , completed so far.
+(from login.html till Candidate List page)
+Use inspect option (client side debugging) for BEST clarity.
+
+1.2 Complete cookie based state management(session tracking) n test it.
+
+1.3 Discuss Voter registration (sign up)
+Complete this in the individual labs.
+
+2. Mandatory Hands on (in the individual labs.)
+
+
+Add a Link for  Sign Up , in login.html
+Submit it to voter_register.html(Already supplied in today's help.)
+ Accept first name , last name , email , password , dob from user.
+Submit the form to VoterRegistrationServlet
+Validate user's age . In case of valid age(>21)  , use dao layer to insert a record in DB.
+Already done in UserDaoImpl.
+
+In case of successful insertion , give a messgae n Add a link : Login Again ---> login.html
+In case of failure  ,display failure message ,  Add a link : Back  ---> voter_registration.html
+
+
+Day 3 
+1. import day3.2 (it's a copy of day3.1)
+ It uses ServletConfig n init params
+What will you edit here ????
+Any Java code OR web.xml ?
+Revise
+1.1 HttpSession API
+1.2 Dynamic form generation
+1.3 ServletConfig
+
+2. In the combined labs 
+complete 
+2.1  Complete Voter registration
+2.2  Complete admin flow (If time permits) or do it in the individual labs.
+
+
+
+
+
+
+
+
+
