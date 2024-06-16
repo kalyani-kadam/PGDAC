@@ -1,0 +1,210 @@
+
+Today's topics
+
+Revise JSP Actions
+JSP using JavaBean
+JSTL
+Enter Hibernate
+
+Revision 
+1. Name JSP Scripting elements
+scriptlets, expression OR EL syntax , declarations
+
+2. Name JSP implicit objects available from scriptlets n expression
+request, response,out,session,config,application,exception,page,pageContext
+
+3. Name EL impl objects available from EL syntax(${...})
+param,pageScope....applicationScope,cookie,initParam
+
+4. JSP Actions 
+4.1  Request dispatcher related
+In one.jsp 
+<jsp:forward page="two.jsp"/>
+
+In one.jsp 
+<jsp:include page="two.jsp"/>
+---------------------------------
+
+
+4.2 JSP - using JavaBean 
+
+Objective : User login in online voting
+We have already solved it using servlets . Right ?
+So why JSP  Using Java Beans
+1. For separation of concerns(=tasks/responsibilities)
+We are going to separate :
+1.1  P.L (presentation logic) , navigation in a JSP 
+(w/o using java code)
+
+1.2 B.L (Business logic) + managing DAO layer: separated in a java class : java bean 
+
+2. WC auto translates(converts) string based req parameters to primtive types in Java Bean BUT can't parse non primitive types.
+
+3. Re usable components.
+
+
+
+
+Enter 
+1. What is a java bean ?
+Java class containing B.L (service layer in spring)
+It's attribute (=server side entry , key=string , value=object) created by WC as a result of <jsp:useBean>, can be added under page|request|session|application
+
+2. Why Java Beans ?
+
+
+Start with the same case study : Voting case study  (admin role)
+
+
+Layers to be copied from earlier (servlet based) assgnment
+No change in : Tables, POJOs, DAOs , DBUtils
+ 
+Steps
+
+
+3. JSP standard Actions Using java beans 
+3.1 Create javabean instance(=attribute) n store it in the suitable scope.
+
+<jsp:useBean id="bean id" class="Fully qualified bean class" scope="page|request|session|application"/>
+Mandatory attributes : id n class
+Default value of scope=page
+
+eg: <jsp:useBean id="user" class="com.app.beans.UserBean" scope="session"/>
+
+Internals (What will WC invoke?)
+refer to a digram
+
+2. Data binding  from view layer ---> model (java bean)
+i.e calling the setters of Javabean properties.
+<jsp:setProperty name="bean id" property="*"/>
+eg : 
+
+WC tries to invoke ALL MATCHING setters , on java bean instance
+(i.e for complete data transfer : MATCH req param names with JB property setters)
+
+3. Invoke B.L method using EL syntax
+eg : ${sessionScope.user.validateUser()}
+WC : sessionScope.get("user").validateUser();
+OR
+session.getAttribute("user").validateUser();
+
+
+4. Navigate clnt to the next page in the SAME request(server pull : forward)
+eg : <jsp:forward page="${sessionScope.user.validateUser()}.jsp"/>
+
+
+5. How to invoke getters of JB ?
+5.1 <jsp:getProperty name="voter" property="validatedUser"/>
+
+
+OR 
+EL syntax : ${
+
+WC : 
+
+
+6. Any problems observed with server pull(RD's forward scenario)  
+Multiple submission issue
+Why ? Client is navigated to the next page , in the SAME request
+When the client refreshes the admin page , it's resulting into increased DB traffic (i.e select query is fired mutiple times)
+
+or even worse , in case of insert query --dup records or some exceptions...
+eg dup orders.
+
+What's the solution ? Double/multiple submit guard
+Design Pattern : PRG (Post--Redirect--Get)
+
+Replace server pull by client pull 
+(i.e replace RD's forward by sendRedirect + encodeRedirectURL)
+
+Problem -- In JSP  standard actions (useBean,getProperty,setPropert,forward,include,param) --it doesn't support redirect scenario.
+
+Solution --  Enter JSTL(JSP standard tag library)
+
+7. JSTL -- part of Java EE specs
+Tomcat doesn't supply it's implementation jar.
+
+Steps
+1. Copy/confirm jstl1.2.jar under <tomcat> / lib
+(Already done in the supplied server)
+
+2. Import JSTL supplied  tag library(=collection of tags/actions)
+JSTL supports 5 tag libsraries --core , sql,xml, fmt, function
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+3. Use JSTL actions/tags
+<c:redirect url="redirect location"/>
+Performs redirect + URL encoding
+
+eg : In one.jsp : 
+<c:redirect url="two.jsp"/>
+WC : response.sendRedirect(response.encodeRedirectURL("two.jsp"));
+If cookies are enabled ,WC sends location  : two.jsp
+OR
+If cookies are disabled , WC sends resp :   two.jsp;jsessionid=tgret45645654hfdhgf
+
+Other JSTL Tags
+0. <c:forEach> - Iteration tag (works with arrays and any Iterable source)
+syntax
+<c:forEach var="loop var| attribute" items="iterable src">
+ Body of the loop
+</c:forEach>
+
+1. <c:set var="abc" value="${param.name}" scope="session"/>
+WC : session.setAttribute("abc",request.getParameter("name"));
+
+2. <c:remove var="abc"  scope="session"/>
+WC : session.removeAttribute("abc") (equivalent to Map's remove)
+
+3. <c:set var="abc" value="${param.name}"/>
+WC : pageContext.setAttribute("abc",request.getParameter("name"));
+
+4. eg : In HTML form 
+<input type="submit" name="btn" value="Withdraw">
+<input type="submit" name="btn" value="Deposit">
+In transactions.jsp
+<c:if test="${param.btn eq 'Withdraw'}">
+ In withdraw 
+</c:if>
+WC : 
+if(request.getParameter("btn").equals("Withdraw")
+ out.print("in withdraw")
+Use case : voter login --success -not yet voted --list.jsp ---status.jsp
+voter login --success -alrdy  voted ----status.jsp
+
+status.jsp : after casting a vote => increment votes n change voting status
+directly : u have alrdy voted => no action --display a message
+eg : 
+<c:if test="${sessionScope.voter.status}">
+ You have alrdy voted....
+</c:if>
+
+
+5. 
+<c:choose>
+ <c:when test="${param.btn eq 'Withdraw'}">
+ In withdraw 
+ </c:when>
+ <c:when test="${param.btn eq 'Deposit'}">
+In Deposit
+ </c:when>
+ <c:otherwise>
+ some other btn ......
+ </c:otherwise>
+</c:choose>
+
+URL :  
+http://host:port/one.jsp?name="Ranjana"
+
+In one.jsp
+<c:set var="abc" value="${param.name}" scope="session"/> 
+<c:redirect url="two.jsp"/>
+WC : response.sendRedirect(response.encodeRedirectURL("two.jsp"));
+
+In two.jsp
+${sessionScope.abc} : Ranjana  ---Even if cookies are enabled/disabled
+
+eg : 
+<c:redirect url="${sessionScope.user.validateUser()}.jsp"/>
+
