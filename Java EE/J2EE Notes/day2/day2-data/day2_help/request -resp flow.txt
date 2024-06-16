@@ -1,0 +1,26 @@
+Network Traffic (request -resp flow) for Online Voting
+
+1. http://localhost:8080/day2.1
+resp -login.html
+
+2. After user submits the form
+http://localhost:8080/day2.1/login
+
+Redirect resp (in case of voter logged in -who has not yet voted)
+Response code - SC 302 
+Response headers - Location="candidate_list" , Set-cookie - cookie name n value 
+Response body - empty
+
+3. Assume --Cookies are not blocked , by the client.
+Clnt browser will save the cookie in browser cache.
+Sends NEXT redirect request
+
+4. Redirect request URL - http://localhost:8080/day2.1/candidate_list
+Method - GET
+Request header - Cookie - cookie name n value
+From Candidate List servlet , read cookie data n remember th clnt across multiple requests.
+
+
+
+
+

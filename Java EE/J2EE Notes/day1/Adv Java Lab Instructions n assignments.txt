@@ -1,0 +1,36 @@
+Day 1
+In the combined lab , 
+Confirm first 
+JDK version : JDK 11
+IDE : Eclipse STS 3.9.18
+1. Create new workspace
+2. Change perspective to Java EE 
+3. Delete earlier web server.
+4. Add Apache tomcat (,.0,76) in IDE.
+5. Create dynamic web project n test welcome page(HTML contents)
+6. Extract Java EE docs from : "day1_help\JavaEE_help\Web Server n Java EE docs\javaee-api-8.0-javadoc.jar"
+7. In index.html , add a link to test the servlet , deployed using annotations
+(Servlet1)
+Confirm complete servlet life cycle (init , service , destroy)
+(by printing messages on the server console)
+
+8. In index.html , add another link to test the servlet , deployed using xml tags
+Copy Servlet1 into Servlet2 (make some changes in the print statements)
+Confirm complete servlet life cycle again
+
+9. Let's start solving online voting case study
+
+9.1 Voter authentication
+i/p : email , password
+
+
+In individual lab session 
+1. MUST revise till Servlet deployment steps.
+
+2. Complete JDBC assignment of DAO layer for
+
+2.1  Get all candidates. 
+2.2  Update Voting status
+2.3  Increment candidate votes
+
+
