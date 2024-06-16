@@ -1,0 +1,25 @@
+Use Case: Healthcare Appointment System
+
+Description:
+Develop dynamic web application(currently servlet based) for managing appointments in a healthcare system. After login , patients should be able to schedule appointments, view their upcoming appointments, and cancel appointments.
+
+Requirements
+1.	Create Appointment:
+•	Request: Schedule a new appointment by providing details like patient name, doctor name, date, and time.
+(Assume morning time slots for appointment starting from 9:30 AM - 1PM , appointment time 30 min
+Evening time slots for appointment starting from 6PM - 9PM , appointment time 30 min)
+
+•	Response: Return the confirmation of the scheduled appointment or if the appointment is not available , return error message
+
+2.	View Upcoming Appointments:
+•	Request: Retrieve a list of upcoming appointments for a specific patient by his/her id.
+•	Response: Return the details of upcoming appointments 
+
+3.	Cancel Appointment:
+•	Request: Cancel a scheduled appointment by providing its unique identifier.
+•	Response: Return a success message or confirmation of the canceled appointment.
+
+Notes:
+
+•	There should not be conflicting appointments, for example – more than one appointment with same doctor on same date & time.
+

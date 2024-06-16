@@ -1,0 +1,13 @@
+// 1. get session from SF (getCurrentSession)
+		Session session=getFactory().getCurrentSession();
+		//2. Begin a Tx
+		Transaction tx=session.beginTransaction();
+		try {
+			
+			tx.commit();
+		} catch (RuntimeException e) {
+			if(tx != null)
+				tx.rollback();
+			//re throw the exc to the caller
+			throw e;
+		}
