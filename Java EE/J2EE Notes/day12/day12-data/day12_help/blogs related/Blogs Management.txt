@@ -1,0 +1,30 @@
+Blog Post Management
+Under Admin Role
+1. Add new blogs category
+2. Delete category
+3. Update category
+
+Under Blogger role
+1. Add new Blog post
+2. View all blog posts
+3. Delete a blog post
+4. Update blog post
+
+A Commenter can
+1. Add the comment (blogger can't add a comment to his/her own post)
+2. A same commenter can't add the comment again to the same post
+3. A commenter can update the comment (his/her own) comment
+
+
+Simple Page flow
+1. User logs in 
+2. Display all blogs (only title , author n category) in summary.
+3. When you click on a details link for a particular blog , then it's description should be displayed.
+4. Update delete button/link should appear only for his blogs.
+5. Add Comment link should appear only for other's blogs.
+6. View Comments link should appear for all the blogs.
+
+Blog -- id , creation date , update timestamp , title, description, content
+
+
+

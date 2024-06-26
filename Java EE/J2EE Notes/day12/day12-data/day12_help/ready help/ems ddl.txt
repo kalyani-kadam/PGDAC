@@ -1,0 +1,12 @@
+insert into departments values(default,'Pune','Rnd');
+insert into departments values(default,'Mumbai','Finance');
+insert into departments values(default,'Delhi','HR');
+
+
+insert into emps values(default,'abcd1234567','2010-1-1','Satara','a1@gmail.com','FULL_TIME','a1',null,'2024-1-1','b1','abc#1234',50000,1);
+
+insert into emps values(default,'abcd8734567','2009-11-1','Nashik','a2@gmail.com','FULL_TIME','a2',null,'2023-11-11','b2','abcd#1234',55000,1);
+
+insert into emps values(default,'xyze8734567','2005-10-21','Mumbai','a3@gmail.com','FULL_TIME','a3',null,'2022-7-1','b3','dbcd#1234',57000,1);
+
+insert into emps values(default,'uyze8738567','2006-10-21','Delhi','a4@gmail.com','FULL_TIME','a4',null,'2021-7-1','b4','xbcd#1234',59000,1);

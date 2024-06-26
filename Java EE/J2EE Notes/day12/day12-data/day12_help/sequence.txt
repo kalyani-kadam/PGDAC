@@ -1,0 +1,154 @@
+IMPORTANT Instruction (before coming to combined lab)
+Copy "Template Projects\spring_boot_template_mvc" project in your workspace n import it as existing Maven project . Force update it.
+(It will download spring boot n related dependencies)
+Do this step in the lunch break n then join the combined lab.
+Versions used (as per PG-DAC contents)
+JDK 11
+Spring Boot 2.x
+
+
+Today's topics
+
+Revision using code 
+Spring MVC flow 
+ModelAttributes
+ModelAndView
+
+
+New Topics : 
+Understand Model Map
+Handling request params in Spring MVC
+Spring MVC integration with Hibernate
+Objective List All Categories
+A diagram for steps n code together for complete understanding.
+
+Regarding Maven
+
+Enter Spring Boot.
+Port existing web app to spring boot.
+
+
+Enter Spring Data JPA
+Lombok annotations 
+
+
+-------------------------------------------------
+Understood the efforts  of the extensive configuration ?
+
+Any solution : YES !
+
+1. Enter Spring Boot
+Readmes to refer 
+1."day12-data\day12_help\spring boot\spring-boot-steps.txt"
+2. "day12-data\day12_help\spring boot\Why n What is spring boot.txt"
+
+2. While Porting earlier app to spring boot 
+Any problems noticed ?
+Exception : org.hibernate.HibernateException
+Root cause : no curnt session context configured!
+(i.e unable to get curnt session from SessionFactory , in the DAO layer)
+Reason : Spring boot  DOES NOT directly support native hibernate APIs
+(eg : org.hibernate : SessionFactory , Session, Transaction....)
+
+Soln : Replace Hibernate by it's specs : JPA (Java Persistence API)
+
+3. Replace hibernate native APIs by JPA
+Refer : "day12-data\day12_help\spring boot\diagrams\jpa-entitymgr-session-layers.png"
+Reference project : day12_boot
+
+4. BUT if you notice , in all DAO layers (JDBC / Hibernate / JPA) , you are solving common problems : CRUD 
+So is there any out of box (ready made) solution ?
+YES
+
+Enter Spring Data JPA
+Refer : "day12-data\day12_help\Spring Data JPA\regarding spring data JPA.txt"
+Spring Data JPA Links (Bookmark them!)
+1. API Docs : https://docs.spring.io/spring-data/jpa/docs/2.7.14/api/
+2. Ref docs : https://docs.spring.io/spring-data/jpa/docs/2.7.14/reference/html/
+
+
+
+5. Test Model Map
+
+
+5.5 Request response flow summary
+1. http://host:port/ctx_path/
+resp --SC index.jsp
+
+2. http://host:port/ctx_path/categories/list
+--> intercepted by D.S  --> H.M --> CategoryController.listAllCategories
+Controller --> Service --> DAO --> sql --> result --> DAO --> Service --> controller
+
+D.S invokes the method
+Rets --> Model map + LVN --> D.S
+D.S --LVN --> V.R --> rets AVN
+D.S adds model attributes under request scope --> forwards the clnt to the view layer
+JSP -- EL syntax
+
+
+6. Handling Request parameters
+Use @RequestParam
+
+
+7. Use <c:url> or <spring:url> for creating context relative URLs as well as URL rewriting ) (needed in the absence of cookies)
+eg : 
+<spring:url var="abc" value="/categories/list"/>
+<form action="${abc}" method="post">
+....
+</form>
+After submitting the form --> 
+What will be the URL if cookies are not blocked ?
+http://host:port/ctx_path/categories/list
+
+What will be the URL if cookies are  blocked ?
+http://host:port/ctx_path/emps/list;jsessionid=dfgsdftrtr56846jghjd
+-----------------------
+http://localhost:8080/day12_boot/categories/list
+payload : categoryId=1
+
+7. Solve the assignment
+(Continue with BMS)
+
+8. Install Lombok 
+
+To reduce boilerplate code from the entities Layer , add Lombok annotations
+
+Ref : https://www.baeldung.com/intro-to-project-lombok
+
+What is Lombok ?
+It's helper 3rd party library , to reduce boilerplate code from java classes(mainly form POJO layer)  , using annotations
+Steps 
+1. Add lombok dependency, during creation of spring boot project.
+2. Install Lombok library , to IDE location.
+3. Use class level annotations
+eg : @NoArgsConstructor , @AllArgsConstructor, @RequiredArgsConstructor
+@Getter
+@Setter
+@ToString(exclude = ...,callSuper = true)
+@Data n many more
+
+Steps 
+1. Add lombok dependency : pom.xml (already done !)
+2. install lombok jar , from 
+<home dir> \.m2\repository\org\projectlombok\lombok\1.18.30
+OR open terminal/cmd prompt
+java -jar lombok-1.18.30.jar
+Specify location : IDE (STS : IDE app)
+2.5 Maven force update +  cleaning steps
+3. use annotations.
+
+To Locate IDE installation : 
+From STS IDE  --Help --Installation Details -- Configuration
+eg : C:\sts-bundle\sts-3.9.18.RELEASE\STS.exe 
+n Install Lombok JAR.
+
+
+
+-------------------------
+Revise this (from Java SE api docs)
+
+java.util.Optional class Method
+public  T orElseThrow​(Supplier exceptionSupplier) throws Throwable
+If a value is present, returns the value, otherwise throws an exception produced by the exception supplying function.
+
+
