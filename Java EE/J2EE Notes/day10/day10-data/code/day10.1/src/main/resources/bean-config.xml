@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- configure Java classes as spring beans -->
+	<!-- dependency bscopeans -->
+	<!-- singleton n lazy -->
+	<bean id="test" class="dependency.TestTransport" 
+	lazy-init="true"/>
+	<!-- singleton n lazy -->
+	<bean id="http" class="dependency.HttpTransport" 
+	lazy-init="true"/>
+	<!-- singleton n eager -->
+	<bean id="soap" class="dependency.SoapTransport" />
+	<!-- dependent bean , prototype n lazy -->
+	<bean id="my_atm" class="dependent.ATMImpl" 
+	init-method="anyInit" destroy-method="anyDestroy" 
+	scope="prototype">
+		<!-- setter based D.I -->
+		<property name="myTransport" ref="http" />
+	</bean>
+</beans>
