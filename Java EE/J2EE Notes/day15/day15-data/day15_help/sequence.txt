@@ -1,0 +1,171 @@
+Revise ResponseEntity
+Today's  Topics
+Spring validations n global exception handling
+Spring Boot AOP
+Spring Security
+Spring boot internal working
+----------------------
+
+1. Revise ResponseEntity
+o.s.http.ResponseEntity<T>  : generic class
+T : type of the response body
+It represents an ENTIRE response packet , consisting of 
+response status code | Header/s | Resp body
+
+Ctor : ResponseEntity(T body, HttpStatus status);
+HttpStatus : enum containing Resp status codes
+
+OR Methods
+ResponseEntity.status(HttpStatus status).body(T body)
+
+
+1. How will you add server side validations ?
+Refer - "day14_help\Advanced REST\readmes\regarding spring boot exc handling n validations.txt" 
+
+Steps :
+1.1 Add dependency : spring boot validation stater
+(already added in pom.xml)
+
+1.2 To validate Request Body
+Since we are using DTOs for data exchange (eg - Appointment DTO , User DTO , Category DTO)
+Add these annotations on DTO fields.
+@NotBlank , @NotNull , @Pattern, @Min,@Max, @Range, @Length,@Future....
+
+1.3 @RequestBody + @Valid on the  request body : method arg of POST/PUT/PATCH
+In case of validation failure the exception raised - MethodArgumentNotValidException
+
+1.4 To validate  - path variables or request params 
+
+Add - 
+@Validated : class level annotation , on the RestController class
+@NotBlank , @NotNull , @Pattern, @Min,@Max, @Range, @Length....
+on request parameters  or path variables
+eg : End point -- get all posts for given category id
+In @Validated
+BlogPostController - @ReqMapping - "/categories"
+@GetMapping("/{categoryId}/posts")
+public ResponseEntity<?> getAllPOstsByCategory(@PathVariable @NotNull Long categoryId)
+{
+ .....
+}
+Exception raised :  ConstraintViolationException
+
+1.5 Why do we need to add centralized(Global) custom exception handling ?
+
+In the absence of custom exc handler , Spring boot supplies a default  exception handler
+It  sends JSON error object with -  timestamp , error code , err mesg ,err stack trace to the clnt .
+Is this a correct practice ?
+NO !
+
+In case of  B.L failures (service layer exceptions) --
+You can add a try-catch block in the controller 
+BUT it will result into lot many try catch blocks ,  in Rest controller methods
+
+Such a try-catch block CAN NOT handle : validation failures 
+
+Soln : add custom (global) exception handler
+
+How will you add it ?
+Create a separate global exception handler class.
+1. Add class level anno
+@ControllerAdvice | @RestControllerAdvice
+=> Spring bean containing common advice .
+This exc handler class  is supplying a common advice to all REST controllers 
+The advice being -  
+Do not add exc handling logic separately BUT add it ONLY in this class.
+
+2. Add exception handling methods in this global exception handler class.
+Add method level annotation 
+eg : ResourceNotFoundException
+@ExceptionHandler(ResourceNotFoundException.class)
+public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException e)
+{
+ return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse(e.getMessage()));
+}
+
+
+2. Spring Boot AOP
+refer -"day15_help\AOP\readme_aop.txt"
+code - spring_boot_aop
+
+
+3. Enter Spring Security
+Refer - "day15_help\spring security\regarding spring security.txt"
+"day15_help\spring security\Security flow summary.txt"
+
+Steps
+1. Create spring boot application , w/o adding spring security dependencies
+Try to access some end points (eg : view products , add / delete products ..)
+Observation : all end points were un protected !
+
+2. Add spring security starter dependency in pom.xml , update maven project
+Observations
+2.1  : All end points are automatically PROTECTED (SECURED)
+i.e entire web app is under a lock (authentication lock).
+Un authenticated user CAN NOT access any of the APIs.
+2.2 It supplies def user name : user
+generate 128 bit randomly generated password on server console 
+You can test it using a browser. It will give you a ready made signin n signout form
+Understand this : By def spring security offers : form login n also authentication mechanism = Basic Authentication.
+
+What is Basic Authentication scheme of HTTP?
+
+1. Any time clnt sends a req to protected resource --spring sec uses by default : basic auth
+Server sends resp header : WWW-Autheticate --- Basic 
+2. clnt has to send username:password --- base64 encoding
+auto sent by postman , using Basic Authentication scheme.
+3. Continue to in mem based authentication(InMemory User Details)
+Ref eclipse project : 
+
+4. Replace it by DB based authentication (DB based  User Details , accessed using JPA)
+Ref eclipse project : 
+
+5. Continue to JWT based authentication
+(Replace Basic Authentication scheme by JWT based authentication)
+For the understanding of JWT n steps , 
+Refer : "day15_help\spring security\JWT\JWT Details.txt"
+Refer : "day15_help\spring security\JWT\JWT Steps Upgraded.txt"
+Ref eclipse project : 
+Edit DB properties .
+Run the test class : src\test\java\com\app\repository\UserEntityRepositoryTest.java
+It will create 3 different users  with 3 different type of roles.
+
+
+
+
+1.6 What is pagination ?
+Dividing larger no of results (eg : products , users, reviews , blogs ...) into fixed size pages/slices.
+
+How will you add it's support ?
+
+Steps 
+ The Dao i/fs extends from JpaRepository ----> PagingAndSortingRepository -->CrudRepository --> Repository
+
+PagingAndSortingRepository Methods
+package : o.s.data.repository
+1. 
+Page<T> findAll(Pageable pageable)
+Returns a Page of entities meeting the paging restriction provided in the Pageable object.
+
+i/p : Pageable : i/f for pagination
+Implementation class : PageRequest
+
+2. Method of PageRequest class 
+public static PageRequest of(int pageNumber,int pageSize)
+Creates a new unsorted PageRequest.
+Parameters:
+pageNumber - zero-based page number
+pageSize - the size of the page to be returned(>0)
+
+3. Page<T> : i/f 
+It's inherited method for Slice<T>
+List<T> getContent()
+Returns the page content as List.
+T : type of the entity
+
+
+2. Spring boot internals 
+refer : readme
+
+
+
