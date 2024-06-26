@@ -1,0 +1,127 @@
+Revise
+Hibernate Session API
+Entity States 
+Automatic dirty checking
+Continue with hibernate sequence
+
+Answer this 
+
+Name n explain Entity states n methods for its transition
+Transient : NO NO (exists in heap)
+Persistent : transient--> persistent (save|persist|saveOrUpdate|merge)
+YES NO (rec is inserted upon commit)
+
+does not exist(in heap) --> Persistent(get | load |JPQL |HQL)
+YES YES
+
+Deatched (Persistent--->Detached : session.close() | evict | clear)
+NO YES
+
+Does Not Exist --> Transient 
+Transient --> Persistent 
+Persistent --> Detached 
+Persistent --> Removed 
+Detached --> Persistent 
+
+What will hibernate do upon commit , (while using getCurrentSession)
+1.session.flush()
+2. Hibernate performs auto dirty checking -- it will try to sync up state L1 cache with that of the DB, in case of the change , it  will fire DML 
+new entity --insert
+state updated -- update
+removed entity --delete
+3. session.close()
+3.1 pooled out DB cn rets to DBCP
+3.2 L1 cache will be destroyed.
+
+What will hibernate do upon rollback ?
+1. session.close()
+1.1 pooled out DB cn rets to DBCP
+1.2 L1 cache will be destroyed.
+
+Persistent vs Detached
+1. Persistent entities are stored in L1 cache.
+Detched entities are not !
+
+2. If you modify the state of the persistent entity (setters) , hibernate tracks these changes to DB (update)
+
+If you modify the state of the detached  entity (setters) , hibernate DOES NOT track these changes to DB (update)
+
+1. Objective : Display all user first names born between strt date n end date & under a specific role
+eg - select u.firstName from User u where ....
+List<String> names=session.createQuery(jpql,String.class)....
+ 
+
+2. Objective : Display all user first name , dob,phone no  born between strt date n end date 
+String jpql ="select u.firstName,u.dob,u.phoneNo from User u where u.dob between :strt and :end"
+
+List<Object[]> list=session.createQuery(jpql,Object[].class).setParameter("start", startDate).setParameter("end", endDate).getResultList();
+
+
+In Tester : 
+list.forEach(o -> sop(o[0]+" "+o[1]+"  "+o[2]));
+
+While fetching multiple columns(props) , instead of using a complex result type : Object[] , use a constructor expression
+
+eg :
+jpql = "select new com.app.entities.User(firstName,dob,phoneNo) from User u where u.dob between :strt and :end 
+Pre requisite : MATCHING constr in POJO class
+
+3.  Update 
+Objective : 
+1. Change password
+i/p --email , old password , new pass
+o/p : mesg indicating success or a failure
+(Done already !)
+How  --select(JPQL) + update : triggered auto by hibernate
+
+4. Suppose a Blogger has to pay annual registration amount to publish their blogs on our web site(for admin n commenter : 0) , later when no of comments for a blog grows , web site will pay the blogger.
+Plus add the registration date to the all the users
+(Generate it automatically , how ?)
+Look at - @CreationTimestamp
+@UpdateTimeStamp
+
+Apply discount to reg amount , for all users(blogger/commenter) , reged before a specific date.(Bulk update)
+i/p -- discount amt, reg date
+String jpql="update User u set u.regAmount=u.regAmount-:discount where u.regDate < :date and u.role=:role";
+
+
+2.1 Session API
+public Query<T> createQuery(String jpql) throws HibernateException
+jpql -- DML
+
+2.2 Query API
+public int executeUpdate() throws HibernateException
+--use case --DML
+
+
+5. Un subscribe user
+i/p user id
+o/p user details removed from DB
+Hint : Session API : 
+
+6. Lab work
+Objective --delete all the bloggers , registered before a specific date.
+via Bulk delete
+String jpql="";
+
+
+7. Save n restore images to / from DB
+
+For easier file handling , use FileUtils from Apache commons-io.jar
+We have already added this dependency in pom.xml .
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+Methods of FileUtils class -
+
+1. public static byte[] readFileToByteArray(File file)
+                                  throws IOException
+Reads the contents of a file into a byte array n cloess the file.
+
+2. public static void writeByteArrayToFile(File file,byte[] data)
+                                 throws IOException
+Writes a byte array to a file creating the file if it does not exist.
+
