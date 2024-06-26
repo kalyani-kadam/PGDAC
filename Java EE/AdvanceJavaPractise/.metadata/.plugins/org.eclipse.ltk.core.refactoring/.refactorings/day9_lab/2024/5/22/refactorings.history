@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;spring_mvc_template/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;day9_lab&apos;&#x0D;&#x0A;- Destination element: &apos;spring_mvc_template/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     day9_lab/src/main/java/com.app.entities&#x0D;&#x0A;     day9_lab/src/main/java/com.app.value_types" description="Copy packages" destination="=spring_mvc_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.entities" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.value_types" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1716811368580" version="1.0"/>
+</session>

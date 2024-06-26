@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="3.1">
+	<display-name>spring_mvc_template</display-name>
+	
+	<!-- <welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list> -->	
+	
+	<!-- these are servlet deployment tags --> <!-- spring boot we use @webServlet annotation -->
+	<!-- who is going to read this tags? w.c. -->
+	<!-- wc = > key = / and value =org.springframework.web.servlet.DispatcherServlet -->
+	<servlet>
+		<servlet-name>spring</servlet-name> <!--spring-config.xml ==configuration file name this name should match with .xml file name , if u dont give the same name then server will not start it will throw exception -->
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name> 
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>

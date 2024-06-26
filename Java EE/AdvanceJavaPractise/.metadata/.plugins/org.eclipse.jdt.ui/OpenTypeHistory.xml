@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=HCS/src\/main\/java&lt;com.app.dao{PatientDao.java[PatientDao" modifiers="513" timestamp="1716103952343"/>
+    <typeInfo handle="=HCS/src\/main\/java&lt;com.app.dao{DoctorDao.java[DoctorDao" modifiers="513" timestamp="1716484076623"/>
+    <typeInfo handle="=HCS/src\/main\/java&lt;com.app.dao{AppointmentDao.java[AppointmentDao" modifiers="513" timestamp="1716484269433"/>
+    <typeInfo handle="=day7.1/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.dao{PostDao.java[PostDao" modifiers="513" timestamp="1716400503552"/>
+    <typeInfo handle="=day8.2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.dao{BlogPostDao.java[BlogPostDao" modifiers="513" timestamp="1716463533870"/>
+    <typeInfo handle="=day9.1/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.dao{CommentDao.java[CommentDao" modifiers="513" timestamp="1716545667476"/>
+    <typeInfo handle="=day9.1/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.entities{BaseEntity.java[BaseEntity" modifiers="1" timestamp="1716539660891"/>
+    <typeInfo handle="=spring_boot_backend_template/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.blogs.service{CategoryService.java[CategoryService" modifiers="513" timestamp="1716984911737"/>
+    <typeInfo handle="=spring_boot_backend_template3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.service{PatientService.java[PatientService" modifiers="513" timestamp="1717085881233"/>
+    <typeInfo handle="=spring_boot_backend_template3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.service{DoctorService.java[DoctorService" modifiers="513" timestamp="1717179072514"/>
+    <typeInfo handle="=spring_boot_backend_template3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.app.service{AppoinmentService.java[AppoinmentService" modifiers="513" timestamp="1717141435187"/>
+    <typeInfo handle="=spring_boot_backend_template/C:\/Users\/kalya\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.7.18\/spring-data-jpa-2.7.18.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.7.18=/=/maven.scope=/compile=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1716887852237"/>
+</typeInfoHistroy>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Advance Java notes\Template Projects\spring_boot_backend_template"/>
+			<item value="D:\AdvanceJavaPractise\spring_security_jwt"/>
+			<item value="D:\AdvanceJavaPractise\spring_security_basic_auth"/>
+			<item value="D:\AdvanceJavaPractise\day15_security"/>
+			<item value="D:\AdvanceJavaPractise\day15.2"/>
+			<item value="D:\AdvanceJavaPractise\day13_lab"/>
+			<item value="D:\AdvanceJavaPractise\day14_lab"/>
+			<item value="D:\AdvanceJavaPractise\day14_REST_Advanced"/>
+			<item value="D:\AdvanceJavaPractise\spring_boot_backend_template2"/>
+			<item value="D:\AdvanceJavaPractise\day13.2"/>
+			<item value="D:\AdvanceJavaPractise\day13.1"/>
+			<item value="D:\AdvanceJavaPractise\spring_boot_backend_template"/>
+			<item value="D:\AdvanceJavaPractise\spring_mvc_hibernate"/>
+			<item value="D:\AdvanceJavaPractise\day12_spring_boot"/>
+			<item value="D:\AdvanceJavaPractise\spring_boot_template_mvc"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="healthCareSystem"/>
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\AdvanceJavaPractise\day10.1"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>
