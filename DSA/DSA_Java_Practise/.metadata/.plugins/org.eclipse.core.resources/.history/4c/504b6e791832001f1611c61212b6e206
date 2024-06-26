@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		BinarySearchArray bs = new BinarySearchArray();
+		int arr[] = bs.addElemnts(sc);
+		System.out.println("enter element to search");
+		bs.search(arr, sc.nextInt());
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.app;
+
+public class StackPalindrome {\
+	Stack<String> stack = new Stack<>(); 
+	public boolean storeStringInStack(String s) {
+		for(int i = 0;i<s.length();i++) {
+			s.charAt(i);
+		}
+	}
+}

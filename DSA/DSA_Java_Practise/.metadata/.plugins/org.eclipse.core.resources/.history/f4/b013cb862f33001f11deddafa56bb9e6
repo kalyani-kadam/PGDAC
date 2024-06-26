@@ -1,0 +1,37 @@
+package sll;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+		DLL dl = new DLL();
+		dl.insert(12);
+		dl.insert(89);
+		dl.insert(83);
+		dl.insert(90, 2);
+		dl.insert(100, 2);
+		dl.diplay();
+		dl.insert(89);
+		dl.insert(83);
+//		dl.delete(89);
+//		dl.diplay();
+//		
+//		dl.deletebypos(1);
+//		dl.diplay();
+//		
+//		dl.deletebypos(0);
+//		dl.diplay();
+//		dl.deletebypos(6);
+//		dl.diplay();
+//		dl.deletebypos(2);
+//		dl.diplay();
+		
+		dl.deletebypos(1);
+		dl.diplay();
+		
+		dl.searchByval(100);
+		dl.removeDup();
+		dl.diplay();
+		
+		dl.getCount();
+	}
+}

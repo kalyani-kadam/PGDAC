@@ -1,0 +1,34 @@
+package com.product;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		LinkedList products = new LinkedList();
+//		System.out.println(products.insertData(12,"Lays",100,500.72)); 
+		Scanner sc = new Scanner(System.in);
+//		products.insertData(78, "happy-happy", 40, 800);
+//		products.insertData(24, "pen", 90, 300);
+//		products.insertData(72, "dairy-milk", 100, 200);
+
+//		System.out.println(products.insertData(72, "dairy-milk", 100, 200));
+//		System.out.println(products.insertData(92, "pencil", 50, 100));
+		System.out.println("Enter how many element u wanna to add: ");
+		int cnt = sc.nextInt();
+//		for (int i = 0; i < sc.nextInt(); i++) {
+			System.out.println("Enter id,name,quantity,price");
+			Product p = new Product(sc.nextInt(),sc.next(),sc.nextInt(),sc.nextDouble());
+			System.out.println("Data given suuccessfully");
+			products.insertData(p);
+			
+			System.out.println("Enter id,name,quantity,price");
+			Product p1 = new Product(sc.nextInt(),sc.next(),sc.nextInt(),sc.nextDouble());
+			System.out.println("Data given suuccessfully");
+			products.insertData(p1);
+//		}
+		
+
+		products.displayData();
+	}
+}

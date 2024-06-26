@@ -1,0 +1,19 @@
+package sll;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+		DLL dl = new DLL();
+		dl.insert(12);
+		dl.insert(89);
+		dl.insert(83);
+		dl.insert(90, 2);
+		dl.insert(100, 2);
+		dl.diplay();
+		dl.delete(89);
+		dl.diplay();
+		dl.deletebypos(2);
+		dl.diplay();
+	}
+
+}

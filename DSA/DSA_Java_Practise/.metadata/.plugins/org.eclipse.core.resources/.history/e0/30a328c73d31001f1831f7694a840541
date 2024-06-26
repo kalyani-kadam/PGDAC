@@ -1,0 +1,10 @@
+package com.app;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Stack s = new stack(); 
+		s.push("Pune");
+	}
+
+}

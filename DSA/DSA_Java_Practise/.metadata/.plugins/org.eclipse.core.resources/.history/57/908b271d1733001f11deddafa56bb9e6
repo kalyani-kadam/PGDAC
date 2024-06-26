@@ -1,0 +1,34 @@
+package com.app;
+
+public class cycleque {
+	private int f,r;
+	private int[] arr;
+	private int size;
+	public cycleque( int size) {
+		super();
+		this.size = size;
+		this.f = -1;
+		this.r = -1;
+		this.arr = new int[size];
+	}
+	public int getF() {
+		return f;
+	}
+	public void setF(int f) {
+		this.f = f;
+	}
+	public int getR() {
+		return r;
+	}
+	public void setR(int r) {
+		this.r = r;
+	}
+	
+	public boolean isfull() {
+		return (f==-1 && r==size-1) || f==(r+1)%size;
+	}
+	public boolean isempty() {
+		return f==r;
+	}
+	
+}

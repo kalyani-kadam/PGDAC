@@ -1,0 +1,39 @@
+package com.app;
+
+import java.util.Iterator;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Queue<String> qs = new Queue<>(4);
+//		Queue<Integer> qi = new Queue<>(4);
+//		System.out.println(qs.enQueue("jnkc"));
+//		System.out.println(qs.enQueue("kjhkj"));
+//		System.out.println(qs.enQueue("u3e"));
+//		System.out.println(qs.deQueue());
+//		System.out.println(qs.deQueue());
+//		System.out.println(qs.deQueue());
+//		
+//		System.out.println(qi.enQueue(890));
+//		System.out.println(qi.enQueue(433));
+//		System.out.println(qi.enQueue(323));
+//		System.out.println(qi.deQueue());
+		
+		que q= new que(3);
+		q.insert(682);
+		q.insert(12);
+		q.insert(13);
+		q.insert(321);
+//		q.display();
+		q.delete();
+//		q.display();
+		System.out.println(q);
+		
+		for(int i:que) {
+			System.out.println(i+ " ");
+		}
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.app;
+
+public class Main {
+
+	public static void main(String[] args) {
+		BST bst = new BST();
+		bst.insert(89);
+		bst.insert(82);
+		bst.insert(45);
+		bst.insert(65);
+		
+		System.out.println("Min "+bst.getMin());
+		
+	}
+
+}

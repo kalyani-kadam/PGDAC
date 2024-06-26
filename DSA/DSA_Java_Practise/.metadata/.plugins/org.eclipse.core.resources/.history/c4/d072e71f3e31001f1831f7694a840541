@@ -1,0 +1,14 @@
+package com.app;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Stack<String> s = new Stack<>(5); 
+		s.push("P");
+		s.push("u");
+		s.push("n");
+		s.push("e");
+		System.out.println(s.peek());
+	}
+
+}

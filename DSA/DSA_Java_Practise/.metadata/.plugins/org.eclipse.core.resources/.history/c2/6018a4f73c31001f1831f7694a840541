@@ -1,0 +1,19 @@
+package com.app;
+
+public class Stack<String> {
+	String[] arr;
+	int size,top;
+	
+	public Stack(int size) {
+		this.size = size;
+		top = -1;
+		arr = (String[]) new Object[size];
+	}
+
+	public Stack(String[] arr, int size, int top) {
+		super();
+		this.arr = arr;
+		this.size = size;
+		this.top = top;
+	}
+}

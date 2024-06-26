@@ -1,0 +1,14 @@
+package com.app;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Queue<String> qs = new Queue<>(4);
+		qs.enQueue("kk");
+		qs.enQueue("io");
+		
+		qs.deQueue();
+	}
+
+}

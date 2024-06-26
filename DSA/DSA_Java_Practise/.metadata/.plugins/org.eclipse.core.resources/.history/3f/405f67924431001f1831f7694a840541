@@ -1,0 +1,17 @@
+package com.app;
+
+public class Queue<T> {
+
+	private int front;
+	private int rear;
+	private T[] arr;
+	
+	public Queue() {
+		super();
+		this.front = -1;
+		this.rear = -1;
+		arr = (T[]) new Object(size);
+	}
+	
+	
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="com.product.LinkedList"/>
+    <fullyQualifiedTypeName name="middleOfSinglyLL.Linkedlist"/>
+    <fullyQualifiedTypeName name="com.app.StackPalindrome"/>
+    <fullyQualifiedTypeName name="com.app.Queue"/>
+    <fullyQualifiedTypeName name="com.app.DynamicStack"/>
+    <fullyQualifiedTypeName name="com.app.DynamicQueue"/>
+    <fullyQualifiedTypeName name="com.app.LinearSearchArray"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="BinarySearchArray"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.app.cycleque"/>
+    <fullyQualifiedTypeName name="sll.NodeDll"/>
+</qualifiedTypeNameHistroy>

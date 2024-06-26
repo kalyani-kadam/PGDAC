@@ -1,0 +1,224 @@
+package sll;
+
+public class SLL {
+	private Node head;
+
+	public boolean insert(int data) {
+		Node nn = new Node(data);
+		if (nn == null) {
+			return false;
+		}
+		if (head == null) {
+			head = nn;
+			return true;
+		}
+		Node temp = head;
+
+		while (temp.getNext() != null) {
+			temp = temp.getNext();
+		}
+		temp.setNext(nn);
+		return true;
+	}
+
+	public boolean insert(int data, int pos) {
+		Node nn = new Node(data);
+		if (pos <= 0 || (head == null && pos > 1)) {
+			return false;
+		}
+
+		if (nn == null) {
+			return false;
+		}
+		if (pos == 1) {
+			nn.setNext(head);
+			head = nn;
+			return true;
+		}
+		Node temp = head;
+		for (int i = 2; i < pos - 1; i++) {
+			temp = temp.getNext();
+			if (temp == null) {
+				return false;
+			}
+		}
+		nn.setNext(temp.getNext());
+		temp.setNext(nn);
+		return true;
+	}
+
+	public void display() {
+		Node temp = head;
+//		System.out.println("ll elements are ");
+		if (temp == null) {
+			return;
+		}
+		while (temp != null) {
+			System.out.print(temp.getData() + "->");
+			temp = temp.getNext();
+		}
+		System.out.println("null");
+	}
+
+	public boolean delete(int data) {
+		if (head == null) {
+			return false;
+		}
+		if (head.getData() == data) {
+			head = head.getNext();
+			return true;
+		}
+		Node del = head, prev = head;
+		while (del.getData() != data) {
+			prev = del;
+			del = del.getNext();
+			if (del == null) {
+				return false;
+			}
+		}
+		prev.setNext(del.getNext());
+		return true;
+	}
+
+	public boolean delete(int data, int pos) {
+		if (head == null) {
+			return false;
+		}
+		if (head.getData() == data && pos <= 0) {
+			head = head.getNext();
+			return true;
+		}
+		Node temp = head;
+		while (temp != null) {
+			if (data != temp.getData()) {
+				System.out.println(data + " is not present at position " + pos);
+				return false;
+			}
+		}
+		Node del = head, prev = head;
+		for (int i = 0; i < pos - 1; i++) {
+			prev = prev.getNext();
+			if (del == null) {
+				return false;
+			}
+		}
+
+		del = del.getNext();
+		prev.setNext(del.getNext());
+		return true;
+	}
+	
+	public boolean deletebypos(int pos) {
+		if(head == null || pos>=0) {
+			return false;
+		}
+		Node temp = head;
+		if(pos==1) {
+			head = head.getNext();
+//			if(head == null) {
+//				
+//			}
+		}
+		for(int i=1;i<pos;i++) {
+			temp = temp.getNext();
+			if(temp == null) {
+				return false;
+			}
+		}
+		
+		temp.setNext(temp.getNext().getNext());
+		return true;
+	}
+
+	public void removeDuplicates() {
+		Node temp = head,temp2=null;
+		while (temp != null && temp.getNext() != null) {
+			 temp2 = temp;
+			while (temp2.getNext() != null) {
+				if (temp.getData() == temp2.getNext().getData()) {
+					System.out.println("duplicate found");
+					temp2.setNext(temp2.getNext().getNext());
+				}else {
+					temp2 = temp2.getNext();
+				}
+			}
+			temp=temp.getNext();
+		}
+	}
+	
+	public void searchByVal(int data) {
+		Node temp = head;
+		boolean flag = false;
+		while(temp != null) {
+			if(temp.getData() == data) {
+				flag = true;
+			}
+			temp = temp.getNext();
+		}
+		if(flag) {
+			System.out.println("Element found");
+		}else {
+			System.out.println("Element not found");
+		}
+	}
+	
+	public void sortAsc() {
+		Node temp = head,temp2=null;
+		
+		while(temp != null && temp.getNext()!= null) {
+			temp2=temp;
+			while(temp2 != null) {
+				if(temp.getData() > temp2.getData()) {
+					int n = temp.getData();
+					temp.setData(temp2.getData());
+					temp2.setData(n);
+				}
+				temp2 = temp2.getNext();
+			}
+			temp = temp.getNext();
+		}
+	}
+	
+	public void sortDesc() {
+		Node temp = head ,temp2 = null;
+		
+		while(temp != null && temp.getNext() != null) {
+			temp2 = temp;
+			while(temp2 != null) {
+				if(temp.getData() < temp2.getData()) {
+					int n= temp.getData();
+					temp.setData(temp2.getData());
+					temp2.setData(n);
+				}
+				temp2 = temp2.getNext();
+			}
+			temp = temp.getNext();
+		}
+	}
+	
+	public void getMin() {
+		Node temp = head;
+		int min = head.getData();
+		while(temp != null ) {
+//			temp2 = temp;
+			if(temp.getData() <= min) {
+				min = temp.getData();
+			}
+			temp = temp.getNext();
+		}
+//		return min;
+		System.out.println("Min is "+min);
+	}
+	
+	public void getMax() {
+		Node temp = head;
+		int max = temp.getData();
+		while(temp != null) {
+			if(temp.getData() >= max ) {
+				max = temp.getData();
+			}
+			temp = temp.getNext();
+		}
+		System.out.println("Max is "+max);
+	}
+}

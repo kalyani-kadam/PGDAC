@@ -1,0 +1,15 @@
+package com.app;
+
+public class DynamicQueue {
+	private int front,rear;
+	private Node head;
+	
+	public DynamicQueue(int front, int rear, Node head) {
+		super();
+		this.front = front;
+		this.rear = rear;
+		this.head = null;
+	}
+	
+	
+}

@@ -1,0 +1,56 @@
+package com.product;
+
+import com.product.*;
+
+public class LinkedList {
+
+	private Node head;
+
+	public LinkedList() {
+		super();
+		this.head = null;
+	}
+	
+	public boolean insertData(Product p) {
+//		Product product = new Product(id,nm,qty,d);
+		Node newNode = new Node(p);
+		if(p == null) {
+			return false;
+		}
+		if(head == null) {
+			head = newNode;
+			return true;
+		}
+//		Product temp = head;
+//		temp.setId(id);
+//		temp.setName(nm);
+//		temp.setQty(qty);
+//		temp.setPrice(d);
+		
+		Node temp = head;
+		temp.setnext(newNode);
+		System.out.println("Data inserted successfully!!");
+		return true;
+//		temp.setNext(product);
+		
+//		return p;
+	}
+	
+	public void displayData() {
+//		Product temp = head;
+		System.out.println("while before");
+		Node temp = head;
+		while(temp != null) {
+			System.out.println("in while ");
+			System.out.println(temp.getData());
+//			if(temp.getnext()== null) {
+//				break;
+//			}
+			temp = temp.getnext();
+			if(temp != null) {
+				System.out.print("->");
+			}
+		}
+	}
+
+}

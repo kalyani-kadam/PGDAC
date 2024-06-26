@@ -1,0 +1,20 @@
+package com.app;
+
+public class Stack<String> {
+	String[] arr;
+	int size,top;
+	
+	public Stack(int size) {
+		this.size = size;
+		top = -1;
+		arr = (String[]) new Object[size];
+	}
+
+	public void isEmpty() {
+		top = -1;
+	}
+	
+	public void isFull() {
+		top = size-1;
+	}
+}

@@ -1,0 +1,12 @@
+package sll;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SLL s=new SLL();
+		s.insert(12);
+		s.insert(112);
+	}
+
+}

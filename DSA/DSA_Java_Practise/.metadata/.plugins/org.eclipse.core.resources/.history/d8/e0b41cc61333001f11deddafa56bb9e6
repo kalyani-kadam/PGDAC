@@ -1,0 +1,53 @@
+package com.app;
+
+public class Queue<T> {
+
+	private int front;
+	private int rear;
+	private T[] arr;
+	private int size;
+
+	public Queue(int size) {
+		super();
+		this.front = -1;
+		this.rear = -1;
+		this.size = size;
+		arr = (T[]) new Object[size];
+	}
+
+	public boolean isEmpty() {
+//		if (front == -1 && rear == -1 || front > rear) {
+//			return true;
+//		}
+//		return false;
+		
+		return front == -1 && rear == -1 || front > rear;
+	}
+	
+	public boolean isFull() {
+//		if(rear == size-1) {
+//			return true;
+//		}
+//		return false;
+		
+		return rear == size-1;
+	}
+	
+	public boolean enQueue(T data) {
+		if(isFull()) {
+			return false;
+		}
+		arr[++rear] = data;
+		if(front == -1) {
+			front = 0;
+		}
+		return true;
+	}
+	
+	public T deQueue() {
+		if(isEmpty()) {
+			return null ;
+		}
+		return arr[front++];
+	}
+}

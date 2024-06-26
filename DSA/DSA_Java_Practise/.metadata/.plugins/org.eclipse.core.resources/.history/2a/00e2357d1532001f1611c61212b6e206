@@ -1,0 +1,21 @@
+
+public class BinarySearchArray {
+	public int search(int []arr,int key,int size) {
+		int low = 0,high=size-1;
+		while(low<=high) {
+			int mid = (low + high)/2;
+			if(arr[mid] == key) {
+				System.out.println(arr[mid]+" found at index "+mid);
+				return mid;
+			}
+			if(key < arr[mid]) {
+				high = mid-1;
+			}
+			else {
+				low = mid+1;
+			}
+		}
+		System.out.println("Element not found");
+		return -1;	
+	}
+}

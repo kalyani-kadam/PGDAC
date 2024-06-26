@@ -1,0 +1,12 @@
+package sll;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		CLL cl = new CLL();
+		cl.insert(12);
+		cl.display();
+
+	}
+
+}

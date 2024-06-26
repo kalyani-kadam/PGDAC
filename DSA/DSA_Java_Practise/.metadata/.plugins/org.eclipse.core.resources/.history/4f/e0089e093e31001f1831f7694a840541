@@ -1,0 +1,12 @@
+package com.app;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Stack<String> s = new Stack<>(5); 
+		s.push("Pune");
+		
+		System.out.println(s.peek());
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.app;
+
+public class cycleque {
+	private int f,r;
+	private int[] arr;
+	private int size;
+	public cycleque( int size) {
+		super();
+		this.f = -1;
+		this.r = -1;
+		this.arr = new int[]arr;
+		this.size = size;
+	}
+	
+	
+}

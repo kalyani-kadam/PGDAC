@@ -1,0 +1,15 @@
+package com.app;
+
+public class Main {
+
+	public static void main(String[] args) {
+		DynamicQueue dq = new DynamicQueue();
+		dq.enqueue(781);
+		dq.enqueue(72);
+		dq.enqueue(71);
+		dq.display();
+		dq.dequeue();
+
+	}
+
+}

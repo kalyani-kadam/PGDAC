@@ -1,0 +1,27 @@
+package com.app;
+
+public class Main {
+
+	public static void main(String[] args) {
+		BST bst = new BST();
+		bst.insert(133);
+		bst.insert(89);
+		bst.insert(45);
+		bst.insert(10);
+		bst.insert(65);
+		bst.insert(82);
+		bst.insert(800);
+		bst.insert(10);
+//		System.out.println("Root "+bst.getRoot());
+		bst.inOrder(bst.getRoot());
+//		bst.display();
+		System.out.println();
+		System.out.println("Min = "+bst.getMin());
+		
+		System.out.println("max = "+bst.getMax());
+		System.out.println("Second max = "+bst.secondMax());
+//		int count = bst.findKthNode(bst.getRoot());
+		System.out.println("count "+bst.findKthNode(bst.getRoot()));
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.app;
+
+public class que {
+	private int f,r;
+	private int[] arr;
+	public que(int size) {
+		super();
+		f = -1;
+		r = -1;
+		arr = new int[size];
+	}
+	public int getF() {
+		return f;
+	}
+	public void setF(int f) {
+		this.f = f;
+	}
+	public int getR() {
+		return r;
+	}
+	public void setR(int r) {
+		this.r = r;
+	}
+	public int[] getArr() {
+		return arr;
+	}
+	public void setArr(int[] arr) {
+		this.arr = arr;
+	}
+	
+	
+}

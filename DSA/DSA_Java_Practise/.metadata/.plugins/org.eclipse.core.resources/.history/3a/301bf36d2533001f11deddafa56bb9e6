@@ -1,0 +1,37 @@
+package sll;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		CLL cl = new CLL();
+		cl.insert(12);
+		cl.insert(38);
+		cl.insert(70);
+		cl.insert(12);
+		cl.insert(38);
+		cl.insert(70);
+		cl.insert(100, 2);
+		cl.insert(20, -1);
+		cl.display();
+		System.out.println("--------delete by val -----");
+//		cl.delete(100,2);
+//		cl.delete(38,1);
+//		cl.delete(133,7);
+		cl.deletebypos(0);
+		cl.display();
+		cl.count();
+		System.out.println("---Asc sort------");
+		cl.sortAsc();
+		cl.display();
+		System.out.println("---Desc sort------");
+		cl.sortDEsc();
+		cl.display();
+		cl.searchbyVal(70);
+		cl.searchbyVal(67);
+		
+		System.out.println("-----remove dup----");
+		cl.removeDup();
+		cl.display();
+	}
+
+}

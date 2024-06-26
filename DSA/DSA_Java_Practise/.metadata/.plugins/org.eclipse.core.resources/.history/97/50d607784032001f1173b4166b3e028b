@@ -1,0 +1,28 @@
+package sll;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SLL s=new SLL();
+		s.insert(12);
+		s.insert(92);
+		s.insert(192, 1);
+		s.insert(44);
+		s.insert(67);
+		s.insert(244, 3);
+		s.insert(123);
+		s.insert(190, 0);
+		System.out.println("after insertion");
+		s.display();
+		System.out.println("after deletion");
+		s.delete(192);
+		s.display();
+//		System.out.println("after deletion");
+//		s.delete(92, 1);
+//		s.display();
+//		System.out.println("after deletion");
+//		s.delete(44, 3);
+//		s.display();
+	}
+}

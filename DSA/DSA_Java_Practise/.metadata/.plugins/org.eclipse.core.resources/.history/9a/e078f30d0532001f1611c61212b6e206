@@ -1,0 +1,25 @@
+package com.app;
+
+public class DynamicStack {
+	private int top=0;
+	private Node head;
+	
+	public boolean push(int data) {
+		Node newNode = new Node(data);
+		if(newNode == null) {
+			return false;
+		}
+		if(head == null) {
+			head = newNode;
+			top++;
+			return true;
+		}
+		Node temp = head;
+		while(temp.getNext() != null) {
+			temp = temp.getNext();
+		}
+		temp.setNext(newNode);
+		top++;
+		return true;
+	}
+}
