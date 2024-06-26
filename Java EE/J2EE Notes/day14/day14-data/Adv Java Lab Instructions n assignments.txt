@@ -1,0 +1,462 @@
+Day 1
+In the combined lab , 
+Confirm first 
+JDK version : JDK 11
+IDE : Eclipse STS 3.9.18
+1. Create new workspace
+2. Change perspective to Java EE 
+3. Delete earlier web server.
+4. Add Apache tomcat (,.0,76) in IDE.
+5. Create dynamic web project n test welcome page(HTML contents)
+6. Extract Java EE docs from : "day1_help\JavaEE_help\Web Server n Java EE docs\javaee-api-8.0-javadoc.jar"
+2. In index.html , add a link to test the servlet , deployed using annotations
+(Servlet1)
+Confirm complete servlet life cycle (init , service , destroy)
+(by printing messages on the server console)
+
+8. In index.html , add another link to test the servlet , deployed using xml tags
+Copy Servlet1 into Servlet2 (make some changes in the print statements)
+Confirm complete servlet life cycle again
+
+9. Let's start solving online voting case study
+
+9.1 Voter authentication
+i/p : email , password
+
+
+In individual lab session 
+1. MUST revise till Servlet deployment steps.
+
+2. Complete JDBC assignment of DAO layer for
+
+2.1  Get all candidates. 
+2.2  Update Voting status
+2.3  Increment candidate votes
+
+
+Day 2
+1. import day2.1 , in the Java EE workspace
+Correct Build path errors if any !
+Edit DBUtils , as per your DB settings.
+
+1.1 Revise the flow of Online voting , completed so far.
+(from login.html till Candidate List page)
+Use inspect option (client side debugging) for BEST clarity.
+
+1.2 Complete cookie based state management(session tracking) n test it.
+
+1.3 Discuss Voter registration (sign up)
+Complete this in the individual labs.
+
+2. Mandatory Hands on (in the individual labs.)
+
+
+Add a Link for  Sign Up , in login.html
+Submit it to voter_register.html(Already supplied in today's help.)
+ Accept first name , last name , email , password , dob from user.
+Submit the form to VoterRegistrationServlet
+Validate user's age . In case of valid age(>21)  , use dao layer to insert a record in DB.
+Already done in UserDaoImpl.
+
+In case of successful insertion , give a messgae n Add a link : Login Again ---> login.html
+In case of failure  ,display failure message ,  Add a link : Back  ---> voter_registration.html
+
+
+Day 3 
+1. import day3.2 (it's a copy of day3.1)
+ It uses ServletConfig n init params
+What will you edit here ????
+Any Java code OR web.xml ?
+Revise
+1.1 HttpSession API
+1.2 Dynamic form generation
+1.3 ServletConfig
+
+2. In the combined labs 
+complete 
+2.1  Complete Voter registration
+2.2  Complete admin flow (If time permits) or do it in the individual labs.
+
+
+Day 4
+1. import day4.1 in your workspace , to revise RequestDispathcer's forward scenario
+(IMPORTANT)
+
+After this you should be able to discuss similarities n differences between redirect n forward (popular question) 
+
+2. import day4.2 in your workspace , to revise RequestDispathcer's include scenario
+After this you should be able to discuss similarities n differences between include n forward (popular question) 
+
+3. Complete Voter Registration n Admin flow (if not done already !)
+
+3.5 import day4.3 in your workspace to revise basics of JSP
+
+4. Optional BUT recommended assignment
+Health Care appointment system
+
+4.1 
+Tables
+4.2 Entities(POJOs)
+4.3 DAOs 
+4.4 HTML pages(static)
+4.5 Servlets (dyn web pages) --Later can be replaced by JSP and Java Beans
+
+
+Day 5
+1. import day5.1 in your workspace (import --> general --> existing project --> check the copy checkbox --> finish)
+
+2. Run the application n trace the last link for revision.
+
+3. Continue with the theory session
+3.1 JSP page directive 
+Test error handling in JSP
+3.2 JSP include directive
+3.3 JSP actions
+forward action
+include action
+
+4. OPTIONAL
+If possible - refer "day5-lab-data\student admission.png"
+We have solved it already on day4 , using servlets
+Try solving it in JSP (o/p should be as shown in the above diagram)
+4.1 <jsp:forward>
+4.2 <jsp:include>
+4.3 Replace server pull by client pull  (i.e use sendRedirect)
+4.4 Disable the cookies (in Edge)
+above 4.3 will fail.
+Add URL rewriting n try it again!!!
+
+
+Day 6
+
+1. In the extended theory session , 
+1.1 Discuss hibernate overview.
+1.2 Create hibernate based project , for Moview Review system or Blogs management system or Healthcare.
+In any application you will need a user , so we will start from there. 
+eg - users table 
+column - id , first name(not null) , last name(not null), email (unique) ,password(not null) , dob, role (user or admin)
+1.3 Develop standalone(not a web app !) hibernate based application
+
+2. import day6.1 to revise JSP using Java Bean
+Layers 
+JSP-Java Bean - DAO(uses DBUtils) -Entities --DB
+
+3. Discuss voter registration n solve it in the individual labs.
+
+Day 7
+
+
+
+1. Download today's data .
+
+2. DO NOT import the project yourself. We will import the project together(to avoid any mistakes.)
+
+3. Revise hibernate steps.
+
+4. Continue to CRUD operations in hibernate , using Session API.
+(Refer - today's hibernate sequence n session API readme)
+
+5. In the individual labs
+5.1 Refer - "day7-data\case studies\blogs E-R.png"
+5.2 Create BlogPost entity 
+with - id(PK) , content , description , title(unique)
+5.3 Create BlogPost dao for the following
+1. Create new post
+2. Display all posts
+3. Display a specific post by it's title.
+
+
+Day 8
+
+1. Copy day8.2 under your eclipse Java EE workspace
+import it as existing Maven project
+Edit from hibernate.cfg.xml , DB details (password , DB port no etc.)
+
+2. We will discuss 
+2.1 one - many bi-directional association between Category n Blog Posts
+2.2 Revise n Follow Hibernate advanced sequence
+2.3 many to one uni directional association between Post *-->1 User
+FK col name in posts -- author_id
+add not null constraint
+
+2.4 Objective 
+Add new blog post
+Pre requisites
+
+1. Add blogger details
+UserDao 
+i/p -- user details(with BLOGGER role)
+add blogger
+2. Add a new category
+CategoryDao
+i/p -- desc , name
+
+3. You can import or refer to day8_lab.
+Run - RegisterUserwithRegAmount , with the sample data (1 admin n 1 blogger)
+
+Run - AddNewCategory (to add atleast 1 category)
+
+
+4. Add new blog post
+i/p --blog post  title, content, desc,author id n cat id
+(Major focus wil be on the entity layer n it's annotations)
+
+
+3. In tomorrow's lab , we will integrate web app with hibernate.
+In the individual labs 
+3.1 Copy "Template Projects\web_maven_hibernate"  , under your eclipse Java EE workspace.
+
+import it as existing Maven project
+Edit from hibernate.cfg.xml , DB details (password , DB port no etc.)
+Keep this ready , before tomorrow morning.
+
+
+Day 9
+1. Copy day9.1 under your eclipse Java EE workspace
+Import it as existing Maven project
+Edit from hibernate.cfg.xml , DB details (password , DB port no etc.)
+
+2. Copy \Template Projects\web_maven_hibernate under your eclipse Java EE workspace .
+Import it as existing Maven project
+
+Hands on
+1. Configure uni dir association , between
+User  1<-----* Comment
+Post  1<-----* Comment
+Add the validation rules
+1.Same user should not be able to comment on the same post again.
+2. You should not automatically lift the commenter n post details from DB along with the comment.
+3. How will you  stop the blogger commenting on his/her own post ?
+
+Comment entity is already provided.
+
+1.1 Add a new comment
+i/p - comment , rating , user id , post id
+o/p mesg
+(sample data supplied)
+
+1.2 View all the comments on a specific blog post
+i/p - blog post title
+o/p -- all comments
+eg : JPQL - select c from Comment c where c.post.title=:title
+
+2. Configure , uni directional many to many association between Post n Tag entity
+Post *---->* Tag
+Table (tags) --id ,creation , updation , name
+We will do it together.
+
+3. Port existing web app to hibernate
+Steps
+3.1 
+Copy \Template Projects\web_maven_hibernate under your eclipse Java EE workspace .
+Import it as existing Maven project
+(Already done ??)
+
+3.2 Copy earlier layers from Online Voting (admin flow) , reference project -day6_lab
+Port it to hibernate.
+
+
+Day 10
+1. Copy day10.1 in your workspace.
+Import it as existing Maven project n Maven Force Update.
+
+2. Revise spring bean life cycle with setter Based D.I
+
+3. Use constructor based D.I
+
+4. Use Factory based D.I
+
+5. use auto wiring (byName , byType , constructor)
+
+6. If time permits , enter spring annotations.
+
+2. Help for completing web app +hibernate integration (for online voting , admin flow)
+For top 2 candidates
+jpql="select c from Candidate c order by c.votes desc"
+Hint : Use public void setMaxResult(int maxRes) of hibernate Query i/f  to set a limit of 2.
+
+For group by party
+jpql="select new com.app.entities.Analysis(party,sum(votes)) from Candidate c"
+Pre requisite -- You will have to create - Analysis class 
+with 2 fields String party,int votes , with no args , paramterized ctor , getters n setters.
+
+Day 11
+1. Copy "Template Projects\spring_mvc_template" in your workspace.
+Import it as existing Maven project n Maven Force Update.
+
+1.1 Refer to a folder (Keep it open for the reference)
+Spring Reference Material\Spring MVC\spring-hibernate-templates
+
+1.2 We will create from scratch Spring MVC web app n solve below objectives.
+
+
+2. Lab Objectives 
+1. Test Spring MVC Flow
+2. Deliver/render the index.jsp from SC (using spring MVC architecture)
+3. Test Model n View
+
+4. Test Model Map
+5. Enter Case study (Blogs Management System)
+Spring MVC Hibernate integration  (w/o spring boot)
+5.1 List All Categories
+(For this you can import spring_mvc_hibernate in your workspace)
+
+3. Later in the practice labs
+3.1 import day11.1 to revise , autowire=byName
+3.2 import day11.2 to revise , autowire=byType
+
+3.3 import day11.3 to revise , autowire=constructor
+
+Till this we were using pure XML approach
+
+3.4  import day11.4 to revise , hybrid appraoch (reduced XML n majority annotations)
+
+3.5  import day11.5 to revise , no xml (using only Java config class + annotations)
+
+
+Day 12
+
+1. Copy "Template Projects\spring_boot_template_mvc" project in your workspace n import it as existing Maven project . Force update it.
+
+2. drop database blogs2;
+
+3. Run these testers
+
+3.1 Run - AddNewCategory (to add atleast 2 categories)
+3.2 Regsiter User
+3.3  Add new blog post
+i/p --blog post  title, content, desc,author id n cat id
+(Refer to sample data shared today)
+
+4. We will design n implement blog assignment , with spring boot n Spring Data JPA
+together.
+
+
+Day 13.
+1. Copy "Template Projects\spring_boot_backend_template" in your workspace 
+Import it as existing Maven project
+Edit application.properties file ,as per your DB
+
+2. 
+Objective : Complete backend for the Blog management's  for Category resource
+
+2.1 Continue to use blogs2 DB .
+2.2 Create the packages
+Copy entities , value_types ,repository , service  
+
+2.3. Add lombok annotations
+Refer -  "day13_help\Regarding Lombok.txt"
+Apply these annotations only for Category resource
+
+2.4 Comment the association between Category n Blog Posts.
+E-R demo will be discussed later.
+
+Solve 			
+
+1. Get All Categories
+Design end point of REST API to get all categories
+URL - http://host:port/categories
+Method - GET
+Payload(request data) - NONE
+Resp - : @ResponseBody List<Category> 
+(sent from RestController --> D.S --> marshalling(ser :Java --> JSON) --> will be sent to the REST clnt.
+
+2. Add new Category
+Design end point of REST API for adding new category(Create)
+URL - http://host:port/categories
+Method - POST
+Payload(request data) - category details (name n desc) : Category entity
+Resp - : @ResponseBody -- Category (with generated id)
+(sent from RestController --> D.S --> marshalling(ser :Java --> JSON) --> will be sent to the REST clnt.
+
+
+3. Delete catgeory details
+Design end point of REST API for deleting existing category(Delete)
+URL - http://host:port/categories/{categoryId} (URI template variable |path variable)
+Method - DELETE
+Payload(request data) - none
+Resp - : @ResponseBody -- plain string message
+
+
+Better Practice : Instead of a plain string message , wrap it in the java object (ApiResponse) n send it to front end
+4. Update category details
+ 
+4.1 Get category details By Id
+Design end point of REST API for getting existing category(GET)
+URL - http://host:port/categories/{categoryId} (URI template variable |path variable)
+Method - GET
+Payload(request data) - none
+Resp - : @ResponseBody -- Category 
+
+4.2 Update category details
+Design end point of REST API for updating existing category(PUT)
+URL - http://host:port/categories
+Method - PUT
+Payload(request data) - Category
+Resp - : @ResponseBody -- Category
+
+5. 
+Regarding swagger 
+Refer - "day13_help\Regarding Swagger.txt"
+
+
+Test it with postman/swagger (Add swagger dependency here)
+Steps 
+1. Add swagger dependency in pom.xml
+(Already added in spring boot backend template project)
+2. From web browser , access swagger endpoint
+http://localhost:8080/swagger-ui/index.html
+
+
+
+Optional work (To be done in a monolithic web app with JSP based view layer)
+Add a  link in Blogger's home page
+My Blogs --after user clicks on it , it should display only logged in blogger's blogs.
+
+Day 14.
+
+1. Copy n import day14_REST_advanced , in your workspace.
+Force update the maven project
+Edit DB settings in application.properties file
+
+2. 
+Post a comment to the blog post
+i/p - comment  , rating  , commenter id , post id
+DESIGN-
+commentController,commentService,impl,commentRepo,dto
+URL - http://host:port/comments
+method -POST
+req - comment dto
+resp : ApiRepo with msg
+
+2.1 Before trying it with swagger / postman 
+Perform integration testing (will be discussed in the lab)
+service layer testing
+
+2.2 Test it with swagger.
+
+
+3.  User signin endpoint 
+URL : http://host:port/users/signin
+Method : POST (for adding email n pwd : in request body as additional security.)
+Design -
+userController userService n impl
+useRepository extends jpaRepository
+URl 
+req AuthDTo (email,password)
+resp - failed -- exception(error)
+success -- user details
+
+
+3.1 Test the Data layer (unit testing)
+3.2 Test it with swagger.
+
+4. Add the endpoint , to see all the blogs written by particular blogger
+i/p - blogger's  email
+Resp - title,desc,updationDate,bloggerName,categoryName
+
+4.1 Unit testing with data layer.
+4.2 test ot with swagger
+
+5. Add - 
+Server side validations n global exception handling

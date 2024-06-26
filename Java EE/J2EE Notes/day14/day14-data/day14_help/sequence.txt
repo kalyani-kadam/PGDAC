@@ -1,0 +1,143 @@
+Spring Data JPA Links (Bookmark them!)
+1. API Docs : https://docs.spring.io/spring-data/jpa/docs/2.7.18/api/
+2. Ref docs : https://docs.spring.io/spring-data/jpa/docs/2.7.18/reference/html/
+Latest Spring java docs
+Link : https://docs.spring.io/spring-framework/docs/5.3.26/javadoc-api/
+
+
+
+
+
+Today's Topics
+Revise - 
+RESTful web service 
+Full stack app overview
+Annotations
+How does SC perform marshalling / un marshalling ?
+Refer - HttpMessageConverter from "RestController vs MVC Controller n Annotations.txt"
+
+Content negotiation
+Refer - "day14_help\Content Negotiation.txt"
+Add a header , in postman request 
+Accept with value=application/xml 
+Observe n conclude .
+
+
+
+New Topics
+1. Using swagger 
+Refer - "day13-data\day13_help\Regarding Swagger.txt"
+Test the application with swagger as a REST client.
+
+Enter Advanced REST
+
+2 E-R with REST API
+Un comment the association from Category class.
+Generate suitable constructor
+Exclude association fields from toString , to avoid recursion n thus leading to stack overflow
+
+2.1 Run the end point - get all categories  
+
+Observation - Exception
+Details - org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily initialize a collection of role: com.blogs.entities.Category.posts, could not initialize proxy - no Session
+
+Cause -Category 1->* Post
+Default fetch type : LAZY  (i.e post details are NOT lifted from DB -- represented by a proxy) --can't be access outside the session scope. 
+
+Soln -- change LAZY --> EAGER
+
+2.2 Eager fetching ?
+Observation - stack overflow to due recursion
+root cause - bi dir association
+(during ser Jackson from category --tries to ser posts n from post tries to ser. Category)
+(For understanding the problem - run postman client)
+
+2.3 Use @JsonIgnore (jackson annotation) to tell Jackson(vendor for ser n de-ser) to skip a field during ser n de-ser.
+Not an effective solution
+Reason - If REST clnt needs to fetch category + post details - it won't be possible, since @JsonIgnore is used !!!
+
+
+2.4 Clean n recommended solution -
+DO NOT expose entities for data exchange between REST clnt n REST server , use them only for persistence.
+
+Instead use DTO(Data transfer obj) pattern to exchange data between client n server.
+1 Entity --> DTO (is required during ser.)
+Create DTO instance , read data from entity(getter) --> set the data in DTO (setter)
+
+DTO --> Entity (is required during de-ser.)
+Create entity instance , read data from dto(getter) --> set the data in entity (setter)
+
+2. Instead of doing it ourselves --there are ready made 3rd party libs -
+meant for src obj --> dest obj conversion.
+
+eg : ModelMapper, MapStruct
+Refer - "day14_help\Advanced REST\readmes\Regarding ModelMapper.txt"
+
+Objective - Create CategoryDTO , with required fields.
+Control property access (@JsonProperty) , if required.
+
+Modify service layer , to return List of Category entity or DTO ?
+
+2.1 Replace actual Resource(eg : Employee / Customer / User / Category )  by ResponseEntity
+Refer - "Regarding ResponseEntity.txt"
+
+2.5 Lab objective - Add the end point to return Category with given id , along with Post details
+i/p - category id
+resp - Category + it's post details
+
+2.6 Add new end point
+For adding a new blog post.
+i/p - title , desc , contents , category id ,  author id 
+How will you design it ?
+
+How to control the access to the property during ser/ de-ser ?
+Default access -the propety is accessed during sern n de-ser.
+To use it only during de-ser
+@JsonProperty(access=Access.WRITE_ONLY) //setters
+
+To use it only during ser
+@JsonProperty(access=Access.READ_ONLY)// getters
+
+
+
+2.7 Update blog post contents
+i/p - post id n updated contents
+How will you design it ?
+
+2.8 Lab work
+Post a comment to the blog post
+i/p - comment  , rating  , commenter id , post id
+
+
+3. Objective : User signin endpoint 
+URL : http://host:port/users/signin
+Method : POST (for adding email n pwd : in request body as additional security.)
+
+
+Request Body : DTO (eg : AuthRequestDTO)
+Resp : ResponseEntity
+Success : SC 200 + UserDTO
+Failure : SC 404 + ApiResp (err mesg +timestamp)
+
+4. In case of failure : Client SHOULD NOT see the error stack trace 
+INSTEAD
+REST server should return Resp packet with : SC 404 n resp body containing : DTO 
+with time stamp n err mesg (Hint : Use ApiResponse DTO)
+
+5. What will happen ?
+In User sign in
+in the JSON payload : send empty payload
+Observe n conclude 
+
+Any problem n any solution ?
+
+6. Enter :  REST Server side Validations
+(Refer to readme : templates.txt & "regarding spring boot exc handling n validations.txt") 
+
+
+7. Spring boot testing
+Refer - "day14_help\Advanced REST\readmes\Regarding Spring Boot Testing.txt"
+Use it for unit testing n integration testing.
+
+
+
