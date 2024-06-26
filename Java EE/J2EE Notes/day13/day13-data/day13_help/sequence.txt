@@ -1,0 +1,44 @@
+Spring Data JPA Links (Bookmark them!)
+1. API Docs : https://docs.spring.io/spring-data/jpa/docs/2.7.18/api/
+2. Ref docs : https://docs.spring.io/spring-data/jpa/docs/2.7.18/reference/html/
+
+
+Today's Topics
+1. Revise Spring Boot MVC , using Spring Data JPA (using complete code walk through) n understand solution , with request n response flow
+
+2. Continue with remaining part of the assignment
+
+3. Enter REST 
+
+---------------------------------
+1. Revision 
+Refer -  "day12_lab_problem" in your workspace
+Edit application.properties file , as per DB settings
+
+It is NOT using redirect
+It is NOT using any <c:url> tags , in login.jsp
+
+Spot the problem !
+1. If you log in correctly , with admin / blogger no issues
+BUT if you give incorrect credentials , it will show you error message
+After that if you incorrect or correct credentials 
+It will show you - Whitelabel Error Page (i.e spring boot generated error page)
+What is happening ?
+Answer lies in the URL -- check it
+Solution ????
+
+1.5 Try changing the login.jsp , form action="/user/login" 
+observer n conclude.
+
+2. Another problem
+Login correctly first itself.
+It will show you a blogger or admin home page.
+Now refresh the page couple of times -it will fire select query every time even after forwarding to home page.
+Remember multiple submit issue ??
+Solution ????
+
+
+ 3. Solve above problems n continue with the assignment
+
+4. Enter REST
+"day13_help\REST\Spring Boot REST Steps.txt"

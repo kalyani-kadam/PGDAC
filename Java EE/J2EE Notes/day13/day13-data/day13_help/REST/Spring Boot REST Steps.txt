@@ -1,0 +1,99 @@
+Spring Boot REST Steps
+Enter  Spring boot REST
+Understand RESTful web services n it's architecture , which sits on the top of Spring MVC
+(Draw a comparison , with existing Spring MVC Flow Diagram)
+1.1 Ref : Full Stack Overview.png
+
+1.2 refer to : REST Simplified
+1.3 Diag : web app vs web service
+1.4 Readme : RestController vs MVC Controller n Annotations.txt
+1.5 Develop the backend for Blog management for category resource
+(CRUD)
+
+
+Steps
+1. Create spring boot app : using spring boot starter project (choose packaging as JAR)
+2. Use same spring boot starters as earlier.
+Spring web , Mysql driver , Spring data JPA , Lombok , Spring Dev Tools,validation
+2.1 Since Spring boot starter DOES NOT support spring boot 2.x , choose Spring boot 3.2 n JDK 17.
+After the whole project is built , it will show you build errors(since currently we don't have JDK 17 with us !)
+2.2 Open pom.xml n edit Spring Boot parent version (line no 8)
+<version>2.7.18</version>
+And Edit Java version
+<java.version>11</java.version> (line no 17)
+
+2.3 Force update Maven . Open Maven dependencies n conform that you are actually using spring boot 2.7.x 
+
+3. NO additional dependencies for view layer(i.e no jstl n no tomcat-embeded jasper  dependencies , in pom.xml
+
+4. Copy application.properties from earlier spring boot project
+(Do not add view resolver related properties)
+
+5. Add additional dependencies , in pom.xml
+<!-- Swagger UI -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+	
+
+OR 
+If you don't want to invest time in all of above , simply import "template projects\spring_boot_backend_template" n start with the actual development .
+
+For advanced Java Lab exam , you will be getting this template project. You will have to develop the RestController, Service n DAO layer n Entities on your own , as per the requirements.
+
+6. Write simple RestController to serve simple resource , to confirm.
+
+7. Build the layers in bottoms up manner, for the following objectives.
+
+Objective : Complete backend for the Blog management's  for Category resource
+
+7.1 Continue to use blogs2 DB .
+7.2 Create the packages
+Copy entities , value_types ,repository , service  
+
+7.3. Add lombok annotations
+Refer -  "day13_help\Regarding Lombok.txt"
+Apply these annotations only for Category resource
+
+7.4 Comment the association between Category n Blog Posts.
+E-R demo will be discussed later.
+
+Solve 			
+
+1. Get All Categories
+2. Add new Category
+3. Delete catgeory details
+Better Practice : Instead of a plain string message , wrap it in the java object (ApiResponse) n send it to front end
+4. Update category details 
+4.1 Get category details By Id
+4.2 Update category details
+
+8. 
+Regarding swagger 
+Refer - "day13_help\Regarding Swagger.txt"
+
+
+Test it with postman/swagger (Add swagger dependency here)
+Steps 
+1. Add swagger dependency in pom.xml
+(Already added in spring boot backend template project)
+2. From web browser , access swagger endpoint
+http://localhost:8080/swagger-ui/index.html
+
+
+
+
