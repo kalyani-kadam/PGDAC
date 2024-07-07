@@ -1,0 +1,13 @@
+﻿
+<h1>Product Catalog</h1>
+<hr/>
+ 
+<ol>
+    @{
+        List<string> allProducts = (List<string>)ViewData["catalog"];
+        foreach( string s in allProducts)
+        {
+            <li>@s</li>
+        }
+    }
+</ol>

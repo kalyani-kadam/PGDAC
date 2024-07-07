@@ -1,0 +1,118 @@
+
+
+
+	Adaptibility of Database Connectivity:
+
+	ADO.net 
+		System.Data
+			IDbConnection ----> Open () 	Close ()
+			IDbCommand    ----> ExecuteNonQuery()
+			 			ExecuteReader()
+			 			ExecuteScalar()
+			IDbDataReader ----->ExecuteReader()
+			IDbDataAdapter
+					---> Fill()
+					---> Update()
+			DataSet, DataTable, DataRowCollection, DataRow, DataColumn
+
+		connection String
+
+
+			
+	Connection, Command
+		ADO.NET consist of Managed Providers (dll's)
+		For MySql Server Connectivity
+
+		Assembly: mysql.Data.dll  ----------using nuget package
+		Namespace: mysql.Data.MysqlClient -------------------------namespace
+		Classes:MySqlConnection, MySqlCommand, MySqlDataReader-------mysql.Data.dll 
+		
+		Connection method:
+			Open ()
+			Close ()
+		Command methods
+			 ExecuteNonQuery()
+			 ExecuteReader()
+			 ExecuteScalar()
+		ADO.net Object Model
+
+		For Microsfot Sql Server Connectivity 
+		Assembly: Data.dll  ----------using nuget package
+		Namespace: System.Data.SqlClient -------------------------namespace
+		Classes:SqlConnection, SqlCommand, SqlDataReader-------mysql.Data.dll 
+		ADO.net Object Model
+	 Connected 
+		
+		
+	 Disconnected
+	 
+
+
+
+	mysql.Entityframeworkcore.dll
+	DBSet<>
+	DbContext<>
+	ORM
+	overridable methods of DataContext
+		OnConfiguring
+		OnModelCreating
+	Entity FrameworkCore
+
+
+Recap:
+	Docupled asp.net mvc Application
+	MVC Application Architecture
+	Layered Architecture
+	ViewData, ViewBag, TempData
+	Data Binding
+	Razor Syntax
+	html helper functions
+	Model Binding
+
+
+
+
+Todays Agenda:
+
+
+ Partial Views
+		Partial class:
+		Partial Views	 (Dashboard Screen)
+		html.partial("");
+	
+ Using Client Side UI Technologies for Rich UI
+		Using javascript
+		Using chart.js
+		Using Ajax, jQuery
+		Performing DOM Manipulation using jQuery	
+ Using simple JSON return data Action Method
+
+ State Management
+	Client Side State Management
+		Browser based components
+		Local Storage, Session Storage
+		cookies,
+		querystrings
+	Server Side State Management
+		Session
+	OutputCaching
+		
+ Rest API 
+	Creating REST full services
+		web api project (Minimal Code Strategy(
+		Web api project using Controllers
+		async, await keywords
+	Consuming REST Full Services
+		$.get(), $.post(), $.put(), $.delete()------- crud api invocation
+		$.Ajax ()--------------using jQuery
+		fetch()
+		XmlHttpRequest
+	
+ Building ASP.net Core Application using REACT Integration.
+
+
+Sunday:
+	Create Secure Web Application
+	SDM Mode: Software Testing
+
+

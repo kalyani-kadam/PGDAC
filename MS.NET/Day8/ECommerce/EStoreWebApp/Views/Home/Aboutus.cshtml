@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "About us Page";
+}
+<div>
+   <h1> @ViewData["company"]</h1>
+   <h3>Ravi Tambade</h3>
+   <hr/>
+
+   <p>List of Corporate Training locations</p>
+    <hr/>
+   <table>
+       <tr>
+            <td>
+                <!-- Associate Partial view to  html helper function--->
+                <!--- Similar like JSTL in JSP java -->
+                <!--- cdac.cshtml---- Partial View -->
+                @Html.Partial("cdac")
+            </td>
+
+            <td>
+                <!--- corporate.cshtml---- Partial View -->
+                @Html.Partial("corporate")
+            </td>
+
+       </tr>
+   </table>
+    
+
+</div>

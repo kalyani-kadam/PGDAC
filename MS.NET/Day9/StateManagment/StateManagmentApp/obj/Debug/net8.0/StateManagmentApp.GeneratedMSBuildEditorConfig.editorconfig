@@ -1,0 +1,131 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StateManagmentApp
+build_property.RootNamespace = StateManagmentApp
+build_property.ProjectDir = G:\study material\MS.NET\Day9\StateManagment\StateManagmentApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = G:\study material\MS.NET\Day9\StateManagment\StateManagmentApp
+build_property._RazorSourceGeneratorDebug = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Auth/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Dashboard/BarChartView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEJhckNoYXJ0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Dashboard/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Dashboard/DonutView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERvbnV0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Dashboard/LineChartView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXExpbmVDaGFydFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Dashboard/PieChartView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFBpZUNoYXJ0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Home/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Home/Services.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/ShoppingCart/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XENhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/ShoppingCart/TempData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XFRlbXBEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/StateMgmt/DisplayCookie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVNZ210XERpc3BsYXlDb29raWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/StateMgmt/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVNZ210XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/StateMgmt/LocalStorage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVNZ210XExvY2FsU3RvcmFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/StateMgmt/SessionStorage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVNZ210XFNlc3Npb25TdG9yYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/study material/MS.NET/Day9/StateManagment/StateManagmentApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-d8l03do1e8

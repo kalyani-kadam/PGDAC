@@ -1,0 +1,14 @@
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\bin\Debug\net8.0\CSharpFeatureApp.exe
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\bin\Debug\net8.0\CSharpFeatureApp.deps.json
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\bin\Debug\net8.0\CSharpFeatureApp.runtimeconfig.json
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\bin\Debug\net8.0\CSharpFeatureApp.dll
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\bin\Debug\net8.0\CSharpFeatureApp.pdb
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\CSharpFeatureApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\CSharpFeatureApp.AssemblyInfoInputs.cache
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\CSharpFeatureApp.AssemblyInfo.cs
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\CSharpFeatureApp.csproj.CoreCompileInputs.cache
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\CSharpFeatureApp.dll
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\refint\CSharpFeatureApp.dll
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\CSharpFeatureApp.pdb
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\CSharpFeatureApp.genruntimeconfig.cache
+D:\Ravi\TAP\iacsd\Day5\ECommerce\CSharpFeatureApp\obj\Debug\net8.0\ref\CSharpFeatureApp.dll

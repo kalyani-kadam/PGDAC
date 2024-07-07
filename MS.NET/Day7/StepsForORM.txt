@@ -1,0 +1,67 @@
+
+1.Create Blank solution.
+2.Create new console Application.
+3.Add Mysql.EntityFramework.dll using nuget package manager
+4.Add Department.cs file matcthing with Department Table
+5.Add new Class CollectionContext.cs file to project
+6.Inherit class CollectionContext.cs from DbContext.
+7.Add Data member <DbSet> Departments to CollectionContext
+8.Override OnConfiguring method of Collection Context.
+9.Define connection string inside OptionsBuilder using UseMySql()
+10.Override OnModelCreating inside Collection Context Class.
+11.Perform Model Mapping  with constraints using ModelBuilder 
+12.Add IDBManager interface with CRUD Operations signatures
+13.Add DBManager class implementing IDBManager interface.
+14.Implement each crud operation method using instance of CollectionContext
+15.Invoke LINQ query or Data Manipulation Code inside CRUD Operation method.
+16.Always invoke SaveChanges method for  Update , Delete , Insert operation.
+
+
+
+
+
+Assignment :
+
+Agenda:Create ECommerce Solution with  Product Catalog Functionality.
+
+a.Create ECommerce Database with Table Products ( Id, Title, Description, unitprice,
+						  imageurl, Quantity)
+b.Insert few sample records inside Products table for testing point of view.
+c.Create ASP.NET MVC ProductsOnline Web application.
+d.Add Repositories folder inside ProductsOnline web application projects
+e.Add POCO class Product in Models folder.
+f.Create EStoreCollectionContext Class for ORM inside Repositories
+g.Define DbSet<Product> Collection inside EStoreCollectionContext.
+h.Override OnConfiguring and OnModelCreating methods in EStoreCollectionContext.
+i.Add IDBManager interface with Product entity level CRUD Operations.
+j.Implement IDBManager interface in DBManager Class belong to Repositories.
+k.Add IProductService interface inside Services folder.
+l.Implement all methods of IProductService inside ProductServices.
+m.Use Delegatoin mechanism  to connect  DBManager functionality  along with  ProductService.
+n.Configure Dependecy Services  inside Program.cs using builder.Services.AddScoped<IProductService, ProductService>()
+o.Add new Controller ProductsController to Web project inside Controllers folder.
+p.Add Code for Injecting Dependency ProductService using Constructor Dependency Injection.
+q.Add logic to Index Action method of ProductsController with the help of _productService.GetAll method.
+r.Return list of Products to View Method of Index belong to Products Controller.
+s.Show all received Products inside index.cshtml file using Razor syntax.
+t.Add Insert, details, Update, delete action methods to Products Controller
+u.Add Views insert.cshtml, update.cshtml, details.cshtml  for corresponding action method of ProductsController.
+w.Implement Post and Get methos for Insert, Update.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

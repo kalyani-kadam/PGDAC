@@ -1,0 +1,14 @@
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\TypeApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\TypeApp.AssemblyInfoInputs.cache
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\TypeApp.AssemblyInfo.cs
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\TypeApp.csproj.CoreCompileInputs.cache
+D:\Ravi\TypeSolution\TypeApp\bin\Debug\net8.0\TypeApp.exe
+D:\Ravi\TypeSolution\TypeApp\bin\Debug\net8.0\TypeApp.deps.json
+D:\Ravi\TypeSolution\TypeApp\bin\Debug\net8.0\TypeApp.runtimeconfig.json
+D:\Ravi\TypeSolution\TypeApp\bin\Debug\net8.0\TypeApp.dll
+D:\Ravi\TypeSolution\TypeApp\bin\Debug\net8.0\TypeApp.pdb
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\TypeApp.dll
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\refint\TypeApp.dll
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\TypeApp.pdb
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\TypeApp.genruntimeconfig.cache
+D:\Ravi\TypeSolution\TypeApp\obj\Debug\net8.0\ref\TypeApp.dll

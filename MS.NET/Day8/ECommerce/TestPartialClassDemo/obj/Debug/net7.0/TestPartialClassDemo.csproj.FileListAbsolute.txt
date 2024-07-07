@@ -1,0 +1,14 @@
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\bin\Debug\net7.0\TestPartialClassDemo.exe
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\bin\Debug\net7.0\TestPartialClassDemo.deps.json
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\bin\Debug\net7.0\TestPartialClassDemo.runtimeconfig.json
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\bin\Debug\net7.0\TestPartialClassDemo.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\bin\Debug\net7.0\TestPartialClassDemo.pdb
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\TestPartialClassDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\TestPartialClassDemo.AssemblyInfoInputs.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\TestPartialClassDemo.AssemblyInfo.cs
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\TestPartialClassDemo.csproj.CoreCompileInputs.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\TestPartialClassDemo.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\refint\TestPartialClassDemo.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\TestPartialClassDemo.pdb
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\TestPartialClassDemo.genruntimeconfig.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\TestPartialClassDemo\obj\Debug\net7.0\ref\TestPartialClassDemo.dll

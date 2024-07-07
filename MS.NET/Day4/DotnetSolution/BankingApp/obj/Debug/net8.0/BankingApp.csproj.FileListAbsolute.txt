@@ -1,0 +1,14 @@
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\BankingApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\BankingApp.AssemblyInfoInputs.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\BankingApp.AssemblyInfo.cs
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\BankingApp.csproj.CoreCompileInputs.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\bin\Debug\net8.0\BankingApp.exe
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\bin\Debug\net8.0\BankingApp.deps.json
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\bin\Debug\net8.0\BankingApp.runtimeconfig.json
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\bin\Debug\net8.0\BankingApp.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\bin\Debug\net8.0\BankingApp.pdb
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\BankingApp.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\refint\BankingApp.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\BankingApp.pdb
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\BankingApp.genruntimeconfig.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day4\DotnetSolution\BankingApp\obj\Debug\net8.0\ref\BankingApp.dll

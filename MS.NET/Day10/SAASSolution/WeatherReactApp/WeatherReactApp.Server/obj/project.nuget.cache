@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jyxoXYxhRWY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\WeatherReactApp\\WeatherReactApp.Server\\WeatherReactApp.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tfladmin\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.6\\microsoft.aspnetcore.spaproxy.8.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "huHScHY5TmX3p1HRUcCUt9HJOblfawGv7dUvoRMPIhY=",
+  "Source": "MyntraWebAPI",
+  "BasePath": "_content/MyntraWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

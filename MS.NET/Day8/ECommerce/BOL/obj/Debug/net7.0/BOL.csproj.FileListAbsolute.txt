@@ -1,0 +1,11 @@
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\bin\Debug\net7.0\BOL.deps.json
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\bin\Debug\net7.0\BOL.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\bin\Debug\net7.0\BOL.pdb
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\BOL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\BOL.AssemblyInfoInputs.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\BOL.AssemblyInfo.cs
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\BOL.csproj.CoreCompileInputs.cache
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\BOL.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\refint\BOL.dll
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\BOL.pdb
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\BOL\obj\Debug\net7.0\ref\BOL.dll

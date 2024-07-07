@@ -1,0 +1,31 @@
+
+@using System.Collections.Generic;
+@using BOL;
+<h2>Transflowers</h2>
+<hr/>
+
+<!-- Razor View-->
+<!-- Each razor page is processed 
+     Razor View Engine
+-->
+
+@{
+    //razor syntax
+    int count = 45;
+    //Data Binding
+    <p> Result=@count</p>
+
+   // List<BOL.Product> allProducts=(List<BOL.Product>)ViewData["catalog"];
+   // List<BOL.Product> allProducts=ViewBag.catalog;
+   //List<BOL.Product> allProducts=TempData["catalog"] as List<BOL.Product>;
+
+    <ol>
+       @{
+           //foreach( BOL.Product product in allProducts)
+                foreach (BOL.Product product in Model)
+                {
+                  <li>@product.Title</li>
+                }
+        }
+    </ol>
+}

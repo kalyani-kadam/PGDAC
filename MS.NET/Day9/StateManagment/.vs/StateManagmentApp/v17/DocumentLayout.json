@@ -1,0 +1,296 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\study material\\MS.NET\\Day9\\StateManagment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\views\\shoppingcart\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\views\\shoppingcart\\cart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\controllers\\statemgmtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\controllers\\statemgmtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\models\\myuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\models\\myuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\views\\dashboard\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\views\\dashboard\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\models\\claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\models\\claim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\views\\statemgmt\\sessionstorage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\views\\statemgmt\\sessionstorage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\views\\statemgmt\\localstorage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\views\\statemgmt\\localstorage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|g:\\study material\\ms.net\\day9\\statemanagment\\statemanagmentapp\\views\\statemgmt\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5015EF01-5E30-43FC-B895-CD134AF89D47}|StateManagmentApp\\StateManagmentApp.csproj|solutionrelative:statemanagmentapp\\views\\statemgmt\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cart.cshtml",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\ShoppingCart\\Cart.cshtml",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Views\\ShoppingCart\\Cart.cshtml",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\ShoppingCart\\Cart.cshtml",
+              "RelativeToolTip": "StateManagmentApp\\Views\\ShoppingCart\\Cart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T07:42:01.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Controllers\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Controllers\\ShoppingCartController.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Controllers\\ShoppingCartController.cs",
+              "RelativeToolTip": "StateManagmentApp\\Controllers\\ShoppingCartController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAswBEAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T07:33:40.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Program.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Program.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Program.cs",
+              "RelativeToolTip": "StateManagmentApp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T07:16:03.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MyUser.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\MyUser.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Models\\MyUser.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\MyUser.cs",
+              "RelativeToolTip": "StateManagmentApp\\Models\\MyUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:46:42.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Controllers\\DashboardController.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "StateManagmentApp\\Controllers\\DashboardController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwCEAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:43:56.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\Dashboard\\Details.cshtml",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Views\\Dashboard\\Details.cshtml",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\Dashboard\\Details.cshtml",
+              "RelativeToolTip": "StateManagmentApp\\Views\\Dashboard\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T06:43:27.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Student.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Models\\Student.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Student.cs",
+              "RelativeToolTip": "StateManagmentApp\\Models\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:33:01.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Models\\ErrorViewModel.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "StateManagmentApp\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:32:59.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Models\\Cart.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Cart.cs",
+              "RelativeToolTip": "StateManagmentApp\\Models\\Cart.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:32:57.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Claim.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Claim.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Models\\Claim.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Claim.cs",
+              "RelativeToolTip": "StateManagmentApp\\Models\\Claim.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:32:56.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Models\\Customer.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Customer.cs",
+              "RelativeToolTip": "StateManagmentApp\\Models\\Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:32:52.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Models\\Product.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Models\\Product.cs",
+              "RelativeToolTip": "StateManagmentApp\\Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T06:32:49.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SessionStorage.cshtml",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\StateMgmt\\SessionStorage.cshtml",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Views\\StateMgmt\\SessionStorage.cshtml",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\StateMgmt\\SessionStorage.cshtml",
+              "RelativeToolTip": "StateManagmentApp\\Views\\StateMgmt\\SessionStorage.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAIBJwCkAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T06:04:43.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LocalStorage.cshtml",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\StateMgmt\\LocalStorage.cshtml",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Views\\StateMgmt\\LocalStorage.cshtml",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\StateMgmt\\LocalStorage.cshtml",
+              "RelativeToolTip": "StateManagmentApp\\Views\\StateMgmt\\LocalStorage.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T05:56:47.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\StateMgmt\\Index.cshtml",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Views\\StateMgmt\\Index.cshtml",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Views\\StateMgmt\\Index.cshtml",
+              "RelativeToolTip": "StateManagmentApp\\Views\\StateMgmt\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-06T05:47:22.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StateMgmtController.cs",
+              "DocumentMoniker": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Controllers\\StateMgmtController.cs",
+              "RelativeDocumentMoniker": "StateManagmentApp\\Controllers\\StateMgmtController.cs",
+              "ToolTip": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\Controllers\\StateMgmtController.cs",
+              "RelativeToolTip": "StateManagmentApp\\Controllers\\StateMgmtController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAwwDYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T05:46:50.131Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

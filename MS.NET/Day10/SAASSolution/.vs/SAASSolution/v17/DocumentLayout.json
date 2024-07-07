@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{860F1D63-74BB-41CD-BD55-04947951024C}|IACSDMinimalAPI\\IACSDMinimalAPI.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day_10\\saassolution\\iacsdminimalapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860F1D63-74BB-41CD-BD55-04947951024C}|IACSDMinimalAPI\\IACSDMinimalAPI.csproj|solutionrelative:iacsdminimalapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B49C025B-8BA1-4454-98EC-E1CCA7AA33CC}|WeatherReactApp\\weatherreactapp.client\\weatherreactapp.client.esproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day_10\\saassolution\\weatherreactapp\\weatherreactapp.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B49C025B-8BA1-4454-98EC-E1CCA7AA33CC}|WeatherReactApp\\weatherreactapp.client\\weatherreactapp.client.esproj|solutionrelative:weatherreactapp\\weatherreactapp.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AB169A-E362-451E-8F4E-03E0AF32751E}|WeatherReactApp\\WeatherReactApp.Server\\WeatherReactApp.Server.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day_10\\saassolution\\weatherreactapp\\weatherreactapp.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2AB169A-E362-451E-8F4E-03E0AF32751E}|WeatherReactApp\\WeatherReactApp.Server\\WeatherReactApp.Server.csproj|solutionrelative:weatherreactapp\\weatherreactapp.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44913A40-2C1E-4CDA-934F-F1FC54DF9DDE}|MyntraWebAPI\\MyntraWebAPI.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day_10\\saassolution\\myntrawebapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44913A40-2C1E-4CDA-934F-F1FC54DF9DDE}|MyntraWebAPI\\MyntraWebAPI.csproj|solutionrelative:myntrawebapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44913A40-2C1E-4CDA-934F-F1FC54DF9DDE}|MyntraWebAPI\\MyntraWebAPI.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day_10\\saassolution\\myntrawebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44913A40-2C1E-4CDA-934F-F1FC54DF9DDE}|MyntraWebAPI\\MyntraWebAPI.csproj|solutionrelative:myntrawebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44913A40-2C1E-4CDA-934F-F1FC54DF9DDE}|MyntraWebAPI\\MyntraWebAPI.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day_10\\saassolution\\myntrawebapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44913A40-2C1E-4CDA-934F-F1FC54DF9DDE}|MyntraWebAPI\\MyntraWebAPI.csproj|solutionrelative:myntrawebapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\IACSDMinimalAPI\\Program.cs",
+              "RelativeDocumentMoniker": "IACSDMinimalAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\IACSDMinimalAPI\\Program.cs",
+              "RelativeToolTip": "IACSDMinimalAPI\\Program.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAEwCYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T04:28:44.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\WeatherReactApp\\weatherreactapp.client\\src\\App.jsx",
+              "RelativeDocumentMoniker": "WeatherReactApp\\weatherreactapp.client\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\WeatherReactApp\\weatherreactapp.client\\src\\App.jsx",
+              "RelativeToolTip": "WeatherReactApp\\weatherreactapp.client\\src\\App.jsx",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAABQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-07-07T04:12:15.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\WeatherReactApp\\WeatherReactApp.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "WeatherReactApp\\WeatherReactApp.Server\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\WeatherReactApp\\WeatherReactApp.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "WeatherReactApp\\WeatherReactApp.Server\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T04:11:07.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\MyntraWebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "MyntraWebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\MyntraWebAPI\\Program.cs",
+              "RelativeToolTip": "MyntraWebAPI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T04:02:38.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\MyntraWebAPI\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "MyntraWebAPI\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\MyntraWebAPI\\WeatherForecast.cs",
+              "RelativeToolTip": "MyntraWebAPI\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T04:01:41.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\MyntraWebAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "MyntraWebAPI\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day_10\\SAASSolution\\MyntraWebAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "MyntraWebAPI\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T03:59:00.744Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

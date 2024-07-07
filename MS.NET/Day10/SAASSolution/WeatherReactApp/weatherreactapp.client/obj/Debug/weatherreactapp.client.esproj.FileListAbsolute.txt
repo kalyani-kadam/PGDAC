@@ -1,0 +1,1 @@
+C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day_10\SAASSolution\WeatherReactApp\weatherreactapp.client\obj\Debug\weatherreactapp.client.esproj.CoreCompileInputs.cache
