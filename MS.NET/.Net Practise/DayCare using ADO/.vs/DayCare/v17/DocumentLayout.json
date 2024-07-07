@@ -1,0 +1,211 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\DotNet\\DayCare\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\views\\author\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\views\\author\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\views\\author\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\views\\author\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\views\\author\\deleteuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\views\\author\\deleteuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\views\\author\\updateuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\views\\author\\updateuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|e:\\dotnet\\daycare\\kiddohubsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0FE8C1B-122D-4AC8-9B3D-43216323104F}|KiddohubSystem\\KiddohubSystem.csproj|solutionrelative:kiddohubsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Program.cs",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Program.cs",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Program.cs",
+              "RelativeToolTip": "KiddohubSystem\\Program.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T10:57:08.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "KiddohubSystem\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T08:57:31.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Services\\IUserService.cs",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Services\\IUserService.cs",
+              "RelativeToolTip": "KiddohubSystem\\Services\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T13:00:29.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "deleteuser.cshtml",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\deleteuser.cshtml",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Views\\Author\\deleteuser.cshtml",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\deleteuser.cshtml",
+              "RelativeToolTip": "KiddohubSystem\\Views\\Author\\deleteuser.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T12:54:00.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "updateuser.cshtml",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\updateuser.cshtml",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Views\\Author\\updateuser.cshtml",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\updateuser.cshtml",
+              "RelativeToolTip": "KiddohubSystem\\Views\\Author\\updateuser.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T12:26:03.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\Login.cshtml",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Views\\Author\\Login.cshtml",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\Login.cshtml",
+              "RelativeToolTip": "KiddohubSystem\\Views\\Author\\Login.cshtml",
+              "ViewState": "AQIAACUAAAAAAAAAAAAkwDcAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T12:24:10.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "register.cshtml",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\register.cshtml",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Views\\Author\\register.cshtml",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Views\\Author\\register.cshtml",
+              "RelativeToolTip": "KiddohubSystem\\Views\\Author\\register.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowDkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-03T11:55:37.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Models\\User.cs",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Models\\User.cs",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Models\\User.cs",
+              "RelativeToolTip": "KiddohubSystem\\Models\\User.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T10:35:24.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Repository\\UserRepository.cs",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "KiddohubSystem\\Repository\\UserRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T10:31:46.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Services\\UserService.cs",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Services\\UserService.cs",
+              "RelativeToolTip": "KiddohubSystem\\Services\\UserService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T10:30:44.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthorController.cs",
+              "DocumentMoniker": "E:\\DotNet\\DayCare\\KiddohubSystem\\Controllers\\AuthorController.cs",
+              "RelativeDocumentMoniker": "KiddohubSystem\\Controllers\\AuthorController.cs",
+              "ToolTip": "E:\\DotNet\\DayCare\\KiddohubSystem\\Controllers\\AuthorController.cs",
+              "RelativeToolTip": "KiddohubSystem\\Controllers\\AuthorController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T10:30:28.692Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
