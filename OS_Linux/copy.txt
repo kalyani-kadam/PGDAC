@@ -1,0 +1,174 @@
+LINUX Directory
+    
+    
+    1  whoami
+    2  whatis whoami
+    3  whatis man
+    4  echo "Hiii"
+    5  echo "hiii \n hii"
+    6  echo -e "Hello \n Hii"
+    7  ls
+    8  ls -l
+    9  which nano
+   10  whatis nano
+   11  mkdir kk
+   12  cd kk
+   13  touch file1.txt
+   14  echo "hello" >> file1.txt
+   15  cat file1.txt
+   16  cd..
+   17  cd ..
+   18  rm file1.txt
+   19  cd kk
+   20  rm file1.txt
+   21  cat file1.txt
+   22  ls -l file1.txt
+   23  touch file1.txt
+   24  ls -l file1.txt
+   25  touch file1.txt
+   26  ls -l file1.txt
+   27  cd ..
+   28  mkdir dir1/dir2
+   29  mkdir -p  dir1/dir2
+   30  etc dir1
+   31  etc/user
+   32  /etc/passwd
+   33  ls
+   34  cd dir
+   35  cd dir1
+   36  cd dir2
+   37  cd ..
+   38  exit
+   39  ls -a
+   40  ls -l
+   41  cd kk
+   42  whatis wc
+   43  wc -l
+   44  touch text.txt
+   45  echo "A B CRFH HF JD"
+   46  sort text.txt
+   47  echo "A B CRFH HF JD" >> text.txt
+   48  sort text.txt
+   49  echo "z a h s w">>text.txt
+   50  sort text.txt
+   51  sort text.txt >> text.txt
+   52  cat text.txt
+   53  echo "kalyani kadam"> text.txt
+   54  sort text.txt
+   55  cat text.txt
+   56  cat file1.txt
+   57  echo "hiiiii">>text.txt
+   58  cat file1.txt
+   59  sort file1.txt
+   60  touch test.txt
+   61  echo "z x y t p q" >> test.txt
+   62  cat test.txt
+   63  sort test.txt
+   64  sort test.txt > test.txt
+   65  cat test.txt
+   66  sort -r
+   67  touch number.txt
+   68  echo " 5 6 7 2 9" >> number.txt
+   69  cat number.txt
+   70  sort -n number.txt
+   71  cat number.txt
+   72  sort number.txt
+   73  cat test.txt
+   74  whatis grep
+   75  grep "hiii" test.txt
+   76  grep "Hello" test.txt
+   77  grep "hello" test.txt
+   78  grep -i "hello" test.txt
+   79  echo $SHELL
+   80  touch first.sh
+   81  echo -n"hiii"
+   82  echo -n "hiii"
+   83  bash first.sh
+   84  cat first.sh
+   85  touch alpha.txt
+   86  echo "z y x w v u" >> alpha.txt
+   87  nano alpha.txt
+   88  sort alpha.txt
+   89  cat alpha.txt
+   90  sort alpha.txt
+   91  nano alpha1.txt
+   92  sort alpha1.txt
+   93  cat alpha.txt
+   94  nano alpha.txt
+   95  cat alpha.txt
+   96  sort alpha.txt
+   97  echo "x
+   98  z
+   99  c
+  100  e
+  101  g
+  102  h" > test.txt
+  103  cat test.txt
+  104  sort test.txt
+  105  cd day1 os
+  106  cd day1OS
+  107  touch copy.html
+  108  cat copy.html
+  109  whereis ls
+  110  whatis ls
+  111  ls
+  112  sudo -s
+  113  su root
+  114  ls
+  115  cd
+  116  ls
+  117  ls -l
+  118  touch test1.txt
+  119  ls -l
+  120  cat test1.txt
+  121  echo "Hello from tester">> test1.txt
+  122  cat test1.txt
+  123  nano two.sh
+  124  cat two.sh
+  125  bash two.sh
+  126  touch error.txt
+  127  nano two.sh
+  128  cat two.sh
+  129  bash two.sh
+  130  bash two.sh 2> error.txt
+  131  bash two.sh &> error.txt
+  132  cat error.txt
+  133  bash two.sh 2> error.txt
+  134  cat error.txt
+  135  touch copy.txt
+  136  nano capy.txt
+  137  cd kk
+  138  touch copy.txt
+  139  poweroff
+  140  cd
+  141  mkdir d1
+  142  cd d1
+  143  ls -l
+  144  cd ..
+  145  ls -l
+  146  ls -l *.txt
+  147  ls -l first.txt
+  148  ls -l copy.txt
+  149  ls -l copy.txt | cut -d" "-f1
+  150  ls -l copy.txt | cut -d" " -f1
+  151  mkdir acts sunbeam iacsd
+  152  cd acts
+  153  cd sunbeam
+  154  rmdir
+  155  cd ..
+  156  rmdir
+  157  rmdir acts
+  158  cd acts
+  159  mkdir -p acts
+  160  mkdir -p acts1 hello
+  161  rm -r kk
+  162  whatis rm -r
+  163  etc kk
+  164  etc acts
+  165  echo -n "hello"
+  166  echo -e "hello"
+  167  echo -e "hello \n byeeee"
+  168  echo -e "hello byeeee"
+  169  echo "hello \n byeeee"
+  170  history
+
