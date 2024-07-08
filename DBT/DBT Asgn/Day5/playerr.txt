@@ -1,0 +1,69 @@
+create table team(
+team_id int primary key,
+tname varchar(30) not null,
+player_num int check(player_num>10)
+);
+
+
+create table player(
+    player_id int primary key,
+    pname varchar(30) not null,
+    speciality enum('baller','batsman','wicket keeper','all rounder'),
+    date_of_joining date,
+    num_matches int,
+    team_id int,
+    constraint fk_tid foreign key(team_id) references team(team_id)
+    on delete set null
+    on update cascade
+    );
+
+
+
+create table matches(
+match_id int primary key,
+match_date date,
+winner int,
+team2 int,
+man_of_the_match int,
+constraint fk_tid1 foreign key(team1) references team(team_id),
+constraint fk_tid2 foreign key(team2) references team(team_id),
+constraint fk_pid foreign key(man_of_the_match) references player(player_id),
+constraint chk_win check(winner in(team1,team2))
+);
+
+insert into team values(101,'RCB',13);
+insert into team(team_id,tname,player_num) values(102,'CSK',14),
+    -> (103,'MI',15),
+    -> (104,'RR',13);
+
+
+
+
+insert into player(player_id,pname,speciality,date_of_joining,num_matches,team_id)
+values(1,'VIRAT KOHLI','BATSMAN','1995-03-02',100,101),
+(2,'M S DHONI','ALL ROUNDER','1990-04-02',200,102),
+(3,'SIRAJ','BALLER','1997-03-02',10,101),
+(4,'SHUBHMAN GILL','WICKET KEEPER','1996-09-09',5,101),
+(5,'JADEJJA','ALL ROUNDER','2014-12-09',8,101),
+(6,'SACHIN TENDULKAR','ALL ROUNDER','1990-11-28',10,102),
+(7,'ROHIT SHARMA','BATSMAN','1990-11-28',5,102),
+(8,'SHAMI','BALLER','2001-06-28',8,102),
+(9,'S K YADAV','WICKET KEEPER','2005-11-28',20,102),
+(10,'MICHEL','BATSMAN','1997-03-28',20,101);
+
+
+
+INSERT INTO MATCHES(match_id,match_date,winner,team1,team2,man_of_the_match)
+    -> values(1001,'1999-05-21',101,101,102,6),
+    -> (1002,'1997-09-08',102,101,102,2),
+    -> (1004,'2016-07-16',102,102,101,7),
+    -> (1008,'2024-02-24',101,101,102,5);
+
+
+
+
+
+ select winner,team_id,count(*)
+     from matches
+     group by winner;
+ 

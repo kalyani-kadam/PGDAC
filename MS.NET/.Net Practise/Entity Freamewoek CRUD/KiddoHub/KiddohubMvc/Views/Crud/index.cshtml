@@ -1,14 +1,8 @@
-﻿<h2>All Products</h2>
-
-@{
-    int count = 45;
-    //Data Binding
-    <p> Result=@count</p>
-<ol>
-@{
-    foreach(Product product in Model){
-        <li>@product.name</li>
-    }
-}
-</ol>
-}
+﻿<div>
+    <h2>Login</h2>
+<form action="/crud/index" method="post">
+<input type="email" name="email" placeholder="email" required><br />
+    <input type="password" name="password" placeholder="password" required><br /><br />
+    <button type="submit">Submit</button>
+</form>
+</div>

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace KiddohubMvc.Views.Crud
 {
-    public class getproductsModel : PageModel
+    public class loginModel : PageModel
     {
         public void OnGet()
         {

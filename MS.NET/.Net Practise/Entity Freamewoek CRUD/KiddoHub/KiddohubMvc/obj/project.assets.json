@@ -2368,19 +2368,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dac\\.nuget\\packages\\": {}
+    "C:\\Users\\KALYANI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\KiddoHub\\KiddohubMvc\\KiddohubMvc.csproj",
+      "projectUniqueName": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\KiddohubMvc.csproj",
       "projectName": "KiddohubMvc",
-      "projectPath": "E:\\KiddoHub\\KiddohubMvc\\KiddohubMvc.csproj",
-      "packagesPath": "C:\\Users\\dac\\.nuget\\packages\\",
-      "outputPath": "E:\\KiddoHub\\KiddohubMvc\\obj\\",
+      "projectPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\KiddohubMvc.csproj",
+      "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+      "outputPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

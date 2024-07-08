@@ -1,0 +1,39 @@
+
+
+mongoimport  --db iacsd24 --collection restaurant --file C:\Users\dac\Downloads\samplerestaurent.json
+
+mongoimport  --collection samplemovie --file 
+
+ cuisine : {$nin :'American'}, 'grades.score' : {$gt:70}, 
+ 'address.coord.1':{$lt :  -65.754168}
+ 
+ 
+db.restaurant.find({cuisine : {$nin :['American']}, 
+'grades.score' : {$gt:70},
+'address.coord.1':{$lt :  -65.754168}},
+{name : 1,'address.coord':1,'grades.score':1, _id:0})
+
+
+
+
+cuisine:{$nin:['American']},
+'grades.grade:'A',
+borough:{$nin:'Brooklyn'}
+
+db.restaurant.find({cuisine : {$nin :['American']},
+'grades.grade' : 'A',
+borough:{$nin:['Brooklyn']}},{name:1,borough:1,cuisine:1,_id:0})
+
+
+
+name:/^wil.*$/
+
+db.restaurant.find({name:/reg/i},{name : 1, borough : 1, cuisine : 1})
+
+db.restaurant.find({borough:'Bronx',cuisine:{$in:['American','Chinese']}},{name:1,borough:1,cuisine:1,_id:0})
+
+db.restaurant.find({$or:[{borough:{$in:['Staten Island','Queens','Bronx','Brooklyn']}}]},{name:1,borough:1,cuisine:1})
+
+db.restaurant.find({$or:[{borough:{$nin:['Staten Island','Queens','Bronx','Brooklyn']}}]},{name:1,borough:1,cuisine:1})
+
+db.restaurant.find({'grades.score':{$not:{$gt:10}}},{name:1,borough:1,cuisine:1})

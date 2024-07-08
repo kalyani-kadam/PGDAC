@@ -6,15 +6,20 @@ namespace KiddohubMvc.Repository
 {
     public class ProductRepository
     {
-            public static bool delete(int id)
+        public static bool delete(int id)
+        {
+            using (var context = new CollectionContext())
             {
-                using (var context = new CollectionContext())
+                var searchId = context.product.Find(id);
+                if (searchId != null)
                 {
-                    context.product.Remove(context.product.Find(id));
+                    context.product.Remove(searchId);
                     context.SaveChanges();
                     return true;
                 }
+                return false;
             }
+        }
 
             public static List<Product> getAllProducts()
             {
@@ -48,14 +53,18 @@ namespace KiddohubMvc.Repository
                 using (var context = new CollectionContext())
                 {
                     var prod = context.product.Find(product.id);
-                    //Console.WriteLine(prod.id+" "+prod.name+" "+prod.description);
+                //Console.WriteLine(prod.id+" "+prod.name+" "+prod.description);
+                if (prod != null)
+                {
                     prod.name = product.name;
                     prod.description = product.description;
                     prod.price = product.price;
-                context.SaveChanges();
-
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-                return true;
+                
             }
         }
  }

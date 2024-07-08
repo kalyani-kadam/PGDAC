@@ -1,6 +1,7 @@
 ﻿using KiddohubMvc.Models;
 using KiddohubMvc.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
 
 namespace KiddohubMvc.Controllers
 {
@@ -14,28 +15,35 @@ namespace KiddohubMvc.Controllers
         public CrudController(IProductService productService) {
             _productService = productService;
         }
-        public IActionResult Index()
+        public IActionResult Index(string email, string password)
         {
-           List<Product> products = _productService.getAllProducts();
+            //return View();
+            if (email == "kk@gmail.com" && password == "kk123")
+            {
+                return RedirectToAction("admin", "crud");
+            }
+            return View();
+        }
+        public IActionResult getAll()
+        {
+            List<Product> products = _productService.getAllProducts();
             return View(products);
         }
-
-        public IActionResult Login()
+        public IActionResult admin()
         {
             return View();
         }
 
-      /*  [HttpPost]
-        public IActionResult Login()
+        /*[HttpPost]
+        public IActionResult Login(string email, string password)
         {
             if (email == "kk@gmail.com" && password == "kk123")
             {
-                return RedirectToAction("index", "Contact");
+                return RedirectToAction("index", "crud");
             }
             return View();
-
-        }
-      */
+        }*/
+      
 
 
         public IActionResult addProduct()
@@ -43,15 +51,29 @@ namespace KiddohubMvc.Controllers
             return View();
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult addProduct(int id,string name,string description, int price)
         {
+            
             Product product = new Product();
             //Product product = new Product(id,name,description,price);
             product.id = id;
             product.name = name;
             product.description = description;  
             product.price = price;  
+
+            return Json(_productService.insert(product));
+        }*/
+
+        [HttpPost]
+        public IActionResult addProduct(Product product1)
+        {
+            Product product = new Product();
+            //Product product = new Product(id,name,description,price);
+            product.id = product1.id;
+            product.name = product1.name;
+            product.description = product1.description;
+            product.price = product1.price;
 
             return Json(_productService.insert(product));
         }

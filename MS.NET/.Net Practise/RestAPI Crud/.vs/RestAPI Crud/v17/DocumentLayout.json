@@ -1,37 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "G:\\Dot Net Notes\\RestAPI Crud\\",
+  "WorkspaceRootPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\repository\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\repository\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\repository\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|g:\\dot net notes\\restapi crud\\webapplication1\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|d:\\pgdac\\ms.net\\.net practise\\restapi crud\\webapplication1\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C884C-BB57-4F66-B809-439CC5802643}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,115 +46,117 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwCMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T16:12:59.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-07T10:28:29.563Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ProductRepository.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Repository\\ProductRepository.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Repository\\ProductRepository.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Repository\\ProductRepository.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Repository\\ProductRepository.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Repository\\ProductRepository.cs",
               "RelativeToolTip": "WebApplication1\\Repository\\ProductRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T09:32:01.911Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Repository\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Repository\\IProductRepository.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Repository\\IProductRepository.cs",
-              "RelativeToolTip": "WebApplication1\\Repository\\IProductRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T09:31:37.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Product.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Entities\\Product.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Entities\\Product.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Entities\\Product.cs",
-              "RelativeToolTip": "WebApplication1\\Entities\\Product.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T09:28:15.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Services\\ProductService.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Services\\ProductService.cs",
-              "RelativeToolTip": "WebApplication1\\Services\\ProductService.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowBUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T09:26:30.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T09:32:01.911Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CollectionContext.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Repository\\CollectionContext.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Repository\\CollectionContext.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Repository\\CollectionContext.cs",
-              "RelativeToolTip": "WebApplication1\\Repository\\CollectionContext.cs",
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Repository\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Repository\\IProductRepository.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Repository\\IProductRepository.cs",
+              "RelativeToolTip": "WebApplication1\\Repository\\IProductRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T09:32:33.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T09:31:37.963Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Services\\IProductService.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Services\\IProductService.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Services\\IProductService.cs",
-              "RelativeToolTip": "WebApplication1\\Services\\IProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Entities\\Product.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Entities\\Product.cs",
+              "RelativeToolTip": "WebApplication1\\Entities\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T09:26:09.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T09:28:15.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Services\\ProductService.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Services\\ProductService.cs",
+              "RelativeToolTip": "WebApplication1\\Services\\ProductService.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAowBUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T09:26:30.155Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "CollectionContext.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Repository\\CollectionContext.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Repository\\CollectionContext.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Repository\\CollectionContext.cs",
+              "RelativeToolTip": "WebApplication1\\Repository\\CollectionContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T09:32:33.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Services\\IProductService.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Services\\IProductService.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Services\\IProductService.cs",
+              "RelativeToolTip": "WebApplication1\\Services\\IProductService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T09:26:09.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Program.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\Program.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\Program.cs",
               "RelativeToolTip": "WebApplication1\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T10:25:37.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T10:25:37.419Z"
             }
           ]
         }

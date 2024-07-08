@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "G:\\Dot Net Notes\\RestAPI Crud\\WebApplication1\\obj\\",
+        "projectPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+        "outputPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\RestAPI Crud\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
