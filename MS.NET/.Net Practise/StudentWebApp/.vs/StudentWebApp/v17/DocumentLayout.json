@@ -1,0 +1,286 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\stud\\editdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\stud\\editdata.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\repository\\studrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\repository\\studrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\controllers\\studcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\controllers\\studcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\stud\\viewstud.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\stud\\viewstud.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\stud\\stud.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\stud\\stud.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\stud\\student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\stud\\student.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\service\\studservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\service\\studservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\service\\istudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\service\\istudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\stud\\insert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\stud\\insert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\stud\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\stud\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\views\\stud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\views\\stud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\repository\\clollectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\repository\\clollectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|d:\\pgdac\\ms.net\\.net practise\\studentwebapp\\studentapp\\repository\\istudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{967D16D8-82CD-4F39-8C6A-77C19A76913C}|StudentApp\\StudentApp.csproj|solutionrelative:studentapp\\repository\\istudrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "editdata.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\editdata.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Stud\\editdata.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\editdata.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Stud\\editdata.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T07:30:19.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StudService.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Service\\StudService.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Service\\StudService.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Service\\StudService.cs",
+              "RelativeToolTip": "StudentApp\\Service\\StudService.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T07:28:11.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "viewstud.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\viewstud.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Stud\\viewstud.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\viewstud.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Stud\\viewstud.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T06:51:05.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "student.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\student.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Stud\\student.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\student.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Stud\\student.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T06:50:20.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "stud.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\stud.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Stud\\stud.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\stud.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Stud\\stud.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T06:50:16.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "insert.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\insert.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Stud\\insert.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\insert.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Stud\\insert.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T06:02:47.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudController.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Controllers\\StudController.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Controllers\\StudController.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Controllers\\StudController.cs",
+              "RelativeToolTip": "StudentApp\\Controllers\\StudController.cs",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAI4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:27:17.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudRepository.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Repository\\StudRepository.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Repository\\StudRepository.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Repository\\StudRepository.cs",
+              "RelativeToolTip": "StudentApp\\Repository\\StudRepository.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAgwDQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:27:43.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T06:03:36.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Program.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Program.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Program.cs",
+              "RelativeToolTip": "StudentApp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T05:37:40.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IStudService.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Service\\IStudService.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Service\\IStudService.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Service\\IStudService.cs",
+              "RelativeToolTip": "StudentApp\\Service\\IStudService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:27:41.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "admin.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\admin.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Stud\\admin.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\admin.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Stud\\admin.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T06:02:37.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\Index.cshtml",
+              "RelativeDocumentMoniker": "StudentApp\\Views\\Stud\\Index.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Views\\Stud\\Index.cshtml",
+              "RelativeToolTip": "StudentApp\\Views\\Stud\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T06:05:52.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ClollectionContext.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Repository\\ClollectionContext.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Repository\\ClollectionContext.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Repository\\ClollectionContext.cs",
+              "RelativeToolTip": "StudentApp\\Repository\\ClollectionContext.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwB4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:27:45.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Models\\Student.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Models\\Student.cs",
+              "RelativeToolTip": "StudentApp\\Models\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:45:00.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IStudRepository.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Repository\\IStudRepository.cs",
+              "RelativeDocumentMoniker": "StudentApp\\Repository\\IStudRepository.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\StudentWebApp\\StudentApp\\Repository\\IStudRepository.cs",
+              "RelativeToolTip": "StudentApp\\Repository\\IStudRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:27:42.632Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

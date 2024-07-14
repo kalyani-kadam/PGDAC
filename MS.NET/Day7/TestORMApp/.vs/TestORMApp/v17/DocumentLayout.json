@@ -1,35 +1,35 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\",
+  "WorkspaceRootPath": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\testormapp\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|d:\\pgdac\\ms.net\\day7\\testormapp\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|solutionrelative:collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21EE069B-5EDF-448A-A9DA-DC123B1FA565}|..\\FlipKart\\FlipKart.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\flipkart\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21EE069B-5EDF-448A-A9DA-DC123B1FA565}|..\\FlipKart\\FlipKart.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\flipkart\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21EE069B-5EDF-448A-A9DA-DC123B1FA565}|..\\FlipKart\\FlipKart.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\flipkart\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\testormapp\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|d:\\pgdac\\ms.net\\day7\\testormapp\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|solutionrelative:dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\testormapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\testormapp\\idbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|d:\\pgdac\\ms.net\\day7\\testormapp\\idbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|solutionrelative:idbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|c:\\users\\tfladmin\\onedrive\\desktop\\iacsd\\day7\\testormapp\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|d:\\pgdac\\ms.net\\day7\\testormapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|d:\\pgdac\\ms.net\\day7\\testormapp\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF50DEA2-69B0-453B-8562-467406119504}|TestORMApp.csproj|solutionrelative:department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Views\\Products\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Controllers\\ProductsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,97 +39,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Views\\Products\\Index.cshtml",
-              "RelativeDocumentMoniker": "..\\FlipKart\\Views\\Products\\Index.cshtml",
               "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Views\\Products\\Index.cshtml",
-              "RelativeToolTip": "..\\FlipKart\\Views\\Products\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-04T07:20:12.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T07:20:12.755Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "..\\FlipKart\\Controllers\\ProductsController.cs",
               "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "..\\FlipKart\\Controllers\\ProductsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T07:19:53.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T07:19:53.386Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CollectionContext.cs",
-              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\CollectionContext.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\CollectionContext.cs",
               "RelativeDocumentMoniker": "CollectionContext.cs",
-              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\CollectionContext.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\CollectionContext.cs",
               "RelativeToolTip": "CollectionContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABSAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA1wBkAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T06:13:23.339Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "..\\FlipKart\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "..\\FlipKart\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAQwBQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T07:17:18.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T07:17:18.711Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "DBManager.cs",
-              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\DBManager.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\DBManager.cs",
               "RelativeDocumentMoniker": "DBManager.cs",
-              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\DBManager.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\DBManager.cs",
               "RelativeToolTip": "DBManager.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBAAAAASAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAA5wC8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T06:02:45.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\Department.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\Department.cs",
               "RelativeDocumentMoniker": "Department.cs",
-              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\Department.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\Department.cs",
               "RelativeToolTip": "Department.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T05:49:19.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T05:49:19.47Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "IDBManager.cs",
-              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\IDBManager.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\IDBManager.cs",
               "RelativeDocumentMoniker": "IDBManager.cs",
-              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\IDBManager.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\IDBManager.cs",
               "RelativeToolTip": "IDBManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -138,16 +124,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\Program.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\TestORMApp\\Program.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\Day7\\TestORMApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T05:44:48.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T05:44:48.339Z"
             }
           ]
         }

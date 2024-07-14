@@ -10,8 +10,7 @@ namespace KiddohubMvc.Repository
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connstring = @"server=localhost;port=3306;user=root;password=root;" +
-                "database=productmanage;";
+            string connstring = @"server=localhost;port=3306;user=root;password=root;database=productmanage;";
             optionsBuilder.UseMySQL(connstring);
          
         }

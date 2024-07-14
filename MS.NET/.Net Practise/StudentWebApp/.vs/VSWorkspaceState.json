@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\StudentApp",
+    "\\StudentApp\\Controllers",
+    "\\StudentApp\\Models",
+    "\\StudentApp\\Repository",
+    "\\StudentApp\\Views",
+    "\\StudentApp\\Views\\Shared",
+    "\\StudentApp\\Views\\Stud"
+  ],
+  "SelectedNode": "\\StudentApp\\Views\\Stud\\insert.cshtml",
+  "PreviewInSolutionExplorer": false
+}

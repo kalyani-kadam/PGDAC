@@ -947,19 +947,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tfladmin\\.nuget\\packages\\": {}
+    "C:\\Users\\KALYANI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\EStoreWebApp\\EStoreWebApp.csproj",
+      "projectUniqueName": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\EStoreWebApp\\EStoreWebApp.csproj",
       "projectName": "EStoreWebApp",
-      "projectPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\EStoreWebApp\\EStoreWebApp.csproj",
-      "packagesPath": "C:\\Users\\tfladmin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\EStoreWebApp\\obj\\",
+      "projectPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\EStoreWebApp\\EStoreWebApp.csproj",
+      "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+      "outputPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\EStoreWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tfladmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -974,11 +974,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BLL\\BLL.csproj"
+            "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BOL\\BOL.csproj": {
-              "projectPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BOL\\BOL.csproj"
+            "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BOL\\BOL.csproj": {
+              "projectPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BOL\\BOL.csproj"
             }
           }
         }
@@ -1008,6 +1008,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1016,7 +1034,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

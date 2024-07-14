@@ -5690,19 +5690,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\KALYANI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\StateManagmentApp.csproj",
+      "projectUniqueName": "D:\\PGDAC\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\StateManagmentApp.csproj",
       "projectName": "StateManagmentApp",
-      "projectPath": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\StateManagmentApp.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "G:\\study material\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\obj\\",
+      "projectPath": "D:\\PGDAC\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\StateManagmentApp.csproj",
+      "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+      "outputPath": "D:\\PGDAC\\MS.NET\\Day9\\StateManagment\\StateManagmentApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

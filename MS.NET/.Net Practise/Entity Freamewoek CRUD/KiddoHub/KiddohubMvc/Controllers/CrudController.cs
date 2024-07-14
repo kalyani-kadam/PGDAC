@@ -24,7 +24,7 @@ namespace KiddohubMvc.Controllers
             }
             return View();
         }
-        public IActionResult getAll()
+        public IActionResult getall()
         {
             List<Product> products = _productService.getAllProducts();
             return View(products);

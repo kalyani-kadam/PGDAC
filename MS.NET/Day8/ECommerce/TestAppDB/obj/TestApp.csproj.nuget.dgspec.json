@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj": {}
+    "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj": {
+    "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj",
+        "projectUniqueName": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj",
         "projectName": "TestApp",
-        "projectPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj",
-        "packagesPath": "C:\\Users\\tfladmin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\TestAppDB\\obj\\",
+        "projectPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\TestAppDB\\TestApp.csproj",
+        "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+        "outputPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\TestAppDB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tfladmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,12 +62,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

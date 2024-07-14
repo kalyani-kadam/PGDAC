@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\controllers\\crudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\controllers\\crudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\getall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\getall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\deleteproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\deleteproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\repository\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\repository\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -11,40 +39,20 @@
       "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\controllers\\crudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\controllers\\crudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\editproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\repository\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\repository\\collectioncontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\getall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\getall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\addproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,15 +67,7 @@
       "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\views\\crud\\deleteproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\views\\crud\\deleteproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dac\\AppData\\Local\\SourceServer\\5e64bf1cb161c663aa4e660a390fe6dc0150d47187e6ba6853f71b84192b6094\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\CancellationTokenSource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|solutionrelative:kiddohubmvc\\repository\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{924B1182-99D7-461F-8BCA-AD3ACEA787F6}|KiddohubMvc\\KiddohubMvc.csproj|d:\\pgdac\\ms.net\\.net practise\\entity freamewoek crud\\kiddohub\\kiddohubmvc\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,24 +85,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "index.cshtml.cs",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
-              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T16:15:54.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Repository\\ProductRepository.cs",
               "RelativeDocumentMoniker": "KiddohubMvc\\Repository\\ProductRepository.cs",
@@ -115,58 +102,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Services\\ProductService.cs",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Services\\ProductService.cs",
-              "RelativeToolTip": "KiddohubMvc\\Services\\ProductService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T09:50:56.448Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CrudController.cs",
               "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Controllers\\CrudController.cs",
               "RelativeDocumentMoniker": "KiddohubMvc\\Controllers\\CrudController.cs",
               "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Controllers\\CrudController.cs",
               "RelativeToolTip": "KiddohubMvc\\Controllers\\CrudController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAgwDcAAAAJAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAYwBkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T08:46:12.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "editproduct.cshtml",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
-              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
-              "ViewState": "AQIAACwAAAAAAAAAAAAgwD0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-05T09:47:57.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "CollectionContext.cs",
               "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Repository\\CollectionContext.cs",
               "RelativeDocumentMoniker": "KiddohubMvc\\Repository\\CollectionContext.cs",
               "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Repository\\CollectionContext.cs",
               "RelativeToolTip": "KiddohubMvc\\Repository\\CollectionContext.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAswAsAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-04T09:30:08.164Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "addproduct.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
+              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAA4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-04T10:43:06.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "getall.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\getall.cshtml",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\getall.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\getall.cshtml",
+              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\getall.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T15:39:35.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "deleteproduct.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
+              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAgwDYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-05T09:46:29.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\index.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml",
+              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T15:40:48.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "index.cshtml.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
+              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\index.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T16:15:54.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Repository\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Repository\\IProductRepository.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Repository\\IProductRepository.cs",
+              "RelativeToolTip": "KiddohubMvc\\Repository\\IProductRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T10:23:24.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Models\\Product.cs",
               "RelativeDocumentMoniker": "KiddohubMvc\\Models\\Product.cs",
@@ -174,34 +214,7 @@
               "RelativeToolTip": "KiddohubMvc\\Models\\Product.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAzwAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T08:49:06.261Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "index.cshtml",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\index.cshtml",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\index.cshtml",
-              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-08T15:40:48.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-08T16:03:26.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T08:49:06.261Z"
             },
             {
               "$type": "Document",
@@ -219,19 +232,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "addproduct.cshtml",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
-              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\addproduct.cshtml",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAEIAAAAAAAAA",
+              "Title": "editproduct.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
+              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\editproduct.cshtml",
+              "ViewState": "AQIAACwAAAAAAAAAAAAgwD0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-04T10:43:06.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-05T09:47:57.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Services\\ProductService.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Services\\ProductService.cs",
+              "RelativeToolTip": "KiddohubMvc\\Services\\ProductService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-04T09:50:56.448Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "KiddohubMvc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T16:03:26.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Program.cs",
               "RelativeDocumentMoniker": "KiddohubMvc\\Program.cs",
@@ -239,37 +275,11 @@
               "RelativeToolTip": "KiddohubMvc\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T10:48:22.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "getall.cshtml",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\getall.cshtml",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\getall.cshtml",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\getall.cshtml",
-              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\getall.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-08T15:39:35.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-04T10:48:22.845Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Repository\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Repository\\IProductRepository.cs",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Repository\\IProductRepository.cs",
-              "RelativeToolTip": "KiddohubMvc\\Repository\\IProductRepository.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T10:23:24.057Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
               "Title": "CancellationTokenSource.cs",
               "DocumentMoniker": "C:\\Users\\dac\\AppData\\Local\\SourceServer\\5e64bf1cb161c663aa4e660a390fe6dc0150d47187e6ba6853f71b84192b6094\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\CancellationTokenSource.cs",
               "ToolTip": "C:\\Users\\dac\\AppData\\Local\\SourceServer\\5e64bf1cb161c663aa4e660a390fe6dc0150d47187e6ba6853f71b84192b6094\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\CancellationTokenSource.cs",
@@ -280,18 +290,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "deleteproduct.cshtml",
-              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
-              "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
-              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
-              "RelativeToolTip": "KiddohubMvc\\Views\\Crud\\deleteproduct.cshtml",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAgwDUAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-05T09:46:29.099Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
               "Title": "admin.cshtml.cs",
               "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\Entity Freamewoek CRUD\\KiddoHub\\KiddohubMvc\\Views\\Crud\\admin.cshtml.cs",
               "RelativeDocumentMoniker": "KiddohubMvc\\Views\\Crud\\admin.cshtml.cs",

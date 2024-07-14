@@ -1,0 +1,71 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApplication
+build_property.RootNamespace = WebApplication
+build_property.ProjectDir = D:\PGDAC\MS.NET\.Net Practise\prac\WebApplication\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\PGDAC\MS.NET\.Net Practise\prac\WebApplication
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Stud/admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZFxhZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Stud/delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZFxkZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Stud/findbyname.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZFxmaW5kYnluYW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Stud/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Stud/insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZFxpbnNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Stud/update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZFx1cGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PGDAC/MS.NET/.Net Practise/prac/WebApplication/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-f9qln7o7lm

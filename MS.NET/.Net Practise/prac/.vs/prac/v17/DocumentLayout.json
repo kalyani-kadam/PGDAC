@@ -1,0 +1,288 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\views\\stud\\findbyname.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\views\\stud\\findbyname.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\controllers\\studcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\controllers\\studcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\views\\stud\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\views\\stud\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\views\\stud\\insert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\views\\stud\\insert.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\service\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\service\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\views\\stud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\views\\stud\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\views\\stud\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\views\\stud\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\views\\stud\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\views\\stud\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\repository\\dbconncs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\repository\\dbconncs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\repository\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\repository\\repo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\service\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\pracapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\pracapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|d:\\pgdac\\ms.net\\.net practise\\prac\\webapplication\\repository\\irepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36F4A517-030F-4E5D-9F5B-350C54D219E9}|WebApplication\\PracApp.csproj|solutionrelative:webapplication\\repository\\irepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "admin.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\admin.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Stud\\admin.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\admin.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Stud\\admin.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T05:19:10.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IService.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Service\\IService.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Service\\IService.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Service\\IService.cs",
+              "RelativeToolTip": "WebApplication\\Service\\IService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:39:49.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudController.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Controllers\\StudController.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Controllers\\StudController.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Controllers\\StudController.cs",
+              "RelativeToolTip": "WebApplication\\Controllers\\StudController.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAiwGIAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T05:13:57.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "findbyname.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\findbyname.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Stud\\findbyname.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\findbyname.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Stud\\findbyname.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T05:35:27.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "update.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\update.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Stud\\update.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\update.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Stud\\update.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T05:33:17.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "delete.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\delete.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Stud\\delete.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\delete.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Stud\\delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T05:34:31.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "insert.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\insert.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Stud\\insert.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\insert.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Stud\\insert.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T05:29:47.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Stud\\Index.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Stud\\Index.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Stud\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T05:17:17.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DBConncs.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Repository\\DBConncs.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Repository\\DBConncs.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Repository\\DBConncs.cs",
+              "RelativeToolTip": "WebApplication\\Repository\\DBConncs.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:45:29.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PracApp.csproj",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\PracApp.csproj",
+              "RelativeDocumentMoniker": "WebApplication\\PracApp.csproj",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\PracApp.csproj",
+              "RelativeToolTip": "WebApplication\\PracApp.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-10T04:39:07.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Student.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Models\\Student.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Models\\Student.cs",
+              "RelativeToolTip": "WebApplication\\Models\\Student.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:40:50.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Repo.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Repository\\Repo.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Repository\\Repo.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Repository\\Repo.cs",
+              "RelativeToolTip": "WebApplication\\Repository\\Repo.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAAAFAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:40:24.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Service\\Service.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Service\\Service.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Service\\Service.cs",
+              "RelativeToolTip": "WebApplication\\Service\\Service.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:40:05.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Program.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Program.cs",
+              "RelativeToolTip": "WebApplication\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T05:35:55.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T05:43:37.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IRepo.cs",
+              "DocumentMoniker": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Repository\\IRepo.cs",
+              "RelativeDocumentMoniker": "WebApplication\\Repository\\IRepo.cs",
+              "ToolTip": "D:\\PGDAC\\MS.NET\\.Net Practise\\prac\\WebApplication\\Repository\\IRepo.cs",
+              "RelativeToolTip": "WebApplication\\Repository\\IRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T04:39:35.146Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -48,4 +48,6 @@ calloc initializes memory to zero, which can be useful for avoiding undefined be
 
 realloc can be used to expand or shrink the memory block, but it may involve copying data, and if the new size is larger, the newly allocated memory is not initialized.
 
-In modern C++ code, it's recommended to use new for dynamic object allocation and rely on standard library containers like std::vector or smart pointers like std::shared_ptr and std::unique_ptr to manage memory in a safer and more convenient manner. Avoid using malloc and calloc in C++ unless you have a specific reason to do so, and prefer using the C++ memory management features for object-oriented code.
+In modern C++ code, it's recommended to use new for dynamic object allocation and rely on standard library containers like std::vector or 
+smart pointers like std::shared_ptr and std::unique_ptr to manage memory in a safer and more convenient manner. 
+Avoid using malloc and calloc in C++ unless you have a specific reason to do so, and prefer using the C++ memory management features for object-oriented code.

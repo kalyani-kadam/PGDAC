@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BOL\\BOL.csproj": {}
+    "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BOL\\BOL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BOL\\BOL.csproj": {
+    "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BOL\\BOL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BOL\\BOL.csproj",
+        "projectUniqueName": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BOL\\BOL.csproj",
         "projectName": "BOL",
-        "projectPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BOL\\BOL.csproj",
-        "packagesPath": "C:\\Users\\tfladmin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day8\\ECommerce\\BOL\\obj\\",
+        "projectPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BOL\\BOL.csproj",
+        "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+        "outputPath": "D:\\PGDAC\\MS.NET\\Day8\\ECommerce\\BOL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tfladmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,12 +56,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.20, 7.0.20]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

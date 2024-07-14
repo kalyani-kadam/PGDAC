@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ravi\\TAP\\iacsd\\Day5\\ECommerce\\CSharpFeatureApp\\CSharpFeatureApp.csproj": {}
+    "D:\\PGDAC\\MS.NET\\Day8\\CSharpFeatureApp\\CSharpFeatureApp.csproj": {}
   },
   "projects": {
-    "D:\\Ravi\\TAP\\iacsd\\Day5\\ECommerce\\CSharpFeatureApp\\CSharpFeatureApp.csproj": {
+    "D:\\PGDAC\\MS.NET\\Day8\\CSharpFeatureApp\\CSharpFeatureApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ravi\\TAP\\iacsd\\Day5\\ECommerce\\CSharpFeatureApp\\CSharpFeatureApp.csproj",
+        "projectUniqueName": "D:\\PGDAC\\MS.NET\\Day8\\CSharpFeatureApp\\CSharpFeatureApp.csproj",
         "projectName": "CSharpFeatureApp",
-        "projectPath": "D:\\Ravi\\TAP\\iacsd\\Day5\\ECommerce\\CSharpFeatureApp\\CSharpFeatureApp.csproj",
-        "packagesPath": "C:\\Users\\tfladmin\\.nuget\\packages\\",
-        "outputPath": "D:\\Ravi\\TAP\\iacsd\\Day5\\ECommerce\\CSharpFeatureApp\\obj\\",
+        "projectPath": "D:\\PGDAC\\MS.NET\\Day8\\CSharpFeatureApp\\CSharpFeatureApp.csproj",
+        "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+        "outputPath": "D:\\PGDAC\\MS.NET\\Day8\\CSharpFeatureApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tfladmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

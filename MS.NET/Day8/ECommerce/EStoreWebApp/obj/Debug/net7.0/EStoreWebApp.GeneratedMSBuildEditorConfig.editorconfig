@@ -9,107 +9,107 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EStoreWebApp
 build_property.RootNamespace = EStoreWebApp
-build_property.ProjectDir = C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\EStoreWebApp\
+build_property.ProjectDir = D:\PGDAC\MS.NET\Day8\ECommerce\EStoreWebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\tfladmin\OneDrive\Desktop\IACSD\Day8\ECommerce\EStoreWebApp
+build_property.MSBuildProjectDirectory = D:\PGDAC\MS.NET\Day8\ECommerce\EStoreWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Auth/Login.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Customers/Index.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Customers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Customers/Register.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Customers/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Departments/Details.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Departments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Departments/Index.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Departments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/Aboutus.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/Aboutus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dHVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/cdac.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/cdac.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjZGFjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/Combo.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/Combo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21iby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/corporate.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/corporate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb3Jwb3JhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/Details.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/Index.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/Instructor.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/Instructor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnN0cnVjdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/pgdac.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/pgdac.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwZ2RhYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/pgdbda.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/pgdbda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwZ2RiZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/Privacy.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Home/Services.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Home/Services.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Products/Index.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Products/Insert.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Products/Insert.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5zZXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Shared/Error.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/StateManagement/Index.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/StateManagement/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGVNYW5hZ2VtZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/_ViewImports.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/_ViewStart.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tfladmin/OneDrive/Desktop/IACSD/Day8/ECommerce/EStoreWebApp/Views/Shared/_Layout.cshtml]
+[D:/PGDAC/MS.NET/Day8/ECommerce/EStoreWebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1c6rw98s2s

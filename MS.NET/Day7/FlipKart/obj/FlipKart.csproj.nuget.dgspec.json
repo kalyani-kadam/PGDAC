@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\FlipKart.csproj": {}
+    "D:\\PGDAC\\MS.NET\\Day7\\FlipKart\\FlipKart.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\FlipKart.csproj": {
+    "D:\\PGDAC\\MS.NET\\Day7\\FlipKart\\FlipKart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\FlipKart.csproj",
+        "projectUniqueName": "D:\\PGDAC\\MS.NET\\Day7\\FlipKart\\FlipKart.csproj",
         "projectName": "FlipKart",
-        "projectPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\FlipKart.csproj",
-        "packagesPath": "C:\\Users\\tfladmin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tfladmin\\OneDrive\\Desktop\\IACSD\\Day7\\FlipKart\\obj\\",
+        "projectPath": "D:\\PGDAC\\MS.NET\\Day7\\FlipKart\\FlipKart.csproj",
+        "packagesPath": "C:\\Users\\KALYANI\\.nuget\\packages\\",
+        "outputPath": "D:\\PGDAC\\MS.NET\\Day7\\FlipKart\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tfladmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KALYANI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
